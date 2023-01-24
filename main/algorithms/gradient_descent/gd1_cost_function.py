@@ -1,10 +1,8 @@
 """ Parameterized SSR (cost function)
-f(x) = ax + b
-SSR(a) = sum(R^2)
-Build an algorithm to find the best fit parameter for f(x)
-We need a way to measure the goodness-of-fit (SSR)
-Then, search over all posible values of a and b (gradient descent)
+Measure the goodness-of-fit (SSR)
 For start, let's pretend that intercept is known b = -18
+f(x) = ax + -18
+SSR(a) = sum(R^2)
 """
 
 import matplotlib.pyplot as plt

@@ -1,5 +1,4 @@
 # Plot the slope gradient of f(x) = ax^2 
-# https://www.mathworks.com/matlabcentral/answers/281511-how-do-i-plot-the-plot-a-line-using-slope-and-one-x-y-coordinate-on-matlab
 
 x = -3:0.25:3;
 

@@ -1,4 +1,7 @@
-# Plot the slope gradient of f(x) = ax^2 
+%{
+Plot the slope gradient for f(x) = ax^2
+Derivative: f'(x) = 2ax 
+%}
 
 x = -3:0.25:3;
 

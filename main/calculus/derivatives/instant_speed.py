@@ -28,9 +28,9 @@ def speed(t1, rate=1):
     s = round(s, 1)
     print(f'{t1} to {t2} seconds: va = {s} ft/sec')
 
-speed(4, 1) # 144.0
-speed(4, 0.1) # 129.6
-speed(4, 0.01) # 128.2
-speed(4, 0.001) # 128.0
-speed(4, 0.0001) # 128.0
-speed(4, 0.00001) # 128.0
+speed(4, 1)         # 144.0
+speed(4, 0.1)       # 129.6
+speed(4, 0.01)      # 128.2
+speed(4, 0.001)     # 128.0
+speed(4, 0.0001)    # 128.0
+speed(4, 0.00001)   # 128.0

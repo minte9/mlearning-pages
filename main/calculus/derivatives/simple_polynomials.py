@@ -13,6 +13,8 @@ x = Symbol('x')
 a = 2
 b = 3
 c = 4
-f = a*x**2 + b*x + c
 
-print(f'f\'(x) = {f.diff(x)}')  # f'(x) = 4*x + 3
+y = a*x**2 + b*x + c
+d = y.diff(x)
+
+print(f'y\' = {d}')  # y' = 4*x + 3

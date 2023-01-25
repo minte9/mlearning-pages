@@ -15,7 +15,8 @@ Derived function f'(x) is pronounced "f prime of x"
 
 from sympy import *
 
-x, t = Symbol('x'), Symbol('t')
+x = Symbol('x')
+t = Symbol('t')
 
 a = 1
 f = a*x**2

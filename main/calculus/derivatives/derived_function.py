@@ -33,3 +33,6 @@ d3 = A.diff(r)
 print(f'f\'(x) = {d1}')  # f'(x) = 2*x
 print(f's\'(t) = {d2}')  # s'(x) = 32*t
 print(f'A\'(r) = {d3}')  # A'(r) = 2*pi*r
+
+f = 5*x
+assert f.diff(x) == 5

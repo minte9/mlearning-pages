@@ -16,5 +16,5 @@ c = 4
 
 y = a*x**2 + b*x + c
 
-assert y.diff(x) == 2*a*x + b   # passed
-assert y.diff(x) == 4*x + 3     # passed
+assert y.diff(x) == 2*a*x + b   # passes
+assert y.diff(x) == 4*x + 3     # passes

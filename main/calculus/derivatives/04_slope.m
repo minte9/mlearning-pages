@@ -10,7 +10,7 @@ y = m*(x.^2);
 h = plot(x, y);
 hold on;
 
-x1 = -3:1;
+x1 = -2:1;
 y1 = 16;
 y = -(2*m*x1 + y1);
 h = plot(x1, y);

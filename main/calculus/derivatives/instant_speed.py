@@ -34,11 +34,3 @@ speed(4, 0.01) # 128.2 ft/sec
 speed(4, 0.001) # 128.0 ft/sec
 speed(4, 0.0001) # 128.0 ft/sec
 speed(4, 0.00001) # 128.0 ft/sec
-
-
-""" Average speed in 4 to 4 + h seconds
-s4 + k = 16(4 + h)^2
-s4 + k = 16(16 + 8h + h^2)
-k = 128h + 16h^2
-k/h = 128 + 16h
-"""

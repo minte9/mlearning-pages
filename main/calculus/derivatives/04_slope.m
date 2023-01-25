@@ -17,5 +17,8 @@ title ("s(t) = 16t^2");
 xlabel ("t (seconds)");
 ylabel ("s(t)");
 
-print -djpg "04_slope.jpg"
+img = '04_slope.jpg'
+print -djpg '04_slope.jpg'
+copyfile '04_slope.jpg' '../../../../../../html/lib/images/ml/04_slope.jpg'
+
 waitfor(h);

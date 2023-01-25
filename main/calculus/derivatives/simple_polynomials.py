@@ -1,8 +1,8 @@
 """ Differentiation of Simple Polynomials
-    y = ax^2 + bx + c
+y = ax^2 + bx + c
 
 Obtain the contribution from each term
-    y' = 2ax + b
+y' = 2ax + b
 """
 
 

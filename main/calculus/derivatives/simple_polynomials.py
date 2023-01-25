@@ -15,6 +15,5 @@ b = 3
 c = 4
 
 y = a*x**2 + b*x + c
-d = y.diff(x)
 
-print(f'y\' = {d}')  # y' = 4*x + 3
+assert y.diff(x) == 4*x + 3

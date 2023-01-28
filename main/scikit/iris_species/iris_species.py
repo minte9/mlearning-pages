@@ -43,7 +43,9 @@ print(dataset['target'][148:])
     # [0, 0]
     # [2, 2]
 
-X1, X2, y1, y2 = train_test_split(dataset['data'], dataset['target'], random_state=0)
+X1, X2, y1, y2 = train_test_split(
+    dataset['data'], dataset['target'], random_state=0
+)
 
 print('X1 shape: ', X1.shape) # (112, 4)
 print('X2 shape: ', X2.shape) # (38, 4)

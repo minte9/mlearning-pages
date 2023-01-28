@@ -35,7 +35,7 @@ ax.set_title("Petals")
 ax.set_xlabel('length (cm)')
 ax.set_ylabel('width (cm)')
 ax.scatter(df['petal length (cm)'], df['petal width (cm)'], c=y1)
-ax.scatter(X_new[0][2], X_new[0][3], c=y_new, marker='x', s=100)
+ax.scatter(X_new[0][2], X_new[0][3], c='r', marker='x', s=100)
 ax.grid()
 
 # Iris sepal scatter plot
@@ -44,8 +44,20 @@ ax.set_title("Sepals")
 ax.set_xlabel('length (cm)')
 ax.set_ylabel('width (cm)')
 ax.scatter(df['sepal length (cm)'], df['sepal width (cm)'], c=y1)
-ax.scatter(X_new[0][0], X_new[0][1], c=y_new, marker='x', s=100)
+ax.scatter(X_new[0][0], X_new[0][1], c='r', marker='x', s=100)
 ax.grid()
+
+# Plot the new point on the scatter matrix plot
+axes = pd.plotting.scatter_matrix(
+    df, c=y1, figsize=(15, 15), marker='o', 
+    s=60, alpha = .8, diagonal='none'
+)
+for i in range(4):
+    for j in range(4):
+        if i == j:
+            continue
+        ax = axes[i, j]
+        ax.scatter(X_new[:, j], X_new[:, i], c='r', marker='x', s=200)
 
 plt.show()
 

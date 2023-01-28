@@ -40,8 +40,10 @@ print(dataset['target_names'])
     # ['setosa' 'versicolor' 'virginica']
 
 print(dataset['feature_names'])
-    # sepal length (cm), sepal width (cm)
-    # petal length (cm), petal width (cm)
+    # sepal length (cm)
+    # sepal width (cm)
+    # petal length (cm)
+    # petal width (cm)
 
 print(dataset['data'].shape)
     # (150, 4)
@@ -70,4 +72,5 @@ pd.plotting.scatter_matrix(
     s=60, alpha = .8, diagonal='none'
 )
 
+plt.suptitle('Iris features matrix')
 plt.show()

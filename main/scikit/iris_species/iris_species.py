@@ -33,6 +33,9 @@ print(dataset['DESCR'][:193])
     # Number of Instances: 150 (50 in each of three classes)
     # Number of Attributes: 4 numeric
 
+print(dataset['target_names'])
+    # ['setosa' 'versicolor' 'virginica']
+
 print(dataset['feature_names'])
     # sepal length (cm), sepal width (cm)
     # petal length (cm), petal width (cm)

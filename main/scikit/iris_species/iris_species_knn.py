@@ -9,6 +9,8 @@ import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+import pandas as pd
+import matplotlib.pyplot as plt
 
 dataset = load_iris()
 X1, X2, y1, y2 = train_test_split(
@@ -24,3 +26,27 @@ print("Prediction:", y_new)
 print("Predicted target:", dataset['target_names'][y_new])
     # [0]
     # setosa
+
+df = pd.DataFrame(X1, columns=dataset.feature_names)
+
+# Iris petal scatter plot
+fig, ax = plt.subplots()
+ax.set_title("Petals")
+ax.set_xlabel('length (cm)')
+ax.set_ylabel('width (cm)')
+ax.scatter(df['petal length (cm)'], df['petal width (cm)'], c=y1)
+ax.scatter(X_new[0][2], X_new[0][3], c=y_new, marker='x', s=100)
+ax.grid()
+
+# Iris sepal scatter plot
+fig, ax = plt.subplots()
+ax.set_title("Sepals")
+ax.set_xlabel('length (cm)')
+ax.set_ylabel('width (cm)')
+ax.scatter(df['sepal length (cm)'], df['sepal width (cm)'], c=y1)
+ax.scatter(X_new[0][0], X_new[0][1], c=y_new, marker='x', s=100)
+ax.grid()
+
+plt.show()
+
+

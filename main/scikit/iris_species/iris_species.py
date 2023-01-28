@@ -12,6 +12,9 @@ The species are encoded as integers from 0 to 2.
 We use a fixed seed when splitting in train and test data.
 One of the best way to inspect the data is to visualize it.
 
+It's difficult to plot datasets with more than 2-3 features.
+Pair plots uses all posible pair of features.  
+
 The data points are colored according to the species the iris belons to.
 The diagonal of matrix is filled with histograms of each feature.
 
@@ -64,6 +67,7 @@ print('y2 shape: ', y2.shape) # 38
 df = pd.DataFrame(X1, columns=dataset.feature_names)
 pd.plotting.scatter_matrix(
     df, c=y1, figsize=(15, 15), marker='o', 
-    hist_kwds={'bins': 20}, s=60, alpha = .8
+    s=60, alpha = .8, diagonal='none'
 )
+
 plt.show()

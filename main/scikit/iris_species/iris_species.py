@@ -1,16 +1,22 @@
 """ Iris Species Classifier
 Learn model that predicts the species of a new iris
-based on known measurements (length and width of petals)
+based on known measurements (length and width of petals).
 
-Dataset is a Bunch object (similar to a dictionary)
+Dataset is a Bunch object (similar to a dictionary).
 The shape of the data array is the number of samples
-times the number of features
+times the number of features.
 
-The target array contains the species of the flowers
-The species are encoded as integers from 0 to 2
+The target array contains the species of the flowers.
+The species are encoded as integers from 0 to 2.
 
-We use a fixed seed when splitting in train and test data 
-One of the best way to inspect the data is to visualize it
+We use a fixed seed when splitting in train and test data.
+One of the best way to inspect the data is to visualize it.
+
+The data points are colored according to the species the iris belons to.
+The diagonal of matrix is filled with histograms of each feature.
+
+From the plots, we can see that tha three classes are well separated.
+This means that machine learning model will be able to learn to separate them.
 """
 
 from sklearn.datasets import load_iris

@@ -16,7 +16,7 @@ The data points are colored according to the species the iris belons to.
 The diagonal of matrix is filled with histograms of each feature.
 
 From the plots, we can see that tha three classes are well separated.
-This means that machine learning model will be able to learn to separate them.
+This means that ML model will be able to learn to separate them.
 """
 
 from sklearn.datasets import load_iris

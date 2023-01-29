@@ -24,42 +24,26 @@ x = np.array([[1, 2], [1, 3], [1, 4], [1, 5]])
 y = np.array([[7], [6], [5], [7]])
 
 def cost(theta, x, y):
-
-    # predicted values
     y_pred = np.dot(x, theta)
-
-    # error
     error = y_pred - y
 
-    # return the cost
     return (1 / (2 * len(y))) * np.dot(error.T, error)
 
 def gradient_descent(x, y, theta, learning_rate, num_iterations):
-    
-    # initialize
     cost_history = np.zeros(num_iterations)
-    
+
     for i in range(num_iterations):
 
-        # predicted values
         y_pred = np.dot(x, theta)
         error = y_pred - y
-
-        # update the parameters
         theta = theta - (learning_rate/len(y)) * np.dot(x.T, error)
-
-        # calculate the cost
         cost_history[i] = cost(theta, x, y)
     
     return theta, cost_history
 
-# initialize the parameters
 theta = np.random.randn(2, 1)
 learning_rate = 0.01
 num_iterations = 1000
-
-# call gradient descent function
 theta, cost_history = gradient_descent(x, y, theta, learning_rate, num_iterations)
 
-# print the final parameters
 print("Theta: ", theta)

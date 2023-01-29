@@ -43,4 +43,4 @@ theta, cost_history = gradient_descent(x, y, theta, lr, num_iterations)
 
 print("Theta: ", theta)
     # Theta:  [[4.55230192]
-    #          [0.43431721]]
+    # [0.43431721]]

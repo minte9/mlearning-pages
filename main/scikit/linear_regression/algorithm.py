@@ -9,10 +9,10 @@ Calculate the error difference
     error = y_pred - y
 
 Minimize the error, find the best fit 
-    - use optimization algorithms (gradient descent)
+    use optimization algorithms (gradient descent)
     
 Make predictions
-    - use the line of best fit to make predictions
+    use the line of best fit to make predictions
 """
 
 import numpy as np

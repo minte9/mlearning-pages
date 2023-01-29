@@ -33,18 +33,16 @@ def gradient_descent(x, y, theta, lr, num_iterations):
         cost_history[i] = cost(theta, x, y)
     return theta, cost_history
 
-# example input
+# input
 x = np.array([[1, 2], [1, 3], [1, 4], [1, 5]])
 y = np.array([[7], [6], [5], [7]])
 
-# initialize the parameters
+# params initialization
 theta = np.random.randn(2, 1)
 lr = 0.01
 num_iterations = 1000
 
-# call the gradient descent function
 theta, cost_history = gradient_descent(x, y, theta, lr, num_iterations)
-
 print("Theta: ", theta)
     # Theta:  [[4.55230192]
     # [0.43431721]]

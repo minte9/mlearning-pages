@@ -1,5 +1,4 @@
 """ Gradient descent Algorithm
-
 Can be use to optimizes the parameters of any ML model, 
 not just linear regresssion.
 
@@ -26,24 +25,20 @@ y = np.array([[7], [6], [5], [7]])
 def cost(theta, x, y):
     y_pred = np.dot(x, theta)
     error = y_pred - y
-
     return (1 / (2 * len(y))) * np.dot(error.T, error)
 
-def gradient_descent(x, y, theta, learning_rate, num_iterations):
+def gradient_descent(x, y, theta, lr, num_iterations):
     cost_history = np.zeros(num_iterations)
-
     for i in range(num_iterations):
-
         y_pred = np.dot(x, theta)
         error = y_pred - y
-        theta = theta - (learning_rate/len(y)) * np.dot(x.T, error)
+        theta = theta - (lr/len(y)) * np.dot(x.T, error)
         cost_history[i] = cost(theta, x, y)
-    
     return theta, cost_history
 
 theta = np.random.randn(2, 1)
-learning_rate = 0.01
+lr = 0.01
 num_iterations = 1000
-theta, cost_history = gradient_descent(x, y, theta, learning_rate, num_iterations)
+theta, cost_history = gradient_descent(x, y, theta, lr, num_iterations)
 
 print("Theta: ", theta)

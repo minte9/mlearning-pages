@@ -20,11 +20,14 @@ not just linear regresssion.
 import numpy as np
 
 def cost(theta, x, y):
+
     y_pred = np.dot(x, theta)
     error = y_pred - y
+
     return (1 / (2 * len(y))) * np.dot(error.T, error)
 
 def gradient_descent(x, y, theta, lr, num_iterations):
+
     cost_history = np.zeros(num_iterations)
 
     for i in range(num_iterations):
@@ -45,5 +48,4 @@ lr = 0.01
 num_iterations = 1000
 
 theta, cost_history = gradient_descent(x, y, theta, lr, num_iterations)
-
 print("Theta: ", theta) # [[4.55230192] [0.43431721]]

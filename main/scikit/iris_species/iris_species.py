@@ -2,22 +2,10 @@
 Learn model that predicts the species of a new iris
 based on known measurements (length and width of petals).
 
-Dataset is a Bunch object (similar to a dictionary).
-The shape of the data array is the number of samples
-times the number of features.
-
-The target array contains the species of the flowers.
-The species are encoded as integers from 0 to 2.
-
-We use a fixed seed when splitting in train and test data.
-One of the best way to inspect the data is to visualize it.
-
 It's difficult to plot datasets with more than 2-3 features.
 Pair plots uses all posible pair of features.  
 
 The data points are colored according to the species the iris belons to.
-The diagonal of matrix is filled with histograms of each feature.
-
 From the plots, we can see that tha three classes are well separated.
 This means that ML model will be able to learn to separate them.
 """
@@ -45,7 +33,7 @@ print(dataset['feature_names'])
     # petal length (cm)
     # petal width (cm)
 
-print(dataset['data'].shape)
+print(dataset['data'].shape) # number of samples, features
     # (150, 4)
 
 print(dataset['data'][:2])
@@ -53,12 +41,12 @@ print(dataset['data'][:2])
     # [4.9 3.  1.4 0.2]
 
 print(dataset['target'][:2])
-print(dataset['target'][148:])
+print(dataset['target'][148:]) # species are encoded, 0 to 2
     # [0, 0]
     # [2, 2]
 
 X1, X2, y1, y2 = train_test_split(
-    dataset['data'], dataset['target'], random_state=0
+    dataset['data'], dataset['target'], random_state=0 # fixed seed
 )
 
 print('X1 shape: ', X1.shape) # (112, 4)

@@ -20,7 +20,7 @@ new_point = np.array([3, 3])
 distances = np.sqrt(np.sum((X - new_point)**2, axis=1))
 print(distances) # [2.23606798 1. 1. 2.23606798 3.60555128]
 
-keys = np.argsort(distances) # argsort returns indexes
+keys = np.argsort(distances)
 print(keys) # [1 2 0 3 4]
 
 k_nearest = keys[:k]

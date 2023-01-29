@@ -1,4 +1,5 @@
-"""
+""" Linear Regression Algorithm
+
 Collect data, points with x, y values
     x, y = [1, 2, 3], [2, 4, 5]
 

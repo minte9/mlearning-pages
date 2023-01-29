@@ -28,19 +28,15 @@ num_iterations = 1000
 
 for i in range(num_iterations):
     
-    # predict y values
     y_pred = m*x + b
-
-    # calculate error
     error = y_pred - y
 
-    # calculate the partial derivatives
     m_derivative = -(2/len(x)) * sum(x * (y - y_pred))
     b_derivative = -(2/len(x)) * sum(y - y_pred)
 
-    # update the variables
     m = m - learning_rate * m_derivative
     b = b - learning_rate * b_derivative
 
-print("y =", round(m,2), "x + ", round(b,2))
-    # y = 0.62 x +  2.14
+m = round(m, 2)
+b = round(m, 2)
+print(f"y = {m}x + {b}") # y = 0.62 x +  2.14

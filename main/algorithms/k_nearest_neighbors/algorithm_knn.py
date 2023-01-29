@@ -29,5 +29,4 @@ print(k_nearest) # [1 2 0]
 k_nearest_classes = y[k_nearest]
 most_common_class = np.bincount(k_nearest_classes).argmax()
 
-new_point_class = most_common_class
-print("New point class:", new_point_class)
+print("New point class:", most_common_class) #1

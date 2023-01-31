@@ -20,20 +20,20 @@ from sympy import *
 t = Symbol('t')
 s  = 16*t**2
 d = s.diff(t)
-print("s =", s) # s = 16t^2
-print("d =", d) # s' = 32*t
+print("s  =", s) # s  = 16t^2
+print("s' =", d) # s' = 32*t
 
 # Circle area
 r = Symbol('r')
 A  = pi*r**2
 d = A.diff(r)
-print("s =", s) # A = pi*r^2
-print("d =", d) # A' = 2*pi*r
+print("A  =", s) # A  = pi*r^2
+print("A' =", d) # A' = 2*pi*r
 
 # Function f(x)
 x = Symbol('x')
 a  = 1
 f  = a*x**2
 d = f.diff(x)
-print("s =", s) # f = ax^2
-print("d =", d) # f' = 2*x
+print("f  =", s) # f  = ax^2
+print("f' =", d) # f' = 2*x

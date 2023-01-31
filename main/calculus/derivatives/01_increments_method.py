@@ -1,15 +1,14 @@
 """ Increments method
 
 An average speed of 30 mi/hr does not necessary means an  
-exact speed for 3 hours.
-In the case of a ball droped near the surface of the earth, 
-the formula for distance traveled is: 
+exact speed for 3 hours. In the case of a ball droped near the 
+surface of the earth, the formula for distance traveled is: 
     s = 16t^2 ft/sec
 
+The instant speed is not the quontient of distance and time,
+it is the limit of average speeds at exactly t=4.
 Using increments method, the numbers seem getting closer to:
     128 ft/sec
-This is not the quontient of distance and time,
-it is the limit of average speeds at t=4
 """
 
 # Average speed during the fifth second approximation

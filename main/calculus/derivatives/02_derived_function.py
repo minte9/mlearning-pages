@@ -19,19 +19,21 @@ from sympy import *
 # Derivative for falling speed s(t) = 16^2
 t = Symbol('t')
 s  = 16*t**2
-d2 = s.diff(t)
+d = s.diff(t)
+print(d)
+    # s'(x) = 32*t
 
 # Derivative for circle area A(r) = pi*R^2
 r = Symbol('r')
 A  = pi*r**2
-d3 = A.diff(r)
+d = A.diff(r)
+print(d)
+    # A'(r) = 2*pi*r
 
 # Derivative for f(x) = ax^2
 x = Symbol('x')
 a  = 1
 f  = a*x**2
-d1 = f.diff(x)
-
-print(f'f\'(x) = {d1}')  # f'(x) = 2*x
-print(f's\'(t) = {d2}')  # s'(x) = 32*t
-print(f'A\'(r) = {d3}')  # A'(r) = 2*pi*r
+d = f.diff(x)
+print(d) 
+    # f'(x) = 2*x

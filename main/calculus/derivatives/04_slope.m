@@ -16,19 +16,19 @@ hold on;
 # Plot points and gradients
 for x=2:5;
     y = a*(x.^2);
-    plot(x, y, 'x', 'Color', 'red'); # point
+    plot(x, y, 'x', 'Color', 'red');
 
     m = 2*a*x; # slope coeficient
     b = y - m*x; # intercept in y = mx + b
     X = x:x+2;
     t = num2str(x);
-    plot(X, m*X + b, 'DisplayName', ["s(" t ") = " num2str(m)]) # gradient
+    plot(X, m*X + b, 'DisplayName', ["s(" t ") = " num2str(m)])
 end;
 
 # Instant speeds
 for x=2:5;
     y = a*(x.^2);
-    m = 2*a*x; # slope
+    m = 2*a*x;
     x, m
 end;
 

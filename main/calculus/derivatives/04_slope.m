@@ -1,27 +1,53 @@
 #
-# Plot the slope gradient for f(x) = ax^2
-# Derivative: f'(x) = 2ax 
+# Plot the slope gradient
+# Function: s = ax^2
+# Derivative: s' = 2ax 
+# Gradient: f(x) = mx + b
 #
 
-x = -3:0.25:3;
+a = 16;
 
-m = 16;
-y = m*(x.^2);
-h = plot(x, y);
+# Plot function line
+X = -5:0.1:5;
+Y = a*(X.^2);
+plot(X, Y);
 hold on;
 
-x1 = -2:1;
-y1 = 16;
-y = -(2*m*x1 + y1);
-h = plot(x1, y);
+# Plot points and gradients
+for x=2:5;
+    y = a*(x.^2);
+    plot(x, y, 'x', 'Color', 'red'); # point
 
-grid on;
+    m = 2*a*x; # slope coeficient
+    b = y - m*x; # intercept in y = mx + b
+    X = x:x+2;
+    t = num2str(x);
+    plot(X, m*X + b, 'DisplayName', ["s(" t ") = " num2str(m)]) # gradient
+end;
+
+# Instant speeds
+for x=2:5;
+    y = a*(x.^2);
+    m = 2*a*x; # slope
+    x, m
+end;
+
+# Plot figure
 title ("s(t) = 16t^2");
 xlabel ("t (seconds)");
 ylabel ("s(t)");
+grid on;
+legend('location', 'west');
 
-img = '04_slope.jpg'
-print -djpg '04_slope.jpg'
-copyfile '04_slope.jpg' '../../../../../../html/lib/images/ml/04_slope.jpg'
 
-waitfor(h);
+img = '1421_gradients.jpg';
+print -djpg '1421_gradients.jpg';
+movefile('1421_gradients.jpg', '../../../../../../html/lib/images/ml/1421_gradients.jpg');
+
+uiwait(gcf);
+
+
+
+
+
+

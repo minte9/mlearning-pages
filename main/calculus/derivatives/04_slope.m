@@ -42,7 +42,9 @@ legend('location', 'west');
 
 img = '1421_gradients.jpg';
 print -djpg '1421_gradients.jpg';
-movefile('1421_gradients.jpg', '../../../../../../html/lib/images/ml/1421_gradients.jpg');
+movefile('1421_gradients.jpg', 
+    '../../../../../../html/lib/images/ml/1421_gradients.jpg'
+);
 
 uiwait(gcf);
 

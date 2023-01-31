@@ -1,7 +1,8 @@
 """ Differentiation of Simple Polynomials
 Contributions from each term
-    y = ax^2 + bx + c
-    y' = 2ax + b
+    y   = ax^2 + bx + c
+    y'  = 2ax + b
+    y'' = 2a
 """
 
 from sympy import *

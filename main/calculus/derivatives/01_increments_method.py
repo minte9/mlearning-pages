@@ -8,7 +8,7 @@ surface of the earth, the formula for distance traveled is:
 The instant speed is not the quontient of distance and time,
 it is the limit of average speeds at exactly t=4.
 Using increments method, the numbers seem getting closer to:
-    128 ft/sec
+    s4 = 128 ft/sec
 """
 
 # Average speed during the fifth second approximation

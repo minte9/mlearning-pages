@@ -1,14 +1,17 @@
-""" Instantaneus Speed (at exactly 4 seconds)
+""" Increments method
 
-A person who travels at the average speed of 30 mi/hr
-does not necessary travel at that exact speed for 3 hours.
+An average speed of 30 mi/hr does not necessary means an  
+exact speed for 3 hours
 
-We shall take the case of a ball droped near the surface of the earth.
-The formula is s = 16t^2 (s is distance traveled in t seconds)
+In the case of a ball droped near the surface of the earth, 
+the formula for distance traveled is: 
+    s = 16t^2 ft/sec
 
-The numbers seem getting closer to the 128 ft/sec
-This is not the quontient of distance and time
-It is the limit of average speeds
+Using increments method, the numbers seem getting closer to:
+    128 ft/sec
+
+This is not the quontient of distance and time,
+it is the limit of average speeds at t=4
 """
 
 # Average speed during the fifth second approximation

@@ -44,8 +44,8 @@ print('Integral = ', A)     # Integral = 3.5
 
 def s(t):
     return 16*t**2
-A, err = spi.quad(s, 0, 1) 
-print('Integral = ', A)     # Integral = 5.333333333333334
+A2, err = spi.quad(s, 0, 1) 
+print('Integral = ', A2)     # Integral = 5.333333333333334
 
 
 # Plotting
@@ -53,7 +53,8 @@ x = np.linspace(0, 1, 100)
 y = f(x)
 fig, ax = plt.subplots()
 ax.plot(x, y, label="f(x) = 3x + 2")
-ax.fill_between(x, y, 0, where=(x >= 0) & (x <= 1), color="gray", alpha=0.5)
+ax.fill_between(x, y, 0, where=(x >= 0) & (x <= 1), color="gray", alpha=0.5,
+label=f'Integral (Area) = %s' %A)
 ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.legend()

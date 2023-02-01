@@ -35,7 +35,7 @@ So, from acceleration we can find speed, and then distance
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
-from scipy.integrate import quad
+from matplotlib.animation import FuncAnimation
 
 
 # Symbolic representation
@@ -71,4 +71,26 @@ plt.scatter(5, 400, label="s(5) = 400")
 plt.annotate('(5, 400)', xy=(5, 400), xytext=(5, 400))
 plt.plot((5, 5), (0, 400), linestyle='--')
 plt.plot((0, 5), (400, 400), linestyle='--')
+plt.show()
+
+
+# Animation
+def update(frame):
+    t = np.linspace(0, frame / 10)
+    s = 400 - 16 * t**2
+    ax.clear()
+    ax.plot(t, s)
+    ax.set_xlabel("t")
+    ax.set_ylabel("s(t)")
+    ax.set_ylim(400, 0)
+    ax.set_xlim(0, 5.2)
+    ax.set_title("s(t) = 16t^2")
+
+    ax.scatter(5, 16 * (frame / 10)**2, label="s(t) = 400 - 16t^2")
+
+    ax.plot((frame / 10, frame / 10), (5, 16 * (frame / 10)**2), linestyle='--')
+    ax.plot((5, frame / 10), (16 * (frame / 10)**2, 16 * (frame / 10)**2), linestyle='--')
+
+fig, ax = plt.subplots()
+ani = FuncAnimation(fig, update, frames=np.arange(10, 51, 1), repeat=False)
 plt.show()

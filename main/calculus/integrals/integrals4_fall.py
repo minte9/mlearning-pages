@@ -4,7 +4,7 @@ How long it takes an object dropped from a 400ft point
 to reach the surface of the earth?
     t = ?
 
-Galileo obtain a basic physical principle:
+Galileo obtain a basic physical principle.
 An object fall to earth with the same acceleration (in absence of air)
     a = 32 ft/s2 (9.8 m/s2)
 

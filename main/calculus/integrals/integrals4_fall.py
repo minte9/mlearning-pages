@@ -9,20 +9,21 @@ An object fall to earth with the same acceleration (in absence of air)
     a = 32 ft/s^2 
     a = 9.8 m/s^2
 
-Acceleration is the instantaneus rate of change of speed (with respect to time)
+Acceleration is the instantaneus rate of change of speed, 
+with respect to time:
     v' = 32
     v = 32t + C
     v = 32t (object is dropped, zero speed at start)
 
-Instantaneus speed is the rate of change of distance (with respect to time)
+Instantaneus speed is the rate of change of distance, 
+with respect to time:
     s' = 32t
     s = 16t^2 + C
     s = 16t^2
 
 To answer the initial question, 400ft fall:
     400 = 16t^2
-    t1 = -5
-    t2 = 5
+    t = [-5, 5]
     t = 5 (because we have downward fall)
 
 So, from acceleration we can find speed, and then distance

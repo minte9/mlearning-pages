@@ -37,6 +37,7 @@ import matplotlib.pyplot as plt
 from sympy import *
 from scipy.integrate import quad
 
+
 # Symbolic representation
 t = Symbol('t')
 a = 32
@@ -45,6 +46,7 @@ s = integrate(v, t)
 print('Acceleration =', a)  # Acceleration = 32
 print('Speed =', v)         # Speed = 32*t
 print('Distance =', s)      # Distance = 16*t**2
+
 
 # Distance traveled in 5 seconds
 distance = s.subs(t, 5)

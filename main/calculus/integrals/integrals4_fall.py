@@ -68,7 +68,6 @@ ax.set_ylabel("s(t)")
 ax.legend()
 
 plt.scatter(5, 400, label="s(5) = 400") 
-plt.annotate('(5, 400)', xy=(5, 400), xytext=(5, 400))
 plt.plot((5, 5), (0, 400), linestyle='--')
 plt.plot((0, 5), (400, 400), linestyle='--')
 plt.show()
@@ -77,7 +76,7 @@ plt.show()
 # Animation
 def update(frame):
     t = np.linspace(0, frame/10)
-    s = 400 - 16 * t**2
+    s = 16 * t**2
     ax.clear()
     ax.plot(t, s)
     ax.set_xlabel("t")
@@ -90,5 +89,7 @@ def update(frame):
     ax.plot((5, frame/10), (16*(frame/10)**2, 16*(frame/10)**2), linestyle='--')
 
 fig, ax = plt.subplots()
-ani = FuncAnimation(fig, update, frames=np.arange(10, 51, 1), repeat=False)
+ani = FuncAnimation(fig, update, frames=np.arange(10, 51, 1), repeat=True)
 plt.show()
+
+#ani.save('1427_falling_ball.gif', writer='imagemagick', fps=5)

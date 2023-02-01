@@ -40,12 +40,12 @@ print('Integral =', I)      # Integral = 16*t**2
 def f(x):
     return 3*x + 2
 A, err = spi.quad(f, 0, 1) 
-print('Integral = ', A)        # Integral = 3.5
+print('Integral = ', A)     # Integral = 3.5
 
 def s(t):
     return 16*t**2
 A, err = spi.quad(s, 0, 1) 
-print('Integral = ', A)        # Integral = 5.333333333333334
+print('Integral = ', A)     # Integral = 5.333333333333334
 
 
 # Plotting

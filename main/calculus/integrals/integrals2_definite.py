@@ -1,5 +1,6 @@
 """ Calcutate definite integrals 
-    [a, b]
+
+A definite integral has start and end values [a, b]
 The symbol for integral is a stylish S from sum, 
 or summint slices
 """

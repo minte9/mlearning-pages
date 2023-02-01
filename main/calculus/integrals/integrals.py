@@ -19,28 +19,29 @@ from sympy import *
 x = Symbol('x')
 t = Symbol('t')
 
-# f(x) = 3x + 4
-function = 3*x + 2
-derived  = function.diff(x)
-integral = integrate(derived, x)
-print(function, derived, integral) # 3*x + 4 3 3*x
+f = 3*x + 2
+d  = f.diff(x)
+I = integrate(d, x)
+print(f, d, I) # 3*x + 2 3 3*x
 
-# s(t) = 16t^2
 s = 16*t**2
 d = s.diff(t)
 I = integrate(d, t)
 print(s, d, I) # 16*t**2 32*t 16*t**2
 
 
-# Plotting the function
+# Plotting the function f(x) = 3x + 2 
 def f(x):
     return 3*x + 2
 x = np.linspace(0, 1, 100)
 y = f(x)
 
 fig, ax = plt.subplots()
-ax.plot(x, y, label="f(x) = 3x + 4")
+ax.plot(x, y, label="f(x) = 3x + 2")
+
+# Fill the area under the curve
 ax.fill_between(x, y, 0, where=(x >= 0) & (x <= 100), color="gray", alpha=0.5)
+
 ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.legend()

@@ -1,4 +1,4 @@
-""" Free fall p42
+""" Free fall
 
 Galileo obtain a basic physical principle:
 An object fall to earth with the same acceleration (in absence of air)

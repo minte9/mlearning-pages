@@ -5,7 +5,7 @@
 # Derivative:   s' = 2ax 
 # Gradient:     f(x) = mx + b
 # Coeficient:   m (or slope of the line)
-# Intercetp:    b (where the line crosses y-axis)
+# Intercept:    b (where the line crosses y-axis)
 #
 
 a = 16;

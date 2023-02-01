@@ -1,17 +1,19 @@
 # Plot the slope gradient
 #
-# Function:     s = ax^2
-# Derivative:   s' = 2ax 
-# Gradient:     f(x) = mx + b
+# Function:     f(b) = ax^2
+# Derivative:   f'(x) = 2ax 
+# Gradient:     g(x) = mx + b
 # Coeficient:   m (or slope of the line)
 # Intercept:    b (where the line crosses y-axis)
 
+# Falliing object s(t) = 16t^2
 a = 16;
 
 # Plot function line
 X = -5:0.1:5;
 Y = a*(X.^2);
 plot(X, Y);
+
 hold on;
 
 # Plot points and gradients

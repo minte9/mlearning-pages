@@ -23,12 +23,14 @@ t = Symbol('t')
 f = 3*x + 2
 d  = f.diff(x)
 I = integrate(d, x)
-print(f, d, I) # 3*x + 2 3 3*x
+print(f, d, I) 
+    # 3*x + 2 3 3*x
 
 s = 16*t**2
 d = s.diff(t)
 I = integrate(d, t)
-print(s, d, I) # 16*t**2 32*t 16*t**2
+print(s, d, I) 
+    # 16*t**2 32*t 16*t**2
 
 
 # Plotting the Function and Integral

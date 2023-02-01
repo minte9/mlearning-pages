@@ -42,7 +42,8 @@ y = f(x)
 
 fig, ax = plt.subplots()
 ax.plot(x, y, label="f(x) = x^2")
-ax.fill_between(x, y, 0, where=(x >= 0) & (x <= 1), color="gray", alpha=0.5)
+ax.fill_between(x, y, 0, where=(x >= 0) & (x <= 1), color="gray", alpha=0.5, 
+label=f'I = %s' %round(approx_B, 4))
 ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.legend()

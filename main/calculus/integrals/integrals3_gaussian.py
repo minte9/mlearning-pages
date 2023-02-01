@@ -31,10 +31,10 @@ a = -3
 b = 3
 
 # Integral approximation (area)
-approx = integrate.quad(
+approx, error = integrate.quad(
     lambda x: gaussian(x, mu, sigma), a, b
 )
-print(approx[0])
+print(approx)
     # 2.4998608894830947
 
 plt.plot(X, Y, label="Gaussian distribution")

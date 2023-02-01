@@ -37,6 +37,8 @@ import matplotlib.pyplot as plt
 from sympy import *
 from matplotlib.animation import FuncAnimation
 
+# ---------------------------------------------------------
+
 # Symbolic representation
 t = Symbol('t')
 a = 32
@@ -54,7 +56,6 @@ print("Distance =", distance) # 400
 s = s - 400 # s = 16*t**2 - 400
 time = solve(s, t) # find the value of t that makes s = 0
 print("Time =", time[1]) # 5
-
 
 # ---------------------------------------------------------
 

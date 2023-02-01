@@ -1,4 +1,3 @@
-#
 # Plot the slope gradient
 #
 # Function:     s = ax^2
@@ -6,7 +5,7 @@
 # Gradient:     f(x) = mx + b
 # Coeficient:   m (or slope of the line)
 # Intercept:    b (where the line crosses y-axis)
-#
+
 
 a = 16;
 

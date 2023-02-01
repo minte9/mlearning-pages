@@ -31,7 +31,7 @@ I = integrate(d, t)
 print(s, d, I) # 16*t**2 32*t 16*t**2
 
 
-# Plotting the function
+# Plotting the function and integral
 def f(x):
     return 3*x + 2
 x = np.linspace(0, 1, 100)

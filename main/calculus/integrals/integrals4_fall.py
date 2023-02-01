@@ -6,7 +6,8 @@ to reach the surface of the earth?
 
 Galileo obtain a basic physical principle.
 An object fall to earth with the same acceleration (in absence of air)
-    a = 32 ft/s2 (9.8 m/s2)
+    a = 32 ft/s^2 
+    a = 9.8 m/s^2
 
 Acceleration is the instantaneus rate of change of speed (with respect to time)
     v' = 32

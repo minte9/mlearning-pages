@@ -1,6 +1,6 @@
 """ Free fall
 
-What is the time in which an object dropped from a 400ft point reaches earth
+Object dropped from a 400ft point reaches earth
     t = ?
 
 Galileo: An object fall to earth with the same acceleration

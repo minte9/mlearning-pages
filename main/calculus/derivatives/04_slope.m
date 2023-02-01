@@ -20,7 +20,7 @@ for x=2:5;
     y = a*(x.^2);
     plot(x, y, 'x', 'Color', 'red');
 
-    m = 2*a*x;      # slope coeficient
+    m = 2*a*x;      # slope coeficient (derivative)
     b = y - m*x;    # intercept in y = mx + b
     X = x:x+2;
     t = num2str(x);

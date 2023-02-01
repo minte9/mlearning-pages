@@ -28,14 +28,12 @@ So, from acceleration we can find speed, and then distance
     s = a''
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
-from sympy import *
-from matplotlib.animation import FuncAnimation
-
 # ---------------------------------------------------------
-
 # Symbolic representation
+#
+import numpy as np
+from sympy import *
+
 t = Symbol('t')
 a = 32
 v = integrate(a, t)
@@ -54,8 +52,10 @@ time = solve(s, t) # find the value of t that makes s = 0
 print("Time =", time[1]) # 5
 
 # ---------------------------------------------------------
-
 # Plotting
+#
+import matplotlib.pyplot as plt
+
 t = np.linspace(0, 10)
 s = 16*t**2
 fig, ax = plt.subplots()
@@ -70,8 +70,10 @@ plt.plot((0, 5), (400, 400), linestyle='--')
 plt.show()
 
 # ---------------------------------------------------------
-
 # Animation
+#
+from matplotlib.animation import FuncAnimation
+
 def update(frame):
     t = np.linspace(0, frame/10)
     s = 16 * t**2

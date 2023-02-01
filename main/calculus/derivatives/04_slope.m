@@ -29,9 +29,11 @@ end;
 
 # Instant speeds
 for x=2:5;
-    y = a*(x.^2);
-    m = 2*a*x;
-    x, m
+    y = a*(x.^2);   % 16t^2             = 64, 144, 256, 400
+    m = 2*a*x;      # 32t               = 64, 96, 128, 160
+    b = y - m*x;    # 16t^2 - (32t)t    = -64, -144, -256, -400    
+    x, y, m, b
+    disp('')
 end;
 
 # Plot figure

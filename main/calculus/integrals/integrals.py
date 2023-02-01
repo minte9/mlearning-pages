@@ -31,7 +31,7 @@ I = integrate(d, t)
 print(s, d, I) # 16*t**2 32*t 16*t**2
 
 
-# Plotting the function f(x) = 3x + 2 
+# Plotting the function
 def f(x):
     return 3*x + 2
 x = np.linspace(0, 1, 100)
@@ -40,8 +40,7 @@ y = f(x)
 fig, ax = plt.subplots()
 ax.plot(x, y, label="f(x) = 3x + 2")
 
-# Fill the area under the curve
-A, err = spi.quad(f, 0, 1)
+A, err = spi.quad(f, 0, 1) # Fill the area under the curve
 ax.fill_between(x, y, 0, where=(x >= 0) & (x <= 1), color="gray", alpha=0.5, 
     label=f'Area = %s' %A )
 

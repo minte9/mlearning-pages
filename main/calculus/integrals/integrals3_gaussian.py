@@ -38,6 +38,7 @@ print(approx)
     # 2.4998608894830947
 
 plt.plot(X, Y, label="Gaussian distribution")
-plt.fill_between(X, Y, 0, where=(X >= a) & (X <= b), color='gray', alpha=0.5)
+plt.fill_between(X, Y, 0, where=(X >= a) & (X <= b), color='gray', alpha=0.5,
+label=f'I = %s' %round(approx, 4))
 plt.legend()
 plt.show()

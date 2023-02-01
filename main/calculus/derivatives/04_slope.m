@@ -6,7 +6,6 @@
 # Coeficient:   m (or slope of the line)
 # Intercept:    b (where the line crosses y-axis)
 
-
 a = 16;
 
 # Plot function line

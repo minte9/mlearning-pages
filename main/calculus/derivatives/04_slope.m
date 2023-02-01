@@ -13,7 +13,6 @@ a = 16;
 X = -5:0.1:5;
 Y = a*(X.^2);
 plot(X, Y);
-
 hold on;
 
 # Plot points and gradients

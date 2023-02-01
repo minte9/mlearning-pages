@@ -5,17 +5,21 @@ Object dropped from a 400ft point reaches earth
 
 Galileo: An object fall to earth with the same acceleration
     a = 32 ft/s^2 
+    a = 9.8 m/s^2
 
 Acceleration is the instantaneus rate of change of speed / time
     v' = 32
-    v = 32t + C = 32t (object is dropped, zero speed at start)
+    v = 32t + C
+    v = 32t (object is dropped, zero speed at start)
 
 Instantaneus speed is the rate of change of distance / time
     s' = 32t
-    s = 16t^2 + C = 16t^2
+    s = 16t^2 + C
+    s = 16t^2
 
 To answer the initial question, 400ft fall
     400 = 16t^2
+    t = [-5, 5]
     t = 5 (because we have downward fall)
 
 So, from acceleration we can find speed, and then distance

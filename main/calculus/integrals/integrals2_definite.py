@@ -1,8 +1,7 @@
 """ Calcutate definite integrals 
 
 A definite integral has start and end values [a, b]
-The symbol for integral is a stylish S from sum, 
-or summint slices
+The symbol for integral is a stylish S from sum, or summint slices
 """
 
 import numpy as np

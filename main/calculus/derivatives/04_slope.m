@@ -2,8 +2,8 @@
 #
 # Function:     f(b) = ax^2
 # Derivative:   f'(x) = 2ax 
-# Gradient:     g(x) = mx + b
-# Coeficient:   m (or slope of the line)
+# GradientLine: g(x) = mx + b
+# Coeficient:   m (slope or gradient)
 # Intercept:    b (where the line crosses y-axis)
 
 # Falliing object s(t) = 16t^2

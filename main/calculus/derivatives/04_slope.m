@@ -1,8 +1,11 @@
 #
 # Plot the slope gradient
-# Function: s = ax^2
-# Derivative: s' = 2ax 
-# Gradient: f(x) = mx + b
+#
+# Function:     s = ax^2
+# Derivative:   s' = 2ax 
+# Gradient:     f(x) = mx + b
+# Coeficient:   m (or slope of the line)
+# Intercetp:    b (where the line crosses y-axis)
 #
 
 a = 16;
@@ -39,17 +42,4 @@ ylabel ("s(t)");
 grid on;
 legend('location', 'west');
 
-
-img = '1421_gradients.jpg';
-print -djpg '1421_gradients.jpg';
-movefile('1421_gradients.jpg', 
-    '../../../../../../html/lib/images/ml/1421_gradients.jpg'
-);
-
 uiwait(gcf);
-
-
-
-
-
-

@@ -76,7 +76,7 @@ plt.show()
 
 # Animation
 def update(frame):
-    t = np.linspace(0, frame / 10)
+    t = np.linspace(0, frame/10)
     s = 400 - 16 * t**2
     ax.clear()
     ax.plot(t, s)
@@ -85,11 +85,9 @@ def update(frame):
     ax.set_ylim(400, 0)
     ax.set_xlim(0, 5.2)
     ax.set_title("s(t) = 16t^2")
-
-    ax.scatter(5, 16 * (frame / 10)**2, label="s(t) = 400 - 16t^2")
-
-    ax.plot((frame / 10, frame / 10), (5, 16 * (frame / 10)**2), linestyle='--')
-    ax.plot((5, frame / 10), (16 * (frame / 10)**2, 16 * (frame / 10)**2), linestyle='--')
+    ax.scatter(5, 16 * (frame/10)**2, label="s(t) = 400 - 16t^2")
+    ax.plot((frame/10, frame/10), (5, 16 * (frame/10)**2), linestyle='--')
+    ax.plot((5, frame/10), (16 * (frame/10)**2, 16 * (frame/10)**2), linestyle='--')
 
 fig, ax = plt.subplots()
 ani = FuncAnimation(fig, update, frames=np.arange(10, 51, 1), repeat=False)

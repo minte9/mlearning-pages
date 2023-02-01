@@ -15,6 +15,7 @@ y  = ax + b    then y = (ax^2)/2 + bx + C
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
+import scipy.integrate as spi
 
 x = Symbol('x')
 t = Symbol('t')
@@ -40,7 +41,9 @@ fig, ax = plt.subplots()
 ax.plot(x, y, label="f(x) = 3x + 2")
 
 # Fill the area under the curve
-ax.fill_between(x, y, 0, where=(x >= 0) & (x <= 100), color="gray", alpha=0.5)
+A, err = spi.quad(f, 0, 1)
+ax.fill_between(x, y, 0, where=(x >= 0) & (x <= 1), color="gray", alpha=0.5, 
+    label=f'Area = %s' %A )
 
 ax.set_xlabel("x")
 ax.set_ylabel("y")

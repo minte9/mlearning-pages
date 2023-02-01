@@ -30,7 +30,7 @@ So, from acceleration we can find speed, and then distance
 
 # ---------------------------------------------------------
 # Symbolic representation
-#
+
 import numpy as np
 from sympy import *
 
@@ -53,7 +53,7 @@ print("Time =", time[1]) # 5
 
 # ---------------------------------------------------------
 # Plotting
-#
+
 import matplotlib.pyplot as plt
 
 t = np.linspace(0, 10)
@@ -71,7 +71,7 @@ plt.show()
 
 # ---------------------------------------------------------
 # Animation
-#
+
 from matplotlib.animation import FuncAnimation
 
 def update(frame):

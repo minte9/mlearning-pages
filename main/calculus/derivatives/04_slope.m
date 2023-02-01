@@ -15,6 +15,15 @@ Y = a*(X.^2);
 plot(X, Y);
 hold on;
 
+# Instant speeds
+for x=2:5;
+    y = a*(x.^2);   # 16t^2             = 64, 144, 256, 400
+    m = 2*a*x;      # 32t               = 64, 96, 128, 160
+    b = y - m*x;    # 16t^2 - (32t)t    = -64, -144, -256, -400    
+    x, y, m, b
+    disp('')
+end;
+
 # Plot points and gradients
 for x=2:5;
     y = a*(x.^2);
@@ -25,15 +34,6 @@ for x=2:5;
     X = x:x+2;
     t = num2str(x);
     plot(X, m*X + b, 'DisplayName', ["s(" t ") = " num2str(m)])
-end;
-
-# Instant speeds
-for x=2:5;
-    y = a*(x.^2);   # 16t^2             = 64, 144, 256, 400
-    m = 2*a*x;      # 32t               = 64, 96, 128, 160
-    b = y - m*x;    # 16t^2 - (32t)t    = -64, -144, -256, -400    
-    x, y, m, b
-    disp('')
 end;
 
 # Plot figure

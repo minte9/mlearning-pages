@@ -27,7 +27,6 @@ y = np.array([ # label classes
     400, 
     500,
 ])
-
 k = 3 # number of k-nearest neigbours to use
 
 new_point = np.array([3, 3]) # unknown class

@@ -13,8 +13,20 @@ In classical algorithms, the f(x) is provided by the programmer
 
 import numpy as np
 
-X = np.array([[1, 2], [2, 3], [3, 3.5], [5, 5], [5, 6]])
-y = np.array([1, 1, 2, 2, 2])
+X = np.array([ # training dataset
+    [1, 2], 
+    [2, 3], 
+    [3, 3.5], 
+    [5, 5], 
+    [5, 6],
+])
+y = np.array([ # label classes
+    1, 
+    1, 
+    2, 
+    2, 
+    2,
+])
 
 k = 3
 

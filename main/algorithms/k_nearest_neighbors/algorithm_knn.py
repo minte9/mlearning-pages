@@ -21,15 +21,14 @@ k = 3
 new_point = np.array([3, 3])
 
 distances = np.sqrt(np.sum((X - new_point)**2, axis=1))
-print(distances)    # [2.23606798 1. 1. 2.23606798 3.60555128]
-
 keys = np.argsort(distances)
-print(keys)         # [1 2 0 3 4]
-
 k_nearest = keys[:k]
+
+print(distances)    # [2.23606798 1. 1. 2.23606798 3.60555128]
+print(keys)         # [1 2 0 3 4]
 print(k_nearest)    # [1 2 0]
 
 k_nearest_classes = y[k_nearest]
 most_common_class = np.bincount(k_nearest_classes).argmax()
 
-print("New point class:", most_common_class) #1
+print("New point class:", most_common_class) # 1

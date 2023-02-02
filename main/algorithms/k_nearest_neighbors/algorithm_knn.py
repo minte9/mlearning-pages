@@ -21,26 +21,27 @@ X = np.array([ # training dataset
     [5, 6],
 ])
 y = np.array([ # label classes
-    1, 
-    1, 
-    2, 
-    2, 
-    2,
+    100, 
+    200, 
+    300, 
+    400, 
+    500,
 ])
 
-k = 3
+k = 3 # number of k-nearest neigbours to use
 
 new_point = np.array([3, 3]) # unknown class
 
 distances = np.sqrt(np.sum((X - new_point)**2, axis=1))
 keys = np.argsort(distances)
-k_nearest = keys[:k]
+k_nearest_keys = keys[:k]
+k_nearest_classes = y[k_nearest_keys]
 
-print(distances)    # [2.23606798 1. 0.5 2.82842712 3.60555128]
-print(keys)         # [1 2 0 3 4]
-print(k_nearest)    # [1 2 0]
+print(distances)            # [2.23606798 1. 0.5 2.82842712 3.60555128]
+print(keys)                 # [1 2 0 3 4]
+print(k_nearest_keys)       # [1 2 0]
+print(k_nearest_classes)    # [300 200 100]
 
-k_nearest_classes = y[k_nearest]
 most_common_class = np.bincount(k_nearest_classes).argmax()
 
-print("New point class:", most_common_class) # 1
+print("New point class:", most_common_class) # 100

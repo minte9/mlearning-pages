@@ -1,7 +1,10 @@
 """ K-Nearest Neighbors Algorithm
 
 In machine learning, the computer uses data to learn the best function, 
-while in classical algorithms, the function is explicitly provided by the programmer
+while in classical algorithms, the function is explicitly 
+provided by the programmer
+
+KNN machine learning algorithm:
 
 1. Load training dataset
 2. Select a value for k

@@ -43,5 +43,4 @@ print(k_nearest_keys)       # [1 2 0]
 print(k_nearest_classes)    # [300 200 100]
 
 most_common_class = np.bincount(k_nearest_classes).argmax()
-
 print("New point class:", most_common_class) # 100

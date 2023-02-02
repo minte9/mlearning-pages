@@ -1,26 +1,37 @@
-""" Free fall
+""" Object Free fall
 
-Object dropped from a 400ft point reaches earth
+What is the time in which an object dropped 
+from a 400ft point reaches earth (in the absence of air)
     t = ?
+
 Galileo: An object fall to earth with the same acceleration
     a = 32 ft/s^2 
     a = 9.8 m/s^2
+
 Acceleration is the instantaneus rate of change of speed / time
     v' = 32
     v = 32t + C
     v = 32t (object is dropped, zero speed at start)
+
 Instantaneus speed is the rate of change of distance / time
     s' = 32t
     s = 16t^2 + C
     s = 16t^2
+
 To answer the initial question, 400ft fall
     400 = 16t^2
     t = [-5, 5]
     t = 5 (because we have downward fall)
-So, from acceleration we can find speed, and then distance
+
+By antidifferentiation we can proceed from acceleration to speed, 
+and from acceleration to the distance traveled
     a = 32
     v = a'
     s = a''
+
+Distance traveled in 5 seconds is 400
+    t = 5
+    s = 400
 """
 
 # ---------------------------------------------------------
@@ -51,7 +62,7 @@ print("Time =", time[1]) # 5
 
 import matplotlib.pyplot as plt
 
-t = np.linspace(0, 10)
+t = np.linspace(0, 6)
 s = 16*t**2
 fig, ax = plt.subplots()
 ax.plot(t, s, label="s(t) = 16t^2")
@@ -79,9 +90,11 @@ def update(frame):
     ax.set_ylim(400, 0)
     ax.set_xlim(0, 5.2)
     ax.set_title("s(t) = 16t^2")
-    ax.scatter(5, 16*(frame/10)**2, label="s(t) = 400 - 16t^2")
-    ax.plot((frame/10, frame/10), (5, 16 * (frame/10)**2), linestyle='--')
-    ax.plot((5, frame/10), (16*(frame/10)**2, 16*(frame/10)**2), linestyle='--')
+
+    y = 16*(frame/10)**2
+    ax.scatter(5, y, label="s(t) = 400 - 16t^2")
+    ax.plot((frame/10, frame/10), (5, y), linestyle='--')
+    ax.plot((5, frame/10), (y, y), linestyle='--')
 
 fig, ax = plt.subplots()
 ani = FuncAnimation(fig, update, frames=np.arange(10, 51, 1), repeat=True)

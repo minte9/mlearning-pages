@@ -56,10 +56,9 @@ ax.set_xlabel("t")
 ax.set_ylabel("s(t)")
 ax.legend()
 
-plt.scatter(2.77, 400, label="s(5) = 400") 
+plt.scatter(2.77, 400, label="s(.277) = 400") 
 plt.plot((2.77, 2.77), (0, 400), linestyle='--')
 plt.plot((0, 2.77), (400, 400), linestyle='--')
-plt.grid()
 plt.show()
 
 # ---------------------------------------------------------
@@ -87,4 +86,4 @@ fig, ax = plt.subplots()
 ani = FuncAnimation(fig, update, frames=np.arange(10, 29, 1), repeat=False)
 plt.show()
 
-ani.save('1427_throw_ball.gif', writer='imagemagick', fps=10)
+# ani.save('1427_throw_ball.gif', writer='imagemagick', fps=10)

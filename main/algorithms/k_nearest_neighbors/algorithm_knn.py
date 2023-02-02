@@ -1,5 +1,8 @@
 """ K-Nearest Neighbors Algorithm
 
+In machine learning, the computer uses data to learn the best function, 
+while in classical algorithms, the function is explicitly provided by the programmer
+
 1. Load training dataset
 2. Select a value for k
 3. Calculate distances to the new point

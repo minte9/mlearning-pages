@@ -30,7 +30,7 @@ y = np.array([ # label classes
 
 k = 3
 
-new_point = np.array([3, 3])
+new_point = np.array([3, 3]) # unknown class
 
 distances = np.sqrt(np.sum((X - new_point)**2, axis=1))
 keys = np.argsort(distances)

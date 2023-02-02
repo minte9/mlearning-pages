@@ -1,9 +1,7 @@
-""" Machine Learning algorithm
+""" K-Nearest Neighbors Algorithm
 
 In ML, the computer uses data to learn the best f(x) 
 In classical algorithms, the f(x) is provided by the programmer
-
-K-Nearest Neighbors Algorithm:
 
 1. Load training dataset
 2. Select a value for k

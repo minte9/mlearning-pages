@@ -1,7 +1,7 @@
 """ K-Nearest Neighbors Algorithm
 
-In ML, the computer uses data to learn the best function, while in 
-classical algorithms, the function is explicitly provided by the programmer
+In ML, the computer uses data to learn the best f(x) 
+In classical algorithms, the f(x) is explicitly provided by the programmer
 
 KNN machine learning algorithm:
 

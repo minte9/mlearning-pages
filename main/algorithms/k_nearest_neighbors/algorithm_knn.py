@@ -33,13 +33,13 @@ distances = np.sqrt(np.sum((X - x_unknown)**2, axis=1))
 keys = np.argsort(distances)
 knn_keys = keys[:k]
 knn_classes = y[knn_keys]
-most_common_class = np.bincount(knn_classes).argmax()
+knn_most_common_class = np.bincount(knn_classes).argmax()
 
 print(distances)
 print(keys)
 print(knn_keys)
 print(knn_classes)
-print("New point class:", most_common_class)
+print("New point class:", knn_most_common_class)
 
 """
     [1.58113883 1.5        1.27475488 1.         1.58113883 1.25

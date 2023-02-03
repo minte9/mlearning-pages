@@ -75,12 +75,10 @@ plt.scatter(xA[0], xA[1], marker='o', color='g', label=knn_classA)
 plt.scatter(xB[0], xB[1], marker='x', color='r', label=knn_classB)
 
 for i in knn_keysA:
-    plt.plot((xA[0], X[i][0]), (xA[1], X[i][1]), 
-        color='gray', linestyle='--')
-
+    plt.plot((xA[0], X[i][0]), (xA[1], X[i][1]), color='gray', linestyle='--')
+    
 for i in knn_keysB:
-    plt.plot((xB[0], X[i][0]), (xB[1], X[i][1]), 
-        color='gray', linestyle='--')
+    plt.plot((xB[0], X[i][0]), (xB[1], X[i][1]), color='gray', linestyle='--')
 
 plt.title('Diabetes dataset - KNN')
 plt.legend()

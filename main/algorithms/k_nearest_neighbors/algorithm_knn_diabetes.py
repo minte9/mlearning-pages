@@ -72,6 +72,7 @@ def knn(k, x_unknown):
 knn_classA, knn_keysA = knn(k, xA)
 knn_classB, knn_keysB = knn(k, xB)
 
+
 # -----------------------------------------------
 # Plotting
 

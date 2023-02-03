@@ -25,7 +25,7 @@ y = np.array([
 ])
 
 
-k = 3 # number of k-nearest neigbours to use
+k = 3 # number of k-nearest neighbors to use
 
 x_unknown = np.array([3.6, 1.8]) # unknown class
 

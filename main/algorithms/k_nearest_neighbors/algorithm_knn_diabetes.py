@@ -1,4 +1,4 @@
-""" KNN Algorithm Application - Diabetes dataset
+""" KNN Algorithm Application (Diabetes dataset)
 
 Target is a quantitative measure of disease progression 
 one year after baseline. 

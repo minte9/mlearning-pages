@@ -66,7 +66,8 @@ plt.scatter(X[:, 0], X[:, 1], c=y)
 plt.scatter(x_unknown[0], x_unknown[1], marker='x', color='r')
 
 for i in knn_keys:
-    plt.plot((x_unknown[0], X[i][0]), (x_unknown[1], X[i][1]), color='gray', linestyle='--')
+    plt.plot((x_unknown[0], X[i][0]), (x_unknown[1], X[i][1]), 
+        color='gray', linestyle='--')
 
 plt.xlim(0, 6)
 plt.ylim(0, 6)

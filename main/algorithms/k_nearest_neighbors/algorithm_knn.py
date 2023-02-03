@@ -26,7 +26,7 @@ y = np.array([
 ])
 
 k = 3 # number of k-nearest neighbors to use
-xA = np.array([3.6, 1.8]) # unknown class
+xA = np.array([3.6, 1.8]) # new point with unknown class
 
 distances = np.sqrt(np.sum((X - xA)**2, axis=1))
 keys = np.argsort(distances)

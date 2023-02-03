@@ -1,11 +1,11 @@
 """ KNN Algorithm Diabetes 
+Target is a quantitative measure of disease progression one year after baseline. 
 
-Target is a quantitative measure of disease progression 
-one year after baseline. The target values are continuous not categorical,
-you need to divide the target values into two categories.
+The target values are continuous not categorical.
+You need to divide the target values into two categories.
 
-    1 - represents target value greater than the mean target value
-    0 - represents target value less than or equal
+Target 1 represents target value greater than the mean target value
+Target 0 represents target value less than or equal
 """
 
 import numpy as np

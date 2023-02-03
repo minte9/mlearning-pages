@@ -1,5 +1,7 @@
 """ KNN Algorithm Diabetes 
-Target is a quantitative measure of disease progression one year after baseline. 
+
+Target is a quantitative measure of disease progression 
+one year after baseline. 
 
 The target values are continuous not categorical.
 You need to divide the target values into two categories.

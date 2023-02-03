@@ -35,22 +35,25 @@ knn_keys = keys[:k]
 knn_classes = y[knn_keys]
 knn_most_common_class = np.bincount(knn_classes).argmax()
 
-print(distances)
-print(keys)
-print(knn_keys)
-print(knn_classes)
-print("New point class:", knn_most_common_class)
+print("Distances: \n",distances)
+print("Keys ordered by distances: \n", keys)
+print("Nearest neighbors keys: \n", knn_keys)
+print("Nearest neighbors classes: \n", knn_classes)
+print("Algorithm class response: \n", knn_most_common_class)
 
 """
-    [1.58113883 1.5        1.27475488 1.         1.58113883 1.25
-    0.70710678 1.11803399 0.79056942 1.         1.58113883 1.03077641
-    1.58113883 2.06155281 1.90394328 2.23606798 2.54950976 2.13600094]
-
-    [ 6  3  8  5  2 11  7  9  1  0  4 10 12 14 13 17 15 16]
-    [ 6  8  3  9 11]
-    [2 2 1 2 2]
-
-    New point class: 2
+Distances: 
+ [1.61245155 1.74642492 1.30384048 1.11803399 1.42302495 1.34164079
+ 1.80277564 1.70293864 1.20415946 1.49164339 2.23606798 2.72946881
+ 2.84604989 2.37697286 2.53475837]
+Keys ordered by distances: 
+ [ 3  8  2  5  4  9  0  7  1  6 10 13 14 11 12]
+Nearest neighbors keys: 
+ [3 8 2]
+Nearest neighbors classes: 
+ [1 2 1]
+Algorithm class response: 
+ 1
 """
 
 # -----------------------------------------------

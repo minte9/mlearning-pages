@@ -4,10 +4,10 @@ Target is a quantitative measure of disease progression
 one year after baseline. 
 
 The target values are continuous not categorical.
-You need to divide the target values into two categories.
+We need to divide the target values into two categories.
 
-Target 1 represents target value greater than the mean target value
-Target 0 represents target value less than or equal
+1 represents target value greater than the mean target value
+0 represents target value less than or equal
 """
 
 import numpy as np

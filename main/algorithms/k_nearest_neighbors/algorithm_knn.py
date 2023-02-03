@@ -74,5 +74,4 @@ for i in knn_keys:
 
 plt.xlim(0, 6)
 plt.ylim(0, 6)
-plt.colorbar
 plt.show()

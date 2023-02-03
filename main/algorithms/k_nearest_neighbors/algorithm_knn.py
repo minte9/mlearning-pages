@@ -28,11 +28,11 @@ y = np.array([
 k = 3 # number of k-nearest neighbors to use
 xA = np.array([3.6, 1.8]) # new point with unknown class
 
-distances = np.sqrt(np.sum((X - xA)**2, axis=1))
+distances = np.sqrt(np.sum((X - xA)**2, axis=1)) # axis=1 means rows of X
 keys = np.argsort(distances)
 knn_keys = keys[:k]
 knn_classes = y[knn_keys]
-knn_most_common_class = np.bincount(knn_classes).argmax()
+knn_most_common_class = np.bincount(knn_classes).argmax() # argmax means max value
 
 print("Distances: \n",distances)
 print("Keys ordered by distances: \n", keys)

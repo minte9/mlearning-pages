@@ -32,13 +32,14 @@ distances = np.sqrt(np.sum((X - xA)**2, axis=1)) # axis=1 means rows of X
 keys = np.argsort(distances)
 knn_keys = keys[:k]
 knn_classes = y[knn_keys]
-knn_most_common_class = np.bincount(knn_classes).argmax() # argmax means max value
+knn_most_common_class = np.bincount(knn_classes) # the number of occurrences 
+knn_class = knn_most_common_class.argmax() # max value in array
 
 print("Distances: \n",distances)
 print("Keys ordered by distances: \n", keys)
 print("Nearest neighbors keys: \n", knn_keys)
 print("Nearest neighbors classes: \n", knn_classes)
-print("Algorithm class response: \n", knn_most_common_class)
+print("Algorithm class response: \n", knn_class)
 
 """
 Distances:                  [1.61245155 1.74642492 1.30384048 ...
@@ -56,8 +57,7 @@ ax.set_xlabel('x1')
 ax.set_ylabel('x2')
 
 plt.scatter(X[:, 0], X[:, 1], c=y)
-plt.scatter(xA[0], xA[1], marker='x', color='r', 
-    label='Class =%s' %knn_most_common_class)
+plt.scatter(xA[0], xA[1], marker='x', color='r', label='Class =%s' %knn_class)
 
 for i in knn_keys:
     plt.plot((xA[0], X[i][0]), (xA[1], X[i][1]), color='gray', linestyle='--')

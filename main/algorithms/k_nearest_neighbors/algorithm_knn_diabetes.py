@@ -20,10 +20,10 @@ from sklearn.datasets import load_diabetes
 
 dataset = load_diabetes()
 
-print(dataset.keys()) # 'data', 'target', 'frame', 'DESCR', 'feature_names'
-print(dataset['DESCR']) # age, sex, body mass index, average blood ...
-print(dataset['data'].shape) # 442, 10
-print(dataset.target[0:7]) # 151.  75. 141. 206. 135.  97. 138.
+print(dataset.keys())           # data, target, DESCR, feature_names
+print(dataset['DESCR'])         # age, sex, body mass index, average blood
+print(dataset['data'].shape)    # 442, 10
+print(dataset.target[0:7])      # 151.  75. 141. 206. 135.  97. 138.
 
 X = dataset.data
 y = dataset.target

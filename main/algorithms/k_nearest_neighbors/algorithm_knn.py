@@ -27,7 +27,7 @@ y = np.array([
 
 k = 3 # number of k-nearest neigbours to use
 
-x_unknown = np.array([3.4, 2.2]) # unknown class
+x_unknown = np.array([3.6, 1.8]) # unknown class
 
 distances = np.sqrt(np.sum((X - x_unknown)**2, axis=1))
 keys = np.argsort(distances)

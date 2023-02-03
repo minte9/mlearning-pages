@@ -42,18 +42,11 @@ print("Nearest neighbors classes: \n", knn_classes)
 print("Algorithm class response: \n", knn_most_common_class)
 
 """
-Distances: 
- [1.61245155 1.74642492 1.30384048 1.11803399 1.42302495 1.34164079
- 1.80277564 1.70293864 1.20415946 1.49164339 2.23606798 2.72946881
- 2.84604989 2.37697286 2.53475837]
-Keys ordered by distances: 
- [ 3  8  2  5  4  9  0  7  1  6 10 13 14 11 12]
-Nearest neighbors keys: 
- [3 8 2]
-Nearest neighbors classes: 
- [1 2 1]
-Algorithm class response: 
- 1
+Distances:                  [1.61245155 1.74642492 1.30384048 ...
+Keys ordered by distances:  [ 3  8  2  5  4  ...
+Nearest neighbors keys:     [3 8 2]
+Nearest neighbors classes:  [1 2 1]
+Algorithm class response:   1
 """
 
 # -----------------------------------------------

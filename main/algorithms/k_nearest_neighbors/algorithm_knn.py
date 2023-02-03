@@ -27,9 +27,9 @@ y = np.array([
 
 k = 3 # number of k-nearest neighbors to use
 
-x_unknown = np.array([3.6, 1.8]) # unknown class
+xA = np.array([3.6, 1.8]) # unknown class
 
-distances = np.sqrt(np.sum((X - x_unknown)**2, axis=1))
+distances = np.sqrt(np.sum((X - xA)**2, axis=1))
 keys = np.argsort(distances)
 knn_keys = keys[:k]
 knn_classes = y[knn_keys]
@@ -66,12 +66,14 @@ ax.set_xlabel('x1')
 ax.set_ylabel('x2')
 
 plt.scatter(X[:, 0], X[:, 1], c=y)
-plt.scatter(x_unknown[0], x_unknown[1], marker='x', color='r')
+plt.scatter(xA[0], xA[1], marker='x', color='r', 
+    label='Class =%s' %knn_most_common_class)
 
 for i in knn_keys:
-    plt.plot((x_unknown[0], X[i][0]), (x_unknown[1], X[i][1]), 
-        color='gray', linestyle='--')
+    plt.plot((xA[0], X[i][0]), (xA[1], X[i][1]), color='gray', linestyle='--')
 
+plt.title('K-nearest Neigbors')
 plt.xlim(0, 6)
 plt.ylim(0, 6)
+plt.legend()
 plt.show()

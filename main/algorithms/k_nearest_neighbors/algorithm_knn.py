@@ -12,6 +12,7 @@ In classical algorithms, the f(x) is provided by the programmer
 """
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 X = np.array([
     [2, 2], [2, 2.5], [2.5, 2.5], [2.5, 2], [2.25, 2.25],
@@ -24,9 +25,7 @@ y = np.array([
     3, 3, 3, 3, 3,
 ])
 
-
 k = 3 # number of k-nearest neighbors to use
-
 xA = np.array([3.6, 1.8]) # unknown class
 
 distances = np.sqrt(np.sum((X - xA)**2, axis=1))
@@ -51,8 +50,6 @@ Algorithm class response:   1
 
 # -----------------------------------------------
 # Plotting
-
-import matplotlib.pyplot as plt
 
 fig, ax = plt.subplots()
 ax.set_xlabel('x1')

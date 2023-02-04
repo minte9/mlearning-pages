@@ -53,8 +53,8 @@ t = PolynomialFeatures(degree=degree_).fit_transform(t_)
 plt.figure(figsize=(6,4))
 plt.scatter(X, y, color='blue', label='Training set')
 plt.scatter(X2, y2, color='red', label='Test set')
-plt.plot(t_, model1.predict(t), '--', color='gray', label='Linear regression') # linear
-plt.plot(t_, model2.predict(t), '-', color='orange', label='Ridge regularization') # ridge
+plt.plot(t_, model1.predict(t), '--', color='gray', label='Linear regression')
+plt.plot(t_, model2.predict(t), '-', color='orange', label='Ridge regularization')
 plt.title(f'{degree_}-degree polynomial / Ridge Regression')
 plt.xlim((0, 100))
 plt.ylim((0, 130))

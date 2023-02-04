@@ -43,7 +43,7 @@ print("Model: ", p) # p(t) = 1.303 x - 17.99
 plt.figure(figsize=(6,4))
 plt.scatter(X, y, color='blue', label='Training set')
 plt.scatter(X2, y2, color='red', label='Test set')
-plt.plot(t, p(t), color='orange') # regression line
+plt.plot(t, p(t), color='orange', label=p) # regression line
 
 xa = 50 # unknown
 ya = round(p(xa),2) # prediction
@@ -77,10 +77,8 @@ def pred_polinomial(d, x_unknown):
     plt.plot(t, p(t), color='orange') # regression line
 
     # Evaluate the model (sum of residuals)
-    SSR = sum((p(X) - y) ** 2)
-    SSR2 = sum((p(X2) - y2) ** 2)
-    SSR = round(SSR)
-    SSR2 = round(SSR2)
+    SSR = sum((p(X) - y) ** 2).round()
+    SSR2 = sum((p(X2) - y2) ** 2).round()
 
     # Evaluate the weight (sum of coeficients)
     # The hie

@@ -63,7 +63,7 @@ plt.scatter(X2, y2, color='red', label='Test set')
 
 plt.title(f'{degree_}-degree polynomial / Ridge Regression')
 plt.plot(t_, model1.predict(t), '--', color='gray', label='Linear regression')
-plt.plot(t_, model2.predict(t), '-', color='orange', label='Ridge regularization')
+plt.plot(t_, model2.predict(t), '-', color='orange', label='Ridge regression')
 
 # Predictions
 x_unknown = 50

@@ -81,7 +81,7 @@ def pred_polinomial(d, x_unknown):
     SSR2 = sum((p(X2) - y2) ** 2).round()
 
     # Evaluate the weight (sum of coeficients)
-    # The hie
+    # The higher the sum, the model tends to overfit
     w = round(sum(abs(p.coef)))
     print(w)
 

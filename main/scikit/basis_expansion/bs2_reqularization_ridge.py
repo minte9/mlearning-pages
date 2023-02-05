@@ -1,4 +1,4 @@
-""" Regularization (Ridge regression)
+""" Regularization (Ridge regression - L2)
 
 Basis expansion implies a more complex model.
 One way to decrese this complexity is by regularization.
@@ -7,7 +7,8 @@ Regularization puts constrains on the sum of weights
 in order to keep the weights small.
 
 Ridge regularization uses the sum of square weights, 
-which penalizes large weight vectors.
+which penalizes large weight vectors, and is probably 
+the most popular regularized regression method.
 
 Reshape the train data to prevent numerical errors (to large or to small)
 By reshaping the data can be transform so that it has a mean of 0 
@@ -70,17 +71,17 @@ x_unknown = 50
 xa = np.array([x_unknown]).reshape(-1,1)
 
 polyX = PolynomialFeatures(degree=degree_).fit_transform(xa)
-ya = model1.predict(polyX) # linear regression
+ya = model1.predict(polyX) # Linear regression
 ya = round(ya[0], 2)
 
 polyX = PolynomialFeatures(degree=degree_).fit_transform(xa)
-yb = model2.predict(polyX) # ridge regression
+yb = model2.predict(polyX) # Ridge regression
 yb = round(yb[0], 2)
 
 plt.scatter(xa, ya, color='gray', marker='x')
 plt.scatter(xa, yb, color='red', marker='x')
-plt.annotate(f'({xa[0][0]}, {ya})', (xa+0.1, ya-5))
-plt.annotate(f'({xa[0][0]}, {yb})', (xa+0.1, yb+5))
+plt.annotate(f'({xa[0][0]}, {ya}) - Linear prediction', (xa+0.1, ya-5))
+plt.annotate(f'({xa[0][0]}, {yb}) - Ridge prediction', (xa+0.1, yb+5))
 
 plt.xlim((0, 100))
 plt.ylim((0, 130))

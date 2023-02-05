@@ -23,7 +23,6 @@ from sklearn.preprocessing import PolynomialFeatures, scale
 from sklearn.linear_model import LinearRegression, Ridge
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 
 # ---------------------------------------------------
 # Dataset
@@ -34,7 +33,7 @@ X2 = [17, 40, 55, 57, 70, 85]   # test data
 y2 = [19, 50, 60, 32, 90, 110]
 
 #----------------------------------------------------
-# Ridge regression
+# Ridge Regression
 
 degree_ = 4
 lambda_ = 0.5
@@ -52,7 +51,6 @@ print('Ridge coeficients: ', sum(model2.coef_))  # -7.221838297484756
 
 t_ = np.array(np.linspace(0, 100, 100)).reshape(-1, 1)
 t = PolynomialFeatures(degree=degree_).fit_transform(t_)
-
 
 # ------------------------------------------------------------------
 # Plotting

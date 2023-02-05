@@ -9,7 +9,9 @@ from sklearn.preprocessing import PolynomialFeatures, scale
 from sklearn.linear_model import Ridge, Lasso
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
+
+# ---------------------------------------------------
+# Dataset
 
 X  = [30, 46, 60, 65, 77, 95]   # area (m^2)
 y  = [31, 30, 80, 49, 70, 118]  # price (10,000$)
@@ -17,7 +19,7 @@ X2 = [17, 40, 55, 57, 70, 85]   # test data
 y2 = [19, 50, 60, 32, 90, 110]
 
 #----------------------------------------------------
-# Ridge regression
+# Lasso Regression
 
 degree_ = 4
 lambda_ = 0.5
@@ -33,6 +35,7 @@ t_ = np.array(np.linspace(0, 100, 100)).reshape(-1, 1)
 t = PolynomialFeatures(degree=degree_).fit_transform(t_)
 
 # ------------------------------------------------------------------
+# Plotting
 
 # Plot train, test data and prediction line
 plt.figure(figsize=(6,4))

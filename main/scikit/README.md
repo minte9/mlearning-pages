@@ -4,3 +4,4 @@
 2. Linear model
 3. Iris species
 4. Basis expansion
+5. Regularization

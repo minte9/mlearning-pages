@@ -1,7 +1,11 @@
 """ Regularization (Lasso regression)
 
-L1 (Lasso) puts a constrain on the sum of absolute weights values, 
-different from L2 (Ridge) how uses the sum of square weights.
+Lasso regression (L1) puts a constrain on the sum of absolute weights values, 
+different from Ridge regression (L2) who uses the sum of square weights.
+
+L1 and L2 behave the same at the extremes. 
+L1 shrikns many coefficients to be exactly 0, producing a sparse model, 
+which can be attractive in problems that benefit from features elimination.
 """
 
 from statistics import mode

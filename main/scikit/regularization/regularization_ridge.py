@@ -1,4 +1,4 @@
-""" Regularization (Ridge regression - L2)
+""" Ridge (L2 Regularization)
 
 Basis expansion implies a more complex model.
 One way to decrese this complexity is by regularization.

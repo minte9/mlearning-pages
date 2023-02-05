@@ -1,6 +1,6 @@
-""" Regularization (Lasso regression)
+""" Lasso (L1 Regularization)
 
-Lasso regression (L1) puts a constrain on the sum of absolute weights values, 
+It puts a constrain on the sum of absolute weights values, it is 
 different from Ridge regression (L2) who uses the sum of square weights.
 
 L1 and L2 behave the same at the extremes. 

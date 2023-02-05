@@ -5,6 +5,7 @@ One way to decrese this complexity is by regularization.
 
 Regularization puts constrains on the sum of weights
 in order to keep the weights small.
+It adds a penalty term to the cost function.
 
 Ridge regularization uses the sum of square weights, 
 which penalizes large weight vectors, and is probably 

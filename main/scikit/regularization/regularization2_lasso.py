@@ -8,8 +8,7 @@ L1 shrikns many coefficients to be exactly 0, producing a sparse model,
 which can be attractive in problems that benefit from features elimination.
 """
 
-from statistics import mode
-from sklearn.preprocessing import PolynomialFeatures, scale
+from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import Ridge, Lasso
 import matplotlib.pyplot as plt
 import numpy as np
@@ -26,13 +25,13 @@ y2 = [19, 50, 60, 32, 90, 110]
 # Lasso Regression
 
 degree_ = 4
-lambda_ = 0.5
+lambda_ = 0.8
 
 # Scale train data to prevent numerical errors
 X = np.array(X).reshape(-1, 1)
 polyX = PolynomialFeatures(degree=degree_).fit_transform(X)
 
-model1 = Ridge(alpha=lambda_).fit(polyX, y)
+model1 = Ridge(alpha=lambda_, solver='svd').fit(polyX, y)
 model2 = Lasso(alpha=lambda_, max_iter=1300000).fit(polyX, y) # Look Here
 
 t_ = np.array(np.linspace(0, 100, 100)).reshape(-1, 1)

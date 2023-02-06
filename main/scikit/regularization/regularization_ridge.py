@@ -19,8 +19,7 @@ When making predictions data must be transformed using the same
 PolynomialFeatures transformation that was used to preprocess the training data.
 """
 
-from statistics import mode
-from sklearn.preprocessing import PolynomialFeatures, scale
+from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression, Ridge
 import matplotlib.pyplot as plt
 import numpy as np
@@ -45,7 +44,7 @@ X = np.array(X).reshape(-1, 1) # any numbers of rows, one column
 polyX = PolynomialFeatures(degree=degree_).fit_transform(X)
 
 model1 = LinearRegression().fit(polyX, y)
-model2 = Ridge(alpha=lambda_).fit(polyX, y)
+model2 = Ridge(alpha=lambda_, solver='svd').fit(polyX, y)
 
 print('Linear coeficients: ', sum(model1.coef_)) # -64.66185222664129
 print('Ridge coeficients: ', sum(model2.coef_))  # -7.221838297484756

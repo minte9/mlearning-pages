@@ -26,9 +26,9 @@ for n in neighbors:
     test_accuracy.append(clf.score(X_test, y_test))
 
 # optim n_neighbors
-max_accuracy_key, max_accuracy = max(enumerate(test_accuracy), key=lambda x: x[1])
-print(max_accuracy, max_accuracy_key)
-n = neighbors[max_accuracy_key]
+k, max_accuracy = max(enumerate(test_accuracy), key=lambda x: x[1])
+print(k, max_accuracy)
+n = neighbors[k]
 print(n)
 
 plt.plot(neighbors, training_accuracy, label="training accuracy")
@@ -56,7 +56,7 @@ ax.set_xlabel('mean area')
 ax.set_ylabel('mean concavity')
 df = pd.DataFrame(X_train, columns=dataset.feature_names)
 ax.scatter(df['mean area'], df['mean concavity'], c=y_train)
-ax.scatter(X_unknown[3], X_unknown[6], c='r', marker='x', s=100, label=y_target[0])
+ax.scatter(X_unknown[3], X_unknown[6], c='r',marker='x',s=100, label=y_target[0])
 ax.grid()
 plt.legend(loc='upper right')
 plt.show()

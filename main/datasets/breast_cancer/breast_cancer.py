@@ -1,5 +1,4 @@
-""" Breast cancer
-https://medium.com/analytics-vidhya/prediction-and-data-visualization-of-breast-cancer-using-k-nearest-neighbor-knn-classifier-df7adadc4872
+""" Breast cancer Dataset
 """
 
 import matplotlib.pyplot as plt

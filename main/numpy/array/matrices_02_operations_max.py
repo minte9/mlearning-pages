@@ -1,11 +1,7 @@
 """ Operations on Matrices
-
-Vectorization is essentialy a for loop and 
-does not increase performance.
-
+Vectorization is essentialy a for loop and does not increase performance.
 By Broadcasting, Numpy allows operation on arrays, 
 even if their dimension are not the same.
-
 We can apply operation along the axes (rows or columns).
 """
 

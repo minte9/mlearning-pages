@@ -1,8 +1,6 @@
 """ Matrix addition
 
 For element-wise multiplication we use *
-
-pp17
 """
 
 import numpy as np

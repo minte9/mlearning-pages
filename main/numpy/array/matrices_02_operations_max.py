@@ -24,7 +24,7 @@ matrix = np.array([
 # Add 100 every element
 add_100 = lambda i: i + 100 # create function that add 100
 vectorize_add_100 = np.vectorize(add_100) # create vectorized function
-vectorized_matrix = vectorize_add_100(matrix) # apply vectorization to all elements
+vectorized_matrix = vectorize_add_100(matrix) # apply vectorization to all
 
 # One line
 vectorized_matrix = np.vectorize(lambda i: i + 100)(matrix)

@@ -11,7 +11,7 @@ Netflix movies/users example:
     - Rows are every Netflix user
     - Values are how many times a user watched that movie
 
-pp03
+
 https://docs.scipy.org/doc/scipy/reference/sparse.html
 https://medium.com/@jmaxg3/101-ways-to-store-a-sparse-matrix-c7f2bf15a229
 """

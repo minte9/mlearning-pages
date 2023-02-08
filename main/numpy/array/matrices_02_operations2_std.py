@@ -38,7 +38,7 @@ print(np.std(B))    # 281.43678982440565
 print()
 
 # ----------------------------------------------
-# Math formulas
+# Variation math formula
 
 N = A.size
 mean = np.mean(A)

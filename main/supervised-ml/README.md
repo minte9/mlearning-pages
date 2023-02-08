@@ -6,6 +6,5 @@ Learn and Remember - [minte9.com/mlearning](https://www.minte9.com/mlearning)
 
 - Classifier
 - Linear model
-- Iris species
 - Basis expansion
 - Regularization

@@ -1,6 +1,6 @@
 """ Sparse matrices
 
-Sparse matrices only store nonzero elements, 
+Sparse matrices only store non-zero elements, 
 for computation savings.
 
 Compress sparce row (CSR) matrices contain 
@@ -10,10 +10,6 @@ Netflix movies/users example:
     - Columns are every movie on Netflix
     - Rows are every Netflix user
     - Values are how many times a user watched that movie
-
-
-https://docs.scipy.org/doc/scipy/reference/sparse.html
-https://medium.com/@jmaxg3/101-ways-to-store-a-sparse-matrix-c7f2bf15a229
 """
 
 import numpy as np

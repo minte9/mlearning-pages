@@ -33,6 +33,19 @@ print(matrix)   # [[1 2] [1 2] [1 2]]
 print()
 
 
+# -------------------------------------------
+# Describe
+
+matrix = np.array([
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+])
+print(matrix.shape) # (3, 4)
+print(matrix.size)  # 12
+print(matrix.ndim)  # 2
+
+
 # ----------------------------------------
 # Extract
 
@@ -63,16 +76,3 @@ print()
 assert(matrix[1, 1]     == 5)                              # passed
 assert(matrix[:2, :]    == [[1, 2, 3], [4, 5, 6]])  .all() # passed
 assert(matrix[:, 1:2]   == [[2], [5], [8]])         .all() # passed 
-
-
-# -------------------------------------------
-# Describe
-
-matrix = np.array([
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12],
-])
-print(matrix.shape) # (3, 4)
-print(matrix.size)  # 12
-print(matrix.ndim)  # 2

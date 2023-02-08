@@ -7,9 +7,6 @@ A low variannce means that data are clustered close together.
 Standard deviation is a measure of the spread of the data 
 that is more intuitive than variance, as it is expressed 
 in the same units as data.
-
-pp08
-https://www.statology.org/sample-variance-vs-population-variance/
 """
 
 import numpy as np

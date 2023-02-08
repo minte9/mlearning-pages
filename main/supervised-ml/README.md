@@ -1,4 +1,4 @@
-# Supervised ML Pages
+# Supervised ML
 
 Learn and Remember - [minte9.com/mlearning](https://www.minte9.com/mlearning)
 

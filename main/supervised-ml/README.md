@@ -1,4 +1,4 @@
-# Scikit Pages
+# Supervised ML Pages
 
 Learn and Remember - [minte9.com/mlearning](https://www.minte9.com/mlearning)
 

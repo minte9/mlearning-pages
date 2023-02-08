@@ -12,12 +12,6 @@ Indices of column and rows of each element are swapped.
 A vector cannot be transposed.
 
 Inverse matrix is calculated so that A * A_inv = I
-
-pp09
-Invers Matrix
-http://www.mathwords.com/i/inverse_of_a_matrix.htm
-Identity Matrix
-http://www.mathwords.com/i/identity_matrix.htm
 """
 
 import numpy as np

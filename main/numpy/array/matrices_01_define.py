@@ -4,7 +4,7 @@ Numpy is the foundation of the Python machine learning stack
 Numpy main data structure is the multidimensional array
 Numpy array are zero-indexed, first element index is 0
 
-pp01
+
 https://www.mathsisfun.com/algebra/vectors.html
 https://en.wikipedia.org/wiki/Euclidean_vector
 https://mathworld.wolfram.com/Matrix.html

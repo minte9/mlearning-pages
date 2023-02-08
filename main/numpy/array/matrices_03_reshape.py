@@ -39,6 +39,7 @@ assert matrix.size == A.size  # passed
 assert matrix.size == B.size  # passed
 assert matrix.size == C.size  # passed
 
+
 # --------------------------------------------
 # Transpose
 

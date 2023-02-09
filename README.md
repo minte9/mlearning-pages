@@ -6,5 +6,7 @@ Learn and Remember - [minte9.com/mlearning](https://www.minte9.com/mlearning)
 
 - [Supervised ML](./main/supervised-ml/) 
 - [Matplotlib](./main/matplotlib/)
+- [Datasets](./main/datasets/)
+- [Numpy](./main/numpy/)
 - [Calculus](./main/calculus/)
 - [Algorithms](./main/algorithms/)

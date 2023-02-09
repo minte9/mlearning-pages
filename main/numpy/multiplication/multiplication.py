@@ -1,5 +1,4 @@
 """ Matrix addition
-
 For element-wise multiplication we use *
 """
 

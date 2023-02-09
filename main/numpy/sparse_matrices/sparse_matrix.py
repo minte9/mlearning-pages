@@ -7,9 +7,9 @@ Compress sparce row (CSR) matrices contain
 indices of non-zero values.
 
 Netflix movies/users example:
-    - Columns are every movie on Netflix
-    - Rows are every Netflix user
-    - Values are how many times a user watched that movie
+Columns are every movie on Netflix
+Rows are every Netflix user
+Values are how many times a user watched that movie
 """
 
 import numpy as np

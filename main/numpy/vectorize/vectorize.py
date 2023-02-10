@@ -1,5 +1,5 @@
 """ Vectorization
-It is essentialy a for loop and does not increase performance
+It is essentialy a for loop that does not increase performance
 """
 
 import numpy as np

@@ -10,6 +10,7 @@ column = np.array([         # column vector
     [4],
     [3],
 ])
+
 print(row) # [1 2 3]
 print(column)
     # [[1]

@@ -33,6 +33,7 @@ print()
 
 
 # Math formula
+
 N = A.size
 mean = np.mean(A)
 

@@ -1,7 +1,6 @@
 """ Operations on Matrices
-Vectorization is essentialy a for loop and does not increase performance.
-By Broadcasting, Numpy allows operation on arrays, 
-even if their dimension are not the same.
+Vectorization is essentialy a for loop and does 
+not increase performance.
 """
 
 import numpy as np
@@ -26,7 +25,7 @@ print(vectorized_matrix); print()
    #  [107 108 109]]
 
 
-# Brodcasting
+# Brodcasting (different dimensions are allowed)
 matrix = np.array([
     [1, 2, 3],
     [4, 5, 6],

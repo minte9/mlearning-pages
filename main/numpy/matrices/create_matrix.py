@@ -7,9 +7,7 @@ Arrays are zero-indexed, first element index is 0
 import numpy as np
 
 
-# ---------------------------------------
 # Vector
-
 row = np.array([1, 2, 3]) # vector as a row
 column = np.array([ # vector as a column
     [1],
@@ -21,9 +19,7 @@ print(column)   # [[1] [4] [3]]
 print()
 
 
-# ----------------------------------------
 # Matrix
-
 matrix = np.array([ # three rows, two columns
     [1, 2],
     [1, 2],
@@ -33,9 +29,7 @@ print(matrix)   # [[1 2] [1 2] [1 2]]
 print()
 
 
-# -------------------------------------------
 # Describe
-
 matrix = np.array([
     [1, 2, 3, 4],
     [5, 6, 7, 8],
@@ -46,9 +40,7 @@ print(matrix.size)  # 12
 print(matrix.ndim)  # 2
 
 
-# ----------------------------------------
 # Extract
-
 vector = np.array([1, 2, 3, 4, 5, 6])
 
 print(vector[:])    # [1 2 3 4 5 6]

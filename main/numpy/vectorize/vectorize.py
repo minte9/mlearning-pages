@@ -1,6 +1,5 @@
-""" Operations on Matrices
-Vectorization is essentialy a for loop and does 
-not increase performance.
+""" Vectorization
+It is essentialy a for loop and does not increase performance
 """
 
 import numpy as np

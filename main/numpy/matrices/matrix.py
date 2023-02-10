@@ -6,17 +6,6 @@ Arrays are zero-indexed, first element index is 0
 
 import numpy as np
 
-# Vector
-row = np.array([1, 2, 3]) # vector as a row
-column = np.array([ # vector as a column
-    [1],
-    [4],
-    [3],
-])
-print(row)      # [1 2 3]
-print(column)   # [[1] [4] [3]]
-print()
-
 # Matrix
 matrix = np.array([ # three rows, two columns
     [1, 2],

@@ -6,10 +6,7 @@ even if their dimension are not the same.
 
 import numpy as np
 
-
-# -----------------------------------------
 # Vectorize
-
 matrix = np.array([
     [1, 2, 3],
     [4, 5, 6],
@@ -17,11 +14,11 @@ matrix = np.array([
 ])
 
 # Add 100 every element
-add_100 = lambda i: i + 100 # create function that add 100
-vectorize_add_100 = np.vectorize(add_100) # create vectorized function
-vectorized_matrix = vectorize_add_100(matrix) # apply vectorization to all
+add_100 = lambda i: i + 100                     # create function that add 100
+vectorize_add_100 = np.vectorize(add_100)       # create vectorized function
+vectorized_matrix = vectorize_add_100(matrix)   # apply vectorization to all
 
-# One line
+# One line code
 vectorized_matrix = np.vectorize(lambda i: i + 100)(matrix)
 print(vectorized_matrix); print()
    # [[101 102 103]
@@ -29,15 +26,12 @@ print(vectorized_matrix); print()
    #  [107 108 109]]
 
 
-# -------------------------------------------
 # Brodcasting
-
 matrix = np.array([
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
 ])
-
 matrix = matrix + 100
 print(matrix); print()
    # [[101 102 103]

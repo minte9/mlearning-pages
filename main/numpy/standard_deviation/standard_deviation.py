@@ -1,4 +1,4 @@
-""" Matrix Standard deviation
+""" Variance and Standard deviation
 
 Variance is a measure of the spread of the data.
 A high variance means that data are spread over a large range.
@@ -10,9 +10,6 @@ in the same units as data.
 """
 
 import numpy as np
-
-# -------------------------------------------
-# Variance and Standard deviation
 
 A = np.array([
     [1, 2, 3],
@@ -34,12 +31,9 @@ print(np.var(B))    # 79206.66666666667
 print(np.std(B))    # 281.43678982440565
 print()
 
-# ----------------------------------------------
 # Variation math formula
-
 N = A.size
 mean = np.mean(A)
-
 variation = (1/N) * np.sum((A - mean)**2) # population variance
 standard_deviation = np.sqrt(variation)
 

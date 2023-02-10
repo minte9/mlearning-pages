@@ -1,5 +1,7 @@
 """ Inverse Matrix
-Calculated so that A * A_inv = I
+Calculate the inverse of a square matrix.
+The new matrix A_inv is calculated so that 
+  A * A_inv = I
 """
 
 import numpy as np

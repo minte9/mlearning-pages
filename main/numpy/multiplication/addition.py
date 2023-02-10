@@ -1,5 +1,5 @@
 """ Matrix addition
-For addiction (or substractiion) simply use + - operators
+Use + - operators
 """
 
 import numpy as np

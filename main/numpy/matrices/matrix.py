@@ -2,6 +2,7 @@
 Numpy is the foundation of the Python machine learning stack
 The main data structure is the multidimensional array
 Arrays are zero-indexed, first element index is 0
+Use ':' to select everithing 'up to' or 'after'
 """
 
 import numpy as np

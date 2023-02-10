@@ -4,10 +4,6 @@ We can apply operation along the axes (rows or columns).
 
 import numpy as np
 
-
-# --------------------------------------------
-# Max and Average
-
 matrix = np.array([
     [1, 2, 3],
     [4, 5, 6],

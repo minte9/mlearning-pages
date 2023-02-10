@@ -31,9 +31,11 @@ print(np.var(B))    # 79206.66666666667
 print(np.std(B))    # 281.43678982440565
 print()
 
-# Variation math formula
+
+# Math formula
 N = A.size
 mean = np.mean(A)
+
 variation = (1/N) * np.sum((A - mean)**2) # population variance
 standard_deviation = np.sqrt(variation)
 

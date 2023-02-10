@@ -1,10 +1,7 @@
 """ Sparse matrices
 
-Sparse matrices only store non-zero elements, 
-for computation savings.
-
-Compress sparce row (CSR) matrices contain 
-indices of non-zero values.
+Sparse matrices only store non-zero elements, for computation savings.
+Compress sparce row (CSR) matrices contain indices of non-zero values.
 
 Netflix movies/users example.
 Columns are every movie on Netflix
@@ -14,10 +11,6 @@ Values are how many times a user watched that movie
 
 import numpy as np
 from scipy import sparse
-
-
-# -----------------------------------------------------
-# Sparse matrix
 
 matrix = np.array([
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -34,9 +27,7 @@ assert matrix_sparse[1, 1] == 1
 assert matrix_sparse[2, 0] == 3
 
 
-# -----------------------------------------------------
 # Random
-
 np.random.seed(0)
 R1 = np.random.random(3)          # generate floats
 R2 = np.random.randint(1, 11, 3)  # generate integers

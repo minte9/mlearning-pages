@@ -1,5 +1,4 @@
-""" Matrix addition
-Use + - operators
+""" Addition and Substraction (+ -)
 """
 
 import numpy as np

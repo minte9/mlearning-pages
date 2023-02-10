@@ -1,5 +1,5 @@
-""" Vectors
-A vector is simply a one-dimensional array
+""" Numpy Vectors
+A vector is simply an one-dimensional array
 """
 
 import numpy as np

@@ -27,7 +27,6 @@ DATA = [
     },
 ]
 df = pd.json_normalize(DATA)
-
 print(df.head(2).to_markdown())
 
 # |    |   id | name   |

@@ -14,8 +14,14 @@ import numpy as np
 import pandas as pd
 
 # Sample dataset
-X, y = make_regression(n_samples = 100, n_features = 1, n_informative = 1, n_targets = 1,
-    noise = 10, coef = False, random_state = 0
+X, y = make_regression(
+    n_samples = 100, 
+    n_features = 1, 
+    n_informative = 1, 
+    n_targets = 1,
+    noise = 10, 
+    coef = False, 
+    random_state = 0
 )
 print(X[:1]) # [[-0.35955316]]
 print(y[:1]) # [-19.95588561]

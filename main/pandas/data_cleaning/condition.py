@@ -1,4 +1,5 @@
 """ Condition and filtering
+
 Conditional selecting and filtering data are common tasks.
 Sometinmes you are interseted only of some subset of dataset.
 """

@@ -1,8 +1,5 @@
 """ Read Json
-pp29
 Load a JSON file for data preprocessing.
-
-http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html
 """
 
 import pandas as pd

@@ -1,5 +1,4 @@
 """ Read SQL Database
-pp30
 Load data from a database using SQL queries.
 Probably the most used in real world.
 """

@@ -1,5 +1,4 @@
 """ Read Excel
-pp28
 Import an Excel spreadsheet
 pip install openpyxl
 """

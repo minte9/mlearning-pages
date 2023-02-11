@@ -1,8 +1,5 @@
-""" Read csv
-pp27
-Import a comma-separated values (CSV) file
+""" Read CSV
 The source can be URL of FILE
-https://github.com/chrisalbon/sim_data/
 """
 
 import pandas as pd

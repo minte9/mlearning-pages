@@ -1,4 +1,5 @@
-""" Describe data
+""" Describe DataFrame
+
 Real world cases could have millions of rows and columns.
 We rely on pulling samples and summary statistics.
 

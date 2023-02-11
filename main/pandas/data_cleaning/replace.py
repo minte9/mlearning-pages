@@ -1,4 +1,4 @@
-""" Replace
+""" Replace in DataFrame
 Pandas replace is an easy way to find and replace values.
 Replace accepts regular expressions.
 """

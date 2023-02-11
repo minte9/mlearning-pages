@@ -1,6 +1,5 @@
 """ Simulated dataset (experience / salary)
 
-pp
 Simulate the data for building a regression model.
 
 Simulated dataset linear regression

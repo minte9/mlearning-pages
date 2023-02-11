@@ -6,8 +6,11 @@ Probably the most used in real world.
 
 import pandas as pd
 import sqlite3
+import pathlib
 
-conn = sqlite3.connect('data/04.db')
+DIR = pathlib.Path(__file__).resolve().parent
+
+conn = sqlite3.connect(DIR / 'data/04.db')
 df = pd.read_sql_query("SELECT * FROM data", conn)
 
 print(df.head(2))

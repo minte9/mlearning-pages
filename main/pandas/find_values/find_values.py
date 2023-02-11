@@ -36,8 +36,10 @@ print(T.to_markdown())
 # |  0 | female       |            851 |
 # |  1 | male         |            462 |
 
+
+# Value counts
 T = pd.DataFrame()
-T['PClass_value_counts']  = df['PClass'].value_counts()
+T['PClass_value_counts'] = df['PClass'].value_counts()
 print(T.to_markdown())
 
 # |     |   PClass_value_counts |

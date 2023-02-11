@@ -1,13 +1,8 @@
 """ Simulated dataset (experience / salary)
 
 Simulate the data for building a regression model.
-
-Simulated dataset linear regression
-https://www.gaussianwaves.com/2020/01/generating-simulated-dataset-for-regression-problems-sklearn-make_regression/
-Line of linear regression
-https://www.gaussianwaves.com/2020/02/linear-regression-using-python/
-
 Suppose, we have a survey among the employees of a company.
+
 As a developer, often you have no access to survey data.
 You need to simulate the data for building the regression model.
 """

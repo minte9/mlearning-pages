@@ -19,6 +19,7 @@ df = pd.read_csv(DIR / 'titanic.csv')
 print("Show dimensions | shape:")
 print(df.shape) # (1313, 6)
 
+
 print("First two rows | head(2): ")
 print(df.head(2).to_markdown())
 

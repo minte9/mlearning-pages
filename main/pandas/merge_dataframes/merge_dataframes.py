@@ -1,9 +1,4 @@
 """ Merging DataFrames
-pp56
-Visual explanation joins
-https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
-Pandas merging
-http://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
 
 In real world we usually are faced with multiple sources.
 Sometimes we need to get all that data in one place.

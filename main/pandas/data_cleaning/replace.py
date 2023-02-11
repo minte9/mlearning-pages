@@ -40,10 +40,10 @@ R = df.replace(1, 'one')
 print("Replace all:")
 print(R.head(2).to_markdown())
 
-# |    | Name                         | PClass   |   Age | Sex    | Survived   | SexCode   |
-# |---:|:-----------------------------|:---------|------:|:-------|:-----------|:----------|
-# |  0 | Allen, Miss Elisabeth Walton | 1st      |    29 | female | one        | one       |
-# |  1 | Allison, Miss Helen Loraine  | 1st      |     2 | female | 0          | one       |
+# |    | Name           | PClass   |   Age | Sex    | Survived   | SexCode   |
+# |---:|:---------------|:---------|------:|:-------|:-----------|:----------|
+# |  0 | Allen, Miss Eli| 1st      |    29 | female | one        | one       |
+# |  1 | Allison, Miss H| 1st      |     2 | female | 0          | one       |
 
 
 # Regex
@@ -51,7 +51,7 @@ R = df.replace(r'1st', 'First', regex=True)
 print("Regex replace:") 
 print(R.head(2).to_markdown())
 
-# |    | Name                         | PClass   |   Age | Sex    |   Survived |   SexCode |
-# |---:|:-----------------------------|:---------|------:|:-------|-----------:|----------:|
-# |  0 | Allen, Miss Elisabeth Walton | First    |    29 | female |          1 |         1 |
-# |  1 | Allison, Miss Helen Loraine  | First    |     2 | female |          0 |         1 |
+# |    | Name           | PClass   |   Age | Sex    |   Survived |   SexCode |
+# |---:|:---------------|:---------|------:|:-------|-----------:|----------:|
+# |  0 | Allen, Miss Eli| First    |    29 | female |          1 |         1 |
+# |  1 | Allison, Miss H| First    |     2 | female |          0 |         1 |

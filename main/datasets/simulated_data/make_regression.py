@@ -1,5 +1,4 @@
-""" Make regression - Simulated dataset
-pp24
+""" Make regression
 Dataset designed to be used with linear regression.
 """
 

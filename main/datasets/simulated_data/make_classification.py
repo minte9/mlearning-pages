@@ -1,5 +1,4 @@
-""" Make classification - Simulated dataset
-pp025
+""" Make classification
 Create simulated data for classification.
 """
 

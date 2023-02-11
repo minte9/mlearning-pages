@@ -1,5 +1,4 @@
-""" Make blob - Simulated dataset
-pp25
+""" Make blobs
 Dataset that work well with clustering techniques.
 """
 

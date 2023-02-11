@@ -12,8 +12,8 @@ dataframe = pd.read_csv(URL)
 # Read from FILE
 DIR = pathlib.Path(__file__).resolve().parent 
 dataframe = pd.read_csv(DIR / '../_data/01.csv')
-print(dataframe.head(2).to_markdown())
 
+print(dataframe.head(2).to_markdown())
 
 # |    |   integer | datetime            |   category |
 # |---:|----------:|:--------------------|-----------:|

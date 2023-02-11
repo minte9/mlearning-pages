@@ -53,7 +53,7 @@ df = df[df['Age'].isnull()]
 print('Missing values | Age Null:')
 print(df.head(2).to_markdown())
 
-# |    | Name                   | PClass   |   Age | Sex    |   Survived |   SexCode |
-# |---:|:---------------------- |:---------|------:|:-------|-----------:|----------:|
-# | 12 | Aubert, Mrs Leontine P | 1st      |   nan | female |          1 |         1 |
-# | 13 | Barkworth, Mr Algernon | 1st      |   nan | male   |          1 |         0 |
+# |    | Name           | PClass   |   Age | Sex    |   Survived |   SexCode |
+# |---:|:---------------|:---------|------:|:-------|-----------:|----------:|
+# | 12 | Aubert, Mrs Leo| 1st      |   nan | female |          1 |         1 |
+# | 13 | Barkworth, Mr A| 1st      |   nan | male   |          1 |         0 |

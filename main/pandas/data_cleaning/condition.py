@@ -11,10 +11,8 @@ DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
 df = pd.read_csv(DIR / 'titanic.csv')
 
 
-# Condition
-females = df[df['Sex'] == 'female']
-print("Females:")
-print(females.head(2).to_markdown())
+print("Condition, Females only:")
+print(df[df['Sex'] == 'female'].head(2).to_markdown())
 
 # |    | Name           | PClass   |   Age | Sex    |   Survived |   SexCode |
 # |---:|:---------------|:---------|------:|:-------|-----------:|----------:|
@@ -22,10 +20,8 @@ print(females.head(2).to_markdown())
 # |  1 | Allison, Miss H| 1st      |     2 | female |          0 |         1 |
 
 
-# Filter
-males_60 = df[(df['Sex'] == 'male') & (df['Age'] >= 60)]
-print("Males_60:")
-print(males_60.head(2).to_markdown())
+print("Filter | Males age 60:")
+print(df[(df['Sex'] == 'male') & (df['Age'] >= 60)].head(2).to_markdown())
 
 # |    | Name             | PClass   |   Age | Sex   |   Survived |   SexCode |
 # |---:|:-----------------|:---------|------:|:------|-----------:|----------:|

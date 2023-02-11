@@ -1,5 +1,5 @@
 """ Grouping rows by values
-pp48
+
 Groupby is one of the most powerful feature in pandas.
 We can group rows according to some shared value.
 

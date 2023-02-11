@@ -7,7 +7,6 @@ import pathlib
 
 FILE = pathlib.Path(__file__).resolve().parent / '../_data/03.json'
 df = pd.read_json(FILE, orient='columns')
-
 print(df.head(2).to_markdown())
 
 # |    |   integer | datetime            |   category |

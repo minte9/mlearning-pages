@@ -11,7 +11,6 @@ DIR = pathlib.Path(__file__).resolve().parent
 
 conn = sqlite3.connect(DIR / '../_data/04.db')
 df = pd.read_sql_query("SELECT * FROM data", conn)
-
 print(df.head(2).to_markdown())
 
 # |    | first_name   | last_name   |   age |   preTestScore |   postTestScore |

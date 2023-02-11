@@ -22,10 +22,10 @@ print(df.shape) # (1313, 6)
 print("First two rows | head(2): ")
 print(df.head(2).to_markdown())
 
-# |    | Name              | PClass   |   Age | Sex    |   Survived |   SexCode |
-# |---:|:----------------- |:---------|------:|:-------|-----------:|----------:|
-# |  0 | Allen, Miss Elisa | 1st      |    29 | female |          1 |         1 |
-# |  1 | Allison, Miss Hel | 1st      |     2 | female |          0 |         1 |
+# |    | Name           | PClass   |   Age | Sex    |   Survived |   SexCode |
+# |---:|:---------------|:---------|------:|:-------|-----------:|----------:|
+# |  0 | Allen, Miss Eli| 1st      |    29 | female |          1 |         1 |
+# |  1 | Allison, Miss H| 1st      |     2 | female |          0 |         1 |
 
 
 print("Show statistics | describe():")

@@ -1,5 +1,5 @@
 """ Apply a function over all elements
-pp53
+
 Despite the temptation to fall back on for loops,
 a more Pythonic solution uses pandas' apply method.
 

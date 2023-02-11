@@ -1,7 +1,4 @@
-"""
-pp39
-https://github.com/chrisalbon/sim_data/
-
+""" Replace
 Pandas replace is an easy way to find and replace values.
 Replace accepts regular expressions.
 """

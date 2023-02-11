@@ -1,15 +1,13 @@
 """ Describe data
-pp35
-https://github.com/chrisalbon/sim_data/
-pip install tabulate
-
 Real world cases could have millions of rows and columns.
 We rely on pulling samples and summary statistics.
 
 Describe do not always tell the full story.
 Survived is categorical, but pandas treats it as numerical. 
-
 Both iloc and loc are very useful during data cleaning.
+
+For output data (outside Jupyter) use DataFrame' to_markdown()
+pip install tabulate
 """
 
 import pandas as pd

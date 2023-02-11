@@ -1,6 +1,6 @@
-""" DataFrame - Calculate Statistics
-pp42
-Pandas has multiple built-in methods for descriptive statistisc.
+""" Find values and statistics
+
+Pandas has multiple built-in methods for descriptive statistics.
 Can be applied to a column or to whole dataframe.
 """
 

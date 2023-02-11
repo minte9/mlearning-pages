@@ -1,6 +1,7 @@
 """ Describe data
 pp35
 https://github.com/chrisalbon/sim_data/
+pip install tabulate
 
 Real world cases could have millions of rows and columns.
 We rely on pulling samples and summary statistics.
@@ -9,47 +10,72 @@ Describe do not always tell the full story.
 Survived is categorical, but pandas treats it as numerical. 
 
 Both iloc and loc are very useful during data cleaning.
-
-            Name    PClass   Age     Sex  Survived  SexCode
-Allen, Elisabeth    1st     29.0  female         1        1
-Allison, Helen      1st      2.0  female         0        1
-
-              Age     Survived      SexCode
-count  756.000000  1313.000000  1313.000000
-mean    30.397989     0.342727     0.351866
-std     14.259049     0.474802     0.477734
-min      0.170000     0.000000     0.000000
-25%     21.000000     0.000000     0.000000
-50%     28.000000     0.000000     0.000000
-75%     39.000000     1.000000     1.000000
-max     71.000000     1.000000     1.000000
 """
 
 import pandas as pd
 import pathlib
 
-DIR = pathlib.Path(__file__).resolve().parent / '../data/'
+DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
 df = pd.read_csv(DIR / 'titanic.csv')
 
-# Show two rows
-print(df.head(2))
-print()
-
-# Show dimensions
+print("Show dimensions | shape:")
 print(df.shape) # (1313, 6)
-print()
 
-# Show statistics
-print(df.describe())
-print()
+print("First two rows | head(2): ")
+print(df.head(2).to_markdown())
 
-# Select rows
-print(df.iloc[0])   # first
-print(df.iloc[1:4]) # second, third and fourth
-print(df.iloc[:4])  # up to, and including fourth
-print()
+# |    | Name                         | PClass   |   Age | Sex    |   Survived |   SexCode |
+# |---:|:-----------------------------|:---------|------:|:-------|-----------:|----------:|
+# |  0 | Allen, Miss Elisabeth Walton | 1st      |    29 | female |          1 |         1 |
+# |  1 | Allison, Miss Helen Loraine  | 1st      |     2 | female |          0 |         1 |
+
+
+print("Show statistics | describe():")
+print(df.describe().to_markdown())
+
+# |       |     Age |    Survived |     SexCode |
+# |:------|--------:|------------:|------------:|
+# | count | 756     | 1313        | 1313        |
+# | mean  |  30.398 |    0.342727 |    0.351866 |
+# | std   |  14.259 |    0.474802 |    0.477734 |
+# | min   |   0.17  |    0        |    0        |
+# | 25%   |  21     |    0        |    0        |
+# | 50%   |  28     |    0        |    0        |
+# | 75%   |  39     |    1        |    1        |
+# | max   |  71     |    1        |    1        |
+
+
+
+print("Select first row by index | iloc[0]:")
+print(df.iloc[0].to_markdown()) # first
+
+# |          | 0                            |
+# |:---------|:-----------------------------|
+# | Name     | Allen, Miss Elisabeth Walton |
+# | PClass   | 1st                          |
+# | Age      | 29.0                         |
+# | Sex      | female                       |
+# | Survived | 1                            |
+# | SexCode  | 1                            |
+
+
+print("Second, third and fourth | iloc[1:4]:")
+print(df.iloc[1:4].to_markdown()) # second, third and fourth
+
+print("Select up to and including fourth | iloc[:4]")
+print(df.iloc[:4].to_markdown())  # up to, and including fourth
+
 
 # Set index to non-numerical
 df = df.set_index(df['Name'])
-print(df.loc['Allen, Miss Elisabeth Walton'])
-print()
+print("Select by Name:") 
+print(df.loc['Allen, Miss Elisabeth Walton'].to_markdown())
+
+# |          | Allen, Miss Elisabeth Walton   |
+# |:---------|:-------------------------------|
+# | Name     | Allen, Miss Elisabeth Walton   |
+# | PClass   | 1st                            |
+# | Age      | 29.0                           |
+# | Sex      | female                         |
+# | Survived | 1                              |
+# | SexCode  | 1                              |

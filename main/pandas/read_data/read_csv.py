@@ -1,5 +1,5 @@
 """ Read CSV
-The source can be URL of FILE
+The source can be URL or FILE
 """
 
 import pandas as pd

@@ -23,22 +23,22 @@ print(df.groupby('Sex').mean(numeric_only=True).to_markdown())
 # | male   | 31.0143 |   0.166863 |         0 |
 
 
-print("Grouped by Sex count:")
-print(df.groupby('Sex')['Name'].count().to_markdown())
+print("Grouped by Sex:")
+print(df.groupby('Sex').count().to_markdown())
 
-# | Sex    |   Name |
-# |:-------|-------:|
-# | female |    462 |
-# | male   |    851 |
+# | Sex    |   Name |   PClass |   Age |   Survived |   SexCode |
+# |:-------|-------:|---------:|------:|-----------:|----------:|
+# | female |    462 |      462 |   288 |        462 |       462 |
+# | male   |    851 |      851 |   468 |        851 |       851 |
 
 
-print("Grouped by Survived count:")
-print(df.groupby('Survived')['Name'].count().to_markdown())
+print("Grouped by Sex (count only Survived):")
+print(df.groupby('Sex')['Survived'].count().to_markdown())
 
-# |   Survived |   Name |
-# |-----------:|-------:|
-# |          0 |    863 |
-# |          1 |    450 |
+# | Sex    |   Survived |
+# |:-------|-----------:|
+# | female |        462 |
+# | male   |        851 |
 
 
 print("Group by two columns (average):")

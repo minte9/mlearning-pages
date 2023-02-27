@@ -11,3 +11,11 @@ Learn and Remember - [minte9.com/mlearning](https://www.minte9.com/mlearning)
 - [Pandas](./main/pandas/)
 - [Calculus](./main/calculus/)
 - [Algorithms](./main/algorithms/)
+
+~~~sh
+# Install
+git clone https://github.com/minte9/mlearning-pages.git
+
+# Update
+git pull origin main
+~~~

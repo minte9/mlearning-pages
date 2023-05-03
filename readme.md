@@ -1,20 +1,35 @@
 # Machine Learning
 
-- [Supervised ML](./main/supervised-ml/) 
-- [Matplotlib](./main/matplotlib/)
-- [Datasets](./main/datasets/)
-- [Numpy](./main/numpy/)
-- [Pandas](./main/pandas/)
-- [Calculus](./main/calculus/)
-- [Algorithms](./main/algorithms/)
+[Supervised ML](./main/supervised-ml/) 
+> Classifier
+> Linear model
+> Basis expansion
+> Regularization
+
+[Matplotlib](./main/matplotlib/)
+[Datasets](./main/datasets/)
+[Numpy](./main/numpy/)
+[Pandas](./main/pandas/)
+[Calculus](./main/calculus/)
+[Algorithms](./main/algorithms/)
+
+#
+
+## Install
 
 ~~~sh
-# Install
 git clone https://github.com/minte9/mlearning-pages.git
+cd algorithms-pages/
+~~~
 
-# Update
+## Updates
+
+~~~sh
+cd mlearning-pages/
 git pull origin main
 ~~~
+
+#
 
 ### References
 > [Learn and Remember (minte9)](https://www.minte9.com)

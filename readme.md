@@ -60,4 +60,6 @@ git pull origin main
 #
 
 ### References
+> [Machine Learning Simplified (source code)](https://code.themlsbook.com/index.html)
+> [Machine Learning Simplified (buy)](https://www.amazon.com/gp/product/B0B216KMM4)
 > [Learn and Remember (minte9)](https://www.minte9.com)

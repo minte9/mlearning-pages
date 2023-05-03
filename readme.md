@@ -43,14 +43,14 @@
 
 #
 
-## Install
+### Install
 
 ~~~sh
 git clone https://github.com/minte9/mlearning-pages.git
 cd mlearning-pages/
 ~~~
 
-## Updates
+### Updates
 
 ~~~sh
 cd mlearning-pages/

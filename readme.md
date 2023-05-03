@@ -61,8 +61,8 @@ git pull origin main
 
 ### References
 > [Machine Learning Simplified](https://code.themlsbook.com/index.html) (source code)  
-> [Machine Learning Simplified](https://www.amazon.com/gp/product/B0B216KMM4)  
-> [Calculus: An Intuitive and Physical Approach](https://www.amazon.com/gp/product/B00CB2MK6C)  
-> [Introduction to Machine Learning](https://www.amazon.com/gp/product/B01M0LNE8C)  
-> [Machine Learning with Python Cookbook](https://www.amazon.com/gp/product/B07BC3LFKT)  
+> [Machine Learning Simplified](https://www.amazon.com/gp/product/B0B216KMM4) (book)  
+> [Calculus: An Intuitive and Physical Approach](https://www.amazon.com/gp/product/B00CB2MK6C) (book)   
+> [Introduction to Machine Learning](https://www.amazon.com/gp/product/B01M0LNE8C) (book)  
+> [Machine Learning with Python Cookbook](https://www.amazon.com/gp/product/B07BC3LFKT) (book)  
 > [Learn and Remember](https://www.minte9.com/mlearning) (minte9)  

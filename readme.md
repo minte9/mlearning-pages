@@ -1,17 +1,17 @@
 # Machine Learning
 
-[Supervised ML](./main/supervised-ml/) 
-> Classifier
-> Linear model
-> Basis expansion
-> Regularization
+[Supervised ML](./main/supervised-ml/)  
+> Classifier  
+> Linear model  
+> Basis expansion  
+> Regularization  
 
-[Matplotlib](./main/matplotlib/)
-[Datasets](./main/datasets/)
-[Numpy](./main/numpy/)
-[Pandas](./main/pandas/)
-[Calculus](./main/calculus/)
-[Algorithms](./main/algorithms/)
+[Matplotlib](./main/matplotlib/)  
+[Datasets](./main/datasets/)  
+[Numpy](./main/numpy/)  
+[Pandas](./main/pandas/)  
+[Calculus](./main/calculus/)  
+[Algorithms](./main/algorithms/)  
 
 #
 
@@ -19,7 +19,7 @@
 
 ~~~sh
 git clone https://github.com/minte9/mlearning-pages.git
-cd algorithms-pages/
+cd mlearning-pages/
 ~~~
 
 ## Updates

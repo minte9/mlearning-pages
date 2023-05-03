@@ -17,7 +17,7 @@
 > Simulated Data  
 
 [Numpy](./main/numpy/)  
-> Matrices 
+> Matrices  
 > Sparse Matrices  
 > Vectorize  
 > Average  

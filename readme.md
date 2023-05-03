@@ -2,16 +2,44 @@
 
 [Supervised ML](./main/supervised-ml/)  
 > Classifier  
-> Linear model  
-> Basis expansion  
+> Linear Model  
+> Basis Expansion  
 > Regularization  
 
 [Matplotlib](./main/matplotlib/)  
+> Subplots  
+> Pyplot  
+
 [Datasets](./main/datasets/)  
+> Iris Species  
+> Diabetes  
+> Breast Cancer  
+> Simulated Data  
+
 [Numpy](./main/numpy/)  
+> Matrices 
+> Sparse Matrices  
+> Vectorize  
+> Average  
+> Standard Deviation  
+> Reshape  
+> Multiplication  
+
 [Pandas](./main/pandas/)  
+> Read Data  
+> Data Cleaning  
+> Find Values  
+> Group Rows  
+> Merge Data  
+
 [Calculus](./main/calculus/)  
+> Derivatives  
+> Integrals  
+
 [Algorithms](./main/algorithms/)  
+> K Nearest Neighbors   
+> Linear Regression  
+> Gradient Descent  
 
 #
 

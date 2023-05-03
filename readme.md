@@ -1,7 +1,7 @@
 # Machine Learning
 
 [Supervised ML](./main/supervised-ml/)  
-> Classifier  
+> KNN Classifier  
 > Linear model  
 > Basis expansion  
 > Regularization  

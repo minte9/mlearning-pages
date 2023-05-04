@@ -2,8 +2,8 @@
 h(x) = ax + by + c
 
 We can predict the CO2 emission of a car based on the size of the engine. 
-With multiple regression we can throw in more variables, like the weight of the car, 
-to make the prediction more accurate.
+With multiple regression we can throw in more variables, 
+like the weight of the car, to make the prediction more accurate.
 """
 
 import numpy as np
@@ -12,8 +12,9 @@ from sklearn.linear_model import LinearRegression
 import pandas as pd
 import pathlib
 
+# fitted without feature names
 import warnings  
-warnings.filterwarnings("ignore", category=Warning) # fitted without feature names
+warnings.filterwarnings("ignore", category=Warning)
 
 # Training Dataset
 DIR = pathlib.Path(__file__).resolve().parent
@@ -49,7 +50,7 @@ ax.set_zlabel('CO2')
 X1 = [1600, 1252]    # Honda Civic, 1600, 1252 / CO2: 94
 y1 = r.predict([X1]) # CO2: 101.5
 
-X2 = [1200, 780]    # ?
+X2 = [1200, 780]     # Unknown car
 y2 = r.predict([X2]) # CO2: 94.8
 
 print(df, "\n")
@@ -62,7 +63,7 @@ ax.plot(X2[0], X2[1], y2[0], 's', color='g')
 plt.show()
 
 """
-    		       Car       Model  Volume  Weight  CO2
+    		    Car       Model  Volume  Weight  CO2
 	0       Toyoty        Aygo    1000     790   99
 	1   Mitsubishi  Space Star    1200    1160   95
 	2        Skoda      Citigo    1000     929   95

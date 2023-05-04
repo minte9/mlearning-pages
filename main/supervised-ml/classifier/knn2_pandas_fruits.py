@@ -1,4 +1,4 @@
-"""KNN classification / Fruit example
+"""KNN classifier / Fruit example
 
 Dataset contains heights, widths and labels (fruit name).
 The algorithm teach a function to map any combination 

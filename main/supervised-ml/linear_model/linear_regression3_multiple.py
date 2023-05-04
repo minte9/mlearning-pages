@@ -37,7 +37,7 @@ X3 = [2013.17, 33, 732.85, 0, 24.98, 121.53]     # ?
 print(df, '\n')
 print('Predict training item1, price =', r.predict([X1]).round(1).item())
 print('Predict training item2, price =', r.predict([X2]).round(1).item())
-print('Predict unknow item, price =', r.predict([X3]).round(1).item())
+print('Predict unknow item, price =',    r.predict([X3]).round(1).item())
 
 """
 		  No  X1 transaction date  X2 house age  ...

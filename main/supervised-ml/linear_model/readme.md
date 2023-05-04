@@ -1,4 +1,4 @@
-## Linear Regression Model
+## Linear Model
 
 ### Linear Regression / One variable
 <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/linear_model/images/image1.png' width=300>

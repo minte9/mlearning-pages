@@ -12,6 +12,11 @@ y = [0, 1, 0, 1]
 
 knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X, y)
-            
-prediction = knn.predict([[1,2]])   
-print(prediction) # [0]
+
+x_unknown = [1,2]        
+prediction = knn.predict([x_unknown])   
+print("Label prediction for", x_unknown, "=", prediction)
+
+"""
+    Label prediction for [1, 2] = [0]
+"""

@@ -1,12 +1,10 @@
-""" Basis Expansion (Polynomial Models)
+""" Basis Expansion / Polynomial Model
 Adds non-linear features into to the linear model.
 
 Even though the fifth-degree polynomial model has the lowest
-SSR_training, it also has huge SSR_test.
+SSR_training, it also has huge SSR_test, a good sign of overfitting.
 
-This is a good sign of overfitting.
-Another sign of overfitin is by evaluating the coeficients.
-
+Another sign of overfiting is by evaluating the coeficients.
 Evaluate the weights (sum of coeficients)
 The higher the sum, the more the model tends to overfit.
 """
@@ -14,92 +12,95 @@ The higher the sum, the more the model tends to overfit.
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ---------------------------------------------------
-# Dataset
+# Training datasets
+X1 = [30, 46, 60, 65, 77, 95]  # area (m^2)
+y1 = [31, 30, 80, 49, 70, 118] # price (10,000$)
 
-# Train and test
-X  = [30, 46, 60, 65, 77, 95]   # area (m^2)
-y  = [31, 30, 80, 49, 70, 118]  # price (10,000$)
+# Test dataset
 X2 = [17, 40, 55, 57, 70, 85]
 y2 = [19, 50, 60, 32, 90, 110]
 
-# Plot the data
-plt.figure(figsize=(6,4))
-plt.scatter(X, y, color='blue', label='Training set')
-plt.scatter(X2, y2, color='red', label='Test set')
-plt.title('Dataset (area, price)')
-plt.xlabel('Area (m^2)')
-plt.ylabel('Price (10,000$)')
-plt.legend(loc='best')
-
-# ----------------------------------------------------
-# First-degree polynomial
-
-degrees = 1
-p = np.poly1d(np.polyfit(X, y, degrees))
-t = np.linspace(0, 100, 100)
-print("Model: ", p) # p(t) = 1.303 x - 17.99
-
-plt.figure(figsize=(6,4))
-plt.scatter(X, y, color='blue', label='Training set')
-plt.scatter(X2, y2, color='red', label='Test set')
-plt.plot(t, p(t), color='orange', label=p) # regression line
-
-xa = 50 # unknown
-ya = round(p(xa),2) # prediction
-plt.scatter(xa, ya, color='r', marker='x')
-plt.annotate(f'({xa}, {ya})', (xa+0.1, ya-10))
-
-plt.title('First-degree polinomial')
-plt.legend(loc='best')
-plt.xlabel('Area (m^2)')
-plt.ylabel('Price (10,000$)')
-plt.xlim((0, 100))
-plt.ylim((0, 130))
-plt.show()
-
-
-# ----------------------------------------------------
 # N-degree polynomial
+def pred_polinomial(degree, x_unknown, X1, y1):
 
-def pred_polinomial(d, x_unknown):
-
-    degrees = d
-    p = np.poly1d(np.polyfit(X, y, degrees))
-    t = np.linspace(0, 100, 100)
-    print(p)
-    print(p.coef)
+    p = np.poly1d(np.polyfit(X1, y1, degree))
+    t = np.linspace(0, 100, 100)    
 
     # Plot train, test data and prediction line
     plt.figure(figsize=(6,4))
-    plt.scatter(X, y, color='blue', label='Training set')
+    plt.scatter(X1, y1, color='blue', label='Training set')
     plt.scatter(X2, y2, color='red', label='Test set')
-    plt.plot(t, p(t), color='orange') # regression line
+    plt.plot(t, p(t), color='orange') # line
 
     # Evaluate the model (sum of residuals)
-    SSR = sum((p(X) - y) ** 2).round()
+    SSR1 = sum((p(X1) - y1) ** 2).round()
     SSR2 = sum((p(X2) - y2) ** 2).round()
 
     # Evaluate the weight (sum of coeficients)
-    # The higher the sum, the model tends to overfit
-    w = round(sum(abs(p.coef)))
-    print(w)
+    weight = round(sum(abs(p.coef)))
 
-    # plot prediction
+    # Plot prediction
     xa = x_unknown
     ya = round(p(xa),2)
     plt.scatter(xa, ya, color='r', marker='x')
-    plt.annotate(f'({xa}, {ya}, SSR = {SSR}) SSR2 = {SSR2})', (xa+0.1, ya-10))
+    plt.annotate(f'({xa}, {ya}, SSR1 = {SSR1}) SSR2 = {SSR2})', (xa+0.1, ya-10))
 
-    plt.title(f'{d}-degree polynomial')
+    plt.title(f'{degree}-degree polynomial')
     plt.legend(loc='best')
     plt.xlabel('Area (m^2)')
     plt.ylabel('Price (10,000$)')
     plt.xlim((0, 100))
     plt.ylim((0, 130))
-    plt.show()
 
-pred_polinomial(2, 50) # second-degree polynomial
-pred_polinomial(3, 50) # third-degree polynomial
-pred_polinomial(4, 50) # fourth-degree polynomial
-pred_polinomial(5, 50) # fift-degree polynomial
+    pf1 = "{:.1f}x + {:.1f}"
+    pf2 = "{:.1f}x^2 + " + pf1
+    pf3 = "{:.1f}x^3 + " + pf2
+    pf4 = "{:.1f}x^4 + " + pf3
+    pf5 = "{:.1f}x^5 + " + pf4
+
+    if degree == 1: 
+        print(("p(x) = " + pf1).format(p[1], p[0]))
+    elif degree == 2:
+        print(("p(x) = " + pf2).format(p[2], p[1], p[0]))
+    elif degree == 3:
+        print(("p(x) = " + pf3).format(p[3], p[2], p[1], p[0]))
+    elif degree == 4:
+        print(("p(x) = " + pf4).format(p[4], p[3], p[2], p[1], p[0]))
+    elif degree == 5:
+        print(("p(x) = " + pf5).format(p[5], p[4], p[3], p[2], p[1], p[0]))
+
+    print('SSR1 =', SSR1, ' / ', 'SSR2 =', SSR2)
+    print('weight = ', weight, '\n')
+    return
+
+
+# Plot prediction
+x_unknown = 50
+pred_polinomial(1, x_unknown, X1, y1)
+pred_polinomial(2, x_unknown, X1, y1) 
+pred_polinomial(3, x_unknown, X1, y1) 
+pred_polinomial(4, x_unknown, X1, y1) 
+pred_polinomial(5, x_unknown, X1, y1) 
+plt.show()
+
+"""
+    p(x) = 1.3x + -18.0
+    SSR1 = 1248.0  /  SSR2 = 1681.0
+    weight =  19 
+
+    p(x) = 0.0x^2 + -0.5x + 31.9
+    SSR1 = 995.0  /  SSR2 = 1530.0
+    weight =  32 
+
+    p(x) = 0.0x^3 + -0.0x^2 + 3.0x + -29.5
+    SSR1 = 967.0  /  SSR2 = 1671.0
+    weight =  33 
+
+    p(x) = 0.0x^4 + -0.0x^3 + 1.8x^2 + -66.5x + 876.9
+    SSR1 = 651.0  /  SSR2 = 29011.0
+    weight =  945 
+
+    p(x) = -0.0x^5 + 0.0x^4 + -1.1x^3 + 66.8x^2 + -1866.2x + 19915.1
+    SSR1 = 0.0  /  SSR2 = 6719065.0
+    weight =  21849 
+"""

@@ -2,6 +2,7 @@
 
 We split the dataset in two datasets: training and test
 The we evaluate the model on both datasets.
+
 The score is the difference between actual and predicted labels
 1.0 means the model correctly predicted all (100%)
 """

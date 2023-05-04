@@ -45,7 +45,7 @@ print("Prediction label for item", new_item, ": \n", prediction, "\n")
 print("Precition labels for items", new_items, ":\n", predictions, "\n") 
 
 """
-		  height  width     fruit
+	height  width     fruit
 	0     3.91   5.76  Mandarin
 	1     7.09   7.69     Apple
 	2    10.48   7.32     Lemon

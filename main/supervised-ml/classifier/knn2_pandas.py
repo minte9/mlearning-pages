@@ -1,6 +1,8 @@
-"""KNN Fruit classification (height, width / type)
-Learn a function f that maps any combination 
-of height and width of a fruit to a (predicted) fruit type
+"""KNN classification / Fruit example
+
+Dataset contains heights, widths and labels (fruit name).
+The algorithm teach a function to map any combination 
+in order to predict an unknown fruit name.
 """
 
 import pandas as pd
@@ -28,11 +30,22 @@ print(df)
 X = df[['height', 'width']].values
 y = df.fruit.values
 
+# Train the model
 knn = KNeighborsClassifier(n_neighbors=3) 
 knn.fit(X, y)
 
-prediction  = knn.predict([[9, 3]])
-predictions = knn.predict([[9, 3], [4, 5], [2, 5], [8, 9], [5, 7]])
+# Make predictions
+new_item  = [9, 3]
+new_items = [[9, 3], [4, 5], [2, 5], [8, 9], [5, 7]]
 
-print(prediction)  # Lemon
-print(predictions) # Lemon Mandarin Mandarin Apple Mandarin
+prediction  = knn.predict([new_item])
+predictions = knn.predict(new_items)
+print("Prediction label for item", new_item, ": \n", prediction)
+print("Precition labels for items", new_items, ":\n", predictions) 
+
+"""
+  Prediction label for item [[9, 3]] : 
+    ['Lemon']
+  Precition labels for items [[9, 3], [4, 5], [2, 5], [8, 9], [5, 7]] :
+    ['Lemon' 'Mandarin' 'Mandarin' 'Apple' 'Mandarin']
+"""

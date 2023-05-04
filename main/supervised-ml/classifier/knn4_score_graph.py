@@ -81,3 +81,26 @@ plt.legend()
 
 # Output
 plt.show()
+
+"""
+  k=1  | score1: 100.0 | score2: 40.0
+  k=2  | score1: 95.0 | score2: 60.0
+  k=3  | score1: 85.0 | score2: 100.0
+  k=4  | score1: 85.0 | score2: 100.0
+  k=5  | score1: 85.0 | score2: 100.0
+  k=6  | score1: 85.0 | score2: 100.0
+  k=7  | score1: 85.0 | score2: 100.0
+  k=8  | score1: 85.0 | score2: 100.0
+  k=9  | score1: 85.0 | score2: 80.0
+  k=10 | score1: 85.0 | score2: 60.0
+  k=11 | score1: 80.0 | score2: 60.0
+  k=12 | score1: 90.0 | score2: 60.0
+  k=13 | score1: 65.0 | score2: 60.0
+  k=14 | score1: 55.00000000000001 | score2: 60.0
+  k=15 | score1: 55.00000000000001 | score2: 60.0
+  k=16 | score1: 45.0 | score2: 60.0
+  k=17 | score1: 50.0 | score2: 60.0
+  k=18 | score1: 50.0 | score2: 60.0
+  k=19 | score1: 40.0 | score2: 40.0
+  k=20 | score1: 40.0 | score2: 40.0
+"""

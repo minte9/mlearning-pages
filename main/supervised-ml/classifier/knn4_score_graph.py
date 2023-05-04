@@ -1,7 +1,7 @@
 """KNN classifier Score Graph / Fruit example
 
 Models between k=3 and k=7 perform optimally on the test set.
-In those cases we have the optimal balance between overfitting and underfitting.
+In those cases, optimal balance between overfitting and underfitting.
 """
 
 import pandas as pd

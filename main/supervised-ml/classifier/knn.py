@@ -1,9 +1,7 @@
 """ KNN classifier / Supervised ML algorithm
-K is the number of nearest neighbors to be used.
 
 We provide training dataset points and labels and
-createa a KNN classifier with K=3
-
+createa a KNN classifier with K=3 (nearest neighbors to be used)
 Now, we can predict the label of a new data point.   
 """
 

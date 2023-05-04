@@ -1,7 +1,7 @@
 """ KNN classifier / Supervised ML algorithm
 
 We provide training dataset points and labels and
-createa a KNN classifier with K=3 (nearest neighbors to be used)
+createa a KNN classifier with K=3 (nearest neighbors to be used).
 Now, we can predict the label of a new data point.   
 """
 

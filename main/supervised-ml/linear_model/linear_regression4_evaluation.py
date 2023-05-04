@@ -1,6 +1,7 @@
-""" Linear Regression (evaluation)
+""" Linear Regression / residuals
+
 A residual is the difference between the actual data point 
-and the predicted (by our model) value
+and the predicted (by our model) value.
 """
 
 import numpy as np
@@ -15,7 +16,6 @@ Y = np.array([31, 30, 80, 49, 70, 118])
 r = LinearRegression().fit(X, Y)
 a = r.coef_[0].round(1)
 b = r.intercept_.round(1)
-print(f'f(x) = {a}x + {b}') # f(x) = 1.3x - 18
 
 # Evaluate the model
 P = []  # predictions (on training dataset)
@@ -27,7 +27,8 @@ for i in range(len(X)):
     R = np.append(R, Y[i] - P[i])
     SSR += R[i] ** 2
 
-print(R) # 10 -11.8 20 -17.5 -12.1 12.5
+print(f'Prediction function: f(x) = {a}x + {b}') # f(x) = 1.3x - 18
+print('Residuals:', R) # 10 -11.8 20 -17.5 -12.1 12.5
 print(f'SSR = {SSR.round(2).item()}') # 1248.15
 
 # Draw graphics
@@ -41,3 +42,9 @@ for i in range(len(X)):                                  # residuals
     ax.plot([X[i], X[i]], [P[i], Y[i]], '-', color='c')
 
 plt.legend(), plt.show()
+
+"""
+    Prediction function: f(x) = 1.3x + -18.0
+    Residuals: [10.  -11.8  20.  -17.5 -12.1  12.5]
+    SSR = 1248.15
+"""

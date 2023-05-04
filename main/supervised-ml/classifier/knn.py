@@ -1,4 +1,4 @@
-""" KNN Supervised machine learning (ML) algorithm
+""" KNN classifier / Supervised ML algorithm
 K is the number of nearest neighbors to be used.
 
 We provide training dataset points and labels and

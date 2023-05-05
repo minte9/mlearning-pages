@@ -15,6 +15,7 @@ dataset = load_breast_cancer()
 X1, X2, y1, y2 = train_test_split(
     dataset.data, dataset.target, stratify=dataset.target, random_state=66)
 
+
 # Evaluate accuracy for different numbers of n_neighbors
 accuracy1 = []
 accuracy2 = []
@@ -36,6 +37,7 @@ X_unknown = X2[15]
 y_unknown = model.predict(X_unknown.reshape(1, -1))
 y_target = dataset['target_names'][y_unknown]
 
+
 # Plot accuracy graph
 plt.plot(neighbors, accuracy1, label="training accuracy")
 plt.plot(neighbors, accuracy2, label="test accuracy")
@@ -55,6 +57,7 @@ ax.scatter(X_unknown[3], X_unknown[6], c='r',marker='x',s=100, label=y_target[0]
 ax.grid()
 plt.legend(loc='upper right')
 plt.show()
+
 
 print("Featre names:\n", dataset['feature_names'], '\n')
 print("Data:\n", dataset['data'], '\n')

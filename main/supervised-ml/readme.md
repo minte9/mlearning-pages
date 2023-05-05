@@ -33,7 +33,7 @@
 ## Regularization
 
 ### Ridge Regularization
-<img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/reqularization/images/image1.png' width=300>
+<img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/regularization/images/image1.png' width=300>
 
 ### Lasso Regularization
-<img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/reqularization/images/image2.png' width=300>
+<img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/regularization/images/image2.png' width=300>

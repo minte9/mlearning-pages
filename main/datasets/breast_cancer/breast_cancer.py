@@ -58,7 +58,6 @@ ax.grid()
 plt.legend(loc='upper right')
 plt.show()
 
-
 print("Featre names:\n", dataset['feature_names'], '\n')
 print("Data:\n", dataset['data'], '\n')
 print("Shape:", dataset['data'].shape)

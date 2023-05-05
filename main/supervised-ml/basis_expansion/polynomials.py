@@ -89,6 +89,7 @@ pred_polinomial(2, x_unknown, X1, y1)
 pred_polinomial(3, x_unknown, X1, y1) 
 pred_polinomial(4, x_unknown, X1, y1) 
 pred_polinomial(5, x_unknown, X1, y1) 
+
 plt.show()
 
 """

@@ -14,9 +14,6 @@ the most popular regularized regression method.
 Reshape the train data to prevent numerical errors (to large or to small)
 By reshaping the data can be transform so that it has a mean of 0 
 and a standard deviation of 1
-
-When making predictions data must be transformed using the same 
-PolynomialFeatures transformation that was used to preprocess the training data.
 """
 
 from sklearn.preprocessing import PolynomialFeatures
@@ -24,30 +21,28 @@ from sklearn.linear_model import LinearRegression, Ridge
 import matplotlib.pyplot as plt
 import numpy as np
 
-# ---------------------------------------------------
-# Dataset
+# Training dataset
+X1  = [30, 46, 60, 65, 77, 95]  # area (m^2)
+y1  = [31, 30, 80, 49, 70, 118] # price (10,000$)
 
-X  = [30, 46, 60, 65, 77, 95]   # area (m^2)
-y  = [31, 30, 80, 49, 70, 118]  # price (10,000$)
-X2 = [17, 40, 55, 57, 70, 85]   # test data
+# Test dataset
+X2 = [17, 40, 55, 57, 70, 85]
 y2 = [19, 50, 60, 32, 90, 110]
 
-#----------------------------------------------------
 # Ridge Regression
-
 degree_ = 4
 lambda_ = 0.8
 
 # Scale train data to prevent numerical errors
-X = np.array(X).reshape(-1, 1) # any numbers of rows, one column
+X1 = np.array(X1).reshape(-1, 1) # any numbers of rows, one column
 
-polyX = PolynomialFeatures(degree=degree_).fit_transform(X)
+polyX = PolynomialFeatures(degree=degree_).fit_transform(X1)
 
-model1 = LinearRegression().fit(polyX, y)
-model2 = Ridge(alpha=lambda_, solver='svd').fit(polyX, y)
+model1 = LinearRegression().fit(polyX, y1)
+model2 = Ridge(alpha=lambda_, solver='svd').fit(polyX, y1)
 
-print('Linear coeficients: ', sum(model1.coef_)) # -64.66185222664129
-print('Ridge coeficients: ', sum(model2.coef_))  # -7.221838297484756
+print('Sum of coeficient (linear regregression): ', sum(model1.coef_))
+print('Sum of coeficient (rigde regularization): ', sum(model2.coef_))
 
 t_ = np.array(np.linspace(0, 100, 100)).reshape(-1, 1)
 t = PolynomialFeatures(degree=degree_).fit_transform(t_)
@@ -64,13 +59,10 @@ polyX = PolynomialFeatures(degree=degree_).fit_transform(xa)
 yb = model2.predict(polyX) # Ridge regression
 yb = round(yb[0], 2)
 
-# ------------------------------------------------------------------
-# Plotting
-
 # Plot train, test data and prediction line
 plt.figure(figsize=(6,4))
-plt.scatter(X, y, color='blue', label='Training set')
-plt.scatter(X2, y2, color='red', label='Test set')
+plt.scatter(X1, y1, color='blue', label='Training set')
+plt.scatter(X2, y2, color='red',  label='Test set')
 
 plt.title(f'{degree_}-degree polynomial / Ridge Regression')
 plt.plot(t_, model1.predict(t), '--', color='gray', label='Linear regression')
@@ -86,4 +78,10 @@ plt.ylabel("price (10,000$)")
 plt.xlim((0, 100))
 plt.ylim((0, 130))
 plt.legend(loc='upper left')
+
 plt.show()
+
+"""
+    Sum of coeficient (linear regregression):  -64.66185242575413
+    Sum of coeficient (rigde regularization):  -4.693509929600461
+"""

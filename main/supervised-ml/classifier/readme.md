@@ -1,7 +1,7 @@
 ## KNN Classifier
 
 ### Evaluate Model / Score Graph
-<img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/classifier/images/image1.png' width=300>
+<img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/classifier/images/image1.png' width=300 style='float: left;'>
 
 ### Boundaries
 <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/classifier/images/image2.png' width=300>

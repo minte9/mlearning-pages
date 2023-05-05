@@ -40,7 +40,6 @@ def knn(x_unknown, k=5):
     knn_class = class_names[knn_most_common_class]
     return knn_class, knn_keys
 
-
 # Unknown points
 xA = np.array([-0.075, 0.040])
 xB = np.array([0.10, 0.035])

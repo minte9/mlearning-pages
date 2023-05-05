@@ -21,7 +21,7 @@ X = dataset.data
 y = dataset.target
 features = dataset.feature_names
 
-X = X[:, [2, 3]]                        # select two features to plot (bmi, bp)
+X = X[:, [2, 3]]                        # select 2 features to plot (bmi, bp)
 y_binary = np.where(y > y.mean(), 1, 0) # make the target categorical
 class_names = ['OK', 'NOK']             # 0 is 'OK', 1 is 'NOK'
 

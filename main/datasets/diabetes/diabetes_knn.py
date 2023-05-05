@@ -50,6 +50,7 @@ k_nearest = 5 # number of nearest neighbors (k=5)
 knn_classA, knn_keysA = knn(xA, k_nearest)
 knn_classB, knn_keysB = knn(xB, k_nearest)
 
+
 # Plot the two unknown points and dataset points
 fig, ax = plt.subplots()
 ax.set_xlabel('bmi (body mass index)')

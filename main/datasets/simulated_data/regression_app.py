@@ -23,35 +23,35 @@ X, y = make_regression(
     coef = False, 
     random_state = 0
 )
-print(X[:1]) # [[-0.35955316]]
-print(y[:1]) # [-19.95588561]
 
+# Scale feature and target
+X = np.interp(X, (X.min(), X.max()), (0, 20))           # employ years of experience
+y = np.interp(y, (y.min(), y.max()), (10000, 200000))   # employ's salary
 
-# Scale
-X = np.interp(X, (X.min(), X.max()), (0, 20))           # years of experience
-y = np.interp(y, (y.min(), y.max()), (10000, 200000))   # salary
-
-# Dataframe
+# Data frame
 df = pd.DataFrame(data={'Experience': X.flatten(), 'Salary': y})
-print(df.head(2))
-    #  Experience         Salary
-    #    9.096218   95224.004179
-    #   14.637429  132619.663538
+
+# Fit a linear regression model
+reg = LinearRegression().fit(X, y)
 
 # Plot dataset points
 plt.scatter(X, y, label='training data')
 plt.title('Simultated dataset (Experience / Salary)')
 
-
-# Fit a linear regression model
-reg = LinearRegression().fit(X, y)
-
 # Plot the regression line 
 x_line = np.linspace(np.min(X), np.max(X), 100)
 y_line = reg.intercept_ + x_line * reg.coef_[0]
+
 plt.plot(x_line, y_line, color='red', label='prediction')
 plt.text(10, 25000, r'y = %0.2f + %0.2f x' % (reg.intercept_, reg.coef_[0]))
 plt.xlabel('Years of experience')
 plt.ylabel('Salary')
 plt.legend()
-plt.show()
+# plt.show()
+
+print("Training employ_experiency:\n", X[:2]) # [[-0.35955316]]
+print("Trraining employ_salary:\n", y[:2]) # [-19.95588561]
+print(df.head(2))
+    #  Experience         Salary
+    #    9.096218   95224.004179
+    #   14.637429  132619.663538

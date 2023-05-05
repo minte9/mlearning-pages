@@ -21,14 +21,9 @@ X = dataset.data
 y = dataset.target
 features = dataset.feature_names
 
-# Select two features to plot (bmi, bp)
-X = X[:, [2, 3]]
-
-# Make the target categorical
-y_binary = np.where(y > y.mean(), 1, 0)
-
-# Array containing class names (0 is 'OK', 1 is 'NOK')
-class_names = ['OK', 'NOK']
+X = X[:, [2, 3]]                        # select two features to plot (bmi, bp)
+y_binary = np.where(y > y.mean(), 1, 0) # make the target categorical
+class_names = ['OK', 'NOK']             # 0 is 'OK', 1 is 'NOK'
 
 # Knn algorithm
 def knn(x_unknown, k=5):
@@ -39,10 +34,9 @@ def knn(x_unknown, k=5):
 
     knn_classes = y_binary[knn_keys]
     knn_classes = knn_classes.astype(int)
-    
+
     knn_most_common_class = np.bincount(knn_classes).argmax()
     knn_class = class_names[knn_most_common_class]
-
     return knn_class, knn_keys
 
 # Unknown points

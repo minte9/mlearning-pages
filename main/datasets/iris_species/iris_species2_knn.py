@@ -1,9 +1,8 @@
 """ Iris Species / KNN Clasifier
 
-The most important parameter is the number of neighbors (k)
-
 Learn model that predicts the species of a new iris
 based on known measurements (length and width of petals).
+The most important parameter is the number of neighbors (k)
 
 Our model predicts that this new iris belongs to class 0, 
 meaning its species is setosa.

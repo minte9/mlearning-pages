@@ -1,7 +1,7 @@
-"""
-There are two ways of using Matplotlib:
-1) Explicitly create Figures and Axes, and call methods on them (OOP)
-2) Rely on pyplot to create and manage Figures and Axes, end use functions
+""" Tow ways of using Matplotlib
+
+Explicitly create Figures and Axes, and call methods on them (OOP) and ...
+Rely on pyplot to create and manage Figures and Axes, end use functions
 """
 
 import matplotlib.pyplot as plt
@@ -17,7 +17,6 @@ ax.plot(x, x**3, label='cubic')
 ax.set_xlabel('x')
 ax.set_ylabel('f(x)')
 ax.legend()
-plt.show()
 
 # Pyplot style
 plt.figure(figsize=(5, 2.7), layout='constrained')
@@ -27,4 +26,5 @@ plt.plot(x, x**3, label='cubic')
 plt.xlabel('x')
 plt.ylabel('f(x)')
 plt.legend()
+
 plt.show()

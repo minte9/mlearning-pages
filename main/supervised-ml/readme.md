@@ -23,7 +23,7 @@
 
 #
 
-## Basis expansion / Polinomial Model
+## Basis expansion / Polynomial Model
 
-### N-degree polynomial
+### N-degree polynomials
 <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/basis_expansion/images/image1.png' width=300> <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/basis_expansion/images/image2.png' width=300> <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/basis_expansion/images/image3.png' width=300> <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/basis_expansion/images/image4.png' width=300> <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/basis_expansion/images/image5.png' width=300>

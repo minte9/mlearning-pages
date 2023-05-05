@@ -3,14 +3,14 @@ One-dimensional arrays
 """
 
 import numpy as np
-row = np.array([1, 2, 3])
-column = np.array([
+R = np.array([1, 2, 3])
+C = np.array([
     [1],
     [4],
     [3],
 ])
-print("Row vector: \n", row)
-print("Column vector: \n", column)
+print("Row vector: \n",     R)
+print("Column vector: \n",  C)
 
 """
     Row vector: 

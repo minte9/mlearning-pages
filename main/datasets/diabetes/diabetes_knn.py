@@ -33,12 +33,16 @@ class_names = ['OK', 'NOK']
 # Knn algorithm
 def knn(x_unknown, k=5):
     distances = np.sqrt(np.sum((X - x_unknown)**2, axis=1))
+
     keys = np.argsort(distances)
     knn_keys = keys[:k]
+
     knn_classes = y_binary[knn_keys]
     knn_classes = knn_classes.astype(int)
+    
     knn_most_common_class = np.bincount(knn_classes).argmax()
     knn_class = class_names[knn_most_common_class]
+
     return knn_class, knn_keys
 
 # Unknown points

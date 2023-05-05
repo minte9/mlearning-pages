@@ -47,21 +47,17 @@ features3, target3, coef3 = make_regression(
 plt.scatter(features1[:, 0], features1[:, 1], c=target1)
 plt.title('Make blob - Simultated dataset')
 plt.show()
-
 plt.scatter(features2[:, 0], features2[:, 1], c=target2)
 plt.title('Make classification - Simultated dataset')
 plt.show()
-
 plt.scatter(features3[:, 0], features3[:, 1], c=target3)
 plt.title('Make regression - Simultated dataset')
 plt.show()
 
 print("Blob / Features[0:3]:\n", features1[0:3])
 print("Target[:10]:", target1[:10], '\n')
-
 print("Classification / Features[0:3]:\n", features2[0:3])
 print("Target[:10]:", target2[:10], '\n')
-
 print("Regression / Features[0:3]:\n", features3[0:3])
 print("Target[:10]:\n", target3[:10], '\n')
 

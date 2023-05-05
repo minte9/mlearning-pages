@@ -49,7 +49,7 @@ print('y2 shape: ', y2.shape)
 """
     Keys: dict_keys(['data', 'target', 'frame', 'target_names', ... module'])
     Target names: ['setosa' 'versicolor' 'virginica']
-    Feature_names: ['sepal length (cm)', 'sepal width (cm)', ... 'petal width (cm)']
+    Feature_names: ['sepal length (cm)', 'sepal width (cm)', ... ]
     Shape: (150, 4)
     Data[:2]:
         [[5.1 3.5 1.4 0.2]

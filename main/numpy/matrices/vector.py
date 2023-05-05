@@ -3,7 +3,6 @@ One-dimensional arrays
 """
 
 import numpy as np
-
 row = np.array([1, 2, 3])
 column = np.array([
     [1],

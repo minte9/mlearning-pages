@@ -25,7 +25,7 @@ X = X[:, [2, 3]]                        # select 2 features to plot (bmi, bp)
 y_binary = np.where(y > y.mean(), 1, 0) # make the target categorical
 class_names = ['OK', 'NOK']             # 0 is 'OK', 1 is 'NOK'
 
-# Knn algorithm
+# KNN algorithm
 def knn(x_unknown, k=5):
     distances = np.sqrt(np.sum((X - x_unknown)**2, axis=1))
 

@@ -15,7 +15,6 @@ dataset = load_breast_cancer()
 X1, X2, y1, y2 = train_test_split(
     dataset.data, dataset.target, stratify=dataset.target, random_state=66)
 
-
 # Evaluate accuracy for different numbers of n_neighbors
 accuracy1 = []
 accuracy2 = []
@@ -30,6 +29,13 @@ for n in neighbors:
 k, max_accuracy = max(enumerate(accuracy2), key=lambda z: z[1])
 n = neighbors[k]
 
+# Predict unknown
+model = KNeighborsClassifier(n_neighbors=n)
+model.fit(X1, y1)
+X_unknown = X2[15]
+y_unknown = model.predict(X_unknown.reshape(1, -1))
+y_target = dataset['target_names'][y_unknown]
+
 # Plot accuracy graph
 plt.plot(neighbors, accuracy1, label="training accuracy")
 plt.plot(neighbors, accuracy2, label="test accuracy")
@@ -37,14 +43,6 @@ plt.plot([n, n], [0.88, 1], linestyle='--', label="optim n_neighbors")
 plt.ylabel("Accuracy")
 plt.xlabel("n_neighbors")
 plt.legend()
-
-
-# Predict unknown
-model = KNeighborsClassifier(n_neighbors=n)
-model.fit(X1, y1)
-X_unknown = X2[15]
-y_unknown = model.predict(X_unknown.reshape(1, -1))
-y_target = dataset['target_names'][y_unknown]
 
 # Plot mean scatter plot
 fig, ax = plt.subplots()

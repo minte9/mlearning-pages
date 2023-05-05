@@ -1,12 +1,13 @@
-""" Make blobs
+""" Blobs
 Blobs are dataset that work well with clustering techniques.
 """
 
 import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs
+from sklearn.datasets import make_classification
 
 # Make blob
-features, target = make_blobs(
+features1, target1 = make_blobs(
     n_samples = 100,
     n_features = 2,
     centers = 3, # three target classes
@@ -15,12 +16,28 @@ features, target = make_blobs(
     random_state = 1
 )
 
-plt.scatter(features[:, 0], features[:, 1], c=target)
+# Make classification
+features2, target2 = make_classification(
+    n_samples = 100,
+    n_features = 2,
+    n_informative = 2,
+    n_redundant = 0,
+    n_classes = 2,
+    weights = [.25, .75],
+    random_state = 1
+)
+
+# Plot blobs
+plt.scatter(features1[:, 0], features1[:, 1], c=target1)
 plt.title('Make blob - Simultated dataset')
+plt.scatter(features2[:, 0], features2[:, 1], c=target2)
+plt.title('Make classification - Simultated dataset')
 plt.show()
 
-print("Features[0:3]:\n", features[0:3])
-print("Target:[:10]:", target[:10])
+print("Blob Features[0:3]:\n", features[0:3])
+print("Blob Target:[:10]:", target[:10])
+print("Classification Features[0:3]:\n", features[0:3])
+print("Classification Target:[:10]:", target[:10])
 
 """
     Features[0:3]:

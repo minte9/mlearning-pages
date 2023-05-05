@@ -29,8 +29,8 @@ y2 = [19, 50, 60, 32, 90, 110]
 # N-degree polynomial
 def pred_polinomial(degree, x_unknown, X1, y1):
 
-    # Basis expansion & fit to training data
-    p = np.poly1d(np.polyfit(X1, y1, degree))
+    # Basis expansion
+    p = np.poly1d(np.polyfit(X1, y1, degree)) # fits a polynomial of degree to X1, y1
     t = np.linspace(0, 100, 100)   
 
     # Plot train, test data and prediction line

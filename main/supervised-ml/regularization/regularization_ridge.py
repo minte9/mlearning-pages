@@ -35,14 +35,13 @@ lambda_ = 0.8
 
 # Scale train data to prevent numerical errors
 X1 = np.array(X1).reshape(-1, 1) # any numbers of rows, one column
-
 polyX = PolynomialFeatures(degree=degree_).fit_transform(X1)
 
 model1 = LinearRegression().fit(polyX, y1)
-model2 = Ridge(alpha=lambda_, solver='svd').fit(polyX, y1)
+model2 = Ridge(alpha=lambda_, solver='svd').fit(polyX, y1) # Look Here
 
-print('Sum of coeficient (linear regregression): ', sum(model1.coef_))
-print('Sum of coeficient (rigde regularization): ', sum(model2.coef_))
+print('Sum of coeficient (Linear regregression): ', sum(model1.coef_))
+print('Sum of coeficient (Rigde regularization): ', sum(model2.coef_))
 
 t_ = np.array(np.linspace(0, 100, 100)).reshape(-1, 1)
 t = PolynomialFeatures(degree=degree_).fit_transform(t_)
@@ -82,6 +81,6 @@ plt.legend(loc='upper left')
 plt.show()
 
 """
-    Sum of coeficient (linear regregression):  -64.66185242575413
-    Sum of coeficient (rigde regularization):  -4.693509929600461   # better!
+    Sum of coeficient (Linear regregression):  -64.66185242575413
+    Sum of coeficient (Rigde regularization):  -4.693509929600461 # Look Here
 """

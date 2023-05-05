@@ -15,9 +15,9 @@ print("Column vector: \n", column)
 
 """
     Row vector: 
-     [1 2 3]
+    [1 2 3]
     Column vector: 
     [[1]
-     [4]
-     [3]]
+    [4]
+    [3]]
 """

@@ -1,5 +1,9 @@
-""" Blobs
-Blobs are dataset that work well with clustering techniques.
+""" The make_* functions in the sklearn.datasets module are used 
+to generate synthetic datasets for machine learning tasks.
+
+Make blobs generates isotropic Gaussian blobs for clustering tasks. 
+Make classification generates a random n-class classification problem.
+Make regression generates a random regression problem.
 """
 
 import matplotlib.pyplot as plt

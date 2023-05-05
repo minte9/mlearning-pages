@@ -24,7 +24,7 @@ y2 = [19, 50, 60, 32, 90, 110]
 def pred_polinomial(degree, x_unknown, X1, y1):
 
     p = np.poly1d(np.polyfit(X1, y1, degree))
-    t = np.linspace(0, 100, 100)    
+    t = np.linspace(0, 100, 100)   
 
     # Plot train, test data and prediction line
     plt.figure(figsize=(6,4))
@@ -52,22 +52,23 @@ def pred_polinomial(degree, x_unknown, X1, y1):
     plt.xlim((0, 100))
     plt.ylim((0, 130))
 
-    pf1 = "{:.1f}x + {:.1f}"
-    pf2 = "{:.1f}x^2 + " + pf1
-    pf3 = "{:.1f}x^3 + " + pf2
-    pf4 = "{:.1f}x^4 + " + pf3
-    pf5 = "{:.1f}x^5 + " + pf4
+    # Print prediction functions format
+    xf1 = "{:.1f}x + {:.1f}"
+    xf2 = "{:.1f}x^2 + " + xf1
+    xf3 = "{:.1f}x^3 + " + xf2
+    xf4 = "{:.1f}x^4 + " + xf3
+    xf5 = "{:.1f}x^5 + " + xf4
 
     if degree == 1: 
-        print(("p(x) = " + pf1).format(p[1], p[0]))
+        print(("p(x) = " + xf1).format(p[1], p[0]))
     elif degree == 2:
-        print(("p(x) = " + pf2).format(p[2], p[1], p[0]))
+        print(("p(x) = " + xf2).format(p[2], p[1], p[0]))
     elif degree == 3:
-        print(("p(x) = " + pf3).format(p[3], p[2], p[1], p[0]))
+        print(("p(x) = " + xf3).format(p[3], p[2], p[1], p[0]))
     elif degree == 4:
-        print(("p(x) = " + pf4).format(p[4], p[3], p[2], p[1], p[0]))
+        print(("p(x) = " + xf4).format(p[4], p[3], p[2], p[1], p[0]))
     elif degree == 5:
-        print(("p(x) = " + pf5).format(p[5], p[4], p[3], p[2], p[1], p[0]))
+        print(("p(x) = " + xf5).format(p[5], p[4], p[3], p[2], p[1], p[0]))
 
     print('SSR1 =', SSR1, ' / ', 'SSR2 =', SSR2)
     print('weight = ', weight, '\n')

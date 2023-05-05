@@ -1,11 +1,16 @@
 """ Basis Expansion / Polynomial Model
-Adds non-linear features into to the linear model.
+
+Basis expansion is a technique used to transform a dataset by creating
+new features from existing ones, in order to improve the accuracy of the model.
+
+By expanding the set of input variables using basis functions, 
+the model can capture nonlinear relationships between the inputs and the target variable, 
+which might not be possible with linear models.
 
 Even though the fifth-degree polynomial model has the lowest
 SSR_training, it also has huge SSR_test, a good sign of overfitting.
 
-Another sign of overfiting is by evaluating the coeficients.
-Evaluate the weights (sum of coeficients)
+Another sign of overfiting is by evaluating the coeficients (weights = sum of coeficients).
 The higher the sum, the more the model tends to overfit.
 """
 
@@ -23,6 +28,7 @@ y2 = [19, 50, 60, 32, 90, 110]
 # N-degree polynomial
 def pred_polinomial(degree, x_unknown, X1, y1):
 
+    # Basis expansion & fit to training data
     p = np.poly1d(np.polyfit(X1, y1, degree))
     t = np.linspace(0, 100, 100)   
 

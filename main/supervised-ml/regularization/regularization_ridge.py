@@ -83,5 +83,5 @@ plt.show()
 
 """
     Sum of coeficient (linear regregression):  -64.66185242575413
-    Sum of coeficient (rigde regularization):  -4.693509929600461
+    Sum of coeficient (rigde regularization):  -4.693509929600461   # better!
 """

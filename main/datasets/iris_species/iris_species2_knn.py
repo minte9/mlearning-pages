@@ -1,5 +1,9 @@
-""" Iris Species KNN Clasifier
+""" Iris Species / KNN Clasifier
+
 The most important parameter is the number of neighbors (k)
+
+Learn model that predicts the species of a new iris
+based on known measurements (length and width of petals).
 
 Our model predicts that this new iris belongs to class 0, 
 meaning its species is setosa.
@@ -12,24 +16,24 @@ from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Training and test datasets
 dataset = load_iris()
 X1, X2, y1, y2 = train_test_split(
     dataset['data'], dataset['target'], random_state=0
 )
 
+# Learn model
 knn = KNeighborsClassifier(n_neighbors=1)
 knn.fit(X1, y1)
 
+# New iris prediction
 X_new = np.array([5, 2.9, 1, 0.2]).reshape(1, 4)
 y_new = knn.predict(X_new)
-print("Prediction:", y_new)
-print("Predicted target:", dataset['target_names'][y_new])
-    # [0]
-    # setosa
 
+# Training data frame
 df = pd.DataFrame(X1, columns=dataset.feature_names)
 
-# Iris petal scatter plot
+# Plot iris petal
 fig, ax = plt.subplots()
 ax.set_title("Petals")
 ax.set_xlabel('length (cm)')
@@ -38,7 +42,7 @@ ax.scatter(df['petal length (cm)'], df['petal width (cm)'], c=y1)
 ax.scatter(X_new[0][2], X_new[0][3], c='r', marker='x', s=100)
 ax.grid()
 
-# Iris sepal scatter plot
+# Plot iris sepal
 fig, ax = plt.subplots()
 ax.set_title("Sepals")
 ax.set_xlabel('length (cm)')
@@ -61,4 +65,10 @@ for i in range(4):
 
 plt.show()
 
+print("Prediction class:", y_new)
+print("Predicted target:", dataset['target_names'][y_new])
 
+"""
+    Prediction class: [0]
+    Predicted target: ['setosa']
+"""

@@ -1,4 +1,5 @@
-""" Iris species Model Evaluation
+""" Iris species / Model Evaluation
+
 We make a prediction for each iris in the test dataset and
 compare it against its known label.
 
@@ -20,11 +21,14 @@ X1, X2, y1, y2 = train_test_split(
 knn = KNeighborsClassifier(n_neighbors=1)
 knn.fit(X1, y1)
 
-y_new = knn.predict(X2) # predictions on test dataset
-score = np.mean(y_new == y2)
-print(round(score, 2))
-    # 0.97
+y_new = knn.predict(X2)         # predictions on test dataset
+score1 = np.mean(y_new == y2)   # get score using average, OR
+score2 = knn.score(X2, y2)      # knn object
 
-score = knn.score(X2, y2) # get score using knn object
-print(round(score, 2))
-    # 0.97
+print("Score using mean():", round(score1, 2))
+print("Score using knn object:", round(score2, 2))
+
+"""
+    Score using mean(): 0.97
+    Score using knn object: 0.97
+"""

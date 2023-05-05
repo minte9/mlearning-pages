@@ -1,6 +1,4 @@
-""" Iris Species Classifier
-Learn model that predicts the species of a new iris
-based on known measurements (length and width of petals).
+""" Iris Species  / Dataset description
 
 It's difficult to plot datasets with more than 2-3 features.
 Pair plots uses all posible pair of features.  

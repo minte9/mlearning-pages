@@ -1,4 +1,4 @@
-""" Simulated dataset (experience / salary)
+""" Regression Simulated Dataset (experience / salary)
 
 Simulate the data for building a regression model.
 Suppose, we have a survey among the employees of a company.

@@ -47,17 +47,17 @@ print('y1 shape: ', y1.shape)
 print('y2 shape: ', y2.shape)
 
 """
-    Keys: dict_keys(['data', 'target', 'frame', 'target_names', ... module'])
-    Target names: ['setosa' 'versicolor' 'virginica']
-    Feature_names: ['sepal length (cm)', 'sepal width (cm)', ... ]
-    Shape: (150, 4)
+    Keys:           ['data', 'target', 'frame', 'target_names', ... module'])
+    Target names:   ['setosa' 'versicolor' 'virginica']
+    Feature_names:  ['sepal length (cm)', 'sepal width (cm)', ... ]
+    Shape:          (150, 4)
     Data[:2]:
         [[5.1 3.5 1.4 0.2]
         [4.9 3.  1.4 0.2]]
-    Target[:2]: [0 0]
-    Target[148:]: [2 2]
-    X1 shape:  (112, 4)
-    X2 shape:  (38, 4)
+    Target[:2]:     [0 0]
+    Target[148:]:   [2 2]
+    X1 shape:   (112, 4)
+    X2 shape:   (38, 4)
     y1 shape:  (112,)
     y2 shape:  (38,)
 """

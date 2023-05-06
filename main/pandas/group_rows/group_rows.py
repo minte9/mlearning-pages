@@ -25,17 +25,17 @@ print("Grouped by Sex (count only Survived):"); print(t3, "\n")
 print("Group by two columns (average):"); print(t3, "\n")
 
 """
-Grouped by Sex averages:
-| Sex    |     Age |   Survived |   SexCode |
-|:-------|--------:|-----------:|----------:|
-| female | 29.3964 |   0.666667 |         1 |
-| male   | 31.0143 |   0.166863 |         0 | 
-
 Grouped by Sex:
 | Sex    |   Name |   PClass |   Age |   Survived |   SexCode |
 |:-------|-------:|---------:|------:|-----------:|----------:|
 | female |    462 |      462 |   288 |        462 |       462 |
 | male   |    851 |      851 |   468 |        851 |       851 | 
+
+Grouped by Sex averages:
+| Sex    |     Age |   Survived |   SexCode |
+|:-------|--------:|-----------:|----------:|
+| female | 29.3964 |   0.666667 |         1 |
+| male   | 31.0143 |   0.166863 |         0 | 
 
 Grouped by Sex (count only Survived):
 | Sex    |   Survived |

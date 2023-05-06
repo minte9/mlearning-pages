@@ -24,7 +24,7 @@ DATA = [
 df2 = pd.json_normalize(DATA)
 
 print("DataFrame from json file:"); print(df1.head(2).to_markdown(), "\n")
-print("DataFrame from json string:"); print(df2.head(2).to_markdown())
+print("DataFrame from json string:"); print(df2.head(2).to_markdown(), "\n")
 
 """
 DataFrame from json file:

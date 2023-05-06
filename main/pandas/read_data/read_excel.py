@@ -1,6 +1,7 @@
-""" Read Excel
+""" Read data / Excel
+
 Import an Excel spreadsheet
-pip install openpyxl
+    pip install openpyxl
 """
 
 import pandas as pd

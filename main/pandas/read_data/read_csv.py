@@ -1,4 +1,5 @@
-""" Read CSV
+""" Read data / CSV
+
 The source can be URL or FILE
 """
 

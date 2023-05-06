@@ -17,9 +17,9 @@ print("DataFrame from DB:")
 print(df.head(2).to_markdown())
 
 """
-    DataFrame from DB:
-    |    | first_name   | last_name   |   age |   preTestScore |   postTestScore |
-    |---:|:-------------|:------------|------:|---------------:|----------------:|
-    |  0 | Jason        | Miller      |    42 |              4 |              25 |
-    |  1 | Molly        | Jacobson    |    52 |             24 |              94 |
+DataFrame from DB:
+|    | first_name   | last_name   |   age |   preTestScore |   postTestScore |
+|---:|:-------------|:------------|------:|---------------:|----------------:|
+|  0 | Jason        | Miller      |    42 |              4 |              25 |
+|  1 | Molly        | Jacobson    |    52 |             24 |              94 |
 """

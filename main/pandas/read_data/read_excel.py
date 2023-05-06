@@ -14,9 +14,9 @@ print("Read csv from excel:")
 print(df.head(2).to_markdown())
 
 """
-    Read csv from excel:
-    |    |   integer | datetime            |   category |
-    |---:|----------:|:--------------------|-----------:|
-    |  0 |         5 | 2015-01-01 00:00:00 |          0 |
-    |  1 |         5 | 2015-01-01 00:00:01 |          0 |
+Read csv from excel:
+|    |   integer | datetime            |   category |
+|---:|----------:|:--------------------|-----------:|
+|  0 |         5 | 2015-01-01 00:00:00 |          0 |
+|  1 |         5 | 2015-01-01 00:00:01 |          0 |
 """

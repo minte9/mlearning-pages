@@ -58,11 +58,11 @@ class KNeighborsClassifier:
 
         # --------------------------------------------------------------
 
-        print("Square distances: \n", SD)
-        print("Keys ordered by distances: \n", keys)
-        print("Nearest neighbors keys: \n", keys_knn)
-        print("Nearest neighbors targets: \n", targets_knn)
-        print("Algorithm target response: \n", result)
+        print("Square distances:", SD)
+        print("Keys ordered by distances:", keys)
+        print("Nearest neighbors keys:", keys_knn)
+        print("Nearest neighbors targets:", targets_knn)
+        print("Algorithm target response:", result)
 
         # Plot the point and lines to th k neighbors
         fig, ax = plt.subplots()
@@ -91,20 +91,10 @@ knn_class = knn.predict(x_unknown)
 print("Class prediction for", x_unknown, "=", knn_class)
 
 """
-    Square distances: 
-    [1.61245155 1.74642492 1.30384048 1.11803399 ...]
-    
-    Keys ordered by distances: 
-    [ 3  8  2  5  4  9  0  7  1  6 10 13 14 11 12]
-    
-    Nearest neighbors keys: 
-    [3 8 2]
-    
-    Nearest neighbors targets: 
-    [1 2 1]
-    
-    Algorithm target response: 
-    1
-    
+    Square distances: [1.61245155 1.74642492 1.30384048 ...]
+    Keys ordered by distances: [ 3  8  2  5  4  9  0  7 ...]
+    Nearest neighbors keys: [3 8 2]
+    Nearest neighbors targets: [1 2 1]
+    Algorithm target response: 1
     Class prediction for [3.6, 1.8] = 1
 """

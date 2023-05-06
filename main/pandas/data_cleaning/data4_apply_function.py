@@ -28,7 +28,7 @@ def apply(data):
 print("First two names uppercased:")
 print("Loop:"); loop(df['Name'][:2])
 print("Use list comprehension:"); list_comprehension(df['Name'][:2])
-print("Use pandas' apply()"); apply(df['Name'][:2])
+print("Use pandas' apply() - better!"); apply(df['Name'][:2])
 
 
 """
@@ -41,7 +41,7 @@ Loop:
 Use list comprehension:
  ['ALLEN, MISS ELISABETH WALTON', 'ALLISON, MISS HELEN LORAINE']
 
-Use pandas' apply()
+Use pandas' apply() - better!
 |    | Name                         |
 |---:|:-----------------------------|
 |  0 | ALLEN, MISS ELISABETH WALTON |

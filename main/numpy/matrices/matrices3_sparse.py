@@ -31,7 +31,7 @@ print("Random matrix of integers: \n", M_random2)
 
 """
 	Sparce matrix: 
-	   (1, 1)       1
+	  (1, 1)        1
 	  (2, 0)        3
 	Random matrix of floats: 
 	 [0.5488135  0.71518937 0.60276338]

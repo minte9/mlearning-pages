@@ -23,25 +23,43 @@ B = np.array([
     [7, 8, 900],
 ])
 
-print(np.var(A))    # 6.666666666666667
-print(np.std(A))    # 2.581988897471611
-print()
+def get_variation(M):
+    N = A.size
+    mean = np.mean(A)
+    variation = (1/N) * np.sum((A - mean)**2) # population variance
+    return variation
 
-print(np.var(B))    # 79206.66666666667
-print(np.std(B))    # 281.43678982440565
-print()
+def get_standard_variation(M):
+    return np.sqrt(get_variation(M))
+    return
 
+def np_variation(M):
+    return np.var(M)
 
-# Variation algorithm
+def np_standard_deviation(M):
+    return np.std(M)
 
-N = A.size
-mean = np.mean(A)
+assert get_variation(A).round(14) == np.var(A).round(14)
+assert get_standard_variation(A) == np.std(A)
 
-variation = (1/N) * np.sum((A - mean)**2) # population variance
-standard_deviation = np.sqrt(variation)
+print("Matrix A= \n", A)
+print("Matrix B= \n", B)
+print("A Variation =", np.var(A))
+print("B Variation =", np.var(B))
+print("A Standard deviation = ", np.std(A))
+print("B Standard deviation = ", np.std(B))
 
-print(variation)            # 6.666666666666666
-print(standard_deviation)   # 2.581988897471611
-
-assert standard_deviation == np.std(A)              # passed
-assert variation.round(14) == np.var(A).round(14)   # passed
+"""
+    Matrix A= 
+    [[1 2 3]
+     [4 5 6]
+     [7 8 9]]
+    Matrix B= 
+    [[  1   2   3]
+     [  4   5   6]
+     [  7   8 900]]
+    A Variation = 6.666666666666667
+    B Variation = 79206.66666666667
+    A Standard deviation =  2.581988897471611
+    B Standard deviation =  281.43678982440565
+"""

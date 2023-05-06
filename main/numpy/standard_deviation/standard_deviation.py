@@ -23,6 +23,7 @@ B = np.array([
     [7, 8, 900],
 ])
 
+# Algorithms
 def get_variation(M):
     N = A.size
     mean = np.mean(A)
@@ -33,6 +34,7 @@ def get_standard_variation(M):
     return np.sqrt(get_variation(M))
     return
 
+# Native
 def np_variation(M):
     return np.var(M)
 

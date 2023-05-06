@@ -32,7 +32,7 @@ T['PClass_value_counts'] = df['PClass'].value_counts()
 value_counts = T.to_markdown()
 
 # Missing values
-T = df[df['Age'].isnull()]
+df = df[df['Age'].isnull()]
 missing_values = df.head(2).to_markdown()
 
 print("Statistics:"); print(statistics, "\n")
@@ -63,6 +63,6 @@ Value counts:
 Missing values | Age Null:
 |    | Name                         | PClass   |   Age | Sex    |   Survived |   SexCode |
 |---:|:-----------------------------|:---------|------:|:-------|-----------:|----------:|
-|  0 | Allen, Miss Elisabeth Walton | 1st      |    29 | female |          1 |         1 |
-|  1 | Allison, Miss Helen Loraine  | 1st      |     2 | female |          0 |         1 | 
+| 12 | Aubert, Mrs Leontine Pauline | 1st      |   nan | female |          1 |         1 |
+| 13 | Barkworth, Mr Algernon H     | 1st      |   nan | male   |          1 |         0 |
 """

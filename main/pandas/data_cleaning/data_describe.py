@@ -23,13 +23,18 @@ df = pd.read_csv(FILE)
 # Set index to non-numerical
 df2 = df.set_index(df['Name'])
 
-print("Shape:", df.shape, "\n") # (1313, 6)
+first_row        = df.iloc[0]
+second_to_fourth = df.iloc[1:4]
+up_to_fourth     = df.iloc[:4]
+by_name          = df2.loc['Allen, Miss Elisabeth Walton']
+
+print("Shape:")                                  ; print(df.shape, "\n") # (1313, 6)
 print("First two rows | head(2): ")              ; print(df.head(2).to_markdown(), "\n")
 print("Show statistics | describe():")           ; print(df.describe().to_markdown(), "\n")
-print("Select first row by index | iloc[0]:")    ; print(df.iloc[0].to_markdown(), "\n")
-print("Second, third and fourth | iloc[1:4]:")   ; print(df.iloc[1:4].to_markdown(), "\n")
-print("Up to and including fourth | iloc[:4]")   ; print(df.iloc[:4].to_markdown(), "\n")
-print("Select by Name:")                         ; print(df2.loc['Allen, Miss Elisabeth Walton'].to_markdown(), "\n")
+print("Select first row by index | iloc[0]:")    ; print(first_row.to_markdown(), "\n")
+print("Second, third and fourth | iloc[1:4]:")   ; print(second_to_fourth.to_markdown(), "\n")
+print("Up to and including fourth | iloc[:4]")   ; print(up_to_fourth.to_markdown(), "\n")
+print("Select by Name:")                         ; print(by_name.to_markdown(), "\n")
 
 """
 Shape: (1313, 6)

@@ -1,4 +1,5 @@
 """ Operations / Matrix Transpose
+
 Transposing is a common operation in linear algebra.
 Indices of column and rows of each element are swapped.
 A vector cannot be transposed.

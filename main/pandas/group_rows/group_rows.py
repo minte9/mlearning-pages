@@ -14,13 +14,13 @@ DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
 FILE = DIR / 'titanic.csv'
 df = pd.read_csv(FILE)
 
-t1 = df.groupby('Sex').mean(numeric_only=True).to_markdown()
-t2 = df.groupby('Sex').count().to_markdown()
+t1 = df.groupby('Sex').count().to_markdown()
+t2 = df.groupby('Sex').mean(numeric_only=True).to_markdown()
 t3 = df.groupby('Sex')['Survived'].count().to_markdown()
 t4 = df.groupby(['Sex', 'Survived'])['Age'].mean().to_markdown()
 
-print("Grouped by Sex averages:"); print(t1, "\n")
-print("Grouped by Sex:"); print(t2, "\n")
+print("Grouped by Sex:"); print(t1, "\n")
+print("Grouped by Sex averages:"); print(t2, "\n")
 print("Grouped by Sex (count only Survived):"); print(t3, "\n")
 print("Group by two columns (average):"); print(t3, "\n")
 

@@ -24,12 +24,12 @@ df = pd.read_csv(FILE)
 df2 = df.set_index(df['Name'])
 
 print("\nShape:", df.shape) # (1313, 6)
-print("\nFirst two rows | head(2): ");  print(df.head(2).to_markdown())
-print("\nShow statistics | describe():");   print(df.describe().to_markdown())
+print("\nFirst two rows | head(2): ");              print(df.head(2).to_markdown())
+print("\nShow statistics | describe():");           print(df.describe().to_markdown())
 print("\nSelect first row by index | iloc[0]:");    print(df.iloc[0].to_markdown())
 print("\nSecond, third and fourth | iloc[1:4]:");   print(df.iloc[1:4].to_markdown())
 print("\nUp to and including fourth | iloc[:4]");   print(df.iloc[:4].to_markdown())
-print("\nSelect by Name:");     print(df2.loc['Allen, Miss Elisabeth Walton'].to_markdown())
+print("\nSelect by Name:");                         print(df2.loc['Allen, Miss Elisabeth Walton'].to_markdown())
 
 """
 Shape: (1313, 6)

@@ -1,5 +1,5 @@
-""" Numpy Vectors
-One-dimensional arrays
+""" Matrices / Vectors
+Vectors are one-dimensional arrays
 """
 
 import numpy as np
@@ -17,6 +17,6 @@ print("Column vector: \n",  C)
     [1 2 3]
     Column vector: 
     [[1]
-    [4]
-    [3]]
+     [4]
+     [3]]
 """

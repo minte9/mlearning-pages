@@ -30,12 +30,19 @@ def variation(M):
     variation = (1/N) * np.sum((A - mean)**2) # population variance
     return variation
 
-def standard_variation(M):
+def standard_deviation(M):
     return np.sqrt(variation(M))
     return
 
-assert variation(A).round(14) == np.var(A).round(14)
-assert standard_variation(A)  == np.std(A)
+# Native
+def variation_np(M):
+    return np.var(M)
+
+def standard_deviation_np(M):
+    return np.std(M)
+
+assert variation(A).round(14) == variation_np(A).round(14)
+assert standard_deviation(A)  == standard_deviation_np(A)
 
 print("Matrix A= \n", A)
 print("Matrix B= \n", B)

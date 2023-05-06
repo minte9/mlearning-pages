@@ -35,11 +35,11 @@ print("Use pandas' apply()"); apply(df['Name'][:2])
 First two names uppercased: 
 
 Loop:
-ALLEN, MISS ELISABETH WALTON
-ALLISON, MISS HELEN LORAINE
+ ALLEN, MISS ELISABETH WALTON
+ ALLISON, MISS HELEN LORAINE
 
 Use list comprehension:
-['ALLEN, MISS ELISABETH WALTON', 'ALLISON, MISS HELEN LORAINE']
+ ['ALLEN, MISS ELISABETH WALTON', 'ALLISON, MISS HELEN LORAINE']
 
 Use pandas' apply()
 |    | Name                         |

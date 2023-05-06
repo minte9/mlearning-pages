@@ -1,6 +1,6 @@
 # Numpy Library
 
-[Matrices ML](./main/numpy/matrices/)  
+[Matrices](./matrices/)  
 > Vector  
 Sparse Matrices  
 Vectorization  

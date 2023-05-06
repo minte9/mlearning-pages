@@ -17,12 +17,9 @@
 > Simulated Data  
 
 [Numpy](./main/numpy/)  
-> Matrices  
-> Sparse Matrices  
-> Vectorize  
-> Average  
+> Matrices   
+> Operations  
 > Standard Deviation  
-> Reshape  
 > Multiplication  
 
 [Pandas](./main/pandas/)  

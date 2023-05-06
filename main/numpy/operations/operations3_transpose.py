@@ -18,11 +18,16 @@ assert M[0, 1] == M_transposed[1, 0]
 assert M[1, 0] == M_transposed[0, 1]
 assert M[1, 1] == M_transposed[1, 1]
 
+print("Matrix =\n", M)
 print("Matrix transposed =\n", M_transposed)
 
 """
+    Matrix =
+     [[1 2 3]
+      [4 5 6]
+      [7 8 9]]
     Matrix transposed =
-    [[1 4 7]
-     [2 5 8]
-     [3 6 9]]
+     [[1 4 7]
+      [2 5 8]
+      [3 6 9]]
 """

@@ -8,8 +8,8 @@ import pandas as pd
 import pathlib
 
 DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
-df = pd.read_csv(DIR / 'titanic.csv')
-
+FILE = DIR / 'titanic.csv'
+df = pd.read_csv(FILE)
 
 # Statistics
 T = pd.DataFrame()
@@ -18,44 +18,51 @@ T['min'] = [df['Age'].min()]
 T['avg'] = [df['Age'].mean()]
 T['sum'] = [df['Age'].sum()]
 T['cnt'] = [df['Age'].count()]
-print(T.to_markdown())
+statistics = T.to_markdown()
 
-# |    |   max |   min |    avg |     sum |   cnt |
-# |---:|------:|------:|-------:|--------:|------:|
-# |  0 |    71 |  0.17 | 30.398 | 22980.9 |   756 |
-
-
-# # Unique values
+# Unique values
 T = pd.DataFrame()
 T['unique_sex'] = df['Sex'].unique()
 T['value_counts'] = [df['Sex'].value_counts()[0], df['Sex'].value_counts()[1]] 
-print(T.to_markdown())
-
-# |    | unique_sex   |   value_counts |
-# |---:|:-------------|---------------:|
-# |  0 | female       |            851 |
-# |  1 | male         |            462 |
-
+unique_values = T.to_markdown()
 
 # Value counts
 T = pd.DataFrame()
 T['PClass_value_counts'] = df['PClass'].value_counts()
-print(T.to_markdown())
-
-# |     |   PClass_value_counts |
-# |:----|----------------------:|
-# | 3rd |                   711 |
-# | 1st |                   322 |
-# | 2nd |                   279 |
-# | *   |                     1 |
-
+value_counts = T.to_markdown()
 
 # Missing values
-df = df[df['Age'].isnull()]
-print('Missing values | Age Null:')
-print(df.head(2).to_markdown())
+T = df[df['Age'].isnull()]
+missing_values = df.head(2).to_markdown()
 
-# |    | Name           | PClass   |   Age | Sex    |   Survived |   SexCode |
-# |---:|:---------------|:---------|------:|:-------|-----------:|----------:|
-# | 12 | Aubert, Mrs Leo| 1st      |   nan | female |          1 |         1 |
-# | 13 | Barkworth, Mr A| 1st      |   nan | male   |          1 |         0 |
+print("Statistics:"); print(statistics, "\n")
+print("Unique values:"); print(unique_values, "\n")
+print("Value counts:"); print(value_counts, "\n")
+print('Missing values | Age Null:'); print(missing_values, "\n")
+
+"""
+Statistics:
+|    |   max |   min |    avg |     sum |   cnt |
+|---:|------:|------:|-------:|--------:|------:|
+|  0 |    71 |  0.17 | 30.398 | 22980.9 |   756 | 
+
+Unique values:
+|    | unique_sex   |   value_counts |
+|---:|:-------------|---------------:|
+|  0 | female       |            851 |
+|  1 | male         |            462 | 
+
+Value counts:
+|     |   PClass_value_counts |
+|:----|----------------------:|
+| 3rd |                   711 |
+| 1st |                   322 |
+| 2nd |                   279 |
+| *   |                     1 | 
+
+Missing values | Age Null:
+|    | Name                         | PClass   |   Age | Sex    |   Survived |   SexCode |
+|---:|:-----------------------------|:---------|------:|:-------|-----------:|----------:|
+|  0 | Allen, Miss Elisabeth Walton | 1st      |    29 | female |          1 |         1 |
+|  1 | Allison, Miss Helen Loraine  | 1st      |     2 | female |          0 |         1 | 
+"""

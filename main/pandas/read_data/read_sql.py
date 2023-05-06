@@ -1,5 +1,4 @@
 """ Read data / SQL Database
-
 Load data from a database using SQL queries.
 Probably the most used in real world.
 """

@@ -1,4 +1,4 @@
-# Numpy Library
+# Numpy
 
 [Matrices](./matrices/)  
 > Vector  

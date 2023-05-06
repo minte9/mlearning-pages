@@ -1,28 +1,27 @@
-""" Min, Max, Mean
+""" Operations / Min, Max, Mean
 We can apply operations along the axes (rows or columns).
 """
 
 import numpy as np
 
-matrix = np.array([
+M = np.array([
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
 ])
 
-print(np.max(matrix))  # 9
-print(np.min(matrix))  # 1
-print(np.mean(matrix)) # 5.0
+print("Max item =", np.max(M))
+print("Max item =", np.min(M))
+print("Average =",  np.mean(M))
+print("Max in each row =", np.max(M,  axis=1))
+print("Min in each row =", np.min(M,  axis=1))
+print("Average in each row =", np.mean(M, axis=0))
 
-assert np.max(matrix)  == 9     # passed
-assert np.min(matrix)  == 1     # passed
-assert np.mean(matrix) == 5     # passed
-
-print(np.max(matrix,  axis=1))    # [3 6 9]  # max in each row
-print(np.min(matrix,  axis=1))    # [1 4 7]  # min in each row 
-print(np.mean(matrix, axis=0))    # [4 5 6]  # average in each column
-print()
-
-np.max(matrix,   axis=1) == [3, 6, 9]   # passed
-np.min(matrix,   axis=1) == [1, 4, 7]   # passed
-np.mean(matrix,  axis=1) == [4, 5, 6]   # passed
+"""
+    Max item = 9
+    Max item = 1
+    Average = 5.0
+    Max in each row = [3 6 9]
+    Min in each row = [1 4 7]
+    Average in each row = [4. 5. 6.]
+"""

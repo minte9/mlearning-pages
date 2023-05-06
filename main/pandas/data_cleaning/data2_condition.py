@@ -10,11 +10,8 @@ import pathlib
 DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
 df = pd.read_csv(DIR / 'titanic.csv')
 
-print("Condition, Females only:")
-print(df[df['Sex'] == 'female'].head(2).to_markdown(), "\n")
-
-print("Filter | Males age 60:")
-print(df[(df['Sex'] == 'male') & (df['Age'] >= 60)].head(2).to_markdown(), "\n")
+print("Condition, Females only:")   ; print(df[df['Sex'] == 'female'].head(2).to_markdown(), "\n")
+print("Filter | Males age 60:")     ; print(df[(df['Sex'] == 'male') & (df['Age'] >= 60)].head(2).to_markdown(), "\n")
 
 """
 Condition, Females only:

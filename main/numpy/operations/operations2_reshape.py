@@ -25,9 +25,9 @@ assert M.size == B.size
 assert M.size == C.size
 
 print("Matrix =\n", M)
-print("Matrix reshape (2,6) =\n", A)
-print("Matrix reshape (1,-1) =\n", B)
-print("Matrix flatten =\n", C)
+print("Reshaped (2,6) =\n", A)
+print("Reshaped (1,-1) =\n", B)
+print("Flatten =\n", C)
 
 """
 	Matrix =
@@ -35,11 +35,11 @@ print("Matrix flatten =\n", C)
 	  [ 4  5  6]
 	  [ 7  8  9]
 	  [10 11 12]]
-	Matrix reshape (2,6) =
+	Reshaped (2,6) =
 	 [[ 1  2  3  4  5  6]
 	  [ 7  8  9 10 11 12]]
-	Matrix reshape (1,-1) =
+	Reshaped (1,-1) =
 	 [[ 1  2  3  4  5  6  7  8  9 10 11 12]]
-	Matrix flatten =
+	Flatten =
 	 [ 1  2  3  4  5  6  7  8  9 10 11 12]
 """

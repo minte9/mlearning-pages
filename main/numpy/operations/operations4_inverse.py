@@ -2,7 +2,6 @@
 
 Calculate the inverse of a square matrix.
 Matrices are multiplicated using @ (not *)
-
 The new matrix M_inverse is calculated so that 
   M @ M_inverse = I
 """

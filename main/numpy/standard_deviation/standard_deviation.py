@@ -44,24 +44,24 @@ def standard_deviation_np(M):
 assert variation(A).round(14) == variation_np(A).round(14)
 assert standard_deviation(A)  == standard_deviation_np(A)
 
-print("Matrix A= \n", A)
-print("Matrix B= \n", B)
-print("A Variation =", np.var(A))
-print("B Variation =", np.var(B))
-print("A Standard deviation = ", np.std(A))
-print("B Standard deviation = ", np.std(B))
+print("A = \n", A)
+print("B = \n", B)
+print("np.var(A) variation =", np.var(A))
+print("np.var(B) variation =", np.var(B))
+print("np.std(A) standard deviation = ", np.std(A))
+print("np.std(B) standard deviation = ", np.std(B))
 
 """
-    Matrix A= 
+    A = 
     [[1 2 3]
      [4 5 6]
      [7 8 9]]
-    Matrix B= 
+    B = 
     [[  1   2   3]
      [  4   5   6]
      [  7   8 900]]
-    A Variation = 6.666666666666667
-    B Variation = 79206.66666666667
-    A Standard deviation =  2.581988897471611
-    B Standard deviation =  281.43678982440565
+    np.var(A) variation = 6.666666666666667
+    np.var(B) variation = 79206.66666666667
+    np.std(A) standard deviation =  2.581988897471611
+    np.std(B) standard deviation =  281.43678982440565
 """

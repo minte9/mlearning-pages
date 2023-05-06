@@ -13,28 +13,37 @@ import pathlib
 DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
 df = pd.read_csv(DIR / 'titanic.csv')
 
+def loop(data):
+    for x in data:
+        print(x.upper())
+
+def list_comprehension(data):
+        print([x.upper() for x in data])
+
+def apply(data):
+    def uppercase(x):
+        return x.upper()
+    print(df['Name'].apply(uppercase)[:2].to_markdown()) # Look Here
 
 print("First two names uppercased:")
-for name in df['Name'][:2]:
-    print(name.upper())
-
-# ALLEN, MISS ELISABETH WALTON
-# ALLISON, MISS HELEN LORAINE
+print("Loop:"); loop(df['Name'][:2])
+print("Use list comprehension:"); list_comprehension(df['Name'][:2])
+print("Use pandas' apply()"); apply(df['Name'][:2])
 
 
-print("Use list comprehension:")
-print([name.upper() for name in df['Name'][:2]])
+"""
+First two names uppercased: 
 
-# ['ALLEN, MISS ELISABETH WALTON', 
-#  'ALLISON, MISS HELEN LORAINE']
+Loop:
+ALLEN, MISS ELISABETH WALTON
+ALLISON, MISS HELEN LORAINE
 
+Use list comprehension:
+['ALLEN, MISS ELISABETH WALTON', 'ALLISON, MISS HELEN LORAINE']
 
-print("Better, usign pandas' apply")
-def uppercase(x):
-    return x.upper()
-print(df['Name'].apply(uppercase)[:2].to_markdown())
-
-# |    | Name                         |
-# |---:|:-----------------------------|
-# |  0 | ALLEN, MISS ELISABETH WALTON |
-# |  1 | ALLISON, MISS HELEN LORAINE  |
+Use pandas' apply()
+|    | Name                         |
+|---:|:-----------------------------|
+|  0 | ALLEN, MISS ELISABETH WALTON |
+|  1 | ALLISON, MISS HELEN LORAINE  |
+"""

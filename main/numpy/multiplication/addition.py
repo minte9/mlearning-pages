@@ -17,10 +17,12 @@ C = np.add(A, A) # first method
 C = A + B        # second method
 
 assert (np.add(A, A) == (A + A)).all()
+assert (np.add(A, B) == (A + B)).all()
+assert (np.add(A, B) == (B + A)).all()
 
 print("A =\n", A)
 print("B =\n", B)
-print("C = A + B =", C)
+print("A + B =\n", C)
 
 """
     A =
@@ -29,6 +31,7 @@ print("C = A + B =", C)
     B =
      [[1 1]
       [3 3]]
-    C = A + B = [[2 2]
-     [5 5]]
+    A + B = 
+     [[2 2]
+      [5 5]]
 """

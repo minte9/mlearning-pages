@@ -13,8 +13,7 @@ DB = DIR / '../_data/04.db'
 conn = sqlite3.connect(DB)
 df = pd.read_sql_query("SELECT * FROM data", conn)
 
-print("DataFrame from DB:")
-print(df.head(2).to_markdown())
+print("DataFrame from DB:"); print(df.head(2).to_markdown())
 
 """
 DataFrame from DB:

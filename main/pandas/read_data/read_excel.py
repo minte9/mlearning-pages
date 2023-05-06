@@ -10,8 +10,7 @@ DIR = pathlib.Path(__file__).resolve().parent
 FILE = DIR / '../_data/02.xlsx'
 df = pd.read_excel(FILE , sheet_name=0)
 
-print("Read csv from excel:")
-print(df.head(2).to_markdown())
+print("Read csv from excel:"); print(df.head(2).to_markdown())
 
 """
 Read csv from excel:

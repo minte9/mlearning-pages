@@ -5,6 +5,15 @@
 Sparse Matrices  
 Vectorization  
 
+[Operations](./operations/)  
+> Min, Max, Average  
+Reshape  
+Transpose  
+Inverse  
+
+[Standard Deviation](./standard_deviation/)  
+[Multiplication](./multiplication/)  
+
 #
 
 ### References

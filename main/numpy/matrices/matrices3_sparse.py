@@ -1,12 +1,12 @@
 """ Matrices / Sparse matrix
 
-A sparse matrix stores only non-zero elements, for computation savings.
-Compress sparce row (CSR) matrices contain indexes of non-zero values.
+  A sparse matrix stores only non-zero elements, for computation savings.
+  Compress sparce row (CSR) matrices contain indexes of non-zero values.
 
-Example (Netflix movies/users):
-  Columns are every movie on Netflix
-  Rows are every Netflix user
-  Values are how many times a user watched that movie
+  Example (Netflix movies/users):
+    Columns are every movie on Netflix
+    Rows are every Netflix user
+    Values are how many times a user watched that movie
 """
 
 import numpy as np

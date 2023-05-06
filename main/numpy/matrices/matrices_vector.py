@@ -3,18 +3,20 @@ Vectors are one-dimensional arrays
 """
 
 import numpy as np
-R = np.array([1, 2, 3])
-C = np.array([
+
+v1 = np.array([1, 2, 3])
+v2 = np.array([
     [1],
     [4],
     [3],
 ])
-print("Row vector: \n",     R)
-print("Column vector: \n",  C)
+
+print("Row vector: \n",     v1)
+print("Column vector: \n",  v2)
 
 """
     Row vector: 
-    [1 2 3]
+     [1 2 3]
     Column vector: 
     [[1]
      [4]

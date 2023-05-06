@@ -13,11 +13,22 @@ B = np.array([
     [3, 3],
 ])
 
-C = np.add(A, A)    # first method
-C = A + B           # second method
+C = np.add(A, A) # first method
+C = A + B        # second method
 
-print(C)
-    # [2  2]
-    # [5  5]
+assert (np.add(A, A) == (A + A)).all()
 
-assert (np.add(A, A) == (A + A)) .all()   # passed
+print("A =\n", A)
+print("B =\n", B)
+print("C = A + B =", C)
+
+"""
+    A =
+     [[1 1]
+      [2 2]]
+    B =
+     [[1 1]
+      [3 3]]
+    C = A + B = [[2 2]
+     [5 5]]
+"""

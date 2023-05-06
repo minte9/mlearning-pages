@@ -1,5 +1,5 @@
 """ Min, Max, Mean
-We can apply operation along the axes (rows or columns).
+We can apply operations along the axes (rows or columns).
 """
 
 import numpy as np

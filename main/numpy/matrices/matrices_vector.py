@@ -1,5 +1,5 @@
 """ Matrices / Vectors
-    Vectors are one-dimensional arrays
+Vectors are one-dimensional arrays
 """
 
 import numpy as np

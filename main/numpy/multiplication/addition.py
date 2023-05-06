@@ -1,4 +1,4 @@
-""" Addition and Substraction (+ -)
+""" Operations / Addition and Substraction (+ -)
 """
 
 import numpy as np
@@ -13,12 +13,10 @@ B = np.array([
     [3, 3],
 ])
 
-C = np.add(A, A) # first method
-C = A + B        # second method
+C = np.add(A, B) # first method
+D = A + B        # second method
 
-assert (np.add(A, A) == (A + A)).all()
-assert (np.add(A, B) == (A + B)).all()
-assert (np.add(A, B) == (B + A)).all()
+assert (C == D).all()
 
 print("A =\n", A)
 print("B =\n", B)

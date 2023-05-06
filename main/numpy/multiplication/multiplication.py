@@ -1,4 +1,4 @@
-""" Matrix addition
+""" Operation / Matrix multiplication
 For element-wise multiplication we use *
 """
 
@@ -15,15 +15,28 @@ B = np.array([
 ])
 
 C = np.dot(A, B)    # first method
-C = A @ B           # second method
+D = A @ B           # second method
 E = A * B           # element-wise multiplication
 
-print(C)
-    # [4 4]
-    # [8 8]
-print(E)  
-    # [1 1]
-    # [6 6]
+assert (C == D).all()
+assert (E[1, 1] == 6)     
 
-assert (np.dot(A, A) == (A @ A)) .all()     # passed
-assert (E[1, 1] == 6)                       # passed                     
+print("A =\n", A)
+print("B =\n", B)
+print("A @ A =\n", A @ A)
+print("A * A =\n", A * A)
+
+"""
+    A =
+     [[1 1]
+      [2 2]]
+    B =
+     [[1 1]
+      [3 3]]
+    A @ A =
+     [[3 3]
+      [6 6]]
+    A * A =
+     [[1 1]
+      [4 4]]
+"""

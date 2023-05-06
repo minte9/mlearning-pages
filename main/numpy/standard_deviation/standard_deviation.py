@@ -24,25 +24,18 @@ B = np.array([
 ])
 
 # Algorithms
-def get_variation(M):
+def variation(M):
     N = A.size
     mean = np.mean(A)
     variation = (1/N) * np.sum((A - mean)**2) # population variance
     return variation
 
-def get_standard_variation(M):
-    return np.sqrt(get_variation(M))
+def standard_variation(M):
+    return np.sqrt(variation(M))
     return
 
-# Native
-def np_variation(M):
-    return np.var(M)
-
-def np_standard_deviation(M):
-    return np.std(M)
-
-assert get_variation(A).round(14) == np.var(A).round(14)
-assert get_standard_variation(A) == np.std(A)
+assert variation(A).round(14) == np.var(A).round(14)
+assert standard_variation(A)  == np.std(A)
 
 print("Matrix A= \n", A)
 print("Matrix B= \n", B)

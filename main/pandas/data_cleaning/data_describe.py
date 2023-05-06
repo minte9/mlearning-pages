@@ -1,34 +1,35 @@
 """ Describe DataFrame
 
 Real world cases could have millions of rows and columns.
-We rely on pulling samples and summary statistics.
-
 Describe do not always tell the full story.
-Survived is categorical, but pandas treats it as numerical. 
-Both iloc and loc are very useful during data cleaning.
 
+For example in `titanic.csv`, `survived` is categorical, 
+but pandas treats it as numerical. 
+
+Both iloc and loc are very useful during data cleaning.
 For output data (outside Jupyter) use DataFrame' to_markdown()
-pip install tabulate
+    pip install tabulate
 """
 
 import pandas as pd
 import pathlib
 
 DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
-df = pd.read_csv(DIR / 'titanic.csv')
+FILE = DIR / 'titanic.csv'
 
-print("Show dimensions | shape:")
-print(df.shape) # (1313, 6)
+# Dataframe from csv
+df = pd.read_csv(FILE)
 
+# Set index to non-numerical
+df = df.set_index(df['Name'])
 
-print("First two rows | head(2): ")
-print(df.head(2).to_markdown())
+print("\nShow dimensions | shape:", df.shape) # (1313, 6)
+print("\nFirst two rows | head(2): "); print(df.head(2).to_markdown())
 
 # |    | Name           | PClass   |   Age | Sex    |   Survived |   SexCode |
 # |---:|:---------------|:---------|------:|:-------|-----------:|----------:|
 # |  0 | Allen, Miss Eli| 1st      |    29 | female |          1 |         1 |
 # |  1 | Allison, Miss H| 1st      |     2 | female |          0 |         1 |
-
 
 print("Show statistics | describe():")
 print(df.describe().to_markdown())

@@ -12,11 +12,8 @@ FILE = DIR / '../_data/01.csv'
 df1 = pd.read_csv(URL)
 df2 = pd.read_csv(FILE)
 
-print("Read csv from url:")
-print(df1.head(2).to_markdown(), "\n")
-
-print("Read csv from file:")
-print(df2.head(2).to_markdown())
+print("Read csv from url:"); print(df1.head(2).to_markdown(), "\n")
+print("Read csv from file:"); print(df2.head(2).to_markdown())
 
 """
 Read csv from url:

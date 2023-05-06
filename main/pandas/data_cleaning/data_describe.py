@@ -1,4 +1,4 @@
-""" Describe DataFrame
+""" Data clearing / Describe DataFrame
 
 Real world cases could have millions of rows and columns.
 Describe do not always tell the full story.
@@ -23,13 +23,13 @@ df = pd.read_csv(FILE)
 # Set index to non-numerical
 df2 = df.set_index(df['Name'])
 
-print("\nShape:", df.shape) # (1313, 6)
-print("\nFirst two rows | head(2): ")              ; print(df.head(2).to_markdown())
-print("\nShow statistics | describe():")           ; print(df.describe().to_markdown())
-print("\nSelect first row by index | iloc[0]:")    ; print(df.iloc[0].to_markdown())
-print("\nSecond, third and fourth | iloc[1:4]:")   ; print(df.iloc[1:4].to_markdown())
-print("\nUp to and including fourth | iloc[:4]")   ; print(df.iloc[:4].to_markdown())
-print("\nSelect by Name:")                         ; print(df2.loc['Allen, Miss Elisabeth Walton'].to_markdown())
+print("Shape:", df.shape, "\n") # (1313, 6)
+print("First two rows | head(2): ")              ; print(df.head(2).to_markdown(), "\n")
+print("Show statistics | describe():")           ; print(df.describe().to_markdown(), "\n")
+print("Select first row by index | iloc[0]:")    ; print(df.iloc[0].to_markdown(), "\n")
+print("Second, third and fourth | iloc[1:4]:")   ; print(df.iloc[1:4].to_markdown(), "\n")
+print("Up to and including fourth | iloc[:4]")   ; print(df.iloc[:4].to_markdown(), "\n")
+print("Select by Name:")                         ; print(df2.loc['Allen, Miss Elisabeth Walton'].to_markdown(), "\n")
 
 """
 Shape: (1313, 6)

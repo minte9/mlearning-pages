@@ -36,12 +36,12 @@ for i in range(num_iterations):
 
 # --------------------------------------------------------------
 
-m = round(m, 2)
-b = round(b, 2)
+m = round(m, 1)
+b = round(b, 1)
 
 print(f"Best fit line for given data: \n y = {m}x + {b}")
 
 """
     Best fit line for given data: 
-    y = 0.62x + 2.14
+     y = 0.6x + 2.1
 """

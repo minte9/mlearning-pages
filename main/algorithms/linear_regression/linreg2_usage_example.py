@@ -57,5 +57,5 @@ print(f"Prediction for x = {x_unknown}: \n y = {y_pred:.2f}")
     Best fit line: 
      y = 0.62x + 2.14
     Prediction for x = 6: 
-    y = 5.86
+     y = 5.86
 """

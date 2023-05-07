@@ -10,12 +10,11 @@ for t in range(2, 6):
     y = a*(t**2)
     m = 2*a*t
     b = y - m*t
-
-    print(f"Instant speed for t = {t} is {m}")
-    plt.plot(t, y, 'rx') # points
-
     T = np.arange(t, t+2, 0.1)
+
+    plt.plot(t, y, 'rx') # points
     plt.plot(T, m*T + b, label=f"s({t}) = {m}") # gradients
+    print(f"Instant speed for t = {t} is {m}")
 
 plt.title('s(t) = 16t^2')
 plt.xlabel('t (seconds)')

@@ -29,6 +29,7 @@ def speed(t1, rate=1):
 
 print("Average speed for 4 to 5 second approximation: \n", s45)
 print("Average speed from 4 to 4.1 seconds approximation: \n", s45_1)
+
 print('%s to %s seconds: speed = %s ft/sec' % speed(4, 1))
 print('%s to %s seconds: speed = %s ft/sec' % speed(4, 0.1))
 print('%s to %s seconds: speed = %s ft/sec' % speed(4, 0.01))

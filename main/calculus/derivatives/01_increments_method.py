@@ -21,10 +21,9 @@ s3 = (16*4.1**2 - 16*4**2) / 0.01  # from 4 to 4.01 seconds
 
 # -------------------------------------------------------------------
 
-# The method of increments
 def speed(t1, rate=1):
     t2 = t1 + rate
-    s = 16 * (t2**2 - t1**2) / rate
+    s = 16 * (t2**2 - t1**2) / rate # The method of increments
     s = round(s, 1)
     return (t1, t2, s)
 

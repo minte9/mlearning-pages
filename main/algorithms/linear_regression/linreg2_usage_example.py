@@ -9,8 +9,8 @@ of the line on each iteration of the algorithm.
 import numpy as np
 
 # Training datasets
-X = [1, 2, 3, 4, 5]
-Y = [2, 4, 5, 4, 5]
+X = np.array([1, 2, 3, 4, 5])
+Y = np.array([2, 4, 5, 4, 5])
 
 class LinearRegression:
 
@@ -21,8 +21,8 @@ class LinearRegression:
     def fit(self, X_train, Y_train, learning_rate=0.01, num_iterations=1000):
         lr = LinearRegression()
 
-        x = np.array(X_train)
-        y = np.array(Y_train)
+        x = X_train
+        y = Y_train
         m = 0 
         b = 0
         for i in range(num_iterations):

@@ -8,7 +8,7 @@ of the line on each iteration of the algorithm.
 
 import numpy as np
 
-# Training data
+# Training datasets
 x = np.array([1, 2, 3, 4, 5])
 y = np.array([2, 4, 5, 4, 5])
 

@@ -39,8 +39,12 @@ def gradient_descent(X, Y, b=-18, lr=0.00001, loops=15):
         # print(f'Step {i+1} a = {round(a, 5)}')
     return round(a, 5)
 
+# Result
+optim_a = gradient_descent(X, Y)
+
 # ------------------------------------------------------------
 
+# Compute values to print and plot
 a = 0       # start value
 l = 0.00001 # learning rate
 
@@ -48,9 +52,6 @@ a0 = 0
 a1 = a  - l * dJ(a)  # step 1
 a2 = a1 - l * dJ(a1) # step 2
 a3 = a2 - l * dJ(a2) # step 3
-
-optim_a = gradient_descent(X, Y)
-
 
 # Plot lines SSR curve
 fig, ax = plt.subplots()

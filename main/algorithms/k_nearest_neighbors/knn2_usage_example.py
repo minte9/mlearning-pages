@@ -41,9 +41,6 @@ class KNeighborsClassifier:
         k = self.k
         z = np.array(x_unknown)
 
-        # Algorithm
-        # --------------------------------------------------------------
-
         # Square distances matrix
         SD = np.sqrt(np.sum((X - z)**2, axis=1)) # axis=1 means rows of X
         keys = np.argsort(SD)
@@ -56,31 +53,6 @@ class KNeighborsClassifier:
         most_common = np.bincount(targets_knn) # by number of occurrences 
         result = most_common.argmax() # max value in array
 
-        # --------------------------------------------------------------
-
-        print("Square distances:", SD)
-        print("Keys ordered by distances:", keys)
-        print("Nearest neighbors keys:", keys_knn)
-        print("Nearest neighbors targets:", targets_knn)
-        print("Algorithm target response:", result)
-
-        # Plot the point and lines to th k neighbors
-        fig, ax = plt.subplots()
-        ax.set_xlabel('x1')
-        ax.set_ylabel('x2')
-
-        plt.scatter(X[:, 0], X[:, 1], c=y)
-        plt.scatter(z[0], z[1], marker='x', color='r', label='Class =%s' %result)
-
-        for i in keys_knn:
-            plt.plot((z[0], X[i][0]), (z[1], X[i][1]), color='gray', linestyle='--')
-
-        plt.title('K-nearest Neigbors')
-        plt.xlim(0, 6)
-        plt.ylim(0, 6)
-        plt.legend()
-        plt.show()
-
         return result
 
 knn = KNeighborsClassifier(n_neighbors=3)
@@ -88,7 +60,7 @@ knn.fit(X, y)
 
 x_unknown = [3.6, 1.8]  
 knn_class = knn.predict(x_unknown)   
-print("Class prediction for", x_unknown, "=", knn_class)
+print("Prediction for", x_unknown, "= class", knn_class)
 
 """
     Square distances:           [1.61245155 1.74642492 1.30384048 ...]

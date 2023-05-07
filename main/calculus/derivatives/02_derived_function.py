@@ -28,7 +28,7 @@ x = Symbol('x')
 f  = x**2 # Function f(x)
 f_derivative = f.diff(x)
 
-assert 32 * t == s_derivative
+assert 32*t == s_derivative
 assert 2*pi*r == A_derivative
 assert 2*x == f_derivative
 

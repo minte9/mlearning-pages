@@ -8,6 +8,10 @@ of the line on each iteration of the algorithm.
 
 import numpy as np
 
+# Training datasets
+X = [1, 2, 3, 4, 5]
+Y = [2, 4, 5, 4, 5]
+
 class LinearRegression:
 
     def __init__(self):
@@ -34,10 +38,6 @@ class LinearRegression:
         lr.coef_.append(m)
         lr.intercept_ = b
         return lr
-
-# Training data
-X = [1, 2, 3, 4, 5]
-Y = [2, 4, 5, 4, 5]
 
 # Learn a prediction function
 r = LinearRegression().fit(X, Y)

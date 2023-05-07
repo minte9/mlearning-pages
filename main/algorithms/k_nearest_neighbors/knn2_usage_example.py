@@ -8,7 +8,7 @@ vote of the k-nearest neighbors.
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Train dataset
+# Train datasets
 X = [
     [2, 2], [2, 2.5], [2.5, 2.5], [2.5, 2], [2.25, 2.25],
     [3, 3], [3, 3.5], [3.5, 3.5], [3.5, 3], [3.25, 3.25],
@@ -30,15 +30,12 @@ class KNeighborsClassifier:
         self.y = np.array(y_train)
     
     def predict(self, x_unknown):
-        X = self.X
-        y = self.y
-        k = self.k
         z = np.array(x_unknown)
 
-        SD = np.sqrt(np.sum((X - z)**2, axis=1))
+        SD = np.sqrt(np.sum((self.X - z)**2, axis=1))
         keys = np.argsort(SD)
-        keys_knn = keys[:k]
-        targets_knn = y[keys_knn]
+        keys_knn = keys[:self.k]
+        targets_knn = self.y[keys_knn]
         most_common = np.bincount(targets_knn)
         result = most_common.argmax()
         
@@ -52,10 +49,5 @@ knn_class = knn.predict(x_unknown)
 print("Prediction for", x_unknown, "= class", knn_class)
 
 """
-    Square distances:           [1.61245155 1.74642492 1.30384048 ...]
-    Keys ordered by distances:  [ 3  8  2  5  4  9  0  7 ...]
-    Nearest neighbors keys:     [3 8 2]
-    Nearest neighbors targets:  [1 2 1]
-    Algorithm target response:  1
-    Class prediction:           [3.6, 1.8] = 1
+    Prediction for [3.6, 1.8] = class 1
 """

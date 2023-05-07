@@ -15,8 +15,7 @@ class LinearRegression:
         self.intercept_ = 0
 
     def fit(self, X_train, Y_train, learning_rate=0.01, num_iterations=1000):
-
-        obj = LinearRegression()
+        lr = LinearRegression()
 
         x = np.array(X_train)
         y = np.array(Y_train)
@@ -32,9 +31,9 @@ class LinearRegression:
             m -= learning_rate * m_derivative
             b -= learning_rate * b_derivative
 
-        obj.coef_.append(m)
-        obj.intercept_ = b
-        return obj
+        lr.coef_.append(m)
+        lr.intercept_ = b
+        return lr
 
 # Training data
 X = [1, 2, 3, 4, 5]

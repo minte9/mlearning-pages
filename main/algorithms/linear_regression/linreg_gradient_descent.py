@@ -2,8 +2,15 @@
 
 The algorithm is used to find the best-fit line that models 
 the relationship between x and y.
+
 Gradient descent optimization updates the slope and intercept 
 of the line on each iteration of the algorithm.
+
+Gradient descent is an iterative optimization algorithm that starts 
+with an initial guess for the slope and the intercept and updates them 
+in the direction of steepest descent of the cost function until convergence.
+
+The slope or gradient of a function in (x,y) point is the derivative.
 """
 
 import numpy as np

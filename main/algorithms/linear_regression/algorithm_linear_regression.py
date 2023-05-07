@@ -13,8 +13,11 @@ import numpy as np
 x = np.array([1, 2, 3, 4, 5])
 y = np.array([2, 4, 5, 4, 5])
 
-m = 0 # slope
-b = 0 # intercept
+# Line params (slope & intercept)
+m = 0
+b = 0
+
+# Learning params
 learning_rate = 0.01
 num_iterations = 1000
 

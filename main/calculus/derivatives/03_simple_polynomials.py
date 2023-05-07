@@ -10,19 +10,23 @@ each term:
 from sympy import *
 
 x = Symbol('x')
-a = 2
-b = 3
-c = 4
+a = Symbol('a')
+b = Symbol('b')
+c = Symbol('c')
 
 y = a*x**2 + b*x + c
-d = y.diff(x)
+y_derivative = y.diff(x)
+y_derivative_2 = y_derivative.diff(x)
+
+assert 2*a*x + b == y_derivative
+assert 2*a == y_derivative_2
 
 print("Function:", y)
-print("First derivative:", y.diff(x))
-print("Second derivative:", d.diff(x))
+print("First derivative:", y_derivative)
+print("Second derivative:", y_derivative_2)
 
 """
-    Function:           2*x**2 + 3*x + 4
-    First derivative:   4*x + 3
-    Second derivative:  4
+    Function: a*x**2 + b*x + c
+    First derivative: 2*a*x + b
+    Second derivative: 2*a
 """

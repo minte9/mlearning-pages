@@ -7,6 +7,8 @@ descrease faster and takes a step in that direction, then repeat
 import matplotlib.pyplot as plt
 import numpy as np
 
+# --------------------------------------------------------------
+
 # The model (linear)
 def predict(X, a, b):
     Y = X*a + b
@@ -34,6 +36,7 @@ def gradient_descent(X, Y, lr=0.00001, loops=1000):
             b = b - lr * db
     return round(a, 1), round(b, 1)
 
+# --------------------------------------------------------------
 
 # Train dataset 1
 X = np.array([30, 46, 60, 65, 77, 95])
@@ -42,16 +45,13 @@ print("\nLearning 1")
 
 # Learning a,b
 a, b = gradient_descent(X, Y)
-print('a =', a, ' b =', b) # 1.3, -18
-print('Predictions:', f'f(x) = {a}x + {b}') # f(x) = 1.3x - 18
+print('a =', a, ' b =', b)
+print('Predictions:', f'f(x) = {a}x + {b}')
 
 # Predictions
 x = 33; y = predict(x, a, b); print("f(%s) =" %x, y)
 x = 45; y = predict(x, a, b); print("f(%s) =" %x, y)
 x = 62; y = predict(x, a, b); print("f(%s) =" %x, y)
-    # fx(33) =  25
-    # fx(45) =  41
-    # fx(62) =  63
 
 fig, ax = plt.subplots()
 ax.set_xlabel('x')
@@ -61,11 +61,12 @@ ax.axhline(y=0, color='k')
 ax.axvline(x=0, color='k')
 
 # Draw dataset 1
-ax.plot(X, Y, 'x', color='g', label='training data') # points
-ax.plot(X, a*X + b, label=f'f(x) = {b} + {a}x') # function line
-ax.plot(55, predict(55, a, b), 'o', color='r') # prediction point
+ax.plot(X, Y, 'x', color='g', label='training data')
+ax.plot(X, a*X + b, label=f'f(x) = {b} + {a}x') # line
+ax.plot(55, predict(55, a, b), 'o', color='r')
 plt.legend(loc='upper right')
 
+# --------------------------------------------------------------
 
 # Train dataset 2
 X = np.array([15, 18, 20, 21, 23, 25, 27, 28, 29, 30, 32, 34, 35, 36])
@@ -74,18 +75,33 @@ print("\nLearning 2")
 
 # Learning a,b
 a, b = gradient_descent(X, Y)
-print('a =', a, ' b =', b) # a = 32.9  b = -533.1
-print('Predictions:', f'f(x) = {a}x + {a}') # f(x) = 32.9x + -533
+print('a =', a, ' b =', b)
+print('Predictions:', f'f(x) = {a}x + {a}')
 
 x = 20; y = predict(x, a, b); print("f(%s) =" %x, y)
 x = 24; y = predict(x, a, b); print("f(%s) =" %x, y)
 x = 33; y = predict(x, a, b); print("f(%s) =" %x, y)
 
 # Draw dataset 2
-ax.plot(X, Y, 'x', color='g') # points
-ax.plot(X, a*X + b, label=f'f(x) = {b} + {a}x') # function line
-ax.plot(55, predict(33, a, b), 'o', color='r') # prediction point
+ax.plot(X, Y, 'x', color='g')
+ax.plot(X, a*X + b, label=f'f(x) = {b} + {a}x') # line
+ax.plot(55, predict(33, a, b), 'o', color='r')
 plt.legend(loc='upper right')
 
-
 plt.show()
+
+"""
+    Learning 1
+     a = 1.3  b = -17.3
+    Predictions: f(x) = 1.3x + -17.3
+     f(33) = 26.0
+     f(45) = 41.0
+     f(62) = 63.0
+
+    Learning 2
+     a = 32.9  b = -533.1
+    Predictions: f(x) = 32.9x + 32.9
+     f(20) = 125.0
+     f(24) = 256.0
+     f(33) = 553.0
+"""

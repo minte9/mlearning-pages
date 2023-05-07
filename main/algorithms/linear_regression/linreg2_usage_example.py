@@ -10,13 +10,13 @@ of the line on each iteration of the algorithm.
 import numpy as np
 
 # Algorithm
-def gradient_descent(x, y, learning_rate=0.01, num_iterations=1000):
+def linear_regression(x, y, learning_rate=0.01, num_iterations=1000):
 
     # Initial slope and intercept
     m = 0
     b = 0
 
-    # Gradient descent
+    # Gradient descent optimization
     for i in range(num_iterations):
         y_pred = m*x + b
         error = y - y_pred
@@ -41,7 +41,7 @@ y_train = np.array([2, 4, 5, 4, 5])
 x_unknown = 6
 
 # Learn slope and intercept from training data
-(m, b) = gradient_descent(x_train, y_train)
+(m, b) = linear_regression(x_train, y_train)
 
 # Predict y for unknown x
 y_pred = m*x_unknown + b

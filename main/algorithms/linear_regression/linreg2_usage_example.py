@@ -19,8 +19,7 @@ class LinearRegression:
         self.intercept_ = 0
 
     def fit(self, X_train, Y_train, learning_rate=0.01, num_iterations=1000):
-        lr = LinearRegression()
-
+        
         # -----------------------------------------------
 
         x = X_train
@@ -39,9 +38,11 @@ class LinearRegression:
 
         # -----------------------------------------------
 
-        lr.coef_.append(m)
-        lr.intercept_ = b
-        return lr
+        obj = LinearRegression()
+        obj.coef_.append(m)
+        obj.intercept_ = b
+        
+        return obj
 
 # Learn a prediction function
 r = LinearRegression().fit(X, Y)

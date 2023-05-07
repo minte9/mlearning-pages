@@ -12,6 +12,8 @@ import numpy as np
 x = np.array([1, 2, 3, 4, 5])
 y = np.array([2, 4, 5, 4, 5])
 
+# --------------------------------------------------------------
+
 # Slope and intercept (line params)
 m = 0
 b = 0
@@ -31,6 +33,8 @@ for i in range(num_iterations):
 
     m = m - learning_rate * m_derivative
     b = b - learning_rate * b_derivative
+
+# --------------------------------------------------------------
 
 m = round(m, 2)
 b = round(b, 2)

@@ -1,6 +1,6 @@
 """ K-Nearest Neighbors Classifier / Algorithm
 
-Findg the k nearest neighbors to the input data point, 
+The algorithm works by finding the k nearest neighbors to the input data point, 
 and then assigning the output label based on the majority 
 vote of the k-nearest neighbors.
 

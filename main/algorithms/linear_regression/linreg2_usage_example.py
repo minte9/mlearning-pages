@@ -7,7 +7,6 @@ of the line on each iteration of the algorithm.
 """
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Training datasets
 X = np.array([1, 2, 3, 4, 5])
@@ -49,20 +48,10 @@ b = r.intercept_.round(1)
 x1 = 3
 y1 = m*x1 + b
 
-
 print(f"Learned slope: {m:.1f}")
 print(f"Learned intercept: {b:.1f}")
 print(f"Best fit line: \n y = {m}x + {b}")
 print(f"Prediction for x = {x1}: \n y = {y1:.1f}")
-
-fig, ax = plt.subplots()
-plt.ylim(0, 10)
-plt.xlim(0, 10)
-ax.plot(X,  Y,  'x', color='g', label='training data')
-ax.plot(x1, y1, 'o', color='r', label=f'h({x1}) = {y1}')
-plt.legend()
-ax.plot(X, m*X + b,  label=f'h(x) = {m} + {b}x')
-plt.show()
 
 """
     Learned slope: 0.6

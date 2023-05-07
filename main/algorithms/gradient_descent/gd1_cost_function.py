@@ -1,8 +1,8 @@
 """ Parameterized SSR (cost function)
 Measure the goodness-of-fit (SSR)
 For start, let's pretend that intercept is known b = -18
-f(x) = ax + -18
-SSR(a) = sum(R^2)
+ f(x) = ax + -18
+ SSR(a) = sum(R^2)
 """
 
 import matplotlib.pyplot as plt

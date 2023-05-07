@@ -2,6 +2,7 @@
 
 The algorithm is used to find the best-fit line that models 
 the relationship between x and y.
+
 Gradient descent optimization updates the slope and intercept 
 of the line on each iteration of the algorithm.
 """

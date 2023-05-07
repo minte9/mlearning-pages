@@ -31,11 +31,11 @@ for i in range(num_iterations):
     b = b - learning_rate * b_derivative
 
 m = round(m, 2)
-b = round(m, 2)
+b = round(b, 2)
 
 print(f"Best fit line for given data: \n y = {m}x + {b}")
 
 """
     Best fit line for given data: 
-    y = 0.62x + 0.62
+    y = 0.62x + 2.14
 """

@@ -1,8 +1,10 @@
-""" Derived function for f(x) = ax^2
-f'(x) is pronounced "f prime of x"
+""" Derivatives / Differentiation
 
-It means instantaneous rate of change of y 
-with respect to x at value x1.
+The process of using increment method to get the derivative 
+is called differentiation.
+
+Derived function for f(x) = ax^2 is f'(x) and is pronounced "f prime of x"
+It means instantaneous rate of change of y with respect to x at value x1
 
 Increment method:
     y + Dy = a(x + Dx)^2

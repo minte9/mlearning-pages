@@ -55,7 +55,7 @@ print(f"Prediction for x = {x_unknown}: \n y = {y_pred:.2f}")
     Learned slope: 0.62
     Learned intercept: 2.14
     Best fit line: 
-        y = 0.62x + 2.14
+     y = 0.62x + 2.14
     Prediction for x = 6: 
-        y = 5.86
+     y = 5.86
 """

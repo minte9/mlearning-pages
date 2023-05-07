@@ -1,14 +1,4 @@
-""" K-Nearest Neighbors Algorithm
-
-In ML, the computer uses data to learn the best f(x) fit
-In classical algorithms, the f(x) is provided by the programmer
-
-1. Load training dataset
-2. Select a value for k
-3. Calculate distances to the new point
-4. Select the k-nearest points
-5. Get the most common class
-6. Assign the new point to that class
+""" K-Nearest Neighbors Classifier
 """
 
 import numpy as np

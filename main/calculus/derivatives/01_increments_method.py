@@ -1,4 +1,4 @@
-""" Increments method
+""" Devivatives / Increments method
 
 An average speed of 30 mi/hr does not necessary means an  
 exact speed for 3 hours. 

@@ -32,12 +32,16 @@ class KNeighborsClassifier:
     def predict(self, x_unknown):
         z = np.array(x_unknown)
 
+        # ---------------------------------------------
+
         SD = np.sqrt(np.sum((self.X - z)**2, axis=1))
         keys = np.argsort(SD)
         keys_knn = keys[:self.k]
         targets_knn = self.y[keys_knn]
         most_common = np.bincount(targets_knn)
         result = most_common.argmax()
+
+        # ---------------------------------------------
         
         return result
 

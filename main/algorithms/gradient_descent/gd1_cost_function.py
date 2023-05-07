@@ -72,11 +72,9 @@ ax.plot_surface(aa, bb, J(aa, bb)) # surface
 ax.view_init(50,-150)
 plt.show()
 
+# Print results
 print("Slope range: \n", A)
 print("SSR(a -18): \n", SSR)
-    # 282654, 197923, 128329, 73872, 34552, 10368, 
-    # 1320,
-    # 7409, 28635, 64998, 116497, 183133, 264906
 
 """
     Slope range: 

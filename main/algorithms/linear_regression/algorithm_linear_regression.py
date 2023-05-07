@@ -1,35 +1,28 @@
 """ Linear Regression Algorithm
 
-Collect data, points with x, y values
-    x, y = [1, 2, 3], [2, 4, 5]
+Linear regression algorithm to find the best-fit line 
+that models the relationship between x and y.
 
-Choose a line of best fit 
-    y = ax + b
-    
-Calculate the error difference
-    error = y_pred - y
-
-Minimize the error, find the best fit 
-    use optimization algorithms (gradient descent)
-    
-Make predictions
-    use the line of best fit to make predictions
+The gradient descent algorithm is used to update the slope and intercept 
+of the line on each iteration of the algorithm.
 """
 
 import numpy as np
 
+# Training data
 x = np.array([1, 2, 3, 4, 5])
 y = np.array([2, 4, 5, 4, 5])
 
-m = 0
-b = 0
+m = 0 # slope
+b = 0 # intercept
 learning_rate = 0.01
 num_iterations = 1000
 
+# Gradient descent
 for i in range(num_iterations):
     
     y_pred = m*x + b
-    error = y_pred - y
+    error = y_pred - y # not used here
 
     m_derivative = -(2/len(x)) * sum(x * (y - y_pred))
     b_derivative = -(2/len(x)) * sum(y - y_pred)
@@ -39,4 +32,10 @@ for i in range(num_iterations):
 
 m = round(m, 2)
 b = round(m, 2)
-print(f"y = {m}x + {b}") # y = 0.62 x +  2.14
+
+print(f"Best fit line for given data: \n y = {m}x + {b}")
+
+"""
+    Best fit line for given data: 
+    y = 0.62x + 0.62
+"""

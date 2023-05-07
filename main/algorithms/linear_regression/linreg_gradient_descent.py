@@ -21,7 +21,7 @@ b = 0
 learning_rate = 0.01
 num_iterations = 1000
 
-# Gradient descent Algorithm
+# Gradient descent optimization
 for i in range(num_iterations):
 
     y_pred = m*x + b

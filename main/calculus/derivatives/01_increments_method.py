@@ -14,11 +14,10 @@ Using increments method, the numbers seem getting closer to:
     s4 = 128 ft/sec
 """
 
-s45 = 16*5**2 - 16*4**2
-s45_1 = (16*4.1**2 - 16*4**2) / 0.1
-
-print("Average speed for 4 to 5 second approximation: \n", s45)
-print("Average speed from 4 to 4.1 seconds approximation: \n", s45_1)
+# Average speed aproximation
+s1 = 16*5**2 - 16*4**2               # from 4 to 5 seconds
+s2 = (16*4.1**2 - 16*4**2) / 0.1    # from 4 to 4.1 seconds
+s3 = (16*4.1**2 - 16*4**2) / 0.01  # from 4 to 4.01 seconds
 
 # -------------------------------------------------------------------
 
@@ -31,23 +30,30 @@ def speed(t1, rate=1):
 
 # -------------------------------------------------------------------
 
-print('%s to %s seconds: speed = %s ft/sec' % speed(4, 1))
-print('%s to %s seconds: speed = %s ft/sec' % speed(4, 0.1))
-print('%s to %s seconds: speed = %s ft/sec' % speed(4, 0.01))
-print('%s to %s seconds: speed = %s ft/sec' % speed(4, 0.001))
-print('%s to %s seconds: speed = %s ft/sec' % speed(4, 0.0001))
-print('%s to %s seconds: speed = %s ft/sec' % speed(4, 0.00001))
+print("Manual aproximation:")
+print("4 to 5s: speed =", s1)
+print("4 to 4.1s: speed =", s2)
+print("4 to 4.01s: speed = ", s3, "\n")
+
+print("Increment method speed() function:")
+print('%s to %ss: %s ft/sec' % speed(4, 1))
+print('%s to %ss: %s ft/sec' % speed(4, 0.1))
+print('%s to %ss: %s ft/sec' % speed(4, 0.01))
+print('%s to %ss: %s ft/sec' % speed(4, 0.001))
+print('%s to %ss: %s ft/sec' % speed(4, 0.0001))
+print('%s to %ss: %s ft/sec' % speed(4, 0.00001))
 
 """
-    Average speed for 4 to 5 second approximation: 
-     144
-    Average speed from 4 to 4.1 seconds approximation: 
-     129.5999999999998
-    
-    4 to 5 seconds: va = 144.0 ft/sec
-    4 to 4.1 seconds: va = 129.6 ft/sec
-    4 to 4.01 seconds: va = 128.2 ft/sec
-    4 to 4.001 seconds: va = 128.0 ft/sec
-    4 to 4.0001 seconds: va = 128.0 ft/sec
-    4 to 4.00001 seconds: va = 128.0 ft/sec
+    Manual aproximation:
+     4 to 5s: speed = 144
+     4 to 4.1s: speed = 129.5999999999998
+     4 to 4.01s: speed =  1295.999999999998 
+
+    Increment method speed() function:
+     4 to 5s: 144.0 ft/sec
+     4 to 4.1s: 129.6 ft/sec
+     4 to 4.01s: 128.2 ft/sec
+     4 to 4.001s: 128.0 ft/sec
+     4 to 4.0001s: 128.0 ft/sec
+     4 to 4.00001s: 128.0 ft/sec
 """

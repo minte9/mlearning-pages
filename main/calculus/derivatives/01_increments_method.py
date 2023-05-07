@@ -14,11 +14,13 @@ Using increments method, the numbers seem getting closer to:
     s4 = 128 ft/sec
 """
 
-# Average speed for 4 to 5 s approximation
 s45 = 16*5**2 - 16*4**2
-
-# Average speed from 4 to 4.1 s approximation
 s45_1 = (16*4.1**2 - 16*4**2) / 0.1
+
+print("Average speed for 4 to 5 second approximation: \n", s45)
+print("Average speed from 4 to 4.1 seconds approximation: \n", s45_1)
+
+# -------------------------------------------------------------------
 
 # The method of increments
 def speed(t1, rate=1):
@@ -27,8 +29,7 @@ def speed(t1, rate=1):
     s = round(s, 1)
     return (t1, t2, s)
 
-print("Average speed for 4 to 5 second approximation: \n", s45)
-print("Average speed from 4 to 4.1 seconds approximation: \n", s45_1)
+# -------------------------------------------------------------------
 
 print('%s to %s seconds: speed = %s ft/sec' % speed(4, 1))
 print('%s to %s seconds: speed = %s ft/sec' % speed(4, 0.1))

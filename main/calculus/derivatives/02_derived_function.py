@@ -4,7 +4,7 @@ f'(x) is pronounced "f prime of x"
 It means instantaneous rate of change of y 
 with respect to x at value x1.
 
-Increment method
+Increment method:
     y + Dy = a(x + Dx)^2
     y + Dy = ax^2 + 2axDx + a(Dx^2)
     Dy = 2axDx + a(Dx^2)
@@ -16,23 +16,31 @@ As Dx approaches the limit Dx -> 0, the derived is:
 
 from sympy import *
 
-# Falling speed
+# Speed of a falling object
 t = Symbol('t')
-s  = 16*t**2
-d = s.diff(t)
-print("s  =", s) # s  = 16t^2
-print("s' =", d) # s' = 32*t
+s = 16*t**2
+s_derivative = s.diff(t)
 
 # Circle area
 r = Symbol('r')
 A  = pi*r**2
-d = A.diff(r)
-print("A  =", A) # A  = pi*r^2
-print("A' =", d) # A' = 2*pi*r
+A_derivative = A.diff(r)
 
 # Function f(x)
 x = Symbol('x')
 f  = x**2
-d = f.diff(x)
-print("f  =", f) # f  = ax^2
-print("f' =", d) # f' = 2*x
+f_derivative = f.diff(x)
+
+assert 32 * t == s_derivative
+assert 2*pi*r == A_derivative
+assert 2*x == f_derivative
+
+print(f"Falling speed: s = {s}  s' = {s_derivative}")
+print(f"Circle area:   A = {A}  A' = {A_derivative}")
+print(f"Function:      f ={f}   f' = {f_derivative}")
+
+"""
+    Falling speed: s = 16*t**2  s' = 32*t
+    Circle area:   A = pi*r**2  A' = 2*pi*r
+    Function:      f =x**2      f' = 2*x
+"""

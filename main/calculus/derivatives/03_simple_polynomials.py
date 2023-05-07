@@ -1,7 +1,7 @@
-""" Devivatives / Polynomials
+""" Devivatives / Polynomials Differentiation
 
-Differentiation of Simple Polynomials adds contributions
-from each term:
+Differentiation of simple polynomials takes into account
+each term:
     y   = ax^2 + bx + c
     y'  = 2ax + b
     y'' = 2a

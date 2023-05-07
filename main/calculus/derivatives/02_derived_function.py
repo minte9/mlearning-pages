@@ -16,19 +16,16 @@ As Dx approaches the limit Dx -> 0, the derived is:
 
 from sympy import *
 
-# Speed of a falling object
 t = Symbol('t')
-s = 16*t**2
+s = 16*t**2 # Speed of a falling object
 s_derivative = s.diff(t)
 
-# Circle area
 r = Symbol('r')
-A  = pi*r**2
+A  = pi*r**2 # Circle area
 A_derivative = A.diff(r)
 
-# Function f(x)
 x = Symbol('x')
-f  = x**2
+f  = x**2 # Function f(x)
 f_derivative = f.diff(x)
 
 assert 32 * t == s_derivative

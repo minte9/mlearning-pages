@@ -1,10 +1,13 @@
 """ Derivatives / Slope
+
+Plot instant speeds (sloe or gradients) for different params.
+Falling object speed:
+ s(t) = 16t^2
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Falling object s(t) = 16t^2
 a = 16
 X = np.arange(-5, 5, 0.1)
 Y = a*(X**2)

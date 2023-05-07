@@ -10,7 +10,7 @@ for t in range(2, 6):
     y = a*(t**2)
     m = 2*a*t
     b = y - m*t
-    T = np.arange(t, t+2, 0.1)
+    T = np.arange(t, t+2, 0.1) # 20 values sequence
 
     plt.plot(t, y, 'rx') # points
     plt.plot(T, m*T + b, label=f"s({t}) = {m}") # gradients

@@ -12,6 +12,8 @@ import numpy as np
 X = np.array([30, 46, 60, 65, 77, 95]).reshape(6,1)
 Y = np.array([31, 30, 80, 49, 70, 118])
 
+# ------------------------------------------------
+
 # Slopes range values
 A = np.linspace(-2, 4.5, 13) # 13 values
 
@@ -25,8 +27,6 @@ for a in A:
     for i in range(0, len(X)):
         SR.append((Y[i] - P[i])**2)
     SSR.append(np.sum(SR).round())
-
-# ------------------------------------------------
 
 # Generic cost function SSR(a) = J
 def J(a, b=-18):

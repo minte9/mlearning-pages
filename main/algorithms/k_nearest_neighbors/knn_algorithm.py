@@ -33,7 +33,6 @@ y = np.array([
 k_nearest = 3
 x_unknown = np.array([3.6, 1.8])
 
-# Algorithm
 # --------------------------------------------------------------
 
 # Square distances matrix

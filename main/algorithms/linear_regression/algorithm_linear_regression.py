@@ -1,7 +1,7 @@
-""" Linear Regression Algorithm
+""" Linear Regression / Algorithm
 
-Linear regression algorithm is used to find the best-fit line 
-that models the relationship between x and y.
+This algorithm is used to find the best-fit line that models 
+the relationship between x and y.
 
 The gradient descent algorithm is used to update the slope and intercept 
 of the line on each iteration of the algorithm.

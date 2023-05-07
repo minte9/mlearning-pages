@@ -81,6 +81,7 @@ plt.ylabel("SSR(a)")
 ax.axhline(y=0, color='k')
 ax.axvline(x=0, color='k')
 plt.legend()
+
 plt.show()
 
 # Print results

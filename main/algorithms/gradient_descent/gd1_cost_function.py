@@ -70,6 +70,7 @@ b = np.linspace(-100, 100, 10)
 aa, bb = np.meshgrid(a, b)
 ax.plot_surface(aa, bb, J(aa, bb)) # surface
 ax.view_init(50,-150)
+
 plt.show()
 
 # Print results

@@ -4,8 +4,8 @@ The algorithm works by finding the k nearest neighbors to the input data point,
 and then assigning the output label based on the majority 
 vote of the k-nearest neighbors.
 
-In ML, the computer uses data to learn the best f(x) fit
-In classical algorithms, the f(x) is provided by the programmer
+In classical algorithms, the f(x) is provided by the programmer.
+In ML, the computer uses data to learn the best f(x) fit.
 
 1. Load training dataset
 2. Select a value for k

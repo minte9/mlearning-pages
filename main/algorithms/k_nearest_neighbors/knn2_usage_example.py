@@ -42,7 +42,6 @@ class KNeighborsClassifier:
         # Optim target
         most_common = np.bincount(targets_knn)
         result = most_common.argmax()
-
         return result
 
 knn = KNeighborsClassifier(n_neighbors=3)

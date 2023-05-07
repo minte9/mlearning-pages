@@ -1,4 +1,8 @@
-""" K-Nearest Neighbors Algorithm
+""" K-Nearest Neighbors Classifier / Algorithm
+
+Findg the k nearest neighbors to the input data point, 
+and then assigning the output label based on the majority 
+vote of the k-nearest neighbors.
 
 In ML, the computer uses data to learn the best f(x) fit
 In classical algorithms, the f(x) is provided by the programmer
@@ -29,6 +33,7 @@ y = np.array([
 k_nearest = 3
 x_unknown = np.array([3.6, 1.8])
 
+# Algorithm
 # --------------------------------------------------------------
 
 # Square distances matrix

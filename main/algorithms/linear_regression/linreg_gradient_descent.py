@@ -7,6 +7,7 @@ of the line on each iteration of the algorithm.
 """
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Training datasets
 x = np.array([1, 2, 3, 4, 5])
@@ -38,6 +39,16 @@ for i in range(num_iterations):
 
 m = round(m, 1)
 b = round(b, 1)
+
+# Plot points and the best fit line
+fig, ax = plt.subplots()
+plt.ylim(0, 10)
+plt.xlim(0, 10)
+
+ax.plot(x,  y,  'x', color='g', label='training data')
+plt.legend()
+ax.plot(x, m*x + b,  label=f'h(x) = {m} + {b}x')
+plt.show()
 
 print(f"Best fit line for given data: \n y = {m}x + {b}")
 

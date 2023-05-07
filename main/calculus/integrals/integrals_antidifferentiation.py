@@ -1,12 +1,14 @@
-""" Antidifferention or Integration
-It means getting the original function from derived function.
+""" Integrals / Antidifferention
+
+Antidifferention or integration means getting the 
+original function from derived function.
 
 Integration can be used to find areas, volumes, central points 
 and many other useful things. 
 
-Function: f = 3x + 2
-Derived:  d = 3
-Integral: I = 3x
+Function:   y = 3x + 2
+Derivative: d = 3
+Integral:   I = 3x
 
 y' = ax        then y = (ax^2)/2 + C
 y  = ax + b    then y = (ax^2)/2 + bx + C
@@ -19,7 +21,6 @@ import scipy.integrate as spi
 
 x = Symbol('x')
 t = Symbol('t')
-
 
 # Symbolic representation
 f = 3*x + 2

@@ -23,12 +23,12 @@ num_iterations = 1000
 
 # Gradient descent
 for i in range(num_iterations):
-    
-    y_pred = m*x + b
-    error = y_pred - y # not used here
 
-    m_derivative = -(2/len(x)) * sum(x * (y - y_pred))
-    b_derivative = -(2/len(x)) * sum(y - y_pred)
+    y_pred = m*x + b
+    error = y - y_pred
+
+    m_derivative = -(2/len(x)) * sum(x * error)
+    b_derivative = -(2/len(x)) * sum(error)
 
     m = m - learning_rate * m_derivative
     b = b - learning_rate * b_derivative

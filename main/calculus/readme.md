@@ -1,11 +1,11 @@
 ## Calculus
 
-### Devivatives
+[Devivatives](./devivatives/)  
 > Increments method  
 > Differentiation  
 > The Slope  
 
-### Integrals
+[Integrals](./integrals/)  
 > Integration  
 > Definite integral  
 > Gaussian function  

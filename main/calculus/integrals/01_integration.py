@@ -31,6 +31,7 @@ assert d_integration == f
 
 # -----------------------------------------------------
 
+# Function to be integrated
 def func(x):
     return 2*x
 

@@ -55,22 +55,14 @@ time = solve(s, t)      # find the value of t that makes s = 0
 
 # ---------------------------------------------------------
 
+# Print results
 print('Acceleration =', a)  # Acceleration = 32
 print('Speed =', v)         # Speed = 32*t
 print('Distance =', s)      # Distance = 16*t**2
 print("Distance traveled in 5 seconds =", d) # 400
 print("Time Time for 400ft fall =", time[1]) # 5
 
-"""
-    Acceleration = 32
-    Speed = 32*t
-    Distance = 16*t**2 - 400
-    Distance traveled in 5 seconds = 400
-    Time Time for 400ft fall = 5
-"""
-
-# ---------------------------------------------------------
-
+# Plotting
 t = np.linspace(0, 6)
 s = 16*t**2
 fig, ax = plt.subplots()
@@ -84,8 +76,7 @@ plt.plot((5, 5), (0, 400), linestyle='--')
 plt.plot((0, 5), (400, 400), linestyle='--')
 plt.show()
 
-# ---------------------------------------------------------
-
+# Animation
 def update(frame):
     t = np.linspace(0, frame/10)
     s = 16 * t**2
@@ -107,3 +98,11 @@ ani = FuncAnimation(fig, update, frames=np.arange(10, 51, 1), repeat=True)
 plt.show()
 
     # ani.save('1427_falling_ball.gif', writer='imagemagick', fps=10)
+
+"""
+    Acceleration = 32
+    Speed = 32*t
+    Distance = 16*t**2 - 400
+    Distance traveled in 5 seconds = 400
+    Time Time for 400ft fall = 5
+"""

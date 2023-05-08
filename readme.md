@@ -25,9 +25,9 @@
 [Pandas](./main/pandas/)  
 > Read Data  `Csv` `Excel` `Json` `Sql`  
 > Data Cleaning  `Describe` `Condition` `Replace` `Apply`  
-> Find Values  
-> Group Rows  
-> Merge Data  
+> Find Values  `Descriptive statistics`  
+> Group Rows  `Group by`  
+> Merge Data  `Dataframes merge`  
 
 [Calculus](./main/calculus/)  
 > Derivatives  `Increments method` `Differentiation` `Slope`  

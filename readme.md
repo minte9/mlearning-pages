@@ -7,14 +7,14 @@
 > Regularization  `Ridge` `Lasso`  
 
 [Matplotlib](./main/matplotlib/)  
-> Subplots  
-> Pyplot  
+> Subplots  `Figure` `Axes` `Annotations` `Colored map`  
+> Pyplot  `Functions` `Slope plotting`  
 
 [Datasets](./main/datasets/)  
-> Iris Species  
+> Iris Species  `Dataset` `Prediction` `Evaluation`  
 > Diabetes  
 > Breast Cancer  
-> Simulated Data  
+> Simulated Data  `Make dataset` `Regression Application`  
 
 [Numpy](./main/numpy/)  
 > Matrices   

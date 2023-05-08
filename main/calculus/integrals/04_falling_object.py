@@ -97,7 +97,8 @@ fig, ax = plt.subplots()
 ani = FuncAnimation(fig, update, frames=np.arange(10, 51, 1), repeat=True)
 plt.show() 
 
-# ani.save('1427_falling_ball.gif', writer='imagemagick', fps=10)
+if 1 == 0: # save image
+    ani.save('1427_falling_ball.gif', writer='imagemagick', fps=10)
 
 """
     Acceleration = 32

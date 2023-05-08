@@ -1,10 +1,10 @@
 # Machine Learning
 
 [Supervised ML](./main/supervised-ml/)  
-> Classifier  
-> Linear Model  
+> Classifier  `Knn Classifier` `Data Frame` `Evaluate` `Score Graph` `Boundaries`  
+> Linear Model  `Linear Regression` `SSR Residuals`  
 > Basis Expansion  
-> Regularization  
+> Regularization  `Ridge` `Lasso`  
 
 [Matplotlib](./main/matplotlib/)  
 > Subplots  

@@ -3,7 +3,7 @@
 [Supervised ML](./main/supervised-ml/)  
 > Classifier  `Knn Classifier` `Data Frame` `Evaluate` `Score Graph` `Boundaries`  
 > Linear Model  `Linear Regression` `SSR Residuals`  
-> Basis Expansion  
+> Basis Expansion  `Polynomials`  
 > Regularization  `Ridge` `Lasso`  
 
 [Matplotlib](./main/matplotlib/)  

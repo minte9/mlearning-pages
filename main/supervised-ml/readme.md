@@ -1,4 +1,4 @@
-# Supervised Machine Learning
+#* Supervised Machine Learning
 
 [KNN Classifier](./classifier/)  
 
@@ -12,9 +12,10 @@
 
 #
 
-## Linear Model
+[Linear Model](./linear_model/)
 
-### Linear Regression / One variable
+> Linear Regression / One variable
+
 <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/linear_model/images/image1.png' width=300>
 
 ### Linear Regression / Two variables

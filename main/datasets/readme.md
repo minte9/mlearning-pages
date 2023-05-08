@@ -1,4 +1,4 @@
-## Dataset
+## Datasets
 
 [Iris species](./iris_species/)
 

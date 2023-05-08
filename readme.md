@@ -34,9 +34,9 @@
 > Integrals  `Integration` `Definite integral` `Gaussian function` `Falling object` `Throwing down`  
 
 [Algorithms](./main/algorithms/)  
-> K Nearest Neighbors   
-> Linear Regression  
-> Gradient Descent  
+> K Nearest Neighbors   `Algorithm` `Usage Example`  
+> Linear Regression  `Algorithm` `Usage Example`  
+> Gradient Descent  `Cost function` `Learning a,b` `Algorithm`  
 
 #
 

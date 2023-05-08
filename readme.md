@@ -30,8 +30,8 @@
 > Merge Data  
 
 [Calculus](./main/calculus/)  
-> Derivatives  
-> Integrals  
+> Derivatives  `Increments method` `Differentiation` `Slope`
+> Integrals  `Integration` `Definite integral` `Gaussian function` `Falling object` `Throwing down`  
 
 [Algorithms](./main/algorithms/)  
 > K Nearest Neighbors   

@@ -17,8 +17,8 @@
 > Simulated Data  `Make data` `Regression (A)`  
 
 [Numpy](./main/numpy/)  
-> Matrices   
-> Operations  
+> Matrices   `Vector` `Sparse matrix` `Vectorization`  
+> Operations  `Min, max, mean` `Reshape` `Transpose` `Inverse`  
 > Standard Deviation  
 > Multiplication  
 

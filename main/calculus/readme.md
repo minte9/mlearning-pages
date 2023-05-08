@@ -6,8 +6,8 @@
 > The Slope  
 
 ### Integrals
-> Integration
-> Definite integral
-> Gaussian function
-> Falling object
-> Throwing down
+> Integration  
+> Definite integral  
+> Gaussian function  
+> Falling object  
+> Throwing down  

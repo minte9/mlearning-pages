@@ -14,7 +14,7 @@
 > Iris Species  `Dataset` `Prediction` `Evaluation`  
 > Diabetes  
 > Breast Cancer  
-> Simulated Data  `Make dataset` `Regression Application`  
+> Simulated Data  `Make data` `Regression (A)`  
 
 [Numpy](./main/numpy/)  
 > Matrices   

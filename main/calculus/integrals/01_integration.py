@@ -21,21 +21,22 @@ import scipy.integrate as spi
 
 # -----------------------------------------------------
 
-def func(x):
-    return 2*x
-
 x = Symbol('x')
 t = Symbol('t')
+
 f = 2*x
 d = f.diff(x)
-
-# Function integral
 d_integration = integrate(d, x)
 assert d_integration == f
 
-# Compute Area with scipy quad (lower & upper limits)
+# -----------------------------------------------------
+
+def func(x):
+    return 2*x
+
+# Area with scipy quad()
 xa, xb = 0, 2
-f_integral, err = spi.quad(func, xa, xb)
+f_integral, err = spi.quad(func, xa, xb) # lower & upper limits
 A = f_integral
 
 # -----------------------------------------------------

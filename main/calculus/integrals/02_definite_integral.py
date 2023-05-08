@@ -1,4 +1,4 @@
-""" Calcutate definite integrals 
+""" Integrals / Definite integral
 
 A definite integral has start and end values [a, b]
 The symbol for integral is a stylish S from sum, or summing slices

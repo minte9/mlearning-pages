@@ -1,7 +1,7 @@
 # Machine Learning
 
 [Supervised ML](./main/supervised-ml/)  
-> Classifier  `Knn Classifier` `Data Frame` `Evaluate` `Score Graph` `Boundaries`  
+> Classifier  `Knn` `DataFrame` `Evaluate Model` `Score Graph` `Class Boundaries`  
 > Linear Model  `Linear Regression` `SSR Residuals`  
 > Basis Expansion  `Polynomials`  
 > Regularization  `Ridge` `Lasso`  

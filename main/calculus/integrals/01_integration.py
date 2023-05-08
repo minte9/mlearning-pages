@@ -36,8 +36,8 @@ def func(x):
 
 # Area with scipy quad()
 xa, xb = 0, 2
-f_integral, err = spi.quad(func, xa, xb) # lower & upper limits
-A = f_integral
+func_integral, err = spi.quad(func, xa, xb) # lower & upper limits
+A = func_integral
 
 # -----------------------------------------------------
 
@@ -56,7 +56,7 @@ plt.show()
 print("Function f(x) =", f)
 print("Derivative f' =", d)
 print("Integral I =", d_integration)
-print('Area A =', A)
+print('Area A =', func_integral)
 
 """
     Function   f  = 2*x

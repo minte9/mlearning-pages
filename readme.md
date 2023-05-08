@@ -27,7 +27,7 @@
 > Data Cleaning  `Describe` `Condition` `Replace` `Apply`  
 > Find Values  `Descriptive statistics`  
 > Group Rows  `GroupBy`  
-> Merge Data  `Dataframes`  
+> Merge  `Data sources`  
 
 [Calculus](./main/calculus/)  
 > Derivatives  `Increments method` `Differentiation` `Slope`  

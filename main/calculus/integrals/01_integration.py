@@ -1,7 +1,7 @@
-""" Integrals / Antidifferention
+""" Integrals / Integration
 
-Antidifferention or integration means getting the 
-original function from derived function.
+By antidifferention or integration we can get the original function 
+from the derived function.
 
 Integration can be used to find areas, volumes, central points 
 and many other useful things. 
@@ -19,44 +19,47 @@ import matplotlib.pyplot as plt
 from sympy import *
 import scipy.integrate as spi
 
+# -----------------------------------------------------
+
+def func(x):
+    return 2*x
+
 x = Symbol('x')
 t = Symbol('t')
+f = 2*x
+d = f.diff(x)
 
-# Symbolic representation
-f = 3*x + 2
-d  = f.diff(x)
-I = integrate(d, x)
-print('Derivative =', d)    # Derivative = 3
-print('Integral =', I)      # Integral = 3*x
-print()
+# Function integral
+d_integration = integrate(d, x)
+assert d_integration == f
 
-s = 16*t**2
-d = s.diff(t)
-I = integrate(d, t)
-print('Derivative =', d)    # Derivative = 32*t
-print('Integral =', I)      # Integral = 16*t**2
+# Compute Area with scipy quad (lower & upper limits)
+xa, xb = 0, 2
+f_integral, err = spi.quad(func, xa, xb)
+A = f_integral
 
+# -----------------------------------------------------
 
-# Integral value
-def f(x):
-    return 3*x + 2
-A, err = spi.quad(f, 0, 1) 
-print('Integral = ', A)     # Integral = 3.5
-
-def s(t):
-    return 16*t**2
-A2, err = spi.quad(s, 0, 1) 
-print('Integral = ', A2)     # Integral = 5.333333333333334
-
-
-# Plotting
-x = np.linspace(0, 1, 100)
-y = f(x)
 fig, ax = plt.subplots()
-ax.plot(x, y, label="f(x) = 3x + 2")
-ax.fill_between(x, y, 0, where=(x >= 0) & (x <= 1), color="gray", alpha=0.5,
-label=f'Integral (Area) = %s' %A)
+x = np.linspace(0, 3, 100)
+y = func(x)
+
+ax.plot(x, y, label="f(x) = 2x")
+ax.fill_between(x, y, 0, where=(x >= xa) & (x <= xb),
+    color="gray", alpha=0.5, label=f'Integral (Area) = %s' % A)
 ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.legend()
 plt.show()
+
+print("Function f(x) =", f)
+print("Derivative f' =", d)
+print("Integral I =", d_integration)
+print('Area A =', A)
+
+"""
+    Function   f  = 2*x
+    Derivative f' = 2
+    Integral   I  = 2*x
+    Area       A  = 4.0
+"""

@@ -26,8 +26,8 @@
 > Read Data  `Csv` `Excel` `Json` `Sql`  
 > Data Cleaning  `Describe` `Condition` `Replace` `Apply`  
 > Find Values  `Descriptive statistics`  
-> Group Rows  `Group by`  
-> Merge Data  `Dataframes merge`  
+> Group Rows  `GroupBy`  
+> Merge Data  `Dataframes`  
 
 [Calculus](./main/calculus/)  
 > Derivatives  `Increments method` `Differentiation` `Slope`  

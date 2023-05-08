@@ -12,8 +12,8 @@
 
 [Datasets](./main/datasets/)  
 > Iris Species  `Dataset` `Prediction` `Evaluation`  
-> Diabetes  
-> Breast Cancer  
+> Diabetes  `Prediction`  
+> Breast Cancer  `Prediction`  
 > Simulated Data  `Make data` `Regression (A)`  
 
 [Numpy](./main/numpy/)  

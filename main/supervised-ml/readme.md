@@ -1,11 +1,12 @@
 # Supervised Machine Learning
 
-## KNN Classifier
+[KNN Classifier](./classifier/)  
 
-### Evaluate Model / Score Graph
+> Evaluate Model / Score Graph
+> Boundaries
+
 <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/classifier/images/image1.png' width=300>
 
-### Boundaries
 <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/classifier/images/image2.png' width=300 style='allign: left;'> <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/classifier/images/image3.png' width=300> <img src='https://github.com/minte9/mlearning-pages/blob/main/main/supervised-ml/classifier/images/image4.png' width=300>
 
 #

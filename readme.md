@@ -19,8 +19,8 @@
 [Numpy](./main/numpy/)  
 > Matrices   `Vector` `Sparse matrix` `Vectorization`  
 > Operations  `Min, max, mean` `Reshape` `Transpose` `Inverse`  
-> Standard Deviation  
-> Multiplication  
+> Standard Deviation  `Variance` `Standard deviation`  
+> Multiplication  `Addition` `Substraction`  `Element-wise *` `Matrix multiplication @`
 
 [Pandas](./main/pandas/)  
 > Read Data  `Csv` `Excel` `Json` `Sql`  

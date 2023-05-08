@@ -35,7 +35,7 @@ assert d_integration == f
 def func(x):
     return 2*x
 
-# Area with scipy quad()
+# Integration with scipy quad() - area under the f(x)
 xa, xb = 0, 2
 func_integral, err = spi.quad(func, xa, xb) # lower & upper limits
 A = func_integral

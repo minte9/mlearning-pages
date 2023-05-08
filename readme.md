@@ -23,8 +23,8 @@
 > Multiplication  
 
 [Pandas](./main/pandas/)  
-> Read Data  
-> Data Cleaning  
+> Read Data  `Csv` `Excel` `Json` `Sql`  
+> Data Cleaning  `Describe` `Condition` `Replace` `Apply`  
 > Find Values  
 > Group Rows  
 > Merge Data  

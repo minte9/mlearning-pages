@@ -60,7 +60,7 @@ print('Acceleration =', a)  # Acceleration = 32
 print('Speed =', v)         # Speed = 32*t
 print('Distance =', s)      # Distance = 16*t**2
 print("Distance traveled in 5 seconds =", d) # 400
-print("Time Time for 400ft fall =", time[1]) # 5
+print("Time for 400ft fall =", time[1]) # 5
 
 # Plotting
 t = np.linspace(0, 6)
@@ -104,5 +104,5 @@ plt.show()
     Speed = 32*t
     Distance = 16*t**2 - 400
     Distance traveled in 5 seconds = 400
-    Time Time for 400ft fall = 5
+    Time for 400ft fall = 5
 """

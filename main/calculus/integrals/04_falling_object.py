@@ -39,7 +39,7 @@ from sympy import *
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-# ---------------------------------------------------------
+# ------------------------------------------------------------
 
 t = Symbol('t')
 a = 32
@@ -51,9 +51,9 @@ d = s.subs(t, 5)
 
 # Time for 400ft fall
 s = s - 400             # s = 16*t**2 - 400
-time = solve(s, t)      # find the value of t that makes s = 0
+time = solve(s, t)      # resolve equation that makes s = 0
 
-# ---------------------------------------------------------
+# ------------------------------------------------------------
 
 # Print results
 print('Acceleration =', a)  # Acceleration = 32

@@ -16,38 +16,41 @@ Distance traveled in 5 seconds is 400
     s = 900
 """
 
-# ---------------------------------------------------------
-# Symbolic representation
-
 import numpy as np
 from sympy import *
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+# ------------------------------------------------------------
 
 t = Symbol('t')
 a = 32
-v = integrate(a, t) + 100           # Look Hee
+v = integrate(a, t) + 100 # Look Hee
 s = integrate(v, t)
+
+# Distance after 5 sec
+distance1 = s.subs(t, 5)
+
+# Distance after 2.77 sec
+distance2 = s.subs(t, 2.77)
+
+# Time for 400ft thrown fall
+s = s - 400                    # s = 16*t**2 + 100t
+time = solve(s, t)             # resolve equation that makes s = 0
+
+# ------------------------------------------------------------
+
+# Print results
 print('Acceleration =', a)          # 32
 print('Speed =', v)                 # 32*t + 100
 print('Distance =', s)              # 16*t**2 + 100*t
+print("Distance traveled after 5 sec =", distance1)       # 900
+print("Distance traveled  after 2.77 sec =", distance2)       # 400
+print("Time for 400ft thrown fall =", round(time[0], 2))  # 3
 
-# Distance after 5 sec
-distance = s.subs(t, 5)
-print("Distance =", distance)       # 900
+# ------------------------------------------------------------
 
-# Distance after 2.77 sec
-distance = s.subs(t, 2.77)
-print("Distance =", distance)       # 400
-
-# Time for 400ft thrown fall
-s = s - 400                         # s = 16*t**2 + 100t
-time = solve(s, t)                  # resolve equation that makes s = 0
-print("Time =", round(time[0], 2))  # 3
-
-# ---------------------------------------------------------
 # Plotting
-
-import matplotlib.pyplot as plt
-
 t = np.linspace(0, 5)
 s = 16*t**2 + 100*t
 fig, ax = plt.subplots()
@@ -61,11 +64,7 @@ plt.plot((2.77, 2.77), (0, 400), linestyle='--')
 plt.plot((0, 2.77), (400, 400), linestyle='--')
 plt.show()
 
-# ---------------------------------------------------------
 # Animation
-
-from matplotlib.animation import FuncAnimation
-
 def update(frame):
     t = np.linspace(0, frame/10)
     s = 16 * t**2 + 100*t
@@ -86,4 +85,14 @@ fig, ax = plt.subplots()
 ani = FuncAnimation(fig, update, frames=np.arange(10, 29, 1), repeat=False)
 plt.show()
 
-# ani.save('1427_throw_ball.gif', writer='imagemagick', fps=10)
+if 1 == 0: # save image
+    ani.save('1427_throw_ball.gif', writer='imagemagick', fps=10)
+
+"""
+    Acceleration = 32
+    Speed = 32*t + 100
+    Distance = 16*t**2 + 100*t - 400
+    Distance traveled after 5 sec = 900
+    Distance traveled  after 2.77 sec = 399.766400000000
+    Time for 400ft thrown fall = 2.77
+"""

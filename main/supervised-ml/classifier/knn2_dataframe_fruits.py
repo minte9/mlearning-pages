@@ -74,10 +74,10 @@ print("Precition labels for new items: \n", new_items, "\n", predictions, "\n")
 	7     4.69   6.19  Mandarin 
 
 	Prediction label for new item: 
-	[9, 3] 
-	['Lemon'] 
+	 [9, 3] 
+	 ['Lemon'] 
 
 	Precition labels for new items: 
-	[[9, 3], [4, 5], [2, 5], [8, 9], [5, 7]] 
-	['Lemon' 'Mandarin' 'Mandarin' 'Apple' 'Mandarin'] 
+	 [[9, 3], [4, 5], [2, 5], [8, 9], [5, 7]] 
+	 ['Lemon' 'Mandarin' 'Mandarin' 'Apple' 'Mandarin'] 
 """

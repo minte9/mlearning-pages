@@ -7,8 +7,8 @@ in order to predict an unknown fruit name.
 We use Pandas library to transform a json dataset into a DataFrame.
 """
 
-import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
+import pandas as pd
 
 # Training dataset
 data = {

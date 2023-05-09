@@ -1,4 +1,4 @@
-""" KNN classifier / Supervised ML algorithm
+""" KNN classifier / Features and label
 
 We provide training dataset points (features) and target labels, then
 we train the model using KNN classifier with k=3 (nearest neighbors to be used).

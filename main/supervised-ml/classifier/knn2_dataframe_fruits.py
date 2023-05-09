@@ -46,8 +46,8 @@ prediction  = knn.predict([new_item])
 predictions = knn.predict(new_items)
 
 print("Dataframe(order by fruit): \n", df, "\n")
-print("Prediction label for item", new_item, "\n", prediction, "\n")
-print("Precition labels for items", new_items, "\n", predictions, "\n") 
+print("Prediction label for new item: \n", new_item, "\n", prediction, "\n")
+print("Precition labels for new items: \n", new_items, "\n", predictions, "\n") 
 
 """
 	Dataframe(order by fruit): 
@@ -73,9 +73,11 @@ print("Precition labels for items", new_items, "\n", predictions, "\n")
 	16    4.40   5.90  Mandarin
 	7     4.69   6.19  Mandarin 
 
-	Prediction label for item [9, 3]
-	 ['Lemon']
+	Prediction label for new item: 
+	[9, 3] 
+	['Lemon'] 
 
-	Precition labels for items [[9, 3], [4, 5], [2, 5], [8, 9], [5, 7]]
-	 ['Lemon' 'Mandarin' 'Mandarin' 'Apple' 'Mandarin']
+	Precition labels for new items: 
+	[[9, 3], [4, 5], [2, 5], [8, 9], [5, 7]] 
+	['Lemon' 'Mandarin' 'Mandarin' 'Apple' 'Mandarin'] 
 """

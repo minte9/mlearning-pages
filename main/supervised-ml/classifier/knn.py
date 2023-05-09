@@ -8,8 +8,11 @@ We are able now to predict the label of a new data point.
 from sklearn.neighbors import KNeighborsClassifier
 
 # Training dataset
-X = [[0,0], [1,1], [2,2], [3,3]]    
-y = [0, 1, 0, 1]
+X = [[0,0], 
+     [1,1], 
+     [2,2], 
+     [3,3]]         # features
+y = [0, 1, 0, 1]    # label
 
 # Train the model
 knn = KNeighborsClassifier(n_neighbors=3)

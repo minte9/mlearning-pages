@@ -1,10 +1,11 @@
-"""KNN classifier / Fruit example
+"""KNN classifier / Fruits
 
 Dataset contains heights, widths and labels (fruit name).
-The algorithm teach a function to map any combination 
-in order to predict an unknown fruit name.
+The algorithm teach a function to map any combination in order 
+to predict an unknown fruit name.
 
-We use Pandas library to transform a json dataset into a DataFrame.
+We use Pandas library to transform a json dataset 
+into a DataFrame.
 """
 
 from sklearn.neighbors import KNeighborsClassifier

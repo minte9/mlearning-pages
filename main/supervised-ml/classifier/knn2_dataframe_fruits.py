@@ -44,11 +44,12 @@ new_items = [[9, 3], [4, 5], [2, 5], [8, 9], [5, 7]]
 prediction  = knn.predict([new_item])
 predictions = knn.predict(new_items)
 
-print(df, "\n")
+print("Dataframe: \n", df, "\n")
 print("Prediction label for item", new_item, "\n", prediction, "\n")
 print("Precition labels for items", new_items, "\n", predictions, "\n") 
 
 """
+	Dataframe:
 		height  width     fruit
 	0     3.91   5.76  Mandarin
 	1     7.09   7.69     Apple

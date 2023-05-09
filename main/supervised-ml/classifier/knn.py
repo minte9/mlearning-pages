@@ -20,9 +20,12 @@ knn.fit(X, y)
 
 # Make predictions
 x_unknown = [1,2]        
-prediction = knn.predict([x_unknown])   
-print("Label prediction for", x_unknown, "=", prediction)
+y_pred = knn.predict([x_unknown])  
+
+print("New point: x_unknown =", x_unknown)
+print("Predicted label: y_pred =", y_pred)
 
 """
-    Label prediction for [1, 2] = [0]
+    New point: x_unknown = [1, 2]
+    Predicted label: y_pred = [0]
 """

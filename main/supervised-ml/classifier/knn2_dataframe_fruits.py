@@ -29,7 +29,7 @@ data = {
 } 
 # Transform dataset
 df = pd.DataFrame(data) 
-df = df.sort_values(by='fruit')
+df = df.sort_values(by=['fruit', 'width', 'height'])
 
 X = df[['height', 'width']].values
 y = df.fruit.values
@@ -50,28 +50,28 @@ print("Prediction label for item", new_item, "\n", prediction, "\n")
 print("Precition labels for items", new_items, "\n", predictions, "\n") 
 
 """
-	Dataframe (order by fruit):
+	Dataframe(order by fruit): 
 		height  width     fruit
-	9     7.11   7.02     Apple
-	1     7.09   7.69     Apple
 	15    3.93   6.12     Apple
-	14    7.86   7.60     Apple
+	9     7.11   7.02     Apple
 	5     7.62   7.51     Apple
+	14    7.86   7.60     Apple
+	1     7.09   7.69     Apple
 	13    7.44   7.89     Apple
 	11    7.29   8.38     Apple
 	17    5.50   4.50     Lemon
-	12    8.49   6.52     Lemon
 	19    8.69   5.82     Lemon
-	8     7.50   5.99     Lemon
 	4     7.95   5.90     Lemon
+	8     7.50   5.99     Lemon
+	18    8.10   6.15     Lemon
+	12    8.49   6.52     Lemon
 	3     9.21   7.20     Lemon
 	2    10.48   7.32     Lemon
-	18    8.10   6.15     Lemon
-	10    4.15   5.60  Mandarin
-	7     4.69   6.19  Mandarin
 	6     7.95   5.32  Mandarin
-	16    4.40   5.90  Mandarin
+	10    4.15   5.60  Mandarin
 	0     3.91   5.76  Mandarin
+	16    4.40   5.90  Mandarin
+	7     4.69   6.19  Mandarin 
 
 	Prediction label for item [9, 3]
 	 ['Lemon']

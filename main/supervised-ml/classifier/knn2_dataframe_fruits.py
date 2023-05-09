@@ -27,7 +27,7 @@ data = {
     'Apple', 'Apple', 'Mandarin', 'Lemon', 'Lemon', 'Lemon'
   ]
 } 
-# Transform dataset into a DataFrame
+# Transform dataset
 df = pd.DataFrame(data) 
 
 X = df[['height', 'width']].values

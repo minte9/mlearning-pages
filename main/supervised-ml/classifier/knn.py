@@ -1,13 +1,13 @@
 """ KNN classifier / Supervised ML algorithm
 
-We provide training dataset points and labels and
-createa a KNN classifier with K=3 (nearest neighbors to be used).
-We are able now to predict the label of a new data point.   
+We provide training dataset points (features) and target labels, then
+we train the model using KNN classifier with k=3 (nearest neighbors to be used).
+Finally, we are able now to predict the label of a new data point.   
 """
 
 from sklearn.neighbors import KNeighborsClassifier
 
-# Training dataset (features & label)
+# Training dataset
 X = [[0,0], 
      [1,1], 
      [2,2], 

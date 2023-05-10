@@ -10,10 +10,6 @@ one or a few recommended movies.
 """
 
 from sklearn.neighbors import KNeighborsClassifier
-import matplotlib.pyplot as plt
-import numpy as np
-
-# --------------------------------------------------------------------------
 
 # Training dataset (genre, rating)
 X = [[0.2, 7.8],

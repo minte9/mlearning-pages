@@ -1,4 +1,4 @@
-""" KNN classifier / Movie recomandation
+""" KNN classifier / Movie recomendation
 
 We hava a dataset of 10 movies (ids) and 2 features (genre, rating).
 We also have a movie that an user already saw (x_unknown).

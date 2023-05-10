@@ -1,6 +1,6 @@
 """ KNN classifier / Movie recomendation
 
-We hava a dataset of 10 movies (ids) and 2 features (genre, rating).
+We have a dataset of 10 movies (ids) and 2 features (genre, rating).
 We also have a movie that an user already saw (x_unknown).
 We can predict what's the most recommended next movie for user.
 

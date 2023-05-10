@@ -3,6 +3,10 @@
 We hava a dataset of 10 movies (ids) and 2 features (genre, rating).
 We also have a movie that an user already saw (x_unknown).
 We can predict what's the most recommended next movie for user.
+
+In practice, it's not common to have a large number of tied neighbors, 
+so the knn.predict() function usually returns a list containing 
+one or a few recommended movies.
 """
 
 from sklearn.neighbors import KNeighborsClassifier

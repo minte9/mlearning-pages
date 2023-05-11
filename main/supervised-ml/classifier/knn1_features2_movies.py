@@ -7,6 +7,8 @@ We can predict what's the most recommended next movie for user.
 In practice, it's not common to have a large number of tied neighbors, 
 so the knn.predict() function usually returns a list containing 
 one or a few recommended movies.
+
+This type of recommendation is called content-based filtering.
 """
 
 from sklearn.neighbors import KNeighborsClassifier

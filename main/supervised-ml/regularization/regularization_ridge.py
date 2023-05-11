@@ -29,6 +29,8 @@ y1  = [31, 30, 80, 49, 70, 118] # price (10,000$)
 X2 = [17, 40, 55, 57, 70, 85]
 y2 = [19, 50, 60, 32, 90, 110]
 
+# ------------------------------------------------------------------
+
 # Ridge Regression
 degree_ = 4
 lambda_ = 0.8
@@ -57,6 +59,8 @@ ya = round(ya[0], 2)
 polyX = PolynomialFeatures(degree=degree_).fit_transform(xa)
 yb = model2.predict(polyX) # Ridge regression
 yb = round(yb[0], 2)
+
+# ------------------------------------------------------------------
 
 # Plot train, test data and prediction line
 plt.figure(figsize=(6,4))

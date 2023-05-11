@@ -22,8 +22,8 @@ X2 = [17, 40, 55, 57, 70, 85]
 y2 = [19, 50, 60, 32, 90, 110]
 
 # ------------------------------------------------------------------------
-
 # Lasso Regression
+
 degree_ = 4
 lambda_ = 0.8
 
@@ -34,8 +34,8 @@ polyX = PolynomialFeatures(degree=degree_).fit_transform(X1)
 model1 = Ridge(alpha=lambda_, solver='svd').fit(polyX, y1)
 model2 = Lasso(alpha=lambda_, max_iter=1300000).fit(polyX, y1) # Look Here
 
-print('Sum of coeficient (Rigde regularization): ', sum(model1.coef_))
-print('Sum of coeficient (Lasso regularization): ', sum(model2.coef_))
+print('Sum of coeficient (Rigde regression): ', sum(model1.coef_))
+print('Sum of coeficient (Lasso regression): ', sum(model2.coef_))
 
 t_ = np.array(np.linspace(0, 100, 100)).reshape(-1, 1)
 t = PolynomialFeatures(degree=degree_).fit_transform(t_)
@@ -75,6 +75,6 @@ plt.legend(loc='upper left')
 plt.show()
 
 """
-    Sum of coeficient (Rigde regularization):  -4.693509929600461
-    Sum of coeficient (Lasso regularization):  0.052552083672473715 # Look Here
+    Sum of coeficient (Rigde regression):  -4.693509929600461
+    Sum of coeficient (Lasso regression):  0.052552083672473715 # Look Here
 """

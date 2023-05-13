@@ -1,8 +1,7 @@
-""" TMDB / KNN classifier - Movie recommendation system
+""" Knn / Movie recommendation system
 
 Using head() we can see that dataframe values are in JSON format.
-We'll convert these columns into a format that can be easily read and interpreted. 
-We decode json into a list.
+We'll convert json columns into list to read and interpreted them easily. 
 """
 
 import pathlib
@@ -76,7 +75,7 @@ print("Credits 25: \n", credits.loc[25, ['cast', 'crew']], "\n"))
     keywords    ['shipwreck', 'iceberg', 'ship', 'panic', 'tit...
     homepage                          http://www.titanicmovie.com
     Name: 25, dtype: object
-    
+
     Credits 25: 
     cast    ['Kate Winslet', 'Leonardo DiCaprio', 'Frances...
     crew    [{"credit_id": "52fe425ac3a36847f8017985", "de...

@@ -30,12 +30,12 @@ movies = movies.merge(credits, left_on='id', right_on='movie_id', how='left')
 movies = movies[['id', 'original_title', 'genres', 'cast', 'vote_average', 'keywords']]
 
 # Clean the columns
-movies['genres'] = movies['genres'] \
-                    .str.strip('[]').str.replace(' ', '').str.replace("'", '')
-movies['cast'] = movies['cast'] \
-                    .str.strip('[]').str.replace(' ', '').str.replace("'", '')
-movies['keywords'] = movies['keywords'] \
-                        .str.strip('[]').str.replace(' ', '').str.replace("'", '')
+movies['genres'] = \
+    movies['genres'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
+movies['cast'] = \
+    movies['cast'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
+movies['keywords'] = \
+    movies['keywords'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
 
 # Get lists
 movies['genres'] = movies['genres'].str.split(',')

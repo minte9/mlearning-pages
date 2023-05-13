@@ -1,15 +1,6 @@
-""" TMDB / KNN classifier - Movie recommendation system
+""" Knn / Movie recommendation system (step 5)
 
-We have binary values which represents the presense of absence of a feature.
-The vectors formed using binary values are called `one-hot` encoded vectors.
-Each feature is represented as a separate dimension, with one value (0 or 1).
-
-So, for example, a data point with only two binary features (drama and comedy) 
-can be represented by a 2-dimensional vector, X-axis represents drama and the 
-second dimension Y-axis represents comedy.
-
-The angle between two 3-dimensional vectors can be computed using
-cosine similarity formula.
+This is the final step, where we can use KNN to make predictions.
 """
 
 import pathlib

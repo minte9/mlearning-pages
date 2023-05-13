@@ -1,8 +1,4 @@
-""" TMDB / KNN classifier - Movie recommendation system
-
-Using head() we can see that dataframe values are in JSON format.
-We'll convert these columns into a format that can be easily read and interpreted. 
-We decode json into a list.
+""" Knn / Movie recommendation system (step 2)
 
 We merge the movies and credits dataframes and select the relevant columns.
 """

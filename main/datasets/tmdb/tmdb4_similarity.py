@@ -1,4 +1,4 @@
-""" TMDB / KNN classifier - Movie recommendation system
+""" Knn / Movie recommendation system (step 4)
 
 We have binary values which represents the presense of absence of a feature.
 The vectors formed using binary values are called `one-hot` encoded vectors.

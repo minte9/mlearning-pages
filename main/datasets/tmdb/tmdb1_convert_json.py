@@ -1,4 +1,4 @@
-""" Knn / Movie recommendation system
+""" Knn / Movie recommendation system (step 1)
 
 Using head() we can see that dataframe values are in JSON format.
 We'll convert json columns into list to read and interpreted them easily. 
@@ -36,7 +36,7 @@ convert_json(movies, 'keywords')
 convert_json(credits, 'cast')
 
 print("Movie 25: \n", movies.loc[25, ['genres', 'keywords', 'homepage']], "\n")
-print("Credits 25: \n", credits.loc[25, ['cast', 'crew']], "\n"))
+print("Credits 25: \n", credits.loc[25, ['cast', 'crew']], "\n")
 
 # ------------------------------------------------------------------------------------
 

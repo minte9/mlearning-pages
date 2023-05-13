@@ -1,4 +1,4 @@
-""" TMDB / KNN classifier - Movie recommendation system
+""" Knn / Movie recommendation system (user input)
 """
 
 import pathlib

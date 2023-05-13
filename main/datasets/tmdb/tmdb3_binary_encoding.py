@@ -1,13 +1,8 @@
-""" TMDB / KNN classifier - Movie recommendation system
-
-Using head() we can see that dataframe values are in JSON format.
-Convert these columns into a format that can be easily read and interpreted. 
-
-Decode json into a list.
-Merge the movies and credits dataframes and select the relevant columns.
+""" Knn / Movie recommendation system (step 3)
 
 Classify movies according to their genres (encoding for multiple labels).
-Classify movies according to their actors (with highest contribution to the movie).
+Next based on actors (with highest contribution to the movie).
+The same with their keywords.
 
 Luckily, the sequence of the actors in json is according to the actors' contribution.
 We select the main 4 actors from each movie.

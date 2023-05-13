@@ -11,8 +11,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import json
 
-# ------------------------------------------------------------------------------------
-
 DIR = pathlib.Path(__file__).resolve().parent
 movies = pd.read_csv(DIR / 'data/tmdb_5000_movies.csv') # dataframe
 credits = pd.read_csv(DIR / 'data/tmdb_5000_credits.csv')
@@ -38,16 +36,14 @@ convert_json(credits, 'cast')
 print("Movie 25: \n", movies.loc[25, ['genres', 'keywords', 'homepage']], "\n")
 print("Credits 25: \n", credits.loc[25, ['cast', 'crew']], "\n")
 
-# ------------------------------------------------------------------------------------
-
 """
     Movies head(): 
-        budget                                             genres  ... vote_average  vote_count
-    0  237000000  [{"id": 28, "name": "Action"}, {"id": 12, "nam...  ...          7.2       11800
-    1  300000000  [{"id": 12, "name": "Adventure"}, {"id": 14, "...  ...          6.9        4500
-    2  245000000  [{"id": 28, "name": "Action"}, {"id": 12, "nam...  ...          6.3        4466
-    3  250000000  [{"id": 28, "name": "Action"}, {"id": 80, "nam...  ...          7.6        9106
-    4  260000000  [{"id": 28, "name": "Action"}, {"id": 12, "nam...  ...          6.1        2124
+        budget                                             genres  ... vote_average
+    0  237000000  [{"id": 28, "name": "Action"}, {"id": 12, "nam...  ...          7.2
+    1  300000000  [{"id": 12, "name": "Adventure"}, {"id": 14, "...  ...          6.9
+    2  245000000  [{"id": 28, "name": "Action"}, {"id": 12, "nam...  ...          6.3
+    3  250000000  [{"id": 28, "name": "Action"}, {"id": 80, "nam...  ...          7.6
+    4  260000000  [{"id": 28, "name": "Action"}, {"id": 12, "nam...  ...          6.1
     [5 rows x 20 columns] 
 
     Movies columns: 

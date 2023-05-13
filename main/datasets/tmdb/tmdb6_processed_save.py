@@ -1,5 +1,35 @@
 """ Knn / Movie recommendation system (save processed)
 
+STEP 1
+Using head() we can see that dataframe values are in JSON format.
+We'll convert json columns into list to read and interpreted them easily. 
+
+STEP 2
+We merge the movies and credits dataframes and select the relevant columns.
+
+STEP 3
+Classify movies according to their genres (encoding for multiple labels).
+Next based on actors (with highest contribution to the movie).
+The same with their keywords.
+
+Luckily, the sequence of the actors in json is according to the actors' contribution.
+We select the main 4 actors from each movie.
+
+We have binary values which represents the presense of absence of a feature.
+The vectors formed using binary values are called `one-hot` encoded vectors.
+Each feature is represented as a separate dimension, with one value (0 or 1).
+
+STEP 4
+So, for example, a data point with only two binary features (drama and comedy) 
+can be represented by a 2-dimensional vector, X-axis represents drama and the 
+second dimension Y-axis represents comedy.
+
+The angle between two 3-dimensional vectors can be computed using
+cosine similarity formula.
+
+STEP 5
+In the final step, where we can use KNN to make predictions.
+
 We could save the cleaned and processed movies dataframe to a file, 
 so that we don't have to repeat the data preparation steps every time. 
 This could save a lot of time if you plan on running the code multiple times.
@@ -28,9 +58,7 @@ def convert_json(df, col):
 
 convert_json(movies, 'genres')
 convert_json(movies, 'keywords')
-convert_json(movies, 'production_companies')
 convert_json(credits, 'cast')
-convert_json(credits, 'crew')
 
 # Merge csv files and select the relevant columns
 movies = movies.merge(credits, left_on='id', right_on='movie_id', how='left')

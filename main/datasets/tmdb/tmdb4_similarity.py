@@ -33,9 +33,7 @@ def convert_json(df, col):
 
 convert_json(movies, 'genres')
 convert_json(movies, 'keywords')
-convert_json(movies, 'production_companies')
 convert_json(credits, 'cast')
-convert_json(credits, 'crew')
 
 # Merge csv files and select the relevant columns
 movies = movies.merge(credits, left_on='id', right_on='movie_id', how='left')

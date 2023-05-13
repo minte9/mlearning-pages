@@ -23,9 +23,7 @@ def convert_json(df, col):
 
 convert_json(movies, 'genres')
 convert_json(movies, 'keywords')
-convert_json(movies, 'production_companies')
 convert_json(credits, 'cast')
-convert_json(credits, 'crew')
 
 # ------------------------------------------------------------------------------------
 

@@ -1,6 +1,34 @@
-""" Knn / Movie recommendation system (step 5)
+""" Knn / Movie recommendation system (save processed)
 
-This is the final step, where we can use KNN to make predictions.
+STEP 1
+Using head() we can see that dataframe values are in JSON format.
+We'll convert json columns into list to read and interpreted them easily. 
+
+STEP 2
+We merge the movies and credits dataframes and select the relevant columns.
+
+STEP 3
+Classify movies according to their genres (encoding for multiple labels).
+Next based on actors (with highest contribution to the movie).
+The same with their keywords.
+
+Luckily, the sequence of the actors in json is according to the actors' contribution.
+We select the main 4 actors from each movie.
+
+We have binary values which represents the presense of absence of a feature.
+The vectors formed using binary values are called `one-hot` encoded vectors.
+Each feature is represented as a separate dimension, with one value (0 or 1).
+
+STEP 4
+So, for example, a data point with only two binary features (drama and comedy) 
+can be represented by a 2-dimensional vector, X-axis represents drama and the 
+second dimension Y-axis represents comedy.
+
+The angle between two 3-dimensional vectors can be computed using
+cosine similarity formula.
+
+STEP 5
+In the final step, where we can use KNN to make predictions.
 """
 
 import pathlib
@@ -32,9 +60,12 @@ movies = movies.merge(credits, left_on='id', right_on='movie_id', how='left')
 movies = movies[['id', 'original_title', 'genres', 'cast', 'vote_average', 'keywords']]
 
 # Clean the columns
-movies['genres'] = movies['genres'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
-movies['cast'] = movies['cast'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
-movies['keywords'] = movies['keywords'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
+movies['genres'] = \
+    movies['genres'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
+movies['cast'] = \
+    movies['cast'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
+movies['keywords'] = \
+    movies['keywords'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
 
 # Get lists
 movies['genres'] = movies['genres'].str.split(',')
@@ -103,8 +134,6 @@ movies['genres_bin'] = movies['genres'].apply(lambda x: binary_genres(x))
 movies['cast_bin'] = movies['cast'].apply(lambda x: binary_cast(x)) 
 movies['keywords_bin'] = movies['keywords'].apply(lambda x: binary_keywords(x))
 
-# ------------------------------------------------------------------------------------
-
 # Spatial distance between vectors
 def similarity(movieId1, movieId2):
     a = movies.iloc[movieId1]
@@ -115,8 +144,6 @@ def similarity(movieId1, movieId2):
     d3 = spatial.distance.cosine(a['keywords_bin'], b['keywords_bin'])
 
     return d1 + d2 + d3
-
-# ------------------------------------------------------------------------------------
 
 # New clean dataset
 new_id = list(range(0, movies.shape[0]))

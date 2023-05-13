@@ -15,6 +15,7 @@
 > Diabetes  `Prediction`  
 > Breast Cancer  `Prediction`  
 > Simulated Data  `Make data` `Regression (A)`  
+> Tmdb `Cleanning` `Binary` `Similarity` `Predictions`
 
 [Numpy](./main/numpy/)  
 > Matrices   `Vector` `Sparse matrix` `Vectorization`  

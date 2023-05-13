@@ -25,18 +25,17 @@ convert_json(movies, 'genres')
 convert_json(movies, 'keywords')
 convert_json(credits, 'cast')
 
-# ------------------------------------------------------------------------------------
-
-# pd.set_option('display.max_colwidth', 10)
-
 # Merge csv files and select the relevant columns
 movies = movies.merge(credits, left_on='id', right_on='movie_id', how='left')
 movies = movies[['id', 'original_title', 'genres', 'cast', 'vote_average', 'keywords']]
 
 # Clean the columns
-movies['genres'] = movies['genres'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
-movies['cast'] = movies['cast'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
-movies['keywords'] = movies['keywords'].str.strip('[]').str.replace(' ', '').str.replace("'", '')
+movies['genres'] = movies['genres'] \
+                    .str.strip('[]').str.replace(' ', '').str.replace("'", '')
+movies['cast'] = movies['cast'] \
+                    .str.strip('[]').str.replace(' ', '').str.replace("'", '')
+movies['keywords'] = movies['keywords'] \
+                        .str.strip('[]').str.replace(' ', '').str.replace("'", '')
 
 # Get lists
 movies['genres'] = movies['genres'].str.split(',')
@@ -47,8 +46,6 @@ print('Movies (merged and features selection): \n', movies.head())
 print('Movies index: \n' , movies.index.values)
 print('Movies columns: \n' , movies.columns.values)
 print("Movie 25: \n", movies.loc[25])
-
-# ------------------------------------------------------------------------------------
 
 # Plot top genres
 plt.subplots()
@@ -78,8 +75,6 @@ ax = pd.Series(lst).value_counts()[:10].sort_values(ascending=True) \
         .plot.barh(width=0.9, color=sns.color_palette('hls', 10))
 
 plt.show()
-
-# ------------------------------------------------------------------------------------
 
 """
     Movies (merged and features selection): 

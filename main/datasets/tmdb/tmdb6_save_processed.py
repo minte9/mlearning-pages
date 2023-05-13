@@ -23,8 +23,8 @@ import operator
 import pickle
 
 DIR = pathlib.Path(__file__).resolve().parent
-movies = pd.read_csv(DIR / '_data/tmdb_5000_movies.csv')
-credits = pd.read_csv(DIR / '_data/tmdb_5000_credits.csv')
+movies = pd.read_csv(DIR / 'data/tmdb_5000_movies.csv')
+credits = pd.read_csv(DIR / 'data/tmdb_5000_credits.csv')
 
 # Change columns values from json to string
 def convert_json(df, col):

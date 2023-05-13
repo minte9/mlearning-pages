@@ -15,8 +15,8 @@ import json
 # ------------------------------------------------------------------------------------
 
 DIR = pathlib.Path(__file__).resolve().parent
-movies = pd.read_csv(DIR / '_data/tmdb_5000_movies.csv') # dataframe
-credits = pd.read_csv(DIR / '_data/tmdb_5000_credits.csv')
+movies = pd.read_csv(DIR / 'data/tmdb_5000_movies.csv') # dataframe
+credits = pd.read_csv(DIR / 'data/tmdb_5000_credits.csv')
 
 print("Movies head(): \n", movies.head())
 print("Credits head(): \n", credits.head())

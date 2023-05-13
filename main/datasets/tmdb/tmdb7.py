@@ -7,7 +7,7 @@ from scipy import spatial
 import operator
 
 DIR = pathlib.Path(__file__).resolve().parent
-with open(DIR / '_data/movies_processed.pkl', 'rb') as f:
+with open(DIR / 'data/movies_processed.pkl', 'rb') as f:
     movies = pickle.load(f)
 
 # Spatial distance between vectors

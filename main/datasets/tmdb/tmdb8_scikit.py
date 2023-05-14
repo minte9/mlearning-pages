@@ -1,6 +1,4 @@
-""" Knn / Movie recommendation system
-
-Merge the movies and credits dataframes and select the relevant columns.
+""" Knn / Movie recommendation system (scikit)
 
 Combine relevant features and compute similarity score
 Sort by score in descending order

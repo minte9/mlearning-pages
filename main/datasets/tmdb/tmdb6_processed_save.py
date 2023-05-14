@@ -8,8 +8,6 @@ This could save a lot of time if you plan on running the code multiple times.
 import pathlib
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 import json
 from scipy import spatial
 import operator

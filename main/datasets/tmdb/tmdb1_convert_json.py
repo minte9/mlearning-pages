@@ -7,8 +7,6 @@ We'll convert json columns into list to read and interpreted them easily.
 import pathlib
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 import json
 
 DIR = pathlib.Path(__file__).resolve().parent

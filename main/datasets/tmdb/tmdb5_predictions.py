@@ -128,7 +128,7 @@ movies = movies[[
 ]]
 
 # Find the 10 most similiar movies
-def predict_score(name):
+def predict_movies(name):
     new_movie = movies[movies['original_title'].str.contains(name)]
     new_movie = new_movie.iloc[0].to_frame().T
     print('\nSelected Movie: ', new_movie.original_title.values[0], "\n")
@@ -154,7 +154,7 @@ def predict_score(name):
         rating = str(movies.iloc[neighbor[0]][2])
         print(original_title + " | Genres: " + genres + " | Rating: " + rating) 
 
-predict_score('Godfather')
+predict_movies('Godfather')
 
 # ------------------------------------------------------------------------------------
 

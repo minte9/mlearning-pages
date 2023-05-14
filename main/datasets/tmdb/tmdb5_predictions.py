@@ -2,11 +2,8 @@
 
 Convert json columns into list to read and interpreted them easily. 
 Merge the movies and credits dataframes and select the relevant columns.
-
 Classify movies according to their genres (encoding for multiple labels).
-The same with their cast and  keywords.
-
-We have binary values which represents the presense of absence of a feature.
+New binary values which represents the presense of absence of a feature.
 The vectors formed using binary values are called `one-hot` encoded vectors.
 """
 

@@ -1,10 +1,8 @@
 """ Knn / Movie recommendation system (scikit)
 
-Combine relevant features and compute similarity score
-Sort by score in descending order
-
-x[1] extracts the similarity score
-[1:] exclude the first element, which is the movie itself
+Combine relevant features and compute similarity score.
+Sort by similarity score x[1] in descending order.
+Exclude the first element, which is the movie itself.
 """
 
 import pathlib

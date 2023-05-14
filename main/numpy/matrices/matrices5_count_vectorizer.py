@@ -7,10 +7,11 @@ We can find the cos similarity between these two vectors.
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-text = ['London Paris London', 'Paris Paris London']
-cv = CountVectorizer()
-matrix = cv.fit_transform(text)
+A = 'London Paris London'
+B = 'Paris Paris London'
 
+cv = CountVectorizer()
+matrix = cv.fit_transform([A, B])
 similarity_scores = cosine_similarity(matrix)
 
 print("Features names: \n", cv.get_feature_names_out())

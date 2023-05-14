@@ -1,34 +1,13 @@
-""" Knn / Movie recommendation system (save processed)
+""" Knn / Movie recommendation system
 
-STEP 1
-Using head() we can see that dataframe values are in JSON format.
-We'll convert json columns into list to read and interpreted them easily. 
+Convert json columns into list to read and interpreted them easily. 
+Merge the movies and credits dataframes and select the relevant columns.
 
-STEP 2
-We merge the movies and credits dataframes and select the relevant columns.
-
-STEP 3
 Classify movies according to their genres (encoding for multiple labels).
-Next based on actors (with highest contribution to the movie).
-The same with their keywords.
-
-Luckily, the sequence of the actors in json is according to the actors' contribution.
-We select the main 4 actors from each movie.
+The same with their cast and  keywords.
 
 We have binary values which represents the presense of absence of a feature.
 The vectors formed using binary values are called `one-hot` encoded vectors.
-Each feature is represented as a separate dimension, with one value (0 or 1).
-
-STEP 4
-So, for example, a data point with only two binary features (drama and comedy) 
-can be represented by a 2-dimensional vector, X-axis represents drama and the 
-second dimension Y-axis represents comedy.
-
-The angle between two 3-dimensional vectors can be computed using
-cosine similarity formula.
-
-STEP 5
-In the final step, where we can use KNN to make predictions.
 """
 
 import pathlib
@@ -181,8 +160,6 @@ def predict_score(name):
         print(original_title + " | Genres: " + genres + " | Rating: " + rating) 
 
 predict_score('Godfather')
-predict_score('Donnie Darko')
-predict_score('Notting Hill')
 
 # ------------------------------------------------------------------------------------
 
@@ -199,30 +176,4 @@ predict_score('Notting Hill')
     The Counselor | Genres: Thriller, Crime, Drama | Rating: 5.0
     The Rainmaker | Genres: Drama, Crime, Thriller | Rating: 6.7
     Righteous Kill | Genres: Action, Crime, Drama, Thriller | Rating: 5.9
-
-    Selected Movie:  Donnie Darko 
-
-    Ghost | Genres: Fantasy, Drama, Thriller, Mystery, Romance | Rating: 6.9
-    Meet Joe Black | Genres: Fantasy, Drama, Mystery | Rating: 6.9
-    The Jacket | Genres: Drama, Mystery, Thriller, Fantasy | Rating: 6.8
-    Lady in the Water | Genres: Drama, Thriller, Fantasy, Mystery | Rating: 5.3
-    Winter's Tale | Genres: Drama, Fantasy, Mystery, Romance | Rating: 6.0
-    Flightplan | Genres: Thriller, Drama, Mystery | Rating: 6.1
-    Zodiac | Genres: Crime, Drama, Mystery, Thriller | Rating: 7.3
-    Stranger Than Fiction | Genres: Comedy, Drama, Fantasy, Romance | Rating: 7.1
-    Won't Back Down | Genres: Drama | Rating: 5.8
-    Life as a House | Genres: Drama | Rating: 7.2
-
-    Selected Movie:  Notting Hill 
-
-    About a Boy | Genres: Drama, Comedy, Romance | Rating: 6.6
-    Bridget Jones's Diary | Genres: Comedy, Romance, Drama | Rating: 6.5
-    Four Weddings and a Funeral | Genres: Comedy, Drama, Romance | Rating: 6.6
-    Larry Crowne | Genres: Comedy, Romance, Drama | Rating: 5.7
-    Mystic Pizza | Genres: Comedy, Drama, Romance | Rating: 5.9
-    Bridget Jones: The Edge of Reason | Genres: Comedy, Romance | Rating: 6.1
-    My Best Friend's Wedding | Genres: Comedy, Romance | Rating: 6.3
-    Boys and Girls | Genres: Comedy, Drama, Romance | Rating: 5.4
-    Pretty Woman | Genres: Romance, Comedy | Rating: 7.0
-    Love Actually | Genres: Comedy, Romance, Drama | Rating: 7.0
 """

@@ -1,0 +1,38 @@
+## Decision Trees - Algorithm
+
+### Entropy
+
+Entropy is a measure of how `disordered` a collection of data is.
+P1 and p2 represents the `probability of ocurrance` of that sample in the given data.
+As an example, for 14 data samples (`9 positive`, 5 negative):
+
+    H = -(p1*log(p1) + p2*log(p2))
+    H = -(9/14)log(9/14) - (5/14)log(5/14) = 0.940
+
+### Gain
+
+The amount of information gained from a sample is known as `information gain`.
+We can have the attribute `wind` (9 positive, 5 negative).
+The values for that attribute can be `week` or`strong`.
+If `week` (6 yes, 2 no) and`strong` (3 yes, 3 no), we can compute information gain.
+
+    gini = H - (8/14)H_week - (6/14)H_strong
+    gini = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048
+
+### Decision Tree
+
+Decision tree is a tree developed based on an `algorithm decisions`.
+The algorithm uses `the features` for learning and generate a tree structure.
+The decision tree can then be used to make `predictions`.
+
+
+### References
+
+> [Decision Tree](https://www.knowledgehut.com/blog/data-science/classification-and-regression-trees-in-machine-learning)
+> [Entropy Math](https://www.mathsisfun.com/physics/entropy.html)
+> [Entropy Formula](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.entropy.html)
+> [Information Gain](https://www.featureranking.com/tutorials/machine-learning-tutorials/information-gain-computation)
+> [PlayTennis Dataset](https://www.kaggle.com/code/sdk1810/decision-tree-for-playtennis)
+> [PlayTennis Notebook](https://www.kaggle.com/code/sdk1810/decision-tree-for-playtennis/notebook)
+> [ID3 Algorithm](https://iq.opengenus.org/id3-algorithm)
+> [IBM Decistion Tree](https://www.ibm.com/topics/decision-trees)

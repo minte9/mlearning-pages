@@ -1,0 +1,174 @@
+""" Decisiion Trees / ID3 Algorithm
+
+Iterative Dichotomiser 3, is a classification algorithm that follows a 
+greedy approach of building a decision tree that gives priority to the attributes 
+with the higher information gain (gini).
+
+1. Calculate entropy for dataset
+2. For each attribute:
+    Calculate entropy for all categorical values
+    Calculate information gain for the current attribute
+3. Find the feture with maximum information gain
+4. Repeat
+
+The `outlook` has the highest info gain of 0.24, so we will select it as 
+the root node for the start level of splitting.
+"""
+
+import numpy as np
+import pandas as pd
+import pathlib
+from sklearn import tree
+
+# Dataset
+DIR = pathlib.Path(__file__).resolve().parent
+df = pd.read_csv(DIR / 'data/play_tennis.csv')
+
+# Train data
+X = df.drop(['play'], axis=1)
+y = df['play']
+
+# ------------------------------------------------------------------------------
+
+def dataset_entropy(df):
+    entropy = 0
+    targets = df.play
+    values = targets.unique() # yes/no
+    for v in values:
+        fraction = targets.value_counts()[v]/len(targets)
+        entropy += -fraction*np.log2(fraction)
+    return entropy
+
+def attribute_entropy(df, attr):
+    entropy = 0
+    eps = np.finfo(float).eps
+    targets = df.play.unique() # yes/no
+    values = df[attr].unique() # cool/hot
+    for v in values:
+        ent = 0
+        for t in targets:
+            num = len(df[attr][df[attr] == v][df.play == t]) # numerator
+            den = len(df[attr][df[attr] == v])
+            fraction = num/(den + eps) #pi
+            ent += -fraction*np.log2(fraction + eps) # entropy for one feature
+        entropy += -(den/len(df))*ent # sum of all entropies
+    return abs(entropy)
+
+def find_winner(df):
+
+    E = {} 
+    attributes = df.keys()[:-1]
+    for k in attributes:
+        E[k] = attribute_entropy(df, k)
+        
+    IG = {}
+    for k in E:
+        IG[k] = dataset_entropy(df) - E[k]
+
+    return df.keys()[:-1][np.argmax(IG)]
+
+# ------------------------------------------------------------------------------
+
+def buildTree(df):
+    tree = {}
+
+    # Target column
+    Class = df.keys()[-1] # play
+    
+    # Maximum info gain
+    node = find_winner(df) # outlook
+    tree[node] = {}
+
+    # Distinct values
+    values = np.unique(df[node]) # overcast/rain
+
+    # Loop to construct the tree
+    for value in values:
+        subtable = df[df[node] == value].reset_index(drop=True)
+        attr_values, counts = np.unique(subtable[Class], return_counts=True)
+
+        if len(counts) == 1: # pure subset
+            tree[node][value] = attr_values[0]
+        else:
+            subtable = subtable.drop(node, axis=1)
+            tree[node][value] = buildTree(subtable) # Recursive case
+            
+
+    return tree
+
+decision_tree = buildTree(df)
+
+# ------------------------------------------------------------------------------
+
+def print_tree(tree, attribute=None, indent=''):
+    if not attribute:
+        attribute = next(iter(tree))  # Get the attribute at the current tree node
+
+    for value, subtree in tree[attribute].items():
+        if isinstance(subtree, dict):
+            print(f"{indent}{attribute} = {value}:")
+            print_tree(subtree, indent=indent + '  ')
+        else:
+            print(f"{indent}{attribute} = {value}: {subtree}")
+
+def predict(instance, tree):
+    attribute = next(iter(tree))  # Get the attribute at the current tree node
+    value = instance[attribute]   # Get the value of the attribute for the current instance
+
+    if value in tree[attribute]:
+        # If the value exists as a branch in the tree, recursively traverse the tree
+        if isinstance(tree[attribute][value], dict):
+            return predict(instance, tree[attribute][value])
+        else:
+            return tree[attribute][value]  # Return the predicted class value
+    else:
+        # Value is unseen in the tree
+        return None
+
+
+print(decision_tree, "\n")
+print_tree(decision_tree)
+
+# Example usage
+x = {'outlook': 'sunny', 'temp': 'mild', 'humidity': 'high', 'windy': False}
+y = predict(x, decision_tree)
+print("\nAttributes:", x)
+print("Prediction `play`:", y)
+
+# Example usage 2
+x = {'outlook': 'rainy', 'temp': 'mild', 'humidity': 'normal', 'windy': True}
+y = predict(x, decision_tree)
+print("\nAttributes:", x)
+print("Prediction:", y)
+
+
+"""
+	{'outlook': {'overcast': 'yes', 'rainy': {'temp': {'cool': {'humidity': {'normal': {'windy': 
+	{False: 'yes', True: 'no'}}}}, 'mild': {'humidity': {'high': {'windy': 
+    {False: 'yes', True: 'no'}}, 	'normal': 'yes'}}}}, 'sunny': {'temp': {'cool': 'yes', 
+    'hot': 'no', 'mild': {'humidity': {'high': 'no', 'normal': 'yes'}}}}}}
+
+	outlook = overcast: yes
+	outlook = rainy:
+	  temp = cool:
+		humidity = normal:
+		  windy = False: yes
+		  windy = True: no
+	  temp = mild:
+		humidity = high:
+		  windy = False: yes
+		  windy = True: no
+		humidity = normal: yes
+	outlook = sunny:
+	  temp = cool: yes
+	  temp = hot: no
+	  temp = mild:
+		humidity = high: no
+		humidity = normal: yes
+
+    Attributes: {'outlook': 'sunny', 'temp': 'mild', 'humidity': 'high', 'windy': False}
+    Prediction: no
+
+    Attributes: {'outlook': 'rainy', 'temp': 'mild', 'humidity': 'normal', 'windy': True}
+    Prediction: yes
+"""

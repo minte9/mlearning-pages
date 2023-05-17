@@ -25,6 +25,19 @@ Decision tree is a tree developed based on an `algorithm decisions`.
 The algorithm uses `the features` for learning and generate a tree structure.
 The decision tree can then be used to make `predictions`.
 
+A decision tree is a `supervised ML algorithm`, for classification and regression models 
+that generates a tree structure that can be used later for predictions.
+    `Node` - a feature (or attribute)
+    `Branch` - a decistion (rule or test)
+    `Leaf` - an outcome (categorical or continuous)
+
+Algorithm:
+    Calculate `entropy` for dataset
+    `For each` feature:
+        Calculate `entropy for all` categorical values
+        Calculate information gain `for the feature`
+    Find the feture with `maximum` information gain
+    Repeat
 
 ### References
 

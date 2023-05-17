@@ -2,6 +2,13 @@
 
 Given certain values for each of the attributes, the learned decision tree 
 is able to give a clear answer if weather is suitable or not for tennis.
+
+We have 4 features (outlook, temperature, humidity, windy) and the one target (play). 
+Information gain it is used to identify which attribute provides more information.
+The attribute with the highest gini is given the higher priority in the tree.
+
+For example, by calculating the gini for `humidity` and `wind`, we would find that
+`humidity` plays a more important role, so it is consider as a better classifier.
 """
 
 import numpy as np

@@ -1,4 +1,4 @@
-""" Decisiion Trees / ID3 Algorithm
+""" Decision Trees / ID3 Algorithm
 
 Iterative Dichotomiser 3, is a classification algorithm that follows a 
 greedy approach of building a decision tree that gives priority to the attributes 
@@ -30,45 +30,51 @@ y = df['play']
 
 # ------------------------------------------------------------------------------
 
+# Entropy (total) for current dataframe
 def dataset_entropy(df):
     entropy = 0
     targets = df.play
-    values = targets.unique() # yes/no
-    for v in values:
+
+    for v in targets.unique(): # yes/no
         fraction = targets.value_counts()[v]/len(targets)
         entropy += -fraction*np.log2(fraction)
     return entropy
 
+# Entropy (total) for one specific attribute
 def attribute_entropy(df, attr):
     entropy = 0
-    eps = np.finfo(float).eps
-    targets = df.play.unique() # yes/no
-    values = df[attr].unique() # cool/hot
-    for v in values:
-        ent = 0
-        for t in targets:
+    eps = np.finfo(float).eps # pi
+
+    attr_targets = df.play.unique() # yes/no
+    attr_values = df[attr].unique() # cool/hot
+
+    for v in attr_values:
+        attr_ent = 0
+
+        for t in attr_targets:
             num = len(df[attr][df[attr] == v][df.play == t]) # numerator
-            den = len(df[attr][df[attr] == v])
-            fraction = num/(den + eps) #pi
-            ent += -fraction*np.log2(fraction + eps) # entropy for one feature
-        entropy += -(den/len(df))*ent # sum of all entropies
+            den = len(df[attr][df[attr] == v]) # denominator
+
+            fraction = num/(den + eps)
+            attr_ent += -fraction*np.log2(fraction + eps) # entropy for one feature
+
+        entropy += -(den/len(df))*attr_ent # sum of all entropies
     return abs(entropy)
 
+# Attribute with maxim info gains
 def find_winner(df):
-
-    E = {} 
     attributes = df.keys()[:-1]
-    for k in attributes:
-        E[k] = attribute_entropy(df, k)
-        
+    total_entropy = dataset_entropy(df)
+
+    # Loop for attributes in dataframe and compute info gains
     IG = {}
-    for k in E:
-        IG[k] = dataset_entropy(df) - E[k]
+    for attr in attributes: 
+        IG[attr] = total_entropy - attribute_entropy(df, attr)
 
-    return df.keys()[:-1][np.argmax(IG)]
+    winner_attr = attributes[np.argmax(IG)] # maxim info gains
+    return winner_attr
 
-# ------------------------------------------------------------------------------
-
+# Construct the decision tree (dictionary)
 def buildTree(df):
     tree = {}
 
@@ -82,7 +88,7 @@ def buildTree(df):
     # Distinct values
     values = np.unique(df[node]) # overcast/rain
 
-    # Loop to construct the tree
+    # Loop throw the attribute values
     for value in values:
         subtable = df[df[node] == value].reset_index(drop=True)
         attr_values, counts = np.unique(subtable[Class], return_counts=True)
@@ -93,37 +99,39 @@ def buildTree(df):
             subtable = subtable.drop(node, axis=1)
             tree[node][value] = buildTree(subtable) # Recursive case
             
-
     return tree
 
 decision_tree = buildTree(df)
 
 # ------------------------------------------------------------------------------
 
-def print_tree(tree, attribute=None, indent=''):
-    if not attribute:
-        attribute = next(iter(tree))  # Get the attribute at the current tree node
+# Print dictionary tree (recursion  in case of subtrees)
+def print_tree(tree, attr=None, i=0):
+    if not attr:
+        attr = next(iter(tree)) # attrribute in the current tree node
 
-    for value, subtree in tree[attribute].items():
-        if isinstance(subtree, dict):
-            print(f"{indent}{attribute} = {value}:")
-            print_tree(subtree, indent=indent + '  ')
-        else:
-            print(f"{indent}{attribute} = {value}: {subtree}")
+    for key, subval in tree[attr].items():
 
-def predict(instance, tree):
-    attribute = next(iter(tree))  # Get the attribute at the current tree node
-    value = instance[attribute]   # Get the value of the attribute for the current instance
+        if isinstance(subval, str): # Base case
+            print(i*" ", attr, "=", key, ":", subval)
+            continue
+        
+        print(i*" ", attr, "=", key, ":")
+        print_tree(subval, i=i+1) # Recursive
 
-    if value in tree[attribute]:
-        # If the value exists as a branch in the tree, recursively traverse the tree
-        if isinstance(tree[attribute][value], dict):
-            return predict(instance, tree[attribute][value])
-        else:
-            return tree[attribute][value]  # Return the predicted class value
-    else:
-        # Value is unseen in the tree
-        return None
+    return
+
+# Predict unknow (only for cases included in the train dataset)
+def predict(X, tree):
+    key = next(iter(tree))
+    val = X[key]
+    subval = tree[key][val]
+
+    if isinstance(subval, str): # Base case
+        return subval
+        
+    subval = predict(X, subval) # Recursive
+    return subval
 
 
 print(decision_tree, "\n")
@@ -133,7 +141,7 @@ print_tree(decision_tree)
 x = {'outlook': 'sunny', 'temp': 'mild', 'humidity': 'high', 'windy': False}
 y = predict(x, decision_tree)
 print("\nAttributes:", x)
-print("Prediction `play`:", y)
+print("Prediction:", y)
 
 # Example usage 2
 x = {'outlook': 'rainy', 'temp': 'mild', 'humidity': 'normal', 'windy': True}
@@ -143,28 +151,28 @@ print("Prediction:", y)
 
 
 """
-	{'outlook': {'overcast': 'yes', 'rainy': {'temp': {'cool': {'humidity': {'normal': {'windy': 
-	{False: 'yes', True: 'no'}}}}, 'mild': {'humidity': {'high': {'windy': 
-    {False: 'yes', True: 'no'}}, 	'normal': 'yes'}}}}, 'sunny': {'temp': {'cool': 'yes', 
+    {'outlook': {'overcast': 'yes', 'rainy': {'temp': {'cool': {'humidity': {'normal': {'windy': 
+    {False: 'yes', True: 'no'}},}} 'mild': {'humidity': {'high': {'windy': 
+    {False: 'yes', True: 'no',}}     'normal': 'yes'}},}} 'sunny': {'temp': {'cool': 'yes', 
     'hot': 'no', 'mild': {'humidity': {'high': 'no', 'normal': 'yes'}}}}}}
 
-	outlook = overcast: yes
-	outlook = rainy:
-	  temp = cool:
-		humidity = normal:
-		  windy = False: yes
-		  windy = True: no
-	  temp = mild:
-		humidity = high:
-		  windy = False: yes
-		  windy = True: no
-		humidity = normal: yes
-	outlook = sunny:
-	  temp = cool: yes
-	  temp = hot: no
-	  temp = mild:
-		humidity = high: no
-		humidity = normal: yes
+    outlook = overcast: yes
+    outlook = rainy:
+      temp = cool:
+        humidity = normal:
+          windy = False: yes
+          windy = True: no
+      temp = mild:
+        humidity = high:
+          windy = False: yes
+          windy = True: no
+        humidity = normal: yes
+    outlook = sunny:
+      temp = cool: yes
+      temp = hot: no
+      temp = mild:
+        humidity = high: no
+        humidity = normal: yes
 
     Attributes: {'outlook': 'sunny', 'temp': 'mild', 'humidity': 'high', 'windy': False}
     Prediction: no

@@ -19,16 +19,10 @@ The amount of information gained from a sample is known as `information gain`.
 import numpy as np
 import pandas as pd
 import pathlib
-# from sklearn.tree import DecisionTreeClassifier
-# from sklearn.preprocessing import LabelEncoder
 
 # Dataset
 DIR = pathlib.Path(__file__).resolve().parent
 df = pd.read_csv(DIR / 'data/play_tennis.csv')
-
-# # Encode data
-# for col in df.columns:
-#     df[col] = LabelEncoder().fit_transform(df[col])
 
 # Train data
 X = df.drop(['play'], axis=1)

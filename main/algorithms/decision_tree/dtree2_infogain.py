@@ -2,8 +2,8 @@
 
 Information gain is a measure of the reduction in entropy by splitting 
 a dataset based on a particular attribute.
-    ig = H - (8/14)H_week - (6/14)H_strong
-    ig = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048
+    IG = H - (8/14)H_week - (6/14)H_strong
+    IG = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048
 """
 
 import numpy as np
@@ -54,9 +54,9 @@ entropies = {}
 for k in attributes:
     entropies[k] = attribute_entropy(k)
     
-infogains = {}
+IG = {}
 for k in entropies:
-    infogains[k] = dataset_entropy() - entropies[k]
+    IG[k] = dataset_entropy() - entropies[k]
 
 # entropies = {k:entropy_feature(attr) for k in df.keys()[:-1]} # one line
 # infogains = {k:(entropy_dataset() - E[k]) for k in E}
@@ -67,7 +67,7 @@ outputs = [
     ["Entropy:", dataset_entropy()],
     ["Selection:", df['outlook'][df['outlook'] == 'sunny'][df.play == 'yes'].values],
     ["Entropies:", entropies],
-    ["Information gains:", infogains],
+    ["Information gains:", IG],
 ]
 for v in outputs: 
     print("\n", v[0], "\n ", v[1])

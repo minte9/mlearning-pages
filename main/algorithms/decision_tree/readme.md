@@ -52,4 +52,4 @@ that generates a tree structure that can be used later for predictions.
 > [ID3 Algorithm Implementation](https://www.kaggle.com/code/smsmibrahim/decision-tree-id3-implementation-using-play-tennis/notebook)  notebook  
 > [ID3 Algorithm Enjoy](https://www.enjoyalgorithms.com/blog/decision-tree-algorithm-in-ml)  
 > [ID3 Algorithm from scratch](https://automaticaddison.com/iterative-dichotomiser-3-id3-algorithm-from-scratch/)  
-> [Learn and Remember[(https://www.minte9.com/mlearning/algorithms-decision-tree-1474) minte9
+> [Learn and Remember](https://www.minte9.com/mlearning/algorithms-decision-tree-1474) minte9

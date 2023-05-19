@@ -1,4 +1,4 @@
-""" Decision Tree / Entropy
+""" Decision Tree / Entropy and Info Gain
 
 The more heterogenous and impure the feature is, the higher the entropy.
 We can calculate the impurity of our data using Information gain index.

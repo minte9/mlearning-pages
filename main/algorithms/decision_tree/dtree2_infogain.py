@@ -1,4 +1,4 @@
-""" Decisiion Trees / Info Gain
+""" Decisiion Trees / Info Gains
 
 The amount of information gained from a sample is known as information gain.
     gini = H - (8/14)H_week - (6/14)H_strong

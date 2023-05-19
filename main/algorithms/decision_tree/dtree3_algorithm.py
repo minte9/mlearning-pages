@@ -2,7 +2,7 @@
 
 Iterative Dichotomiser 3, is a classification algorithm that follows a 
 greedy approach of building a decision tree that gives priority to the attributes 
-with the higher information gain (gini).
+with the higher information gain.
 
 1. Calculate entropy for dataset
 2. For each attribute:

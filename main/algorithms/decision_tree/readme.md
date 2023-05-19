@@ -9,7 +9,7 @@ As an example, for 14 data samples (`9 positive`, 5 negative):
     H = -(p1*log(p1) + p2*log(p2))  
     H = -(9/14)log(9/14) - (5/14)log(5/14) = 0.940  
 
-### Gain
+### Information gain
 
 The amount of information gained from a sample is known as `information gain`.  
 We can have the attribute `wind` (9 positive, 5 negative).  
@@ -18,8 +18,8 @@ The values for that attribute can be `week` or`strong`.
 For example, in case of week (6 yes, 2 no) and strong (3 yes, 3 no),  
 we can compute information gain as: 
 
-    gini = H - (8/14)H_week - (6/14)H_strong
-    gini = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048
+    IG = H - (8/14)H_week - (6/14)H_strong
+    IG = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048
 
 ### Decision Tree
 
@@ -44,10 +44,11 @@ that generates a tree structure that can be used later for predictions.
 
 ### References
 
+> [Decision Tree Types](https://www.knowledgehut.com/blog/data-science/classification-and-regression-trees-in-machine-learning)  
+
 > [Information Gain](https://www.featureranking.com/tutorials/machine-learning-tutorials/information-gain-computation)  
 > [Entropy Math](https://www.mathsisfun.com/physics/entropy.html)  
-> [Entropy Formula](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.entropy.html)  
-> [Decision Tree Types](https://www.knowledgehut.com/blog/data-science/classification-and-regression-trees-in-machine-learning)  
+> [Python Formula](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.entropy.html)  
 
 > [PlayTennis Dataset](https://www.kaggle.com/code/sdk1810/decision-tree-for-playtennis)  
 > [ID3 Algorithm Implementation](https://www.kaggle.com/code/smsmibrahim/decision-tree-id3-implementation-using-play-tennis/notebook)  

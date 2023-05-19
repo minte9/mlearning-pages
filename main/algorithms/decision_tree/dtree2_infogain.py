@@ -20,8 +20,6 @@ df = pd.read_csv(DIR / 'data/play_tennis.csv')
 X = df.drop(['play'], axis=1)
 y = df['play']
 
-# ------------------------------------------------------------------------------
-
 def dataset_entropy():
     entropy = 0
     targets = df.play
@@ -64,8 +62,6 @@ for k in entropies:
 
 # entropies = {k:entropy_feature(attr) for k in df.keys()[:-1]} # one line
 # infogains = {k:(entropy_dataset() - E[k]) for k in E}
-
-# ------------------------------------------------------------------------------
 
 outputs = [
     ["Dataset:", df],

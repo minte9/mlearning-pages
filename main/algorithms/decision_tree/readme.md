@@ -13,8 +13,10 @@ As an example, for 14 data samples (`9 positive`, 5 negative):
 
 The amount of information gained from a sample is known as `information gain`.  
 We can have the attribute `wind` (9 positive, 5 negative).  
-The values for that attribute can be `week` or`strong`.  
-If `week` (6 yes, 2 no) and`strong` (3 yes, 3 no), we can compute information gain.  
+
+The values for that attribute can be `week` or`strong`. 
+For example, in case of week (6 yes, 2 no) and strong (3 yes, 3 no),  
+we can compute information gain as: 
 
     gini = H - (8/14)H_week - (6/14)H_strong
     gini = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048

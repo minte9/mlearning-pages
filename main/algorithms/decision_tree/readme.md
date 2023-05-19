@@ -1,5 +1,7 @@
 ## Decision Trees - Algorithm
 
+# 
+
 ### Entropy
 
 Entropy is a measure of how `disordered` a collection of data is.  
@@ -41,6 +43,8 @@ that generates a tree structure that can be used later for predictions.
     Calculate `information gain` for the feature  
 3. Find the feture with `maximum` information gain  
 4. Repeat  
+
+#
 
 ### References
 

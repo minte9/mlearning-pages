@@ -1,9 +1,7 @@
-""" Decision Tree / Entropy
+""" Decision Tree / Entropy and Gini
 
 The more heterogenous and impure the feature is, the higher the entropy.
-We can calculate the impurity of our data using Information gain index.
-Probability distribution of the items is the reletive frequency of 
-each item is the set.
+The Gini Index is a measure of impurity or diversity within a set of elements.
 """
 
 import pandas as pd

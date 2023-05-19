@@ -6,8 +6,8 @@ with the higher information gain (gini).
 
 1. Calculate entropy for dataset
 2. For each attribute:
-    Calculate entropy for all categorical values
-    Calculate information gain for the current attribute
+   Calculate entropy for all categorical values
+   Calculate information gain for the current attribute
 3. Find the feture with maximum information gain
 4. Repeat
 

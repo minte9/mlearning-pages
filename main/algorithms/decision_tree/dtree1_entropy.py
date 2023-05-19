@@ -26,7 +26,7 @@ outputs = [
     ["Probability distribution - value_count():", probs.values],
     ["Probability distribution - by hand:", probs2],
     ["Entropy:", entropy],
-    ["Information gain:", gini_index],
+    ["Gini index:", gini_index],
 ]
 for v in outputs: 
     print(v[0], "\n ", v[1])
@@ -40,6 +40,6 @@ for v in outputs:
      [0.42857142857142855, 0.2857142857142857, 0.2857142857142857]
     Entropy: 
      1.5566567074628228
-    Information gain: 
+    Gini index: 
      0.653061224489796
 """

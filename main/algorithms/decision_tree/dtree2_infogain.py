@@ -59,8 +59,8 @@ IG = {}
 for k in entropies:
     IG[k] = dataset_entropy() - entropies[k]
 
-# entropies = {k:entropy_feature(attr) for k in df.keys()[:-1]} # one line
-# infogains = {k:(entropy_dataset() - E[k]) for k in E}
+# E = {k:entropy_feature(attr) for k in df.keys()[:-1]} # one line
+# Ig = {k:(entropy_dataset() - E[k]) for k in E}
 
 outputs = [
     ["Dataset:", df],

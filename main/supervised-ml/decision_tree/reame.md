@@ -39,4 +39,6 @@ as in linear models.
 
 ### References
 
-> https://github.com/amueller/introduction_to_ml_with_python/blob/master/02-supervised-learning.ipynb#Decision-trees
+> [Introduction to Machine Learning](https://www.amazon.com/gp/product/B01M0LNE8C) book  
+> [Introduction to Machine Learning](https://github.com/amueller/introduction_to_ml_with_python/blob/master/02-supervised-learning.ipynb#Decision-trees) source code  
+> [Learn and Remember](https://www.minte9.com/mlearning) minte9  

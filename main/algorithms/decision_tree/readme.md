@@ -1,7 +1,5 @@
 ## Decision Trees - Algorithm
 
-# 
-
 ### Entropy
 
 Entropy is a measure of how `disordered` a collection of data is.  

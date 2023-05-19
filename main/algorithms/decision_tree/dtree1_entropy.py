@@ -2,7 +2,8 @@
 
 The more heterogenous and impure the feature is, the higher the entropy.
 We can calculate the impurity of our data using Information gain index.
-Probability distribution of the items is the reletive frequency of each item is the set.
+Probability distribution of the items is the reletive frequency of 
+each item is the set.
 """
 
 import pandas as pd

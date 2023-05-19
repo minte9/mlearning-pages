@@ -1,12 +1,14 @@
 """ Decision Trees / Prunning
 
-Insteed of looking at the whole tree, we can select only the most useful properties.
-To summarize the feature importance we use `tree.feature_importance`.
+The max_depth in the classifier controls the maximum depth 
+of the decision tree. Insteed of looking at the whole tree, we can select 
+only the most useful properties.
 We can see that `worst radius` used in the top split, is by far 
 the most important feature.
 """
 
 import numpy as np
+import pandas as pd
 import pathlib
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier
@@ -31,6 +33,17 @@ y_pred = dtree.predict(X_new.reshape(1, -1))
 y_pred_target = df['target_names'][y_pred]
 score = dtree.score(X2, dtree.predict(X2))
 
+# Get feature importances
+importances = dtree.feature_importances_
+impdf = pd.DataFrame({
+    "Feature": df.feature_names, 
+    "Importance": importances
+})
+impdf_sorted = impdf.sort_values(
+    by="Importance", ascending=False
+)
+top_features = impdf_sorted["Feature"].head(4)
+
 # Output
 n = df.data.shape[1]
 plt.subplots_adjust(left=0.28)
@@ -49,11 +62,10 @@ outputs = [
     ["Prediction:", y_pred],
     ["Prediction Target:", y_pred_target],
     ["Dtree accuracy score:", score],
-    ['Feature importances:', dtree.feature_importances_],
+    ["Top features:", top_features],
 ]
 for out in outputs:
     print("\n", out[0], "\n ", out[1])
-
 
 """
 	 Featre names: 
@@ -95,10 +107,9 @@ for out in outputs:
 	 Dtree accuracy score: 
 	  1.0
 
-	 Feature importances: 
-	  [0.         0.         0.         0.         0.         0.
-	 0.         0.         0.         0.         0.01019737 0.04839825
-	 0.         0.         0.0024156  0.         0.         0.
-	 0.         0.         0.72682851 0.0458159  0.         0.
-	 0.0141577  0.         0.018188   0.1221132  0.01188548 0.        ]
+	 Top features: 
+      20            worst radius
+      27    worst concave points
+      11           texture error
+      21           worst texture
 """

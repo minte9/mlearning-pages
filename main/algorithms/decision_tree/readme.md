@@ -33,12 +33,12 @@ that generates a tree structure that can be used later for predictions.
 
 ### Algorithm
 
-Calculate `entropy` for dataset  
-`For each` feature:  
-  Calculate `entropy for all` categorical values  
-  Calculate information gain `for the feature`  
-Find the feture with `maximum` information gain  
-Repeat  
+1. Calculate `entropy` for dataset  
+2. `For each` feature:  
+    Calculate `entropy for all` categorical values  
+    Calculate information gain `for the feature`  
+3. Find the feture with `maximum` information gain  
+4. Repeat  
 
 ### References
 

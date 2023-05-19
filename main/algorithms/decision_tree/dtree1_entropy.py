@@ -1,7 +1,9 @@
 """ Decision Tree / Entropy and Gini
 
+Entropy is a measure of how disordered a collection of data is.  
 The more heterogenous and impure the feature is, the higher the entropy.
 The Gini Index is a measure of impurity or diversity within a set of elements.
+Gini index is between 0 and 1, it easier to compare gini across different features.
 """
 
 import pandas as pd

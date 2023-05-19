@@ -66,7 +66,7 @@ outputs = [
     ["Describe:", df.describe()],
     ["Entropy:", dataset_entropy()],
     ["Selection:", df['outlook'][df['outlook'] == 'sunny'][df.play == 'yes'].values],
-    ["Entropies:", entropies],
+    ["Entropy for each attribute:", entropies],
     ["Information gains:", IG],
 ]
 for v in outputs: 
@@ -104,7 +104,7 @@ for v in outputs:
         8     sunny
         10    sunny
     
-    Entropies: 
+    Entropy for each attribute: 
         { 'outlook':     0.6935361388961914, 
           'temp':        0.9110633930116756, 
           'humidity':    0.7884504573082889, 

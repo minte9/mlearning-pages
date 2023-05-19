@@ -38,6 +38,7 @@
 > K Nearest Neighbors   `Algorithm` `Usage Example`  
 > Linear Regression  `Algorithm` `Usage Example`  
 > Gradient Descent  `Cost function` `Learning a,b` `Algorithm`  
+> Decision Tree  `Entropy` `Information Gain` `Algorithm`
 
 #
 

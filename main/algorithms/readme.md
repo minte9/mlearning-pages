@@ -15,6 +15,6 @@
 > Algorithm  
 
 [Decision Tree](./decision_tree/)   
-> Entropy
-> Information Gain
-> Algorithm
+> Entropy  
+> Information Gain  
+> Algorithm  

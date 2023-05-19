@@ -58,7 +58,6 @@ for k in attributes:
 IG = {}
 for k in entropies:
     IG[k] = dataset_entropy() - entropies[k]
-
 # IG = {k:(entropy_dataset() - E[k]) for k in E} # one line
 
 outputs = [

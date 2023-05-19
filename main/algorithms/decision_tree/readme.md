@@ -31,15 +31,14 @@ that generates a tree structure that can be used later for predictions.
     Branch - a decistion (rule or test)
     Leaf - an outcome (categorical or continuous)
 
-Algorithm:  
-```
-    Calculate `entropy` for dataset  
-    `For each` feature:  
-        Calculate `entropy for all` categorical values  
-        Calculate information gain `for the feature`  
-    Find the feture with `maximum` information gain  
-    Repeat  
-```
+### Algorithm
+
+Calculate `entropy` for dataset  
+`For each` feature:  
+    Calculate `entropy for all` categorical values  
+    Calculate information gain `for the feature`  
+Find the feture with `maximum` information gain  
+Repeat  
 
 ### References
 

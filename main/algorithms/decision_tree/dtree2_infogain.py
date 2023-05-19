@@ -1,10 +1,9 @@
-""" Decisiion Trees / Info Gains
+""" Decision Trees / Info Gain
 
-The amount of information gained from a sample.
-The more heterogenous and impure the feature is, the higher the Gini index.
-Gini index is between 0 and 1, it easier to compare gini across different features.
-    gini = H - (8/14)H_week - (6/14)H_strong
-    gini = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048
+Information gain is a measure of the reduction in entropy by splitting 
+a dataset based on a particular attribute.
+    ig = H - (8/14)H_week - (6/14)H_strong
+    ig = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048
 """
 
 import numpy as np

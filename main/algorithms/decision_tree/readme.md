@@ -34,9 +34,9 @@ that generates a tree structure that can be used later for predictions.
 ### Algorithm
 
 1. Calculate `entropy` for dataset  
-2. `For each` feature:  
+2. For each `feature`:  
     Calculate `entropy for all` categorical values  
-    Calculate information gain `for the feature`  
+    Calculate `information gain` for the feature  
 3. Find the feture with `maximum` information gain  
 4. Repeat  
 

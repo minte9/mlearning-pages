@@ -41,15 +41,12 @@ Algorithm:
 
 ### References
 
-> [Decision Tree](https://www.knowledgehut.com/blog/data-science/classification-and-regression-trees-in-machine-learning)  
+> [Information Gain](https://www.featureranking.com/tutorials/machine-learning-tutorials/information-gain-computation)  
 > [Entropy Math](https://www.mathsisfun.com/physics/entropy.html)  
 > [Entropy Formula](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.entropy.html)  
-> [Information Gain](https://www.featureranking.com/tutorials/machine-learning-tutorials/information-gain-computation)  
+> [Decision Tree Types](https://www.knowledgehut.com/blog/data-science/classification-and-regression-trees-in-machine-learning)  
 
 > [PlayTennis Dataset](https://www.kaggle.com/code/sdk1810/decision-tree-for-playtennis)  
-> [PlayTennis Notebook](https://www.kaggle.com/code/sdk1810/decision-tree-for-playtennis/notebook)  
-
-
-> [ID3 Algorithm](https://www.kaggle.com/code/smsmibrahim/decision-tree-id3-implementation-using-play-tennis/notebook)  
-> [ID3 Algorithm](https://www.enjoyalgorithms.com/blog/decision-tree-algorithm-in-ml)  
-> [ID3 Algorithm](https://automaticaddison.com/iterative-dichotomiser-3-id3-algorithm-from-scratch/)  
+> [ID3 Algorithm Implementation](https://www.kaggle.com/code/smsmibrahim/decision-tree-id3-implementation-using-play-tennis/notebook)  
+> [ID3 Algorithm Enjoy](https://www.enjoyalgorithms.com/blog/decision-tree-algorithm-in-ml)  
+> [ID3 Algorithm from scratch](https://automaticaddison.com/iterative-dichotomiser-3-id3-algorithm-from-scratch/)  

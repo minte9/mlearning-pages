@@ -1,13 +1,13 @@
-""" Decisiion Trees / Entropy (Fruits basket)
-
-Probability distribution of the fruits is the reletive frequency of
-each fruit in the basket.
+""" Decision Tree / Entropy
 
 The more heterogenous and impure the feature is, the higher the entropy.
 We can calculate the impurity of our data using Information gain index.
 
 The more heterogenous and impure the feature is, the higher the Gini index.
 Gini index is between 0 and 1, it easier to compare gini across different features.
+
+Probability distribution of the items is the reletive frequency of
+each item is the set.
 """
 
 import pandas as pd

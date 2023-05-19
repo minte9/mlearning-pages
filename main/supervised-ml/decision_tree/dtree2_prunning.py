@@ -39,7 +39,7 @@ plt.yticks(np.arange(n), df.feature_names)
 plt.xlabel("Feature importance")
 plt.ylabel("Feature")
 plt.ylim(-1, n)
-# plt.show()
+plt.show()
 
 outputs = [
     ["Featre names:", df['feature_names']],
@@ -48,7 +48,7 @@ outputs = [
     ["X_new:", X_new],
     ["Prediction:", y_pred],
     ["Prediction Target:", y_pred_target],
-    ["Score:", score],
+    ["Dtree accuracy score:", score],
     ['Feature importances:', dtree.feature_importances_],
 ]
 for out in outputs:
@@ -92,7 +92,7 @@ for out in outputs:
      Prediction Target: 
      ['benign']
 
-	 Score: 
+	 Dtree accuracy score: 
 	  1.0
 
 	 Feature importances: 

@@ -1,6 +1,6 @@
 """ Decisiion Trees / Info Gains
 
-The amount of information gained from a sample is known as information gain.
+The amount of information gained from a sample.
 The more heterogenous and impure the feature is, the higher the Gini index.
 Gini index is between 0 and 1, it easier to compare gini across different features.
     gini = H - (8/14)H_week - (6/14)H_strong

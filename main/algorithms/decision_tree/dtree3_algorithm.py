@@ -154,10 +154,7 @@ print("Prediction:", y)
 
 
 """
-    {'outlook': {'overcast': 'yes', 'rainy': {'temp': {'cool': {'humidity': {'normal': {'windy': 
-    {False: 'yes', True: 'no'}},}} 'mild': {'humidity': {'high': {'windy': 
-    {False: 'yes', True: 'no',}}     'normal': 'yes'}},}} 'sunny': {'temp': {'cool': 'yes', 
-    'hot': 'no', 'mild': {'humidity': {'high': 'no', 'normal': 'yes'}}}}}}
+    {'outlook': {'overcast': 'yes', 'rainy': {'temp': {'cool': {'humidity': ...
 
     outlook = overcast: yes
     outlook = rainy:
@@ -177,9 +174,17 @@ print("Prediction:", y)
         humidity = high: no
         humidity = normal: yes
 
-    Attributes: {'outlook': 'sunny', 'temp': 'mild', 'humidity': 'high', 'windy': False}
+    Attributes: {
+        'outlook': 'sunny', 
+        'temp': 'mild', 
+        'humidity': 'high', 
+        'windy': False}
     Prediction: no
 
-    Attributes: {'outlook': 'rainy', 'temp': 'mild', 'humidity': 'normal', 'windy': True}
+    Attributes: {
+        'outlook': 'rainy', 
+        'temp': 'mild', 
+        'humidity': 'normal', 
+        'windy': True}
     Prediction: yes
 """

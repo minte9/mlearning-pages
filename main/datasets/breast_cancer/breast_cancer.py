@@ -61,6 +61,7 @@ plt.legend(loc='upper right')
 plt.show()
 
 print("Featre names:\n", dataset['feature_names'], '\n')
+print("Target names:\n", dataset['target_names'], '\n')
 print("Data:\n", dataset['data'], '\n')
 print("Shape:", dataset['data'].shape)
 print("Optim (k, max_accuracy):", f"k={k}, max_accuracy={max_accuracy}")
@@ -80,6 +81,9 @@ print("Predicted target:", y_target)
 	 'worst radius' 'worst texture' 'worst perimeter' 'worst area'
 	 'worst smoothness' 'worst compactness' 'worst concavity'
 	 'worst concave points' 'worst symmetry' 'worst fractal dimension'] 
+
+	Target names:
+ 	 ['malignant' 'benign'] 
 
 	Data:
 	 [[1.799e+01 1.038e+01 1.228e+02 ... 2.654e-01 4.601e-01 1.189e-01]

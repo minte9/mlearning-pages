@@ -33,17 +33,17 @@ for v in outputs:
 
 """
     Fruits narray: 
-    ['apple' 'apple' 'apple' 'orange' 'orange' 'banana' 'banana']
+     ['apple' 'apple' 'apple' 'orange' 'orange' 'banana' 'banana']
 
     Probability distribution - value_count(): 
-    [0.42857143 0.28571429 0.28571429]
+     [0.42857143 0.28571429 0.28571429]
 
     Probability distribution - by hand: 
-    [0.42857142857142855, 0.2857142857142857, 0.2857142857142857]
+     [0.42857142857142855, 0.2857142857142857, 0.2857142857142857]
 
     Entropy: 
-    1.5566567074628228
+     1.5566567074628228
 
     Information gain: 
-    0.653061224489796
+     0.653061224489796
 """

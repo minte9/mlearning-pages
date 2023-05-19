@@ -2,8 +2,9 @@
 
 Information gain is a measure of the reduction in entropy by splitting 
 a dataset based on a particular attribute.
+We can find which attribute provides the most useful or informative split.
     IG = H - (8/14)H_week - (6/14)H_strong
-    IG = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048
+    IG = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048 
 """
 
 import numpy as np

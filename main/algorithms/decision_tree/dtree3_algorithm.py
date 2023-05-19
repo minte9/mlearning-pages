@@ -67,12 +67,14 @@ def find_winner(df):
     total_entropy = dataset_entropy(df)
 
     # Loop for attributes in dataframe and compute info gains
-    IG = {}
+    infogains = {}
     for attr in attributes: 
-        IG[attr] = total_entropy - attribute_entropy(df, attr)
-
-    winner_attr = attributes[np.argmax(IG)] # maxim info gains
+        infogains[attr] = total_entropy - attribute_entropy(df, attr)
+    
+    winner_attr = attributes[np.argmax(infogains)] # maxim info gains
     return winner_attr
+
+# ------------------------------------------------------------------------------
 
 # Construct the decision tree (dictionary)
 def buildTree(df):
@@ -133,6 +135,7 @@ def predict(X, tree):
     subval = predict(X, subval) # Recursive
     return subval
 
+# ------------------------------------------------------------------------------
 
 print(decision_tree, "\n")
 print_tree(decision_tree)

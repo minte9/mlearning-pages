@@ -1,19 +1,11 @@
-""" Decisiion Trees / ID3 Algorithm
+""" Decisiion Trees / Info Gain
 
-Iterative Dichotomiser 3, is a classification algorithm that follows a 
-greedy approach of building a decision tree that gives priority to the attributes 
-with the higher information gain (gini).
-
-1. Calculate entropy for dataset
-2. For each attribute:
-    Calculate entropy for all categorical values
-    Calculate information gain for the current attribute
-3. Find the feture with maximum information gain
-4. Repeat
-
-The amount of information gained from a sample is known as `information gain`.
+The amount of information gained from a sample is known as information gain.
     gini = H - (8/14)H_week - (6/14)H_strong
     gini = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048
+
+The more heterogenous and impure the feature is, the higher the Gini index.
+Gini index is between 0 and 1, it easier to compare gini across different features.
 """
 
 import numpy as np
@@ -34,6 +26,7 @@ def dataset_entropy():
     entropy = 0
     targets = df.play
     values = targets.unique() # yes/no
+
     for v in values:
         fraction = targets.value_counts()[v]/len(targets)
         entropy += -fraction*np.log2(fraction)
@@ -42,38 +35,48 @@ def dataset_entropy():
 def attribute_entropy(attr):
     entropy = 0
     eps = np.finfo(float).eps
+
     targets = df.play.unique() # yes/no
     values = df[attr].unique() # cool/hot
+
     for v in values:
         ent = 0
+
         for t in targets:
             num = len(df[attr][df[attr] == v][df.play == t]) # numerator
             den = len(df[attr][df[attr] == v])
+
             fraction = num/(den + eps) #pi
             ent += -fraction*np.log2(fraction + eps) # entropy for one feature
+
         entropy += -(den/len(df))*ent # sum of all entropies
     return abs(entropy)
 
-E = {} 
 attributes = df.keys()[:-1]
-for k in attributes:
-    E[k] = attribute_entropy(k)
-    
-IG = {}
-for k in E:
-    IG[k] = dataset_entropy() - E[k]
 
-# E  = {k:entropy_feature(attr) for k in df.keys()[:-1]} # one line
-# IG = {k:(entropy_dataset() - E[k]) for k in E}
+entropies = {} 
+for k in attributes:
+    entropies[k] = attribute_entropy(k)
+    
+infogains = {}
+for k in entropies:
+    infogains[k] = dataset_entropy() - entropies[k]
+
+# entropies = {k:entropy_feature(attr) for k in df.keys()[:-1]} # one line
+# infogains = {k:(entropy_dataset() - E[k]) for k in E}
 
 # ------------------------------------------------------------------------------
 
-print("Dataset: \n", df, "\n")
-print("Describe: \n", df.describe(), "\n")
-print("Entropy: \n", dataset_entropy())
-print("Selection df[sunny][yes]: \n", df['outlook'][df['outlook'] == 'sunny'][df.play == 'yes'])
-print("Entropies: \n", E)
-print("Information gains: \n", IG)
+outputs = [
+    ["Dataset:", df],
+    ["Describe:", df.describe()],
+    ["Entropy:", dataset_entropy()],
+    ["Selection:", df['outlook'][df['outlook'] == 'sunny'][df.play == 'yes'].values],
+    ["Entropies:", entropies],
+    ["Information gains:", infogains],
+]
+for v in outputs: 
+    print("\n", v[0], "\n ", v[1])
 
 """
     Dataset: 
@@ -103,7 +106,7 @@ print("Information gains: \n", IG)
     Entropy: 
         0.9402859586706311
 
-    Selection df[sunny][yes]: 
+    Selection by featuare (sunny/yes): 
         8     sunny
         10    sunny
     

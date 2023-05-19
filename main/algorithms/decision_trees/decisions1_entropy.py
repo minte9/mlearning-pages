@@ -19,47 +19,35 @@ import numpy as np
 lst = ['apple']*3 + ['orange']*2 + ['banana']*2
 fruits = pd.Series(lst)
 
-# Relative frequency of each fruit
+# Probability distribution (relative frequency of fruits)
 probs = fruits.value_counts(normalize=True)
+probs2 = [3/7, 2/7, 2/7] # by hand
 
-# Probability distribution computed by hand
-probs2 = [3/7, 2/7, 2/7]
-
-# Entropy (Shannon model)
+# Entropy (Shannon model) and Information gain
 entropy = -1 * np.sum(probs * np.log2(probs))
-
-# Information gain
 gini_index = 1 - np.sum(np.square(probs))
 
 # ------------------------------------------------------------
 
-print("Fruits narray: \n", fruits)
-print("Frecvency value_count(): \n", probs)
-print("Frecvency bay_hand: \n", probs2)
-print("Entropy: \n", entropy)
-print("Information gain: \n", gini_index)
+print("\n Fruits narray: \n ", fruits.values)
+print("\n Probability distribution - value_count(): \n ", probs.values)
+print("\n Probability distribution - by hand: \n ", probs2)
+print("\n Entropy: \n ", entropy)
+print("\n Information gain: \n ", gini_index)
 
 """
     Fruits narray: 
-        0     apple
-        1     apple
-        2     apple
-        3    orange
-        4    orange
-        5    banana
-        6    banana
+     ['apple' 'apple' 'apple' 'orange' 'orange' 'banana' 'banana']
 
-    Frecvency: 
-        apple     0.428571
-        orange    0.285714
-        banana    0.285714
+    Probability distribution - value_count(): 
+     [0.42857143 0.28571429 0.28571429]
 
-    Frecvency bay_hand: 
-        [0.42857142857142855, 0.2857142857142857, 0.2857142857142857]
+    Probability distribution - by hand: 
+     [0.42857142857142855, 0.2857142857142857, 0.2857142857142857]
 
     Entropy: 
-        1.5566567074628228
+     1.5566567074628228
 
     Information gain: 
-        0.653061224489796
+     0.653061224489796
 """

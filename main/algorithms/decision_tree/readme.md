@@ -44,9 +44,9 @@ that generates a tree structure that can be used later for predictions.
 
 ### References
 
-> [Decision Tree Types](https://www.knowledgehut.com/blog/data-science/classification-and-regression-trees-in-machine-learning)  
+> [Decision Tree Types](https://www.knowledgehut.com/blog/data-science/classification-and-regression-trees-in-machine-learning)  Entropy 
 > [Information Gain](https://www.featureranking.com/tutorials/machine-learning-tutorials/information-gain-computation)  
-> [Entropy Math](https://www.mathsisfun.com/physics/entropy.html)  mathisfun
+> [Entropy Math](https://www.mathsisfun.com/physics/entropy.html)  mathisfun  
 > [Python Formula](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.entropy.html)  
 > [PlayTennis Dataset](https://www.kaggle.com/code/sdk1810/decision-tree-for-playtennis)  
 > [ID3 Algorithm Implementation](https://www.kaggle.com/code/smsmibrahim/decision-tree-id3-implementation-using-play-tennis/notebook)  

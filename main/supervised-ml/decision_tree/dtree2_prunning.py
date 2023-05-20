@@ -71,6 +71,7 @@ outputs = [
     ["Dataset:", df['data']],
     ["Shape:", df['data'].shape],
     ["Target names:", df['target_names']],
+    ["Target malignant:", list(df['target_names']).index('malignant')],
     ["Decistion Tree:", tree_text],
     ["X_new:", X_new],
     ["Prediction:", y_pred],
@@ -104,6 +105,45 @@ for out in outputs:
 
 	 Shape: 
 	  (569, 30)
+
+	Target names: 
+	  ['malignant' 'benign']
+
+	 Target malignant: 
+	  0
+
+	 Decistion Tree: 
+	    |--- feature_20 <= 16.80
+        |   |--- feature_27 <= 0.14
+        |   |   |--- feature_10 <= 1.05
+        |   |   |   |--- feature_14 <= 0.00
+        |   |   |   |   |--- class: 1
+        |   |   |   |--- feature_14 >  0.00
+        |   |   |   |   |--- class: 1
+        |   |   |--- feature_10 >  1.05
+        |   |   |   |--- class: 0
+        |   |--- feature_27 >  0.14
+        |   |   |--- feature_21 <= 25.62
+        |   |   |   |--- feature_24 <= 0.18
+        |   |   |   |   |--- class: 1
+        |   |   |   |--- feature_24 >  0.18
+        |   |   |   |   |--- class: 0
+        |   |   |--- feature_21 >  25.62
+        |   |   |   |--- feature_28 <= 0.27
+        |   |   |   |   |--- class: 1
+        |   |   |   |--- feature_28 >  0.27
+        |   |   |   |   |--- class: 0
+        |--- feature_20 >  16.80
+        |   |--- feature_11 <= 0.47
+        |   |   |--- class: 1
+        |   |--- feature_11 >  0.47
+        |   |   |--- feature_26 <= 0.19
+        |   |   |   |--- feature_21 <= 30.98
+        |   |   |   |   |--- class: 1
+        |   |   |   |--- feature_21 >  30.98
+        |   |   |   |   |--- class: 0
+        |   |   |--- feature_26 >  0.19
+        |   |   |   |--- class: 0
 
 	 X_new: 
 	  [ 9.683e+00 1.934e+01 6.105e+01 2.857e+02 8.491e-02 5.030e-02 2.337e-02

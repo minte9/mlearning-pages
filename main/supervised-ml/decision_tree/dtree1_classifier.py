@@ -50,7 +50,8 @@ y2_pred = decision_tree.predict(X2_new)[0]
 # ----------------------------------------------------------------------------
 
 # Output
-dot_data = tree.export_graphviz(decision_tree, out_file=None, filled=True)
+dot_data = tree.export_graphviz(decision_tree, out_file=None, filled=True,
+	class_names=["no", "yes"], feature_names=X.columns)
 dot_graph = graphviz.Source(dot_data)
 dot_graph.view()
 

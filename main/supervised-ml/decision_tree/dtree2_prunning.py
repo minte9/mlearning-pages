@@ -1,4 +1,4 @@
-""" Decision Trees / Prunning
+""" Decision Trees / Prunning (Breast Cancer)
 
 The max_depth in the classifier controls the maximum depth 
 of the decision tree. Insteed of looking at the whole tree, we can select 
@@ -14,10 +14,14 @@ import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
+from sklearn import tree
+import graphviz
 
 # Dataset
 DIR = pathlib.Path(__file__).resolve().parent
 df = load_breast_cancer()
+
+# ----------------------------------------------------------------------------
 
 # Training and test data
 X1, X2, y1, y2 = train_test_split(
@@ -42,7 +46,9 @@ impdf = pd.DataFrame({
 impdf_sorted = impdf.sort_values(
     by="Importance", ascending=False
 )
-top_features = impdf_sorted["Feature"].head(4)
+top_features = impdf_sorted["Feature"].head(5)
+
+# ----------------------------------------------------------------------------
 
 # Output
 n = df.data.shape[1]
@@ -54,10 +60,18 @@ plt.ylabel("Feature")
 plt.ylim(-1, n)
 plt.show()
 
+dot_data = tree.export_graphviz(dtree, out_file=None, filled=True, 
+    class_names=df['target_names'])
+dot_graph = graphviz.Source(dot_data)
+dot_graph.view()
+tree_text = tree.export_text(dtree)
+
 outputs = [
     ["Featre names:", df['feature_names']],
     ["Dataset:", df['data']],
     ["Shape:", df['data'].shape],
+    ["Target names:", df['target_names']],
+    ["Decistion Tree:", tree_text],
     ["X_new:", X_new],
     ["Prediction:", y_pred],
     ["Prediction Target:", y_pred_target],
@@ -112,4 +126,5 @@ for out in outputs:
       27    worst concave points
       11           texture error
       21           worst texture
+      26         worst concavity
 """

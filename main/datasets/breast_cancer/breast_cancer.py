@@ -62,6 +62,7 @@ plt.show()
 
 print("Featre names:\n", dataset['feature_names'], '\n')
 print("Target names:\n", dataset['target_names'], '\n')
+print("Target malignant:\n", list(dataset['target_names']).index('malignant'), '\n')
 print("Data:\n", dataset['data'], '\n')
 print("Shape:", dataset['data'].shape)
 print("Optim (k, max_accuracy):", f"k={k}, max_accuracy={max_accuracy}")

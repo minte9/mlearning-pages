@@ -71,7 +71,7 @@ outputs = [
     ["Dataset:", df['data']],
     ["Shape:", df['data'].shape],
     ["Target names:", df['target_names']],
-    ["Target malignant:", list(df['target_names']).index('malignant')],
+    ["Malignant:", list(df['target_names']).index('malignant')],
     ["Decistion Tree:", tree_text],
     ["X_new:", X_new],
     ["Prediction:", y_pred],

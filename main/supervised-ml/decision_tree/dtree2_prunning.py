@@ -76,7 +76,7 @@ outputs = [
     ["X_new:", X_new],
     ["Prediction:", y_pred],
     ["Prediction Target:", y_pred_target],
-    ["Dtree accuracy score:", score],
+    ["Model accuracy score:", score],
     ["Top features:", top_features],
 ]
 for out in outputs:
@@ -158,7 +158,7 @@ for out in outputs:
      Prediction Target: 
      ['benign']
 
-	 Dtree accuracy score: 
+	 Model accuracy score: 
 	  1.0
 
 	 Top features: 

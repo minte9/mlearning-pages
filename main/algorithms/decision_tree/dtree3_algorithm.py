@@ -28,7 +28,6 @@ df = pd.read_csv(DIR / 'data/play_tennis.csv')
 X = df.drop(['play'], axis=1)
 y = df['play']
 
-# ------------------------------------------------------------------------------
 
 # Entropy (total) for current dataframe
 def dataset_entropy(df):
@@ -74,7 +73,6 @@ def find_winner(df):
     winner_attr = attributes[np.argmax(infogains)] # maxim info gains
     return winner_attr
 
-# ------------------------------------------------------------------------------
 
 # Construct the decision tree (dictionary)
 def buildTree(df):
@@ -105,7 +103,6 @@ def buildTree(df):
 
 decision_tree = buildTree(df)
 
-# ------------------------------------------------------------------------------
 
 # Print dictionary tree (recursion  in case of subtrees)
 def print_tree(tree, attr=None, i=0):
@@ -135,7 +132,6 @@ def predict(X, tree):
     subval = predict(X, subval) # Recursive
     return subval
 
-# ------------------------------------------------------------------------------
 
 print(decision_tree, "\n")
 print_tree(decision_tree)

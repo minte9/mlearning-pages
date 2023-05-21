@@ -1,8 +1,15 @@
 """ Decision Trees / Prunning (Breast Cancer)
 
+Stop developing the tree before the limit of perfectly train data fit.
+This will lower the accuracy for train data, but it will improve 
+the score on test data.
+
 The max_depth in the classifier controls the maximum depth 
-of the decision tree. Insteed of looking at the whole tree, we can select 
+of the decision tree. 
+
+Insteed of looking at the whole tree, we can select 
 only the most useful properties.
+
 We can see that `worst radius` used in the top split, is by far 
 the most important feature.
 """

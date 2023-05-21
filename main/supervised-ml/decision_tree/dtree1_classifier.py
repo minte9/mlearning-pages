@@ -28,8 +28,6 @@ df_encoded = pd.DataFrame()
 for col in df.columns:
     df_encoded[col] = LabelEncoder().fit_transform(df[col])
 
-# ------------------------------------------------------
-
 # Train data
 X = df_encoded.drop(['play'], axis=1) # remove column labeled `play`
 y = df_encoded['play']
@@ -46,8 +44,6 @@ y1_pred = decision_tree.predict(X1_new)[0]
 X2_new = [2, 2, 0, 0]
 X2_new = pd.DataFrame([X2_new], columns=X.columns)
 y2_pred = decision_tree.predict(X2_new)[0]
-
-# ------------------------------------------------------
 
 # Output
 dot_data = tree.export_graphviz(decision_tree, out_file=None, filled=True,

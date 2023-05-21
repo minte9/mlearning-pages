@@ -21,8 +21,6 @@ import graphviz
 DIR = pathlib.Path(__file__).resolve().parent
 df = load_breast_cancer()
 
-# -----------------------------------------------------
-
 # Training and test data
 X1, X2, y1, y2 = train_test_split(
     df.data, df.target, stratify=df.target, random_state=42)
@@ -47,8 +45,6 @@ impdf_sorted = impdf.sort_values(
     by="Importance", ascending=False
 )
 top_features = impdf_sorted["Feature"].head(5)
-
-# -----------------------------------------------------
 
 # Output
 n = df.data.shape[1]

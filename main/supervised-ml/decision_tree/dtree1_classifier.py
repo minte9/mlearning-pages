@@ -36,12 +36,11 @@ y = df_encoded['play']
 decision_tree = DecisionTreeClassifier(criterion='entropy')
 decision_tree.fit(X, y)
 
-# Predictions for second row in dataset
-X1_new = X.iloc[2:3]
+# Predictions
+X1_new = X.iloc[2:3] # second row
 y1_pred = decision_tree.predict(X1_new)[0]
 
-# Prediction for third row
-X2_new = [2, 2, 0, 0]
+X2_new = [2, 2, 0, 0] # third row
 X2_new = pd.DataFrame([X2_new], columns=X.columns)
 y2_pred = decision_tree.predict(X2_new)[0]
 

@@ -13,29 +13,28 @@ from sklearn.tree import DecisionTreeClassifier
 
 # Load dataset
 DIR = pathlib.Path(__file__).resolve().parent
-df = pd.read_csv(DIR / "data/tic-tac-toe-endgame.csv")
+df = pd.read_csv(DIR / "data/tic-tac-toe-somesh24.csv")
 
-def add_draw_class(df):
+def add_draw_class():
     for i in range(len(df)):
         win = False
-
         for j in range(3):
             if df.iloc[i][j] == df.iloc[i][j+1] == df.iloc[i][j+2] and df.iloc[i][j+1] != 'b':
                 win = True # horizontal win
-
-        for j in range(3):
             if df.iloc[i][j] == df.iloc[i][j+3] == df.iloc[i][j+6] and df.iloc[i][j+1] != 'b':
                 win = True # vertical win
-        
+
         if df.iloc[i][0] == df.iloc[i][4] == df.iloc[i][9] or \
             df.iloc[i][2] == df.iloc[i][4] == df.iloc[i][6] and df.iloc[i][4] != 'b':
                 win = True  # diagonal win
-
         if not win:
-            df.loc[i]['V10'] = 'draw'
+            df.loc[i, 'class'] = 'Draw'
     return df
 
-df = add_draw_class(df)
+add_draw_class()
+
+# Convert boolean values to strings in the 'class' column
+df['class'] = df['class'].astype(str)
 
 # Encode lables
 LE = LabelEncoder()
@@ -45,7 +44,7 @@ for col in df.columns:
 
 # Train data
 X = df_encoded.iloc[:,0:-1]
-Y = df_encoded['V10']
+Y = df_encoded['class']
 
 # Fitting the model
 dtree_model = DecisionTreeClassifier(random_state=42)

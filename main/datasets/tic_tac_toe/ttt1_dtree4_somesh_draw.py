@@ -19,29 +19,28 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
 DIR = pathlib.Path(__file__).resolve().parent
-df = pd.read_csv(DIR / "data/tic-tac-toe-endgame.csv")
+df = pd.read_csv(DIR / "data/tic-tac-toe-somesh24.csv")
 
-def add_draw_class(df):
+def add_draw_class():
     for i in range(len(df)):
         win = False
-
         for j in range(3):
             if df.iloc[i][j] == df.iloc[i][j+1] == df.iloc[i][j+2] and df.iloc[i][j+1] != 'b':
                 win = True # horizontal win
-
-        for j in range(3):
             if df.iloc[i][j] == df.iloc[i][j+3] == df.iloc[i][j+6] and df.iloc[i][j+1] != 'b':
                 win = True # vertical win
-        
+
         if df.iloc[i][0] == df.iloc[i][4] == df.iloc[i][9] or \
             df.iloc[i][2] == df.iloc[i][4] == df.iloc[i][6] and df.iloc[i][4] != 'b':
                 win = True  # diagonal win
-
         if not win:
-            df.loc[i]['V10'] = 'draw'
+            df.loc[i, 'class'] = 'Draw'
     return df
 
-df = add_draw_class(df)
+add_draw_class()
+
+# Convert boolean values to strings in the 'class' column
+df['class'] = df['class'].astype(str)
 
 # Encode lables
 LE = LabelEncoder()
@@ -51,9 +50,7 @@ for col in df.columns:
 
 # Train data
 X = df_encoded.iloc[:,0:-1]
-Y = df_encoded['V10'] # [0, 1, 2] / draw, O win, X win
-
-add_draw_class(df_encoded)
+Y = df_encoded['class'] # [0, 1, 2] / draw, O win, X win
 
 # Spliting data (train and test)
 X1, X2, Y1, Y2 = train_test_split(X, Y, test_size=0.3, random_state=42)
@@ -63,20 +60,32 @@ model = DecisionTreeClassifier(random_state=42)
 model.fit(X1, Y1)
 
 # Prediction
-new_board, player, expected = ([
+board = ([
     "X", "O", " ",
     "X", "X", "O",
     "O", " ", " "], True, 1) # X to move / expected 2 (X wins)
 x_new = [2,1,0,2,2,1,1,0,0] # 2
-
-new_board, player, expected = ([
-    "X", " ", "X",
-    "X", "O", " ",
-    "O", " ", " "], True, 1) # O to move / expected 0 (Draw)
-x_new = [2,0,2,2,1,0,1,0,0] # 0
-
 x_new = pd.DataFrame([x_new], columns=X.columns)
 y_pred = model.predict(x_new)
+assert y_pred == 2
+
+board = ([
+    "X", " ", "X",
+    "X", "O", " ",
+    "O", " ", " "], True, 0) # O to move / expected 0 (Draw)
+x_new = [2,0,2,2,1,0,1,0,0] # 0
+x_new = pd.DataFrame([x_new], columns=X.columns)
+y_pred = model.predict(x_new)
+assert y_pred == 0
+
+board = ([
+    "X", "O", "X", 
+    "O", "X", " ",
+    "O", "X", " "], False, 0) # O to move / expected 0 (Draw)
+x_new = [2,1,2,1,2,0,1,2,0] # 0
+x_new = pd.DataFrame([x_new], columns=X.columns)
+y_pred = model.predict(x_new)
+# assert y_pred == 0
 
 # Accuracy score
 score = model.score(X2, model.predict(X2))

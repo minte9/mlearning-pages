@@ -4,43 +4,44 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-import itertools
+import itertools as it
 
 # Load dataset
 DIR = pathlib.Path(__file__).resolve().parent
 df = pd.read_csv(DIR / "data/tic-tac-toe-amit9oc3.csv")
 
 # Train data
-X1 = df[df.IsO == 1].drop(columns=["IsO", "score"])  # O last move
-X2 = df[df.IsO == 0].drop(columns=["IsO", "score"])  # X last move
-Y1 = df[df.IsO == 1]['score']
-Y2 = df[df.IsO == 0]['score']
+X1 = df[1 == df.IsO].drop(columns=["IsO", "score"])  # O last move
+X2 = df[0 == df.IsO].drop(columns=["IsO", "score"])  # X last move
+Y1 = df[1 == df.IsO]['score']
+Y2 = df[0 == df.IsO]['score']
 
 # Fitting the models (X and O)
-dtreeX = DecisionTreeClassifier(random_state=42)
-dtreeO = DecisionTreeClassifier(random_state=42)
+dtreeX = DecisionTreeClassifier()
+dtreeO = DecisionTreeClassifier()
 dtreeX.fit(X1, Y1)
 dtreeO.fit(X2, Y2)
 
 def get_legal_moves(board):
     moves = []
-    for i in range(3):
-        for j in range(3):
-            if board[i, j] == " ":
-                moves.append((i, j))
+    for i,j in it.product(range(3), range(3)):
+        if board[i, j] == " ":
+            moves.append((i, j))
     return moves
 
-def evaluate_score(board):
-    for i in range(3):
-        if board[i][0] == board[i][1] == board[i][2] and board[i][0] != " ":
-            return 1 if board[i][0] == 'X' else -1  # horizontal win score
-    for i in range(3):
-        if board[0][i] == board[1][i] == board[2][i] and board[0][i] != " ":
-            return 1 if board[0][i] == 'X' else -1  # vertical win score
+def evaluate_score(B): # board
 
-    if (board[0][0] == board[1][1] == board[2][2] or
-            board[0][2] == board[1][1] == board[2][0]) and board[1][1] != " ":
-        return 1 if board[1][1] == "X" else -1  # diagonal win score 
+    for i in range(3):
+        if B[i,0] == B[i,1] == B[i,2] and B[i,0] != " ":
+            return 1 if B[i,0] == 'X' else -1  # horizontal win score
+
+    for i in range(3):
+        if B[0,i] == B[1,i] == B[2,i] and B[0,i] != " ":
+            return 1 if B[0,i] == 'X' else -1  # vertical win score
+
+    if (B[0,0] == B[1,1] == B[2,2] or
+            B[0,2] == B[1,1] == B[2,0]) and B[1,1] != " ":
+        return 1 if B[1,1] == "X" else -1  # diagonal win score 
     return 0
 
 def is_terminal_state(board):
@@ -61,20 +62,18 @@ def show(board, move=None):
         if i < 2:
             print(" ---+---+---")
 
-def convert_board(board):
+def convert_board(B):
     x_new = []
+    
+    for i,j in it.product(range(3), range(3)):
+        if B[i,j] == 'X': x_new.append(1)
+        if B[i,j] == 'O': x_new.append(0)
+        if B[i,j] == ' ': x_new.append(0)
 
-    for i in range(3):
-        for j in range(3):
-            if board[i][j] == 'X': x_new.append(1)
-            if board[i][j] == 'O': x_new.append(0)
-            if board[i][j] == ' ': x_new.append(0)
-
-    for i in range(3):
-        for j in range(3):
-            if board[i][j] == 'O': x_new.append(1)
-            if board[i][j] == 'X': x_new.append(0)
-            if board[i][j] == ' ': x_new.append(0)
+    for i,j in it.product(range(3), range(3)):
+        if B[i,j] == 'O': x_new.append(1)
+        if B[i,j] == 'X': x_new.append(0)
+        if B[i,j] == ' ': x_new.append(0)
         
     return x_new
 
@@ -86,7 +85,8 @@ def play(board, player=True, expected=None):
     
     players = [player, not player]
     moves = get_legal_moves(board)
-    for player_, move in itertools.product(players, moves):
+
+    for player_, move in it.product(players, moves): # cartesian product
         new_board = np.copy(board)
         new_board[move] = 'X' if player_ else 'O'
 

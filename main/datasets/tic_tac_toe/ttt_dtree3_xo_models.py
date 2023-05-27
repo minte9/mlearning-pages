@@ -1,7 +1,7 @@
 """ Tic Tac Toe / Decistion Tree
 
 Even though applying machine learning to a problem which can be easily solved 
-by deterministic methods doesn’t add much value, 
+by deterministic methods does not add much value, 
 it can still be considered a good problem for learning ML.
 """
 
@@ -16,34 +16,52 @@ df = pd.read_csv(DIR / "data/tic-tac-toe-amit9oc3.csv")
 
 # Train data
 X1 = df[(df.IsO == 1)].drop(columns=["IsO", "score"]) # O last move
-Y1 = df[(df.IsO == 1)]['score']
 X2 = df[(df.IsO == 0)].drop(columns=["IsO", "score"]) # X last move
+Y1 = df[(df.IsO == 1)]['score']
 Y2 = df[(df.IsO == 0)]['score']
 
 # Fitting the models (X and O)
 dtreeX = DecisionTreeClassifier()
-dtreeX.fit(X1, Y1)
 dtreeO = DecisionTreeClassifier()
+dtreeX.fit(X1, Y1)
 dtreeO.fit(X2, Y2)
+
+def predtest(board, player, expected):
+    x_new = []
+
+    # parse for X
+    for i in range(9):
+        if board[i] == 'X': x_new.append(1)
+        if board[i] == 'O': x_new.append(0)
+        if board[i] == ' ': x_new.append(0)
+
+    # parse for O
+    for i in range(9):
+        if board[i] == 'O': x_new.append(1)
+        if board[i] == 'X': x_new.append(0)
+        if board[i] == ' ': x_new.append(0)
+
+    model = dtreeX if player else dtreeO
+    
+    x_new = pd.DataFrame([x_new], columns=X1.columns)
+    y_pred = model.predict(x_new)
+    assert y_pred == expected
 
 # Predictions
 board = ["X", "O", "X", 
          "O", "X", " ",
          "O", "X", " "] # O to move / expected 0 (Draw)
-x_new = [1,0,1,0,1,0,0,1,0,
-         0,1,0,1,0,0,1,0,0]
-x_new = pd.DataFrame([x_new], columns=X1.columns)
-y_pred = dtreeO.predict(x_new) # 0
-assert y_pred == 0
+predtest(board, False, 0)
 
 board = ["X", " ", " ",
          "X", "O", " ",
          "O", " ", " "] # X to move / expected 0 (Draw)
-x_new = [1, 0, 0, 1, 0, 0, 0, 0, 0,
-         0, 0, 0, 0, 1, 0, 1, 0, 0]
-x_new = pd.DataFrame([x_new], columns=X1.columns)
-y_pred = dtreeX.predict(x_new) # 0
-assert y_pred == 0
+predtest(board, True, 0)
+
+board = [" ", "O", "X",
+         "O", "X", " ",
+         " ", "X", " "] # O to move / extected 0 (Draw)
+predtest(board, False, 0)
 
 # Output
 output = [
@@ -51,8 +69,6 @@ output = [
     ["Features:", X1],
     ["Targets:", Y1],
     ["Unique Classes (draw, O_win, X_win):", Y1.unique()],
-    ["Unknown x_new:", x_new],
-    ["Prediction class:", y_pred],
 ]
 for v in output:
     print("\n", v[0]); print(v[1])
@@ -106,11 +122,4 @@ for v in output:
 
     Unique Classes (draw, O_win, X_win):
     [   0 -100  100]
-
-    Unknown x_new:
-    X0  X1  X2  X3  X4  X5  X6  X7  X8  O0  O1  O2  O3  O4  O5  O6  O7  O8
-    0   1   0   0   1   0   0   0   0   0   0   0   0   0   1   0   1   0   0
-
-    Prediction class:
-    [0]
 """

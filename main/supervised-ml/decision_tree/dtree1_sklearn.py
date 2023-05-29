@@ -2,6 +2,7 @@
 
 Given certain values for each of the attributes, the learned decision tree 
 is able to give a clear answer if weather is suitable or not for tennis.
+The model can make prediction only for known sample from dataset.
 """
 
 import pathlib
@@ -34,7 +35,7 @@ y_pred = dtree_model.predict(x_new)[0]
 
 print("Dataset:"); print(df, "\n")
 print("Encoded:"); print(df_encoded, "\n")
-print("Unknown (index 4):"); print(x_new.to_markdown(), "\n")
+print("Unknown:"); print(x_new.to_markdown(), "\n")
 print("Prediction:", y_pred)
 
 
@@ -73,7 +74,7 @@ print("Prediction:", y_pred)
     12        0     1         1      0     1
     13        1     2         0      1     0 
 
-    Unknown (index 4):
+    Unknown:
     |    |   outlook |   temp |   humidity |   windy |
     |---:|----------:|-------:|-----------:|--------:|
     |  0 |         1 |      0 |          1 |       0 | 

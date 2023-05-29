@@ -16,6 +16,7 @@
 > Breast Cancer  `Prediction`  
 > Simulated Data  `Make data` `Regression (A)`  
 > Tmdb `Cleanning` `Binary` `Similarity` `Predictions` `Scikit`
+> Tic-Tac-Toe `Generate Dataset`
 
 [Numpy](./main/numpy/)  
 > Matrices   `Vector` `Sparse matrix` `Vectorization`  

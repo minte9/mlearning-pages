@@ -35,7 +35,7 @@ y_pred = dtree_model.predict(x_new)[0]
 
 print("Dataset:"); print(df, "\n")
 print("Encoded:"); print(df_encoded, "\n")
-print("Unknown:"); print(x_new.to_markdown(), "\n")
+print("Unknown:"); print(x_new, "\n")
 print("Prediction:", y_pred)
 
 
@@ -73,11 +73,10 @@ print("Prediction:", y_pred)
     11        0     2         0      1     1
     12        0     1         1      0     1
     13        1     2         0      1     0 
-
+    
     Unknown:
-    |    |   outlook |   temp |   humidity |   windy |
-    |---:|----------:|-------:|-----------:|--------:|
-    |  0 |         1 |      0 |          1 |       0 | 
+       outlook  temp  humidity  windy
+    0        1     0         1      0 
 
     Prediction: 1
 """

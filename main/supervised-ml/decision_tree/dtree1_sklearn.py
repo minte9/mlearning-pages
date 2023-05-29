@@ -34,7 +34,7 @@ y_pred = dtree_model.predict(x_new)[0]
 
 print("Dataset:"); print(df, "\n")
 print("Encoded:"); print(df_encoded, "\n")
-print("Unknown:"); print(x_new.to_markdown(), "\n")
+print("Unknown (index 4):"); print(x_new.to_markdown(), "\n")
 print("Prediction:", y_pred)
 
 

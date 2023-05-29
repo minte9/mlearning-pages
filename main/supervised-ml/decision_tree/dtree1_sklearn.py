@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
+from sklearn import tree
 
 # Dataset
 DIR = pathlib.Path(__file__).resolve().parent
@@ -28,6 +29,8 @@ Y = df_encoded['play']
 dtree_model = DecisionTreeClassifier(random_state=42)
 dtree_model.fit(X, Y)
 
+dtree_output = tree.export_text(dtree_model, feature_names=list(X.columns))
+
 # Prediction
 x_new =  [1, 0, 1, 0] # expect 1
 x_new = pd.DataFrame([x_new], columns=X.columns)
@@ -35,6 +38,7 @@ y_pred = dtree_model.predict(x_new)[0]
 
 print("Dataset:"); print(df, "\n")
 print("Encoded:"); print(df_encoded, "\n")
+print("Decision tree:"); print(dtree_output)
 print("Unknown:"); print(x_new, "\n")
 print("Prediction:", y_pred)
 
@@ -73,6 +77,27 @@ print("Prediction:", y_pred)
     11        0     2         0      1     1
     12        0     1         1      0     1
     13        1     2         0      1     0 
+
+    Decision tree:
+    |--- outlook <= 0.50
+    |   |--- class: 1
+    |--- outlook >  0.50
+    |   |--- humidity <= 0.50
+    |   |   |--- outlook <= 1.50
+    |   |   |   |--- windy <= 0.50
+    |   |   |   |   |--- class: 1
+    |   |   |   |--- windy >  0.50
+    |   |   |   |   |--- class: 0
+    |   |   |--- outlook >  1.50
+    |   |   |   |--- class: 0
+    |   |--- humidity >  0.50
+    |   |   |--- windy <= 0.50
+    |   |   |   |--- class: 1
+    |   |   |--- windy >  0.50
+    |   |   |   |--- temp <= 1.00
+    |   |   |   |   |--- class: 0
+    |   |   |   |--- temp >  1.00
+    |   |   |   |   |--- class: 1
     
     Unknown:
        outlook  temp  humidity  windy

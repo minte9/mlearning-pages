@@ -1,6 +1,7 @@
-""" Decision Trees / Play tennis
+""" Decision Tree / Classifier (Play Tennis)
 
-Use DecistionTreeClassifier from sklearn library
+Given certain values for each of the attributes, the learned decision tree 
+is able to give a clear answer if weather is suitable or not for tennis.
 """
 
 import pathlib

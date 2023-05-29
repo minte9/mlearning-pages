@@ -81,7 +81,7 @@ def play(board, player=True, expected=None):
     print("\nX" if player else "\nO", "move")
 
     best_move = None 
-    best_score = float("-inf") if player else float("+inf") # initialize score
+    best_score = float("-inf") # initialize score
     
     players = [player, not player]
     moves = get_legal_moves(board)
@@ -101,23 +101,17 @@ def play(board, player=True, expected=None):
         x_new = pd.DataFrame([x_new], columns=X1.columns)
         score_ = dtree_model.predict(x_new)[0]
 
-        if player_ == True:
-            if score_ > best_score:
-                best_score = score_
-                best_move = move
-            
-        if player_ == False:
-            if score_ < best_score:
-                best_score = score_
-                best_move = move
+        if score_ > best_score:
+            best_score = score_
+            best_move = move
 
     board[best_move] = 'X' if player else 'O'
     show(board, best_move)
 
     if is_terminal_state(board):
-        if best_score == 1:  print('X won!')
+        if best_score ==  1: print('X won!')
         if best_score == -1: print('O won!')
-        if best_score == 0:  print('Draw!')
+        if best_score ==  0: print('Draw!')
 
         assert expected == best_score
         print('Test passed \n')

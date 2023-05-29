@@ -26,7 +26,7 @@ X = df_encoded.drop(columns=["play"])
 Y = df_encoded['play']
 
 # Fitting the model
-dtree_model = DecisionTreeClassifier(random_state=42)
+dtree_model = DecisionTreeClassifier()
 dtree_model.fit(X, Y)
 
 dtree_output = tree.export_text(dtree_model, feature_names=list(X.columns))

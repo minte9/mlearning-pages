@@ -20,10 +20,8 @@ df_encoded = pd.DataFrame()
 for col in df.columns:
     df_encoded[col] = LabelEncoder().fit_transform(df[col])
 
-X = df_encoded.drop(columns=["score", "is_terminal"])  # 2,1,0
-# Y = df['score']  # 1,-1,0
-Y = pd.concat([df['score'], df_encoded['is_terminal']], axis=1) # 1,-1,0 / 1,0
-
+X = df_encoded.drop(columns=["score", "is_terminal"])
+Y = pd.concat([df['score'], df_encoded['is_terminal']], axis=1)  # score 1,-1,0
 
 # Fitting the model
 dtree = DecisionTreeClassifier(random_state=42)

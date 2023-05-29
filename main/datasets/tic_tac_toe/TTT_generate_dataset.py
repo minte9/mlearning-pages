@@ -61,12 +61,12 @@ def minimax(board, player=True, alpha=float('-inf'), beta=float('inf')):
         new_board[move] = 'X' if player else 'O'
         
         if is_terminal_state(new_board): 
-            dataset.append((new_board.flatten(), evaluate_score(new_board), True))
+            dataset.append((new_board.flatten(), evaluate_score(new_board), True, move))
             return move, evaluate_score(new_board) # Base case
 
         # Recursive case
         move_, score_ = minimax(new_board, not player, alpha, beta)
-        dataset.append((new_board.flatten(), score_, False))
+        dataset.append((new_board.flatten(), score_, False, move))
 
         if player == True:
             if score_ > best_score:

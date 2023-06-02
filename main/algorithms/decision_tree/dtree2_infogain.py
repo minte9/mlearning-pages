@@ -35,9 +35,11 @@ def dataset_entropy():
 def attribute_entropy(attr):
     E = 0
     eps = np.finfo(float).eps   # machine epsilon for the float 
-    for v in df[attr].unique(): # cool/hot
+    targets = df.play.unique()
+    values = df[attr].unique()
+    for v in values: # cool/hot
         ent = 0
-        for t in df['play'].unique(): # targets: yes,no
+        for t in targets: # yes,no
             num = len(df[attr][df[attr] == v][df.play == t]) # numerator
             den = len(df[attr][df[attr] == v])
             fraction = num/(den + eps)
@@ -48,22 +50,27 @@ def attribute_entropy(attr):
 # Feaature names
 attributes = df.keys()[:-1]
 
-# Entropy and Information gain (for each attribute)
+# Entropy (for each attribute)
 E = {} 
 for k in attributes:
     E[k] = attribute_entropy(k)
+
+# Information gain (for each attribute)
 IG = {}
 for k in E:
     IG[k] = dataset_entropy() - E[k]
 
-# E  = {k:attribute_entropy(k) for k in attributes} # one line
-# IG = {k:(dataset_entropy() - E[k]) for k in E} 
+# Oneliners
+E  = {k:attribute_entropy(k) for k in attributes}
+IG = {k:(dataset_entropy() - E[k]) for k in E} 
+
+assert E['outlook']  < E['humidity']
+assert IG['outlook'] > IG['humidity'] # Look Here
 
 outputs = [
     ["Dataset:", df],
     ["Describe:", df.describe()],
     ["Entropy:", dataset_entropy()],
-    ["Selection:", df['outlook'][df['outlook'] == 'sunny'][df.play == 'yes'].values],
     ["AttrEntropy:", E],
     ["Information gains:", IG],
 ]
@@ -97,10 +104,6 @@ for v in outputs:
 
     Entropy: 
         0.9402859586706311
-
-    Selection by feature (sunny/yes): 
-        8     sunny
-        10    sunny
     
     Entropy for each attribute: 
         { 'outlook':     0.6935361388961914, 

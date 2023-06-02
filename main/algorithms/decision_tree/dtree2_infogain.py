@@ -3,8 +3,11 @@
 Information gain is a measure of the reduction in entropy by splitting 
 a dataset based on a particular attribute.
 We can find which attribute provides the most useful or informative split.
-    IG = H - (8/14)H_week - (6/14)H_strong
-    IG = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048 
+
+IG = H - (8/14)H_week - (6/14)H_strong
+IG = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048 
+
+Machine epsilon is the upper bound on the relative error due to rounding.
 """
 
 import numpy as np
@@ -19,45 +22,46 @@ df = pd.read_csv(DIR / 'data/play_tennis.csv')
 X = df.drop(['play'], axis=1)
 y = df['play']
 
+# Total entropy
 def dataset_entropy():
-    entropy = 0
-    targets = df.play
-    values = targets.unique() # yes/no
+    E = 0
+    N = df['play'].value_counts() # yes: 9, no: 5
 
-    for v in values:
-        fraction = targets.value_counts()[v]/len(targets)
-        entropy += -fraction*np.log2(fraction)
-    return entropy
+    for v in df['play'].unique(): # yes/no
+        P = N[v]/len(df['play'])  # probability
+        E += -P*np.log2(P)
+    return E
 
+# Feature entropy
 def attribute_entropy(attr):
-    entropy = 0
-    eps = np.finfo(float).eps
+    E = 0
+    eps = np.finfo(float).eps   # machine epsilon for the float 
 
-    targets = df.play.unique() # yes/no
-    values = df[attr].unique() # cool/hot
-
-    for v in values:
+    for v in df[attr].unique(): # cool/hot
         ent = 0
 
-        for t in targets:
+        for t in df['play'].unique(): # targets: yes,no
             num = len(df[attr][df[attr] == v][df.play == t]) # numerator
             den = len(df[attr][df[attr] == v])
 
-            fraction = num/(den + eps) #pi
+            fraction = num/(den + eps)
             ent += -fraction*np.log2(fraction + eps) # entropy for one feature
 
-        entropy += -(den/len(df))*ent # sum of all entropies
-    return abs(entropy)
+        E += -(den/len(df))*ent # sum of all entropies
+    return abs(E)
 
 attributes = df.keys()[:-1]
 
-entropies = {} 
+# Entropy for each attribute
+E = {} 
 for k in attributes:
-    entropies[k] = attribute_entropy(k)
-    
+    E[k] = attribute_entropy(k)
+
+# Information gain for each attribute
 IG = {}
-for k in entropies:
-    IG[k] = dataset_entropy() - entropies[k]
+for k in E:
+    IG[k] = dataset_entropy() - E[k]
+
 # IG = {k:(entropy_dataset() - E[k]) for k in E} # one line
 
 outputs = [
@@ -65,7 +69,7 @@ outputs = [
     ["Describe:", df.describe()],
     ["Entropy:", dataset_entropy()],
     ["Selection:", df['outlook'][df['outlook'] == 'sunny'][df.play == 'yes'].values],
-    ["Entropy for each attribute:", entropies],
+    ["AttrEntropy:", E],
     ["Information gains:", IG],
 ]
 for v in outputs: 
@@ -99,7 +103,7 @@ for v in outputs:
     Entropy: 
         0.9402859586706311
 
-    Selection by featuare (sunny/yes): 
+    Selection by feature (sunny/yes): 
         8     sunny
         10    sunny
     

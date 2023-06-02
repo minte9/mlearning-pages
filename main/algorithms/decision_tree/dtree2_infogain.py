@@ -26,7 +26,6 @@ y = df['play']
 def dataset_entropy():
     E = 0
     N = df['play'].value_counts() # yes: 9, no: 5
-
     for v in df['play'].unique(): # yes/no
         P = N[v]/len(df['play'])  # probability
         E += -P*np.log2(P)
@@ -36,33 +35,29 @@ def dataset_entropy():
 def attribute_entropy(attr):
     E = 0
     eps = np.finfo(float).eps   # machine epsilon for the float 
-
     for v in df[attr].unique(): # cool/hot
         ent = 0
-
         for t in df['play'].unique(): # targets: yes,no
             num = len(df[attr][df[attr] == v][df.play == t]) # numerator
             den = len(df[attr][df[attr] == v])
-
             fraction = num/(den + eps)
             ent += -fraction*np.log2(fraction + eps) # entropy for one feature
-
         E += -(den/len(df))*ent # sum of all entropies
     return abs(E)
 
+# Feaature names
 attributes = df.keys()[:-1]
 
-# Entropy for each attribute
+# Entropy and Information gain (for each attribute)
 E = {} 
 for k in attributes:
     E[k] = attribute_entropy(k)
-
-# Information gain for each attribute
 IG = {}
 for k in E:
     IG[k] = dataset_entropy() - E[k]
 
-# IG = {k:(entropy_dataset() - E[k]) for k in E} # one line
+# E  = {k:attribute_entropy(k) for k in attributes} # one line
+# IG = {k:(dataset_entropy() - E[k]) for k in E} 
 
 outputs = [
     ["Dataset:", df],

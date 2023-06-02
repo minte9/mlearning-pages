@@ -31,7 +31,7 @@ def dataset_entropy():
         E += -P*np.log2(P)
     return E
 
-# Feature entropy
+# Entropy for each attribute
 def attribute_entropy(attr):
     E = 0
     eps = np.finfo(float).eps   # machine epsilon for the float 

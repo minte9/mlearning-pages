@@ -1,0 +1,13 @@
+Nume,Recomandat,MunteMinute,Access-auto,Loc-parcare,Parcare,TipImobil,Imprejurimi,Priveliste,Luminos,Liniste,Camere,Bucatarie,Restaurant,Pat,Baie,Masina-spalat,Canapea,Zona-lucru,Wifi,Link,Pret
+Rasnov-Teilor,saptamana,30,usor,da,usoara,casa,curte,gradina,da,da,2,completa,aproape,bun,fereastra,nu,fara,masa-bucatarie,foarte-bun,https://www.booking.com/hotel/ro/apartament-teilor-rasnov.ro.html,250
+Rasnov-ApNord,weekend,30,usor,da,relativ-usoara,apartament,strada,case,nu,da,2,completa,aproape,bun,fereastra,nu,comoda,masa-bucatarie,foarte-bun,https://www.booking.com/hotel/ro/rosenau-apartment.ro.html,250
+Rasnov-ApBucegi,weekend,30,usor,strada,usoara,casa,strada,case,da,da,2,partiala,masina,bun,ventilator,nu,comoda,masa-bucatarie,bun,https://www.booking.com/hotel/ro/bucegi-nr-18.ro.html,320
+Rasnov-LoftSeo,saptamana,30,usor,da,usoara,apartament,strada,case,da,da,2,completa,masina,bun,fereastra,da,comoda,masa-bucatarie,foarte-bun,https://www.airbnb.com.ro/rooms/33866770,280
+Busteni-Valba,saptamana,5,relativ-usor,da,relativ-usoara,pensiune,strada,munte,da,relativ,2,comuna,aproape,bun,ventilator,nu,incomoda,nu-are,slab,https://www.turistinfo.ro/busteni/cazare-busteni/pensiunea_valea_alba-c1021.html,250
+Zarnesti-Studio54,weekend,15,usor,da,relativ-usoara,casa,curte,gradina,nu,da,1,partiala,masina,bun,fereastra,nu,fara,living-comun,foarte-bun,https://www.airbnb.com.ro/rooms/52295047,250
+Zarnesti-TreiBrazi,weekend,15,usor,da,usoara,pensiune,gradina,gradina,da,relativ,1,nu,in-pensiune,bun,fereastra,nu,fara,living-comun,foarte-bun,https://www.booking.com/hotel/ro/pensiunea-3-brazi-zarnesti.ro.html,280
+BaiaFier-Tobo,saptamana,5,usor,da,usoara,pensiune,strada,munte,da,relativ,2,nu,in-pensiune,bun,ventilator,nu,comoda,birou,bun,https://www.booking.com/hotel/ro/pensiunea-tobo.ro.html,300
+Brasov-ApRadu,weekend,60,relativ-usor,strada,usoara,casa,strada,case,da,da,2,completa,masina,bun,fereastra,nu,incomoda,masa-bucatarie,foarte-bun,https://www.airbnb.com.ro/rooms/570944844087299571,250
+Brasov-TGAndrada,saptamana,60,greu,da,usoara,apartament,strada,munte,da,da,2,completa,masina,bun,fereastra,da,comoda,masa-bucatarie,foarte-bun,https://www.airbnb.com.ro/rooms/36388572,250
+Brasov-TGAndrada2,saptamana,60,greu,da,usoara,apartament,strada,munte,da,da,2,completa,masina,bun,ventilator,da,comoda,birou,foarte-bun,https://www.airbnb.com.ro/rooms/50370129,250
+Brasov-LoftMari,weekend,60,greu,strada,relativ-usoara,apartament,strada,case,nu,da,1,completa,masina,bun,ventilator,nu,fara,masa-bucatarie,bun,https://www.airbnb.com.ro/rooms/766707614240382526,200

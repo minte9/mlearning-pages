@@ -50,7 +50,7 @@ def attribute_entropy(attr):
         E += -(den/len(df))*ent # sum of all entropies
     return abs(E)
 
-# --------------------------------------------
+# -------------------------------
 
 # Attributes names
 attributes = df.keys()[:-1]
@@ -72,7 +72,7 @@ IG = {k:(dataset_entropy() - E[k]) for k in E}
 assert E['outlook']  < E['humidity']
 assert IG['outlook'] > IG['humidity'] # Look Here
 
-# --------------------------------------------
+# -------------------------------
 
 outputs = [
     ["Dataset:", df],

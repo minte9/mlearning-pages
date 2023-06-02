@@ -23,17 +23,17 @@ PA = A.value_counts(normalize=True)
 PB = B.value_counts(normalize=True)
 
 # Gini Index
-gini_A = 1 - np.sum(np.square(PA)) # Look Here
-gini_B = 1 - np.sum(np.square(PB))
-assert gini_B < gini_A
+giniA = 1 - np.sum(np.square(PA)) # Look Here
+giniB = 1 - np.sum(np.square(PB))
+assert giniB < giniA
 
 outputs = [
     ["A  =", A.values],
     ["B  =", B.values],
     ["PA =", PA.values],
     ["PB =", PB.values],
-    ["gini_A =", gini_A],
-    ["gini_B =", gini_B],
+    ["giniA =", giniA],
+    ["giniB =", giniB],
 ]
 for v in outputs: 
     print(v[0], v[1])
@@ -43,6 +43,6 @@ for v in outputs:
     B  = ['apple' 'apple' 'apple' 'apple' 'apple' 'orange' 'orange']
     PA = [0.4 0.4 0.2]
     PB = [0.71428571 0.28571429]
-    gini_A = 0.6399999999999999
-    gini_B = 0.40816326530612246
+    giniA = 0.6399999999999999
+    giniB = 0.40816326530612246
 """

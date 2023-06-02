@@ -22,10 +22,14 @@ B = pd.Series(B)
 PA = A.value_counts(normalize=True)
 PB = B.value_counts(normalize=True)
 
+# ------------------------------------
+
 # Gini Index
 giniA = 1 - np.sum(np.square(PA)) # Look Here
 giniB = 1 - np.sum(np.square(PB))
 assert giniB < giniA
+
+# ------------------------------------
 
 outputs = [
     ["A  =", A.values],

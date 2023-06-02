@@ -17,7 +17,7 @@ P1 = [3/7, 2/7, 2/7]
 P2 = A.value_counts(normalize=True)
 
 # Entropy (Shannon model)
-E = -1 * np.sum(P1 * np.log2(P1))
+E = -1 * np.sum(P1 * np.log2(P1)) # Look Here
 
 # Output
 outputs = [

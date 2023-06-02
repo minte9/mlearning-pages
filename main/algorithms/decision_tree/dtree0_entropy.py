@@ -1,39 +1,37 @@
 """ Decision Tree / Entropy
 
-Entropy is a measure of how disordered a collection of data is.  
-The more heterogenous and impure the feature is, the higher the entropy.
+Entropy tell us how disordered in a collection of data.  
+The more impure the feature is, the higher the entropy.
+Probability distribution is the frequency of the unique values.
 """
 
 import pandas as pd
 import numpy as np
 
 # Dataset
-lst = ['apple']*3 + ['orange']*2 + ['banana']*2
-fruits = pd.Series(lst)
+A = ['apple']*3 + ['orange']*2 + ['banana']*2
+A = pd.Series(A)
 
-# Probability distribution (relative frequency of fruits)
-probs = fruits.value_counts(normalize=True)
-probs2 = [3/7, 2/7, 2/7] # by hand
+# Probability distribution (by hand or pandas)
+P1 = [3/7, 2/7, 2/7]
+P2 = A.value_counts(normalize=True)
 
 # Entropy (Shannon model)
-entropy = -1 * np.sum(probs * np.log2(probs))
+E = -1 * np.sum(P1 * np.log2(P1))
 
+# Output
 outputs = [
-    ["Fruits:", fruits.values],
-    ["Probability distribution - value_count():", probs.values],
-    ["Probability distribution - by hand:", probs2],
-    ["Entropy:", entropy],
+    ["A", A.values],
+    ["P1", P1],
+    ["P2", P2.values],
+    ["E", E],
 ]
 for v in outputs: 
-    print(v[0], "\n ", v[1])
+    print(v[0], v[1])
 
 """
-    Fruits: 
-     ['apple' 'apple' 'apple' 'orange' 'orange' 'banana' 'banana']
-    Probability distribution - value_count(): 
-     [0.42857143 0.28571429 0.28571429]
-    Probability distribution - by hand: 
-     [0.42857142857142855, 0.2857142857142857, 0.2857142857142857]
-    Entropy: 
-     1.5566567074628228
+    A  ['apple' 'apple' 'apple' 'orange' 'orange' 'banana' 'banana']
+    P1 [0.42857142857142855, 0.2857142857142857, 0.2857142857142857]
+    P2 [0.42857143 0.28571429 0.28571429]
+    E  1.5566567074628228
 """

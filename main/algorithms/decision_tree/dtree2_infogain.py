@@ -47,7 +47,7 @@ def attribute_entropy(attr):
         E += -(den/len(df))*ent # sum of all entropies
     return abs(E)
 
-# Feaature names
+# Attributes names
 attributes = df.keys()[:-1]
 
 # Entropy (for each attribute)

@@ -64,7 +64,7 @@ def find_winner(df):
 
     # Loop for attributes in dataframe and compute info gains
     for attr in attributes: 
-        IG[attr] = dataset_entropy(df) - attribute_entropy(df, attr) # Look Here
+        IG[attr] = dataset_entropy(df) - attribute_entropy(df, attr)
     winner = attributes[np.argmax(IG)] # maxim info gains
     return winner
 # ---------------------------------------------------

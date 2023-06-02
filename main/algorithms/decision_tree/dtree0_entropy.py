@@ -20,10 +20,14 @@ P = [3/7, 2/7, 2/7]
 PA = A.value_counts(normalize=True)
 PB = B.value_counts(normalize=True)
 
+# ------------------------------------
+
 # Entropy (Shannon model)
-EA = -1 * np.sum(PA * np.log2(PA)) # Look Here
+EA = -1 * np.sum(PA * np.log2(PA))
 EB = -1 * np.sum(PB * np.log2(PB))
 assert EB < EA
+
+# ------------------------------------
 
 # Output
 outputs = [

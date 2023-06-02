@@ -1,13 +1,16 @@
 """ Decision Trees / Info Gain
 
-Information gain is a measure of the reduction in entropy by splitting 
-a dataset based on a particular attribute.
-We can find which attribute provides the most useful or informative split.
+Information gain is a measure of the reduction in entropy.
+As the entropy of an attribute increases, the information gain decreases.
+
+We can find which attribute is the most useful or informative 
+and split the dataset based on that attribute.
 
 IG = H - (8/14)H_week - (6/14)H_strong
 IG = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048 
 
 Machine epsilon is the upper bound on the relative error due to rounding.
+It is a small value added to the denominator in order to avoid division by zero. 
 """
 
 import numpy as np

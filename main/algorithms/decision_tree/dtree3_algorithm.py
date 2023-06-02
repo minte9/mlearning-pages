@@ -29,49 +29,42 @@ X = df.drop(['play'], axis=1)
 y = df['play']
 
 
-# Entropy (total) for current dataframe
+# Total entropy (for current dataframe)
 def dataset_entropy(df):
-    entropy = 0
-    targets = df.play
+    E = 0
+    N = df['play'].value_counts() # yes: 9, no: 5
+    values = df['play'].unique()
+    for v in values: # yes/no
+        P = N[v]/len(df['play'])  # probability
+        E += -P*np.log2(P)
+    return E
 
-    for v in targets.unique(): # yes/no
-        fraction = targets.value_counts()[v]/len(targets)
-        entropy += -fraction*np.log2(fraction)
-    return entropy
-
-# Entropy (total) for one specific attribute
+# Entropy for each attribute
 def attribute_entropy(df, attr):
-    entropy = 0
-    eps = np.finfo(float).eps # pi
-
-    attr_targets = df.play.unique() # yes/no
-    attr_values = df[attr].unique() # cool/hot
-
-    for v in attr_values:
-        attr_ent = 0
-
-        for t in attr_targets:
+    E = 0
+    eps = np.finfo(float).eps   # machine epsilon for the float 
+    targets = df.play.unique()
+    values = df[attr].unique()
+    for v in values: # cool/hot
+        ent = 0
+        for t in targets: # yes,no
             num = len(df[attr][df[attr] == v][df.play == t]) # numerator
-            den = len(df[attr][df[attr] == v]) # denominator
-
+            den = len(df[attr][df[attr] == v])
             fraction = num/(den + eps)
-            attr_ent += -fraction*np.log2(fraction + eps) # entropy for one feature
+            ent += -fraction*np.log2(fraction + eps) # entropy for one feature
+        E += -(den/len(df))*ent # sum of all entropies
+    return abs(E)
 
-        entropy += -(den/len(df))*attr_ent # sum of all entropies
-    return abs(entropy)
-
-# Attribute with maxim info gains
+# Find attribute with maximum information gain
 def find_winner(df):
+    IG = {}
     attributes = df.keys()[:-1]
-    total_entropy = dataset_entropy(df)
 
     # Loop for attributes in dataframe and compute info gains
-    infogains = {}
     for attr in attributes: 
-        infogains[attr] = total_entropy - attribute_entropy(df, attr)
-    
-    winner_attr = attributes[np.argmax(infogains)] # maxim info gains
-    return winner_attr
+        IG[attr] = dataset_entropy(df) - attribute_entropy(df, attr) # Look Here
+    winner = attributes[np.argmax(IG)] # maxim info gains
+    return winner
 
 
 # Construct the decision tree (dictionary)

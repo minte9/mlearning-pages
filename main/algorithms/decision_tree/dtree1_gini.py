@@ -1,29 +1,41 @@
 """ Decision Tree / Gini Index
 
-The Gini Index is a measure of impurity or diversity within a set of elements.
-Gini index is between 0 and 1, it easier to compare gini across different features.
+Both entropy and Gini index can be used as impurity measures 
+for decision tree algorithms. 
+
+While Gini index is often preferred due to its simplicity and computational efficiency, 
+entropy may be more sensitive to changes in class probabilities.
 """
 
 import pandas as pd
 import numpy as np
 
 # Dataset
-lst = ['apple']*3 + ['orange']*2 + ['banana']*2
-fruits = pd.Series(lst)
+A = ['apple']*1 + ['orange']*2 + ['banana']*2
+A = pd.Series(A)
+
+B = ['apple']*5 + ['orange']*2 + ['banana']*0
+B = pd.Series(B)
 
 # Probability distribution
-probs = fruits.value_counts(normalize=True)
+PA = A.value_counts(normalize=True)
+PB = B.value_counts(normalize=True)
 
 # Gini Index
-gini_index = 1 - np.sum(np.square(probs))
+gini_A = 1 - np.sum(np.square(PA))
+gini_B = 1 - np.sum(np.square(PB))
+assert gini_B < gini_A
 
 outputs = [
-    ["Fruits:", fruits.values],
-    ["Probability distribution:", probs.values],
-    ["Gini index:", gini_index],
+    ["A", A.values],
+    ["B", B.values],
+    ["PA", PA.values],
+    ["PB", PB.values],
+    ["gini_A", gini_A],
+    ["gini_B", gini_B],
 ]
 for v in outputs: 
-    print(v[0], "\n ", v[1])
+    print(v[0], v[1])
 
 """
     Fruits: 

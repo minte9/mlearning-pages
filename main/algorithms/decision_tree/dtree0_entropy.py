@@ -9,29 +9,39 @@ import pandas as pd
 import numpy as np
 
 # Dataset
-A = ['apple']*3 + ['orange']*2 + ['banana']*2
+A = ['apple']*1 + ['orange']*2 + ['banana']*2
 A = pd.Series(A)
 
+B = ['apple']*5 + ['orange']*2 + ['banana']*0
+B = pd.Series(B)
+
 # Probability distribution (by hand or pandas)
-P1 = [3/7, 2/7, 2/7]
-P2 = A.value_counts(normalize=True)
+P = [3/7, 2/7, 2/7]
+PA = A.value_counts(normalize=True)
+PB = B.value_counts(normalize=True)
 
 # Entropy (Shannon model)
-E = -1 * np.sum(P1 * np.log2(P1)) # Look Here
+EA = -1 * np.sum(PA * np.log2(PA)) # Look Here
+EB = -1 * np.sum(PB * np.log2(PB))
+assert EB < EA
 
 # Output
 outputs = [
     ["A", A.values],
-    ["P1", P1],
-    ["P2", P2.values],
-    ["E", E],
+    ["B", B.values],
+    ["PA", PA.values],
+    ["PB", PB.values],
+    ["EA", EA],
+    ["EB", EB],
 ]
 for v in outputs: 
     print(v[0], v[1])
 
 """
-    A  ['apple' 'apple' 'apple' 'orange' 'orange' 'banana' 'banana']
-    P1 [0.42857142857142855, 0.2857142857142857, 0.2857142857142857]
-    P2 [0.42857143 0.28571429 0.28571429]
-    E  1.5566567074628228
+    A ['apple' 'orange' 'orange' 'banana' 'banana']
+    B ['apple' 'apple' 'apple' 'apple' 'apple' 'orange' 'orange']
+    PA [0.4 0.4 0.2]
+    PB [0.71428571 0.28571429]
+    EA 1.5219280948873621
+    EB 0.863120568566631
 """

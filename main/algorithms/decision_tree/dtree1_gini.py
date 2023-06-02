@@ -23,7 +23,7 @@ PA = A.value_counts(normalize=True)
 PB = B.value_counts(normalize=True)
 
 # Gini Index
-gini_A = 1 - np.sum(np.square(PA))
+gini_A = 1 - np.sum(np.square(PA)) # Look Here
 gini_B = 1 - np.sum(np.square(PB))
 assert gini_B < gini_A
 

@@ -55,6 +55,8 @@ def attribute_entropy(df, attr):
         E += -(den/len(df))*ent # sum of all entropies
     return abs(E)
 
+# ---------------------------------------------------
+
 # Find attribute with maximum information gain
 def find_winner(df):
     IG = {}
@@ -65,7 +67,7 @@ def find_winner(df):
         IG[attr] = dataset_entropy(df) - attribute_entropy(df, attr) # Look Here
     winner = attributes[np.argmax(IG)] # maxim info gains
     return winner
-
+# ---------------------------------------------------
 
 # Construct the decision tree (dictionary)
 def buildTree(df):

@@ -27,21 +27,21 @@ assert EB < EA
 
 # Output
 outputs = [
-    ["A", A.values],
-    ["B", B.values],
-    ["PA", PA.values],
-    ["PB", PB.values],
-    ["EA", EA],
-    ["EB", EB],
+    ["A  =", A.values],
+    ["B  =", B.values],
+    ["PA =", PA.values],
+    ["PB =", PB.values],
+    ["EA =", EA],
+    ["EB =", EB],
 ]
 for v in outputs: 
     print(v[0], v[1])
 
 """
-    A ['apple' 'orange' 'orange' 'banana' 'banana']
-    B ['apple' 'apple' 'apple' 'apple' 'apple' 'orange' 'orange']
-    PA [0.4 0.4 0.2]
-    PB [0.71428571 0.28571429]
-    EA 1.5219280948873621
-    EB 0.863120568566631
+    A  = ['apple' 'orange' 'orange' 'banana' 'banana']
+    B  = ['apple' 'apple' 'apple' 'apple' 'apple' 'orange' 'orange']
+    PA = [0.4 0.4 0.2]
+    PB = [0.71428571 0.28571429]
+    EA = 1.5219280948873621
+    EB = 0.863120568566631
 """

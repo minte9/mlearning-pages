@@ -28,21 +28,21 @@ gini_B = 1 - np.sum(np.square(PB))
 assert gini_B < gini_A
 
 outputs = [
-    ["A", A.values],
-    ["B", B.values],
-    ["PA", PA.values],
-    ["PB", PB.values],
-    ["gini_A", gini_A],
-    ["gini_B", gini_B],
+    ["A  =", A.values],
+    ["B  =", B.values],
+    ["PA =", PA.values],
+    ["PB =", PB.values],
+    ["gini_A =", gini_A],
+    ["gini_B =", gini_B],
 ]
 for v in outputs: 
     print(v[0], v[1])
 
 """
-    A ['apple' 'orange' 'orange' 'banana' 'banana']
-    B ['apple' 'apple' 'apple' 'apple' 'apple' 'orange' 'orange']
-    PA [0.4 0.4 0.2]
-    PB [0.71428571 0.28571429]
-    gini_A 0.6399999999999999
-    gini_B 0.40816326530612246
+    A  = ['apple' 'orange' 'orange' 'banana' 'banana']
+    B  = ['apple' 'apple' 'apple' 'apple' 'apple' 'orange' 'orange']
+    PA = [0.4 0.4 0.2]
+    PB = [0.71428571 0.28571429]
+    gini_A = 0.6399999999999999
+    gini_B = 0.40816326530612246
 """

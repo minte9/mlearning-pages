@@ -40,11 +40,15 @@ x_new = pd.DataFrame([x_new], columns=X2.columns)
 y_pred = forest_model.predict(x_new)[0]
 assert y_pred == 1
 
+# ---------------------------------------------------------------
+
 # Output
 output_trees = []
 for i, t in enumerate(forest_model.estimators_):
     out_tree = tree.export_text(t, feature_names=list(X.columns))
     output_trees.append(out_tree)
+
+# ---------------------------------------------------------------
 
 print("Test Data:"); print(X2, "\n")
 print("Encoded:"); print(Y2, "\n")

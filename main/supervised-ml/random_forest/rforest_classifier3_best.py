@@ -27,6 +27,8 @@ X = df_encoded.drop(columns=["play"])
 Y = df_encoded['play']
 X1, X2, Y1, Y2 = train_test_split(X, Y, test_size=0.2, random_state=42)
 
+# --------------------------------------------------------------------
+
 # Best parameters
 parameters = {
     'max_depth': [2, 3, 4, 10],
@@ -39,6 +41,7 @@ grid.fit(X1, Y1)
 print("Best Parameters:", grid.best_params_) # max_depth: 2, n_estimators: 10
 print("Best Score:", round(grid.best_score_, 2), "\n")
 
+# --------------------------------------------------------------------
 
 # Fitting best model
 forest_model = RandomForestClassifier(n_estimators=10, max_depth=2, random_state=0)

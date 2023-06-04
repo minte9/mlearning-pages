@@ -52,9 +52,8 @@ for i, t in enumerate(forest_model.estimators_):
 
 print("Test Data:"); print(X2, "\n")
 print("Encoded:"); print(Y2, "\n")
-print("DecisionTree 1"); print(output_trees[0])
-print("DecisionTree 2"); print(output_trees[1])
-print("DecisionTree 3"); print(output_trees[2])
+for i in range(3):
+	print("DecisionTree", i+1); print(output_trees[i])
 print("Unknown:"); print(x_new, "\n")
 print("Prediction:", y_pred)
 print("Score:", round(forest_score,2))

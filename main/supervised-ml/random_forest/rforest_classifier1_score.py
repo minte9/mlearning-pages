@@ -1,6 +1,6 @@
 """ Random Forest / Classifier (Tic Tac Toe)
 
-With Cross-validation we put aside 10% of the data, before train.
+With Cross-validation we put aside 25% of the data, before train.
 Those test data will be use to measure how good the model is.
 """
 
@@ -23,7 +23,7 @@ for col in df.columns:
 # Train and test data
 X = df_encoded.drop(columns=["score", "is_terminal"])
 Y = df_encoded['score']
-X1, X2, Y1, Y2 = train_test_split(X, Y, random_state=0)
+X1, X2, Y1, Y2 = train_test_split(X, Y, test_size=0.25, random_state=0)
 
 # ----------------------------------------------------------------
 

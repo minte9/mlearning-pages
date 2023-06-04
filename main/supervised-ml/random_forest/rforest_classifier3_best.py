@@ -1,6 +1,7 @@
 """ Random Forest / Classifier (Play Tenis) - Best
 
-We can see what RandomForestClassifier params fit better.
+We can see what are the best params for the 
+RandomForestClassifier model.
 """
 
 import pathlib

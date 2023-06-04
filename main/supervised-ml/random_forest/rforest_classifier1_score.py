@@ -1,5 +1,10 @@
 """ Random Forest / Classifier (Tic Tac Toe)
 
+Random Forests are using subsets of the dataset, randomly selected.
+The generated trees have unique set of data.
+The data is selected randomly for the original dataset, with replacement.
+Each one of the tree has the same size as the original data.
+
 With Cross-validation we put aside 25% of the data, before train.
 Those test data will be use to measure how good the model is.
 """

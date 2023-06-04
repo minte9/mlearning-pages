@@ -1,4 +1,7 @@
-""" Random Forest / Classifier (Play Tenis)
+""" Random Forest / Classifier (Play Tenis) - Trees
+
+Random Forests try to fix this overfitting by using multiple decision trees 
+that are slightly different and averaging the results.
 
 With Cross-validation we put aside 10% of the data, before train.
 Those test data will be use to measure how good the model is.

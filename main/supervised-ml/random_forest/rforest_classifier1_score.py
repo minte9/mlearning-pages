@@ -1,5 +1,8 @@
 """ Random Forest / Classifier (Tic Tac Toe)
 
+Random Forests try to fix this overfitting by using multiple decision trees 
+that are slightly different and averaging the results.
+
 Random Forests are using subsets of the dataset, randomly selected.
 The generated trees have unique set of data.
 The data is selected randomly for the original dataset, with replacement.

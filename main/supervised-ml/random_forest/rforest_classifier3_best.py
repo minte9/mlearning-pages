@@ -1,8 +1,6 @@
 """ Random Forest / Classifier (Play Tenis) - Best
 
-Random Forests try to fix this overfitting by using multiple decision trees 
-that are slightly different and averaging the results.
-With GridSearchCV we can see what params fit better.
+With GridSearchCV we can see what RandomForestClassifier params fit better.
 """
 
 import pathlib

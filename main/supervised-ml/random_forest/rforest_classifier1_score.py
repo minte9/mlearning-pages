@@ -30,14 +30,14 @@ X = df_encoded.drop(columns=["score", "is_terminal"])
 Y = df_encoded['score']
 X1, X2, Y1, Y2 = train_test_split(X, Y, test_size=0.25, random_state=0)
 
-# ----------------------------------------------------------------
+# ---------------------------------------------------
 
 # Fitting the model
 forest_model = RandomForestClassifier(n_estimators=30)
 forest_model.fit(X1, Y1)
 forest_score = forest_model.score(X2, Y2)
 
-# ----------------------------------------------------------------
+# ---------------------------------------------------
 
 # Prediction
 x_new =  X2.iloc[0]

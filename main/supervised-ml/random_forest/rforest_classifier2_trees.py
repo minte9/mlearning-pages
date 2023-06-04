@@ -1,8 +1,6 @@
 """ Random Forest / Classifier (Play Tenis) - Trees
 
-Random Forests try to fix this overfitting by using multiple decision trees 
-that are slightly different and averaging the results.
-
+Random Forests try to fix this overfitting by using multiple decision trees.
 Decistion Tree picks a criteria and a thresold.
 Criteria specifies where to split, for instance length or with.
 The thresold specifies what value of the criteria to split.

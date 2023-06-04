@@ -1,6 +1,6 @@
 """ Random Forest / Classifier (Play Tenis) - Best
 
-With GridSearchCV we can see what RandomForestClassifier params fit better.
+We can see what RandomForestClassifier params fit better.
 """
 
 import pathlib

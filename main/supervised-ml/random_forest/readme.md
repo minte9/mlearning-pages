@@ -61,7 +61,7 @@ Insteed of test data we can use this out of bag for checking the accuracy of the
 
 ### References
 
-[Machine Learning With Random Forests And Decision Trees](https://www.amazon.com/gp/product/B01JBL8YVK)  
+[Machine Learning With Random Forests](https://www.amazon.com/gp/product/B01JBL8YVK)  
 [Understanding Random Forest](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)  
 [Random Forest Example](https://www.analyticsvidhya.com/blog/2021/06/understanding-random-forest/)  
 [Radom Forest Python](https://vitalflux.com/random-forest-classifier-python-code-example/)  

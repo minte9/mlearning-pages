@@ -1,12 +1,12 @@
 ## Random Forest
 
 ### Random
- p11  
+ p11
 Decision Tree is a step by step process in order to decide which category an item belongs to.  
 Random Forest is a collection of Decistion Tree generated using a random subset of data.  
 
 ### Threshold
- p26  
+ p26
 Decistion Tree picks a criteria and a thresold.  
 Criteria specifies where to split, for instance length or with.  
 The thresold specifies what value of the criteria to split.  
@@ -22,7 +22,7 @@ The Random Forest can make the split in a single line.
 Anything with y bellow 10 is red, and anything with y above 10 is blue.  
 
 ### Overfitting
- p31  
+ p31
 By default, the computer never stops.  
 It continues until every single piece of data is split. 
 This leads to overfitting. 
@@ -32,12 +32,12 @@ which type is an unknown item and overfitting doesn't help with that.
 The new item will be a bit different from what we know from data.  
 
 ### Limit overfitting
- p32  
+ p32
 One way of limiting overfiting is by limit the number of splits.  
 The other way is to split only if the brach has a minimum items in it.  
 
 ### Random Forests
- p38  
+ p38
 Random Forests try to fix this overfitting by using multiple decision trees  
 that are slightly different and averaging the results.  
 Using the same data over and over for generating Decistion Trees will result  
@@ -45,7 +45,7 @@ in many copies of the same tree.
 Random Forests are using subsets of the dataset, randomly selected.  
 
 ### Bootstrapping
- p45  
+ p45
 The generated trees have unique set of data.  
 The data is selected randomly for the original dataset, with replacement.  
 Each one of the tree has the same size as the original data.  

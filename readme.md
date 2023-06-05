@@ -66,8 +66,7 @@ git pull origin main
 #
 
 ### References
-> [Machine Learning Simplified](https://www.amazon.com/gp/product/B0B216KMM4) book  
-> [Machine Learning Simplified](https://code.themlsbook.com/index.html) source code  
+> [Machine Learning Simplified](https://www.amazon.com/gp/product/B0B216KMM4) book [source code](https://code.themlsbook.com/index.html)  
 > [Introduction to Machine Learning](https://www.amazon.com/gp/product/B01M0LNE8C) book  
 > [Introduction to Machine Learning](https://github.com/amueller/introduction_to_ml_with_python) source code  
 > [Calculus: An Intuitive and Physical Approach](https://www.amazon.com/gp/product/B00CB2MK6C) book   

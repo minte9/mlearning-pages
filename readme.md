@@ -8,10 +8,6 @@
 > Decision Tree  `Classifier` `Information Gain` `Prunning`  
 > Random Forest  `Decistion Trees` `Best Parameters`  
 
-[Matplotlib](./main/matplotlib/)  
-> Subplots  `Figure` `Axes` `Annotations` `Colored map`  
-> Pyplot  `Functions` `Slope plotting`  
-
 [Datasets](./main/datasets/)  
 > Iris Species  `Dataset` `Prediction` `Evaluation`  
 > Diabetes  `Prediction`  
@@ -19,6 +15,8 @@
 > Simulated Data  `Make data` `Regression (A)`  
 > Tmdb `Cleanning` `Binary` `Similarity` `Predictions` `Scikit`  
 > Tic-Tac-Toe `Generate Dataset`  
+
+#
 
 [Numpy](./main/numpy/)  
 > Matrices   `Vector` `Sparse matrix` `Vectorization`  
@@ -32,6 +30,12 @@
 > Find Values  `Descriptive statistics`  
 > Group Rows  `GroupBy`  
 > Merge  `Data`  
+
+[Matplotlib](./main/matplotlib/)  
+> Subplots  `Figure` `Axes` `Annotations` `Colored map`  
+> Pyplot  `Functions` `Slope plotting`  
+
+#
 
 [Calculus](./main/calculus/)  
 > Derivatives  `Increments method` `Differentiation` `Slope`  

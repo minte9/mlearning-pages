@@ -5,6 +5,8 @@
 > Linear Model  `Linear Regression` `SSR Residuals`  
 > Basis Expansion  `Polynomials`  
 > Regularization  `Ridge` `Lasso`  
+> Decision Tree  `Classifier` `Information Gain` `Prunning`  
+> Random Forest  `Decistion Trees` `Best Parameters`  
 
 [Matplotlib](./main/matplotlib/)  
 > Subplots  `Figure` `Axes` `Annotations` `Colored map`  

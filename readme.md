@@ -7,6 +7,7 @@
 > Regularization  `Ridge` `Lasso`  
 > Decision Tree  `Classifier` `Information Gain` `Prunning`  
 > Random Forest  `Decistion Trees` `Best Parameters` `Gradient Boosting`  
+> Logistic Regression `Classification` `Scalling`  
 
 [Datasets](./main/datasets/)  
 > Iris Species  `Dataset` `Prediction` `Evaluation`  

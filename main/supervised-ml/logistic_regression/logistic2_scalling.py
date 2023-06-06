@@ -15,19 +15,15 @@ X = dataset.data
 y = dataset.target
 
 # Scalling
-X = StandardScaler().fit_transform(X)
+X = StandardScaler().fit_transform(X) # Look Here
 
 # Training and test data
 X1, X2, y1, y2 = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# ------------------------
 
 # Fitting the model
 model = LogisticRegression()
 model.fit(X1, y1)
 score = model.score(X2, y2)
-
-# ------------------------
 
 # Predict unknown
 X_new = X2[15]

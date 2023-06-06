@@ -59,6 +59,13 @@ subset2: 2, 3, 3, 5, 6, 6, 7, 7, 8, 9
 Random Forest set aside some data, using on average only 63.2% of the dataset.  
 Insteed of test data we can use this out of bag for checking the accuracy of the model.  
 
+
+### Gradient Boosting
+ p90
+Gradient boostred regression tree is another ensemble method that combines  
+multiple decision trees to create a more powerful model.   
+Despite the "regression" in the name, can be used for regression and classification.    
+
 ### References
 
 [Machine Learning With Random Forests](https://www.amazon.com/gp/product/B01JBL8YVK)  

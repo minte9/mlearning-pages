@@ -6,7 +6,7 @@
 > Basis Expansion  `Polynomials`  
 > Regularization  `Ridge` `Lasso`  
 > Decision Tree  `Classifier` `Information Gain` `Prunning`  
-> Random Forest  `Decistion Trees` `Best Parameters`  
+> Random Forest  `Decistion Trees` `Best Parameters` `Gradient Boosting`  
 
 [Datasets](./main/datasets/)  
 > Iris Species  `Dataset` `Prediction` `Evaluation`  

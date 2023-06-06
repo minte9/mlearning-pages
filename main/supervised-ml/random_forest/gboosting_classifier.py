@@ -2,7 +2,7 @@
 
 In contract to the random forest, gradient boosting works by
 building trees in a serial manner, where each tree tries to correct
-the mistakes of the previus one.
+the mistakes of the previous one.
 
 By default, it uses 100 trees, maxim depth 3 and learning rate 0.1
 With the default params we get 100% accuracy on train data, which could 
@@ -32,14 +32,14 @@ X1, X2, Y1, Y2 = train_test_split(X, Y, random_state=42)
 
 # ------------------------------------------------------------
 
-# Fit the model (default params)
+# Default params
 model = GradientBoostingClassifier(random_state=0)
 model.fit(X1, Y1)
 score1 = model.score(X1, Y1)
 score2 = model.score(X2, Y2)
 
-# Fit the model (reduce overfitting)
-model = GradientBoostingClassifier(random_state=0, max_depth=1)
+# Reduce overfitting
+model = GradientBoostingClassifier(random_state=0, max_depth=1) # Look Here
 model.fit(X1, Y1)
 score3 = model.score(X1, Y1)
 score4 = model.score(X2, Y2)

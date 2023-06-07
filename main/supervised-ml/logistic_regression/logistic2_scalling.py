@@ -1,4 +1,4 @@
-""" Breast cancer / Logistic Regression
+""" Breast cancer / Logistic Regression (Breast Cancer)
 
 As our data have different values, and even different measurement units, 
 we use scalling in order to compare them.

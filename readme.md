@@ -43,7 +43,7 @@
 > Integrals  
 
 [Algorithms](./main/algorithms/)  
-> K Nearest Neighbors   
+> K-Nearest Neighbors   
 > Linear Regression  
 > Gradient Descent  
 > Decision Tree  

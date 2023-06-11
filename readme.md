@@ -1,13 +1,13 @@
 # Machine Learning
 
 [Supervised ML](./main/supervised-ml/)  
-> Classifier  `K-Neighbors` `DataFrame` `Evaluate Model` `Score Graph` `Class Boundaries`  
-> Linear Model  `Linear Regression` `SSR Residuals`  
+> Classifier  `K-Neighbors`  
+> Linear Regression `SSR Residuals`  
 > Basis Expansion  `Polynomials`  
 > Regularization  `Ridge` `Lasso`  
-> Decision Tree  `Classifier` `Information Gain` `Prunning`  
-> Random Forest  `Decistion Trees` `Best Parameters` `Gradient Boosting`  
-> Logistic Regression `Classification` `Scalling`  
+> Decision Tree  `Information Gain`  
+> Random Forest  `Decistion Trees`  
+> Logistic Regression `Classification`  
 
 [Datasets](./main/datasets/)  
 > Iris Species  `Dataset` `Prediction` `Evaluation`  

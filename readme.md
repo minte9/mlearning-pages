@@ -39,14 +39,14 @@
 #
 
 [Calculus](./main/calculus/)  
-> Derivatives  Increments method Differentiation Slope  
-> Integrals  Integration Definite integral Gaussian function Falling object Throwing down  
+> Derivatives  
+> Integrals  
 
 [Algorithms](./main/algorithms/)  
-> K Nearest Neighbors   Algorithm Usage Example  
-> Linear Regression  Algorithm Usage Example  
-> Gradient Descent  Cost function Learning a,b Algorithm  
-> Decision Tree  Entropy Information Gain Algorithm
+> K Nearest Neighbors   
+> Linear Regression  
+> Gradient Descent  
+> Decision Tree  
 
 #
 

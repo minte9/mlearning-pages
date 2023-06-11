@@ -20,21 +20,21 @@
 #
 
 [Numpy](./main/numpy/)  
-> Matrices   Vector Sparse matrix Vectorization  
-> Operations  Min, max, mean Reshape Transpose Inverse  
-> Standard Deviation  Variance Standard deviation  
-> Multiplication  Addition Substraction  Element-wise (*) Multiplication (@)
+> Matrices   
+> Operations  
+> Standard Deviation  
+> Multiplication  
 
 [Pandas](./main/pandas/)  
-> Read Data  Csv Excel Json Sql  
-> Data Cleaning  Describe Condition Replace Apply  
-> Find Values  Descriptive statistics  
-> Group Rows  GroupBy  
-> Merge  Data  
+> Read Data  
+> Data Cleaning  
+> Find Values  
+> Group Rows  
+> Merge  
 
 [Matplotlib](./main/matplotlib/)  
-> Subplots  Figure Axes Annotations Colored map  
-> Pyplot  Functions Slope plotting  
+> Subplots  
+> Pyplot  
 
 #
 

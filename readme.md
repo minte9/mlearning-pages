@@ -1,8 +1,8 @@
 # Machine Learning
 
 [Supervised ML](./main/supervised-ml/)  
-> Classifier  `K-Neighbors`  
-> Linear Regression `SSR Residuals`  
+> `Classifier`  K-Neighbors  
+> `Linear Regression` SSR Residuals  
 > Basis Expansion  `Polynomials`  
 > Regularization  `Ridge` `Lasso`  
 > Decision Tree  `Information Gain`  

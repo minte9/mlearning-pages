@@ -1,52 +1,52 @@
 # Machine Learning
 
 [Supervised ML](./main/supervised-ml/)  
-> `Classifier` K-Neighbors  
-> `Linear Regression` SSR Residuals  
-> `Basis Expansion` Polynomials    
-> `Regularization` Ridge, Lasso  
-> `Decision Tree` Information Gain  
-> `Random Forest` Decistion Trees    
-> `Logistic Regression` Classification  
+> Classifier    
+> Linear Regression  
+> Basis Expansion    
+> Regularization    
+> Decision Tree
+> Random Forest      
+> Logistic Regression    
 
 [Datasets](./main/datasets/)  
-> Iris Species  `Dataset` `Prediction` `Evaluation`  
-> Diabetes  `Prediction`  
-> Breast Cancer  `Prediction`  
-> Simulated Data  `Make data` `Regression (A)`  
-> Tmdb `Cleanning` `Binary` `Similarity` `Predictions` `Scikit`  
-> Tic-Tac-Toe `Generate Dataset`  
+> Iris Species    
+> Diabetes     
+> Breast Cancer    
+> Simulated Data  
+> Tmdb  
+> Tic-Tac-Toe  
 
 #
 
 [Numpy](./main/numpy/)  
-> Matrices   `Vector` `Sparse matrix` `Vectorization`  
-> Operations  `Min, max, mean` `Reshape` `Transpose` `Inverse`  
-> Standard Deviation  `Variance` `Standard deviation`  
-> Multiplication  `Addition` `Substraction`  `Element-wise (*)` `Multiplication (@)`
+> Matrices   Vector Sparse matrix Vectorization  
+> Operations  Min, max, mean Reshape Transpose Inverse  
+> Standard Deviation  Variance Standard deviation  
+> Multiplication  Addition Substraction  Element-wise (*) Multiplication (@)
 
 [Pandas](./main/pandas/)  
-> Read Data  `Csv` `Excel` `Json` `Sql`  
-> Data Cleaning  `Describe` `Condition` `Replace` `Apply`  
-> Find Values  `Descriptive statistics`  
-> Group Rows  `GroupBy`  
-> Merge  `Data`  
+> Read Data  Csv Excel Json Sql  
+> Data Cleaning  Describe Condition Replace Apply  
+> Find Values  Descriptive statistics  
+> Group Rows  GroupBy  
+> Merge  Data  
 
 [Matplotlib](./main/matplotlib/)  
-> Subplots  `Figure` `Axes` `Annotations` `Colored map`  
-> Pyplot  `Functions` `Slope plotting`  
+> Subplots  Figure Axes Annotations Colored map  
+> Pyplot  Functions Slope plotting  
 
 #
 
 [Calculus](./main/calculus/)  
-> Derivatives  `Increments method` `Differentiation` `Slope`  
-> Integrals  `Integration` `Definite integral` `Gaussian function` `Falling object` `Throwing down`  
+> Derivatives  Increments method Differentiation Slope  
+> Integrals  Integration Definite integral Gaussian function Falling object Throwing down  
 
 [Algorithms](./main/algorithms/)  
-> K Nearest Neighbors   `Algorithm` `Usage Example`  
-> Linear Regression  `Algorithm` `Usage Example`  
-> Gradient Descent  `Cost function` `Learning a,b` `Algorithm`  
-> Decision Tree  `Entropy` `Information Gain` `Algorithm`
+> K Nearest Neighbors   Algorithm Usage Example  
+> Linear Regression  Algorithm Usage Example  
+> Gradient Descent  Cost function Learning a,b Algorithm  
+> Decision Tree  Entropy Information Gain Algorithm
 
 #
 

@@ -1,13 +1,13 @@
 # Machine Learning
 
 [Supervised ML](./main/supervised-ml/)  
-> `Classifier`  K-Neighbors  
+> `Classifier` K-Neighbors  
 > `Linear Regression` SSR Residuals  
-> Basis Expansion  `Polynomials`  
-> Regularization  `Ridge` `Lasso`  
-> Decision Tree  `Information Gain`  
-> Random Forest  `Decistion Trees`  
-> Logistic Regression `Classification`  
+> `Basis Expansion` Polynomials    
+> `Regularization` Ridge, Lasso  
+> `Decision Tree` Information Gain  
+> `Random Forest` Decistion Trees    
+> `Logistic Regression` Classification  
 
 [Datasets](./main/datasets/)  
 > Iris Species  `Dataset` `Prediction` `Evaluation`  

@@ -33,11 +33,16 @@ class KNeighborsClassifier:
         z = np.array(x_unknown)
 
         # ---------------------------------------------
-
+        
+        # Square distances matrix
         SD = np.sqrt(np.sum((self.X - z)**2, axis=1))
         keys = np.argsort(SD)
+
+        # Neighbors target matrix
         keys_knn = keys[:self.k]
         targets_knn = self.y[keys_knn]
+
+        # Optim target
         most_common = np.bincount(targets_knn)
         result = most_common.argmax()
 

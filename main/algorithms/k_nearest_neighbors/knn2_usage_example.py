@@ -31,8 +31,6 @@ class KNeighborsClassifier:
     
     def predict(self, x_unknown):
         z = np.array(x_unknown)
-
-        # ---------------------------------------------
         
         # Square distances matrix
         SD = np.sqrt(np.sum((self.X - z)**2, axis=1))
@@ -45,8 +43,6 @@ class KNeighborsClassifier:
         # Optim target
         most_common = np.bincount(targets_knn)
         result = most_common.argmax()
-
-        # ---------------------------------------------
         
         return result
 

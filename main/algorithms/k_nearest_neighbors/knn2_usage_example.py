@@ -32,11 +32,11 @@ class KNeighborsClassifier:
     def predict(self, x_unknown):
         z = np.array(x_unknown)
         
-        # Square distances matrix
+        # Square distances
         SD = np.sqrt(np.sum((self.X - z)**2, axis=1))
         keys = np.argsort(SD)
 
-        # Neighbors target matrix
+        # Neighbors targets
         keys_knn = keys[:self.k]
         targets_knn = self.y[keys_knn]
 

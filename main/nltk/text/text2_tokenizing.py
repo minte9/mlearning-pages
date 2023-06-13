@@ -37,7 +37,7 @@ def steming_words(words):
 # -------------------------------------------------------
 
 # Output
-print("Input text:", s)
+print("Input text:", s); 
 
 S = tokenize_senteces(s)
 print("Sentences:", S)

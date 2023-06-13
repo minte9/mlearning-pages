@@ -33,8 +33,14 @@ We compare the frequency of a word in a document with the frequency
 of the word in all other documents.
 
 The more a word appears in a document, the more important is.
+We call this term frequency (tf).
+
 In contrast, if a word appears in many documents, it is less important 
 to any individual document.
+We call this document frequency (df).
+
+By combing these two statistics, we give a score to every word that 
+represents how important the word is in a document.
 
 #
 
@@ -42,3 +48,6 @@ to any individual document.
 
 [Installing NLTK Data](https://www.nltk.org/data.html)
 [Sparce matrix](https://www.minte9.com/mlearning/numpy-matrices-1434)
+[Count Vectorizer](https://www.minte9.com/mlearning/numpy-matrices-1434)
+[What is tf-idf](https://monkeylearn.com/blog/what-is-tf-idf)
+[Algorithm tf-idf](https://towardsdatascience.com/tf-idf-term-frequency-and-inverse-dense-frequency-techniques-472bf1ba311b)

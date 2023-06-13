@@ -1,6 +1,6 @@
 """ Cleaning Text
 
-Most text data will not be cleaned before we can use it to build features.
+Most basic cleaning can be done with core string operations
 In the real world we will most likely define a custom cleaning function.
 
 Translate is a Python method popular due to its blazing speed.
@@ -28,20 +28,20 @@ def apply_regex(s: str) -> str:
     return re.sub(r"[a-zA-Z]", "x", s)
 
 def remove_punctuation(A):
-    P = dict()
+    P = dict.fromkeys( # first (fromkeys)
+        i for i in range(sys.maxunicode) 
+            if unicodedata.category(chr(i)).startswith('P')
+    )
+    P = dict() # second (loop)
     for i in range(sys.maxunicode):
         if unicodedata.category(chr(i)).startswith('P'):
             P[i] = None
     A = [s.translate(P) for s in A]
     return A
 
-def remove_punctuation(A): # second method
-    P = dict.fromkeys(
-        i for i in range(sys.maxunicode) 
-            if unicodedata.category(chr(i)).startswith('P')
-    )
-    A = [s.translate(P) for s in A]
-    return A
+def remove_stopwords(words):
+    words = [w for w in words if w not in stopwords.words('english')]
+    return words
 
 # -------------------------------------------------------
 

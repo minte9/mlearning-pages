@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-z_applications/
+projects/
 
 # C extensions
 *.so

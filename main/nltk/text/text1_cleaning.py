@@ -39,10 +39,6 @@ def remove_punctuation(A):
     A = [s.translate(P) for s in A]
     return A
 
-def remove_stopwords(words):
-    words = [w for w in words if w not in stopwords.words('english')]
-    return words
-
 # -------------------------------------------------------
 
 # Output

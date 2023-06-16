@@ -1,21 +1,18 @@
 # Sentiment Analysis on Social Media
 
-Collect a `small number of tweets` or social media posts related to a specific topic, 
-such as a movie, a product, or a current event.
-Manually `label each post` as positive, negative, or neutral sentiment. 
-Extract `text features` from the posts, such as word frequencies or TF-IDF values. 
-Build a `dataset` with these features and labels. 
-Train a `KNN classifier` to classify new posts based on their sentiment.
+Collect a `small number of reviews` from amazon books.  
+Manually `label each post` as positive or negative sentiment.   
+Extract `text features` from the posts, such as word frequencies or TF-IDF values.  
+Build a `dataset` with these features and labels.  
+Train a `KNN classifier` to classify new posts based on their sentiment.  
 
 ### Data Preprocessing
 
-Before extracting features, you'll typically need to preprocess the text data. 
-Cleanning: Removing punctuation, converting text to lowercase, removing stop words.
-Tokenization: Tokenization is the process of splitting text into individual words or tokens.
+Remove punctuation and numbers, convert text to lowercase, remove stop words.  
 
 ## Extracting text features
 
-Extracting text features from posts, such as `word frequencies` or `TF-IDF values`, 
+Extracting text features from posts, such as `word frequencies` or `TF-IDF values`,  
 is a common task in natural language processing (NLP).
 
 Word Frequencies: For each document (in this case, a social media post), you `count the occurrence of each word`. 

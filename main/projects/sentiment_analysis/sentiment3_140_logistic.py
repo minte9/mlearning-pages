@@ -70,7 +70,6 @@ y_unknown_pred = knn.predict(X_unknown)
 # ------------------------------------------------------------------
 
 print("Model accuracy:")
-
 print("Sentiment140 / samples =", sample_size)
 print("Score on Train:", knn.score(X1, y1).round(2))
 print("Score on Test:", knn.score(X2, y2).round(2))

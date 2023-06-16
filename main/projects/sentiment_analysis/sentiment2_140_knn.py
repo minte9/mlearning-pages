@@ -92,3 +92,39 @@ X_unknown = vectorizer.transform(X_unknown)
 y_unknown_pred = knn.predict(X_unknown)
 
 print("Prediction:", labels[y_unknown_pred[0]])
+
+"""
+	Loading ...
+	Learning ...
+	Sentiment140 / samples = 10000
+	Score on Train: 0.78
+	Score on Test: 0.65
+	Report:               precision    recall  f1-score   support
+
+		       0       0.65      0.71      0.68      1023
+		       4       0.66      0.59      0.63       977
+
+		accuracy                           0.65      2000
+	   macro avg       0.65      0.65      0.65      2000
+	weighted avg       0.65      0.65      0.65      2000
+	 
+
+	Reviews (unknown):
+	Unknown:         [0 0 4 4 4 4 4 4 4 4 4 4 4 0 0 0 4 4 4 4 4 4 0 0 0 0 0 0 0 0 0 0 4 4 0]
+	Prediction:      [0 0 0 0 0 0 4 0 0 0 4 0 4 4 0 0 4 0 0 0 4 4 0 0 0 0 0 4 0 0 0 0 4 4 0]
+	Score on Unknown: 0.63
+	Report:               precision    recall  f1-score   support
+
+		       0       0.56      0.88      0.68        16
+		       4       0.80      0.42      0.55        19
+
+		accuracy                           0.63        35
+	   macro avg       0.68      0.65      0.62        35
+	weighted avg       0.69      0.63      0.61        35
+	 
+
+	Review:
+	 very disappointed with this book. i was expecting more code samples but the author was too busy with other less trivial things.
+	Expected: negative
+	Prediction: negative
+"""

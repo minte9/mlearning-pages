@@ -56,3 +56,4 @@ Initial accuracy score is not so good, something `around 60%`
 
 [Machine Learning with Python Cookbook](https://www.amazon.com/gp/product/B07BC3LFKT)  
 [Sentiment140 Dataset](https://www.kaggle.com/datasets/kazanova/sentiment140)  
+[Python Sentiment Analysis Project](https://www.youtube.com/watch?v=QpzMWQvxXWk&ab_channel=RobMulla)

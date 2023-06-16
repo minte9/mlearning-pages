@@ -69,7 +69,7 @@ y_unknown_pred = knn.predict(X_unknown)
 
 # ------------------------------------------------------------------
 
-print("Model accuracy ...")
+print("Model accuracy:")
 
 print("Sentiment140 / samples =", sample_size)
 print("Score on Train:", knn.score(X1, y1).round(2))
@@ -102,3 +102,47 @@ print("Expected:", labels[y_unknown])
 X_unknown = vectorizer.transform(X_unknown)
 y_unknown_pred = knn.predict(X_unknown)
 print("Prediction:", labels[y_unknown_pred[0]])
+
+"""
+	Loading ...
+	Preprocessing ...
+	Learning ...
+	Predict unknown ...
+    
+	Model accuracy:
+	Sentiment140 / samples = 100000
+	Score on Train: 0.84
+	Score on Test: 0.76
+	Report:               precision    recall  f1-score   support
+
+		       0       0.77      0.74      0.75     10075
+		       4       0.75      0.77      0.76      9925
+
+		accuracy                           0.76     20000
+	   macro avg       0.76      0.76      0.76     20000
+	weighted avg       0.76      0.76      0.76     20000
+	 
+	Reviews (unknown):
+	Unknown:         [0 0 4 4 4 4 4 4 4 4 4 4 4 0 0 0 4 4 4 4 4 4 0 0 0 0 0 0 0 0 0 0 4 4 0]
+	Prediction:      [0 0 4 4 4 0 4 4 4 0 4 4 4 4 0 4 4 4 4 4 4 4 4 4 0 0 0 4 4 0 0 4 4 4 4]
+	Score on Unknown: 0.71
+	Report:               precision    recall  f1-score   support
+
+		       0       0.80      0.50      0.62        16
+		       4       0.68      0.89      0.77        19
+
+		accuracy                           0.71        35
+	   macro avg       0.74      0.70      0.69        35
+	weighted avg       0.73      0.71      0.70        35
+	 
+	Predict review ...
+	Review:
+	 Utter waste of money. As someone that has done a fair bit of coding in the past I wanted 
+     an introductory text to Python - something that would outline what could really be done with 
+     the programming language and provide an entry point to it. What a waste. 
+     The book is elementary on the one hand - and yet manages to miss a ton of required detail to 
+     actually do anything useful. Don't waste your time with it.
+
+	Expected: negative
+	Prediction: negative
+"""

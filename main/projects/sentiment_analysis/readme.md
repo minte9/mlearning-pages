@@ -41,6 +41,15 @@ The size of the dataset can have an impact on the `performance and generalizatio
 It contains 1,600,000 tweets extracted using the twitter api.
 The tweets have been annotated  (0 = negative, 4 = positive) and they can be used to detect sentiment.
 
+
+# Project result
+
+The programm is able to train a model using LogisticRegression, based on 100_000 samples from Sentiment140. 
+With this model we can predict if a review on amazon books is positive or negative. 
+Initial accuracy score is not so good, something around 60%
+Preprocessing like removing punctuation, numbers, whitespaces did help, increasing the accuracy around 70%
+
+
 ### References
 
 [Machine Learning with Python Cookbook](https://www.amazon.com/gp/product/B07BC3LFKT)

@@ -84,7 +84,7 @@ print("Report:", classification_report(y_unknown, y_unknown_pred), "\n")
 
 # ------------------------------------------------------------------
 
-print("Predict review ...")
+print("Predict review:")
 
 # Load one row from reviews
 df = pd.read_csv(DIR / 'data/reviews.csv')

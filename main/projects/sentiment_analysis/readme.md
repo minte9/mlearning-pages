@@ -1,5 +1,8 @@
 # Sentiment Analysis on Social Media
 
+
+### Project tasks
+
 Collect a `small number of reviews` from amazon books.  
 Manually `label each post` as positive or negative sentiment.   
 Extract `text features` from the posts, such as word frequencies or TF-IDF values.  

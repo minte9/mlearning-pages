@@ -50,6 +50,10 @@
 
 #
 
+[Projects](./main/projects/)  
+> Sentiment Analysis  
+
+
 ### Install
 
 ~~~sh

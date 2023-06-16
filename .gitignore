@@ -3,7 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-projects/
+# Projects
+airbnb_weekly/
+sentiment140.csv
 
 # C extensions
 *.so

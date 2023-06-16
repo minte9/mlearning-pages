@@ -44,10 +44,10 @@ The tweets have been annotated  (0 = negative, 4 = positive) and they can be use
 
 # Project Result
 
-The programm is able to train a model using LogisticRegression, based on 100_000 samples from Sentiment140.  
-With this model we can predict if a review on amazon books is positive or negative.  
-Initial accuracy score is not so good, something around 60%  
-Preprocessing like removing punctuation, numbers, whitespaces did help, increasing the accuracy around 70%  
+The programm is able to train a model using `LogisticRegression`, based on `100_000` subset tweets from Sentiment140.  
+With this model we can `predict` if a `review` on amazon books is positive or negative.  
+Initial accuracy score is not so good, something `around 60%`   
+`Preprocessing` like removing punctuation, numbers, whitespaces did help, increasing the accuracy `around 70%`  
 
 
 ### References

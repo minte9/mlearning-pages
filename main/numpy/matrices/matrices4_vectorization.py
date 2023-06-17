@@ -1,5 +1,5 @@
 """ Vectorization
-It is essentialy a for loop that does not increase performance.
+Vectorization is used to speed up the Python code without using loop.
 When broadcasting different dimensions are allowed.
 """
 

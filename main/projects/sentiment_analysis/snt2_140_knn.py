@@ -13,12 +13,13 @@ print("Loading ...")
 DIR = pathlib.Path(__file__).resolve().parent
 df = pd.read_csv(DIR / 'data/sentiment140.csv', header=None, usecols=[0, 5])
 
-print("Learning ...")
+# Assign column names
+df.columns = ['Sentiment', 'Text']
+print(df.head())
 
 # ----------------------------------------------------------
 
-# Assign column names
-df.columns = ['Sentiment', 'Text']
+print("Learning ...")
 
 # Sample
 sample_size = 10_000

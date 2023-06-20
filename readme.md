@@ -50,8 +50,8 @@
 
 #
 
-[Projects](./main/projects/)  
-> Sentiment Analysis  
+Projects
+> [Sentiment Analysis](./main/projects/sentiment_analysis) 
 
 #
 

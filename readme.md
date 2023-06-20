@@ -42,11 +42,12 @@
 > Derivatives  
 > Integrals  
 
-[Algorithms](./main/algorithms/)  
-> K-Nearest Neighbors   
-> Linear Regression  
-> Gradient Descent  
-> Decision Tree  
+Algorithms
+
+> K-Nearest Neighbors](./main/algorithms/k_nearest_neighbors)
+> Linear Regression](./main/algorithms/linear_regression/)
+> Gradient Descent](./main/algorithms/gradient_descent/)   
+> Decision Tree](./main/algorithms/decision_tree/)   
 
 #
 

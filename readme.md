@@ -39,8 +39,8 @@
 #
 
 Calculus 
-> [Derivatives](./main/algorithms/derivatives/)   
-> [Integrals](./main/algorithms/integrals/)   
+> [Derivatives](./main/calculus/derivatives/)   
+> [Integrals](./main/calculus/integrals/)   
   
 
 Algorithms   

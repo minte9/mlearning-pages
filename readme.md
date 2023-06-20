@@ -38,9 +38,10 @@
 
 #
 
-[Calculus](./main/calculus/)  
-> Derivatives  
-> Integrals  
+Calculus 
+> [Derivatives](./main/algorithms/derivatives/)   
+> [Integrals](./main/algorithms/integrals/)   
+  
 
 Algorithms   
 > [K-Nearest Neighbors](./main/algorithms/k_nearest_neighbors)  

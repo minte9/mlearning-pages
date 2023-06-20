@@ -42,8 +42,7 @@
 > Derivatives  
 > Integrals  
 
-Algorithms
-
+[Calculus](./main/algorithms/)  
 > [K-Nearest Neighbors](./main/algorithms/k_nearest_neighbors)  
 > [Linear Regression](./main/algorithms/linear_regression/)  
 > [Gradient Descent](./main/algorithms/gradient_descent/)     
@@ -51,7 +50,7 @@ Algorithms
 
 #
 
-Projects
+[Calculus](./main/projects/)  
 > [Sentiment Analysis](./main/projects/sentiment_analysis) 
 
 #

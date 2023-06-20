@@ -1,4 +1,4 @@
-# Sentiment Analysis on Social Media
+# Sentiment Analysis ✨
 
 
 ### Project tasks

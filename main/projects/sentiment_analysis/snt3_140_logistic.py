@@ -30,6 +30,8 @@ df['Text'] = df['Text'].str.replace('[^\w\s]', '', regex=True)  # Remove punctua
 df['Text'] = df['Text'].str.replace('\d+', '', regex=True)  # Remove numbers
 df['Text'] = df['Text'].str.strip()  # Strip whitespaces
 
+# ------------------------------------------------------------------
+
 print("Learning ...")
 
 # Split the dataset into training and testing sets
@@ -42,12 +44,18 @@ vectorizer = TfidfVectorizer(stop_words='english')
 X1 = vectorizer.fit_transform(X1)
 X2 = vectorizer.transform(X2)
 
-# Train the KNN classifier
-knn = LogisticRegression(max_iter=1000)
-knn.fit(X1, y1)
+# Train the model
+classifier = LogisticRegression(max_iter=1000)
+classifier.fit(X1, y1)
 
 # Make predictions on the test set
-y_pred = knn.predict(X2)
+y_pred = classifier.predict(X2)
+
+print("Model accuracy:")
+print("Sentiment140 / samples =", sample_size)
+print("Score on Train:", classifier.score(X1, y1).round(2))
+print("Score on Test:", classifier.score(X2, y2).round(2))
+print("Report:", classification_report(y2, y_pred), "\n")
 
 # ------------------------------------------------------------------
 
@@ -65,20 +73,13 @@ y_unknown = y_unknown.map({'negative': 0, 'positive': 4})
 X_unknown = vectorizer.transform(X_unknown)
 
 # Make predictions on unknown set
-y_unknown_pred = knn.predict(X_unknown)
-
-# ------------------------------------------------------------------
-
-print("Model accuracy:")
-print("Sentiment140 / samples =", sample_size)
-print("Score on Train:", knn.score(X1, y1).round(2))
-print("Score on Test:", knn.score(X2, y2).round(2))
-print("Report:", classification_report(y2, y_pred), "\n")
+y_unknown_pred = classifier.predict(X_unknown)
+score_unknown = classifier.score(X_unknown, y_unknown)
 
 print("Reviews (unknown):")
 print("Unknown:\t", y_unknown.values)
 print("Prediction:\t", y_unknown_pred)
-print("Score on Unknown:", knn.score(X_unknown, y_unknown).round(2))
+print("Score on Unknown:", score_unknown, round(2))
 print("Report:", classification_report(y_unknown, y_unknown_pred), "\n")
 
 # ------------------------------------------------------------------
@@ -99,7 +100,7 @@ print("Expected:", labels[y_unknown])
 
 # Convert using vectorizer
 X_unknown = vectorizer.transform(X_unknown)
-y_unknown_pred = knn.predict(X_unknown)
+y_unknown_pred = classifier.predict(X_unknown)
 print("Prediction:", labels[y_unknown_pred[0]])
 
 """

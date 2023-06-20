@@ -11,7 +11,7 @@ Train a `KNN classifier` to classify new posts based on their sentiment.
 
 ### Data Preprocessing
 
-Remove punctuation and numbers, convert text to lowercase, remove stop words.  
+Remove punctuation and numbers, convert text to lowercase, remove `stop words`.  
 
 ## Extracting text features
 

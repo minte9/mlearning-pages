@@ -80,4 +80,5 @@ git pull origin main
 > [Introduction to Machine Learning](https://github.com/amueller/introduction_to_ml_with_python) source code  
 > [Calculus: An Intuitive and Physical Approach](https://www.amazon.com/gp/product/B00CB2MK6C) book   
 > [Machine Learning with Python Cookbook](https://www.amazon.com/gp/product/B07BC3LFKT) book  
+> [Chris Albon - Datasets](https://github.com/chrisalbon/sim_data)
 > [Learn and Remember](https://www.minte9.com/mlearning) minte9  

@@ -8,12 +8,13 @@ import sqlite3
 import pathlib
 
 DIR = pathlib.Path(__file__).resolve().parent
-DB = DIR / '../data/04.db'
+DB = DIR / 'data/04.db'
 
 conn = sqlite3.connect(DB)
 df = pd.read_sql_query("SELECT * FROM data", conn)
 
-print("DataFrame from DB:"); print(df.head(2).to_markdown())
+print("DB:")
+print(df.head(2).to_markdown())
 
 """
 DataFrame from DB:

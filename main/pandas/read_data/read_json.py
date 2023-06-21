@@ -7,7 +7,7 @@ import pathlib
 
 # Json file
 DIR = pathlib.Path(__file__).resolve().parent 
-FILE = DIR / '../_data/03.json'
+FILE = DIR / '../data/03.json'
 df1 = pd.read_json(FILE, orient='columns')
 
 # Json string

@@ -7,7 +7,7 @@ import pandas as pd
 import pathlib
 
 DIR = pathlib.Path(__file__).resolve().parent 
-FILE = DIR / '../_data/02.xlsx'
+FILE = DIR / '../data/02.xlsx'
 df = pd.read_excel(FILE , sheet_name=0)
 
 print("Read csv from excel:"); print(df.head(2).to_markdown())

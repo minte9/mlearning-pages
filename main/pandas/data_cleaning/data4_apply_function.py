@@ -10,8 +10,8 @@ like separating first and last names, converting strings to floats.
 import pandas as pd
 import pathlib
 
-DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
-df = pd.read_csv(DIR / 'titanic.csv')
+DIR = pathlib.Path(__file__).resolve().parent
+df = pd.read_csv(DIR / '../titanic.csv')
 
 def loop(data):
     for x in data:

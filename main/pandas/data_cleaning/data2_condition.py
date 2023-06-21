@@ -7,8 +7,8 @@ Sometinmes you are interseted only of some subset of dataset.
 import pandas as pd
 import pathlib
 
-DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
-df = pd.read_csv(DIR / 'titanic.csv')
+DIR = pathlib.Path(__file__).resolve().parent
+df = pd.read_csv(DIR / '../titanic.csv')
 
 females = df[df['Sex'] == 'female']
 males_60 = df[(df['Sex'] == 'male') & (df['Age'] >= 60)]

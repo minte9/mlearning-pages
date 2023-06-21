@@ -10,9 +10,8 @@ by a second column.
 import pandas as pd
 import pathlib
 
-DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
-FILE = DIR / 'titanic.csv'
-df = pd.read_csv(FILE)
+DIR = pathlib.Path(__file__).resolve().parent
+df = pd.read_csv(DIR / '../titanic.csv')
 
 T1 = df.groupby('Sex').count().to_markdown()
 T2 = df.groupby('Sex').mean(numeric_only=True).to_markdown()

@@ -7,8 +7,8 @@ Replace accepts regular expressions.
 import pandas as pd
 import pathlib
 
-DIR = pathlib.Path(__file__).resolve().parent / '../_data/'
-df = pd.read_csv(DIR / 'titanic.csv')
+DIR = pathlib.Path(__file__).resolve().parent
+df = pd.read_csv(DIR / '../titanic.csv')
 
 R1 = df['Sex'].replace("female", "Woman")
 R2 = df['Sex'].replace(['female', 'male'], ['Woman', 'Man'])

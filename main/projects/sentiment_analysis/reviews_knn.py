@@ -19,7 +19,7 @@ from sklearn.metrics import classification_report
 
 # Dataset
 DIR = pathlib.Path(__file__).resolve().parent
-df = pd.read_csv(DIR / 'data/reviews.csv')
+df = pd.read_csv(DIR / 'reviews.csv')
 
 def clear_text(A):
     A = [s.strip() for s in A]

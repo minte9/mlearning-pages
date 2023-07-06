@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 
 # Projects
-airbnb_weekly/
 sentiment140.csv
 
 # C extensions

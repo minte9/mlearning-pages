@@ -51,17 +51,13 @@ def steming_words(A):
 def debug(s1, s2=None, debug=False):
     if debug:
         print(s1, s2)
-# -------------------------------------------------------
 
-# Output
 debug("Initial Dataset:\n", df)
 df['Review'] = clear_text(df['Review']);            debug("Cleanning:\n", df)
 df['Review'] = remove_punctuation(df['Review']);    debug("Remove Punctuation:\n", df)
 df['Words']  = tokenize_words(df['Review']);        debug("Tokenize Words:\n", df['Words'])
 df['Words']  = remove_stopwords(df['Words']);       debug("Remove Stop Words:\n", df['Words'])
 df['Words']  = steming_words(df['Words']);          debug("Stem Words:\n", df['Words'])
-
-# -------------------------------------------------------
 
 def build_dataset(df):
     # E = CountVectorizer() # Bag of words
@@ -78,8 +74,6 @@ def build_dataset(df):
 # Final dataset
 dataset = build_dataset(df)
 debug("Final Dataset:\n\n", dataset)
-
-# -------------------------------------------------------
 
 # Features and label
 X = dataset.iloc[:, :-1] # all the columns except the last

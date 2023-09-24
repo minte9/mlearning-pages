@@ -1,70 +1,50 @@
-""" Linear Regression / Algorithm
-
-The algorithm is used to find the best-fit line that models 
-the relationship between x and y.
-
-Gradient descent is an iterative optimization algorithm that starts 
-with an initial guess for the slope and the intercept and updates them 
-in the direction of steepest descent of the cost function until convergence.
-
-The slope or gradient of a function in (x,y) point is the derivative.
-The cost function measures the error between the predicted and actual values.
-
-By iteratively updating the m and b values in the direction of the negative gradient, 
-the algorithm finds the values that minimize the mean squared error, 
-which corresponds to the best fit line for the training data.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Training datasets
+# Input raining dataset
 x = np.array([1, 2, 3, 4, 5])
 y = np.array([2, 4, 5, 4, 5])
 
-# --------------------------------------------------------------
-
-# Slope and intercept (line params)
+# Initialize variables for the slope (m) and y-intercept (b) of the line
 m = 0
 b = 0
 
-# Learning params
+# Set the learning rate and the number of iterations for gradient descent
 learning_rate = 0.01
 num_iterations = 1000
 
-# Gradient descent optimization
+# Perform gradient descent to find the best-fit line
 for i in range(num_iterations):
     
-    # Cost function
+    # Calculate the predicted values of y (y_pred) based on the current m and b
     y_pred = m*x + b
+
+    # Calculate the error between the predicted values and the actual values
     error = y - y_pred 
 
-    # Partial derivatives of the cost function with respect to m and b
+    # Calculate the derivatives of the cost function with respect to m and b
     m_derivative = -(2/len(x)) * sum(x * error)
     b_derivative = -(2/len(x)) * sum(error)
 
-    # Update the m and b values in the direction of the negative gradient
+    # Update the values of m and b using the gradient descent algorithm
     m = m - learning_rate * m_derivative
     b = b - learning_rate * b_derivative
 
-# --------------------------------------------------------------
+# Output the equation of the best-fit line
+print(f'Best fit line for given data: y = {m}x + {b}')
 
+# Round the values of m and b for clarity
 m = round(m, 1)
 b = round(b, 1)
 
-# Plot points and the best fit line
+
+# Create a plot to visualize the data and the best-fit line
 fig, ax = plt.subplots()
 plt.ylim(0, 10)
 plt.xlim(0, 10)
 
-ax.plot(x,  y,  'x', color='g', label='training data')
-plt.legend()
+# Plot the data points as 'x' markers in green
+ax.plot(x,  y,  'x', color='g', label='Training data')
 ax.plot(x, m*x + b,  label=f'h(x) = {m} + {b}x')
+plt.legend()
 plt.show()
-
-print(f"Best fit line for given data: \n y = {m}x + {b}")
-
-"""
-    Best fit line for given data: 
-     y = 0.6x + 2.1
-"""

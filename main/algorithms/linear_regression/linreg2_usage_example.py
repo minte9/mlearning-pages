@@ -1,16 +1,9 @@
-""" Linear Regression / Algorithm
-
-The algorithm is used to find the best-fit line that models 
-the relationship between x and y.
-Gradient descent optimization updates the slope and intercept 
-of the line on each iteration of the algorithm.
-"""
-
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Training datasets
-X = np.array([1, 2, 3, 4, 5])
-Y = np.array([2, 4, 5, 4, 5])
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 5, 4, 5])
 
 class LinearRegression:
 
@@ -20,8 +13,6 @@ class LinearRegression:
 
     def fit(self, X_train, Y_train, learning_rate=0.01, num_iterations=1000):
         
-        # -----------------------------------------------
-
         x = X_train
         y = Y_train
         m = 0 
@@ -36,8 +27,6 @@ class LinearRegression:
             m -= learning_rate * m_derivative
             b -= learning_rate * b_derivative
 
-        # -----------------------------------------------
-
         obj = LinearRegression()
         obj.coef_.append(m)
         obj.intercept_ = b
@@ -45,7 +34,7 @@ class LinearRegression:
         return obj
 
 # Learn a prediction function
-r = LinearRegression().fit(X, Y)
+r = LinearRegression().fit(x, y)
 m = r.coef_[0].round(1)
 b = r.intercept_.round(1)
 
@@ -53,16 +42,19 @@ b = r.intercept_.round(1)
 x1 = 3
 y1 = m*x1 + b
 
-print(f"Learned slope: {m:.1f}")
-print(f"Learned intercept: {b:.1f}")
-print(f"Best fit line: \n y = {m}x + {b}")
-print(f"Prediction for x = {x1}: \n y = {y1:.1f}")
+# Output
+print('Best line:', f"y = {m}x + {b}")
+print('Prediction for x=3:', f"y = {y1:.1f}")
 
-"""
-    Learned slope: 0.6
-    Learned intercept: 2.1
-    Best fit line: 
-     y = 0.6x + 2.1
-    Prediction for x = 3: 
-     y = 3.9
-"""
+m = round(m, 1)
+b = round(b, 1)
+
+fig, ax = plt.subplots()
+plt.ylim(0, 10)
+plt.xlim(0, 10)
+
+ax.plot(x,  y,  'x', color='g', label='Training data')
+ax.plot(x, m*x + b,  label=f'h(x) = {m} + {b}x')
+ax.plot(x1, y1, 'o', color='r', label=f'h({x1}) = {y1}') # Draw unknown point
+plt.legend()
+plt.show()

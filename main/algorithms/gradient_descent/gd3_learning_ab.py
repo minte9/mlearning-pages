@@ -1,13 +1,9 @@
 """ Gradient descent (two params, a and b)
 Algorithm starts with a random value of the parameter a, b
-Then, it finds the direction in which the function
-descrease faster and takes a step in that direction, then repeat
 """
 
 import matplotlib.pyplot as plt
 import numpy as np
-
-# --------------------------------------------------------------
 
 # The model (linear)
 def predict(X, a, b):
@@ -35,8 +31,6 @@ def gradient_descent(X, Y, lr=0.00001, loops=1000):
         for j in range(loops):
             b = b - lr * db
     return round(a, 1), round(b, 1)
-
-# --------------------------------------------------------------
 
 # Train dataset 1
 X = np.array([30, 46, 60, 65, 77, 95])
@@ -66,8 +60,6 @@ ax.plot(X, a*X + b, label=f'f(x) = {b} + {a}x') # line
 ax.plot(55, predict(55, a, b), 'o', color='r')
 plt.legend(loc='upper right')
 
-# --------------------------------------------------------------
-
 # Train dataset 2
 X = np.array([15, 18, 20, 21, 23, 25, 27, 28, 29, 30, 32, 34, 35, 36])
 Y = np.array([23, 74, 65, 82, 135, 321, 440, 400, 290, 620, 630, 610, 560, 568])
@@ -87,21 +79,19 @@ ax.plot(X, Y, 'x', color='g')
 ax.plot(X, a*X + b, label=f'f(x) = {b} + {a}x') # line
 ax.plot(55, predict(33, a, b), 'o', color='r')
 plt.legend(loc='upper right')
-
 plt.show()
 
 """
     Learning 1
-     a = 1.3  b = -17.3
+    a = 1.3  b = -17.3
     Predictions: f(x) = 1.3x + -17.3
-     f(33) = 26.0
-     f(45) = 41.0
-     f(62) = 63.0
+    f(33) = 26.0
+    f(45) = 41.0
+    f(62) = 63.0
 
     Learning 2
-     a = 32.9  b = -533.1
+    a = 32.9  b = -533.1
     Predictions: f(x) = 32.9x + 32.9
-     f(20) = 125.0
-     f(24) = 256.0
-     f(33) = 553.0
+    f(20) = 125.0
+    f(24) = 256.0
 """

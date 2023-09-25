@@ -1,6 +1,4 @@
 """ Gradient descent Algorithm
-Can be use to optimizes the parameters of any ML model, 
-not just linear regresssion.
 
 1. Initialize the parameters
     select initial set of params for the model

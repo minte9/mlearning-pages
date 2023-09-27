@@ -1,8 +1,9 @@
 """ Decision Trees / Info Gain
 Play Tennis
 
+Example for wind:
 IG = H - (8/14)H_weak - (6/14)H_strong
-IG = 0.940 - (8/14)0.811 - (6/14)1.00 - 0.048 
+IG = 0.940 - (8/14)0.811 - (6/14)1.00 = 0.048 
 
 Machine epsilon is the upper bound on the relative error due to rounding.
 This small value added to the denominator in order to avoid division by zero. 

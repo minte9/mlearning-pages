@@ -1,51 +1,38 @@
-""" Decision Tree / Entropy
-
-Entropy tell us how disordered in a collection of data.  
-The more impure the feature is, the higher the entropy.
-Probability distribution is the frequency of the unique values.
-"""
-
 import pandas as pd
 import numpy as np
 
-# Dataset
+# Set the initial traning data
 A = ['apple']*1 + ['orange']*2 + ['banana']*2
-A = pd.Series(A)
-
 B = ['apple']*5 + ['orange']*2 + ['banana']*0
+
+# Probability (by hand)
+P1 = [1/5, 2/5, 2/5] 
+P2 = [5/7, 2/7, 0/7]
+
+# Probability (with pandas)
+A = pd.Series(A)
 B = pd.Series(B)
-
-# Probability distribution (by hand or pandas)
-P = [3/7, 2/7, 2/7]
-PA = A.value_counts(normalize=True)
-PB = B.value_counts(normalize=True)
-
-# ------------------------------------
+P3 = A.value_counts(normalize=True)
+P4 = B.value_counts(normalize=True)
 
 # Entropy (Shannon model)
-EA = -1 * np.sum(PA * np.log2(PA))
-EB = -1 * np.sum(PB * np.log2(PB))
-assert EB < EA
+H3 = -1 * np.sum(P3 * np.log2(P3))
+H4 = -1 * np.sum(P4 * np.log2(P4))
+assert H3 > H4
 
-# ------------------------------------
+# Output results
+print("Datasets:")
+print("A =", A.values)
+print("B =", B.values)
 
-# Output
-outputs = [
-    ["A  =", A.values],
-    ["B  =", B.values],
-    ["PA =", PA.values],
-    ["PB =", PB.values],
-    ["EA =", EA],
-    ["EB =", EB],
-]
-for v in outputs: 
-    print(v[0], v[1])
+print("\n Probability distributions (by hand):")
+print(P1)
+print(P2)
 
-"""
-    A  = ['apple' 'orange' 'orange' 'banana' 'banana']
-    B  = ['apple' 'apple' 'apple' 'apple' 'apple' 'orange' 'orange']
-    PA = [0.4 0.4 0.2]
-    PB = [0.71428571 0.28571429]
-    EA = 1.5219280948873621
-    EB = 0.863120568566631
-"""
+print("\n Probability distributions (with pandas):")
+print(P3.values)
+print(P4.values)
+
+print("\n Entropies:")
+print(H3)
+print(H4)

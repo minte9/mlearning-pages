@@ -38,7 +38,7 @@ print(g2)
     A = ['apple' 'orange' 'orange' 'banana' 'banana']
     B = ['apple' 'apple' 'apple' 'apple' 'apple' 'orange' 'orange']
 
-     Probability distributions (by hand):
+    Probability distributions (by hand):
     orange    0.4
     banana    0.4
     apple     0.2
@@ -47,7 +47,7 @@ print(g2)
     orange    0.285714
     dtype: float64
 
-     Gini indexes:
+    Gini indexes:
     0.6399999999999999
     0.40816326530612246
 """

@@ -36,3 +36,21 @@ print(P4.values)
 print("\n Entropies:")
 print(H3)
 print(H4)
+
+"""
+    Datasets:
+    A = ['apple' 'orange' 'orange' 'banana' 'banana']
+    B = ['apple' 'apple' 'apple' 'apple' 'apple' 'orange' 'orange']
+
+    Probability distributions (by hand):
+    [0.2, 0.4, 0.4]
+    [0.7142857142857143, 0.2857142857142857, 0.0]
+
+    Probability distributions (with pandas):
+    [0.4 0.4 0.2]
+    [0.71428571 0.28571429]
+
+    Entropies:
+    1.5219280948873621
+    0.863120568566631
+"""

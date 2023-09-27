@@ -105,3 +105,44 @@ print("\n Describe:"); print(df.describe())
 print("\n Entropy:"); print(dataset_entropy())
 print("\n AttrEntropy:"); print(E)
 print("\n Information gains:"); print(IG)
+
+"""
+    Dataset:
+        outlook  temp humidity  windy play
+    0      sunny   hot     high  False   no
+    1      sunny   hot     high   True   no
+    2   overcast   hot     high  False  yes
+    3      rainy  mild     high  False  yes
+    4      rainy  cool   normal  False  yes
+    5      rainy  cool   normal   True   no
+    6   overcast  cool   normal   True  yes
+    7      sunny  mild     high  False   no
+    8      sunny  cool   normal  False  yes
+    9      rainy  mild   normal  False  yes
+    10     sunny  mild   normal   True  yes
+    11  overcast  mild     high   True  yes
+    12  overcast   hot   normal  False  yes
+    13     rainy  mild     high   True   no
+
+    Describe:
+        outlook  temp humidity  windy play
+    count       14    14       14     14   14
+    unique       3     3        2      2    2
+    top      sunny  mild     high  False  yes
+    freq         5     6        7      8    9
+
+    Entropy:
+    0.9402859586706311
+
+    AttrEntropy:
+    {'outlook': 0.6935361388961914, 
+     'temp': 0.9110633930116756, 
+     'humidity': 0.7884504573082889, 
+     'windy': 0.892158928262361}
+
+    Information gains:
+    {'outlook': 0.24674981977443977, 
+     'temp': 0.029222565658955535, 
+     'humidity': 0.15183550136234225, 
+     'windy': 0.048127030408270155}
+"""

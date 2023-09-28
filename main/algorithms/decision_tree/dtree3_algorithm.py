@@ -1,4 +1,4 @@
-""" Decision Trees / ID3 Algorithm
+""" Decision Trees / ID3 Algorithm 
 
 1. Calculate entropy for dataset
 2. For each attribute:

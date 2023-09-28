@@ -1,9 +1,5 @@
 """ Decision Trees / ID3 Algorithm
 
-Iterative Dichotomiser 3, is a classification algorithm that follows a 
-greedy approach of building a decision tree that gives priority to the attributes 
-with the higher information gain.
-
 1. Calculate entropy for dataset
 2. For each attribute:
    Calculate entropy for all categorical values
@@ -11,8 +7,8 @@ with the higher information gain.
 3. Find the feture with maximum information gain
 4. Repeat
 
-The `outlook` has the highest info gain of 0.24, so we will select it as 
-the root node for the start level of splitting.
+For example, the `outlook` has the highest info gain (0.24).
+It we will select it as the root node for the start level of splitting.
 """
 
 import numpy as np
@@ -24,7 +20,7 @@ from sklearn import tree
 DIR = pathlib.Path(__file__).resolve().parent
 df = pd.read_csv(DIR / 'data/play_tennis.csv')
 
-# Train data
+# Training data
 X = df.drop(['play'], axis=1)
 y = df['play']
 
@@ -55,8 +51,6 @@ def attribute_entropy(df, attr):
         E += -(den/len(df))*ent # sum of all entropies
     return abs(E)
 
-# ---------------------------------------------------
-
 # Find attribute with maximum information gain
 def find_winner(df):
     IG = {}
@@ -67,7 +61,7 @@ def find_winner(df):
         IG[attr] = dataset_entropy(df) - attribute_entropy(df, attr)
     winner = attributes[np.argmax(IG)] # maxim info gains
     return winner
-# ---------------------------------------------------
+
 
 # Construct the decision tree (dictionary)
 def buildTree(df):
@@ -128,23 +122,24 @@ def predict(X, tree):
     return subval
 
 
+print("\n Decistion Tree:")
 print(decision_tree, "\n")
 print_tree(decision_tree)
 
-# Example usage
+print("\n Example usage 1:")
 x = {'outlook': 'sunny', 'temp': 'mild', 'humidity': 'high', 'windy': False}
 y = predict(x, decision_tree)
-print("\nAttributes:", x)
+print("Attributes:", x)
 print("Prediction:", y)
 
-# Example usage 2
+print("\n Example usage 2:")
 x = {'outlook': 'rainy', 'temp': 'mild', 'humidity': 'normal', 'windy': True}
 y = predict(x, decision_tree)
-print("\nAttributes:", x)
+print("Attributes:", x)
 print("Prediction:", y)
 
-
 """
+     Decistion Tree:
     {'outlook': {'overcast': 'yes', 'rainy': {'temp': {'cool': {'humidity': ...
 
     outlook = overcast: yes
@@ -165,6 +160,7 @@ print("Prediction:", y)
         humidity = high: no
         humidity = normal: yes
 
+     Example usage 1:
     Attributes: {
         'outlook': 'sunny', 
         'temp': 'mild', 
@@ -172,6 +168,7 @@ print("Prediction:", y)
         'windy': False}
     Prediction: no
 
+     Example usage 2:
     Attributes: {
         'outlook': 'rainy', 
         'temp': 'mild', 

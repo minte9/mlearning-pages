@@ -1,6 +1,6 @@
 """ Decision Trees / Info Gain
 
-Play Tennis example (information gain for wind):
+Play Tennis example (wind IG):
 IG = H - (8/14)H_weak - (6/14)H_strong
 IG = 0.940 - (8/14)0.811 - (6/14)1.00 = 0.048 
 

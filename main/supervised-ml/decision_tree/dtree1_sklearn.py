@@ -1,8 +1,4 @@
 """ Decision Tree / Classifier (Play Tennis)
-
-Given certain values for each of the attributes, the learned decision tree 
-is able to give a clear answer if weather is suitable or not for tennis.
-The model can make prediction only for known sample from dataset.
 """
 
 import pathlib
@@ -29,15 +25,14 @@ dtree_model = DecisionTreeClassifier()
 dtree_model.fit(X, Y)
 
 # Prediction
-x_new =  [1, 0, 1, 0] # expect 1
-x_new = pd.DataFrame([x_new], columns=X.columns)
-y_pred = dtree_model.predict(x_new)[0]
+x_unknown =  [1, 0, 1, 0] # expect 1
+x_unknown = pd.DataFrame([x_unknown], columns=X.columns)
+y_pred = dtree_model.predict(x_unknown)[0]
 
 print("Dataset:"); print(df, "\n")
 print("Encoded:"); print(df_encoded, "\n")
-print("Unknown:"); print(x_new, "\n")
+print("Unknown:"); print(x_unknown, "\n")
 print("Prediction:", y_pred)
-
 
 """
     Dataset:

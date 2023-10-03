@@ -1,31 +1,16 @@
+
 """ Decision Trees / Prunning (Breast Cancer)
-
-Stop developing the tree before the limit of perfectly train data fit.
-This will lower the accuracy for train data, but it will improve 
-the score on test data.
-
-The max_depth in the classifier controls the maximum depth 
-of the decision tree. 
-
-Insteed of looking at the whole tree, we can select 
-only the most useful properties.
-
-We can see that `worst radius` used in the top split, is by far 
-the most important feature.
 """
 
 import numpy as np
 import pandas as pd
-import pathlib
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn import tree
-import graphviz
 
 # Dataset
-DIR = pathlib.Path(__file__).resolve().parent
 df = load_breast_cancer()
 
 # Training and test data
@@ -54,19 +39,6 @@ impdf_sorted = impdf.sort_values(
 top_features = impdf_sorted["Feature"].head(5)
 
 # Output
-n = df.data.shape[1]
-plt.subplots_adjust(left=0.28)
-plt.barh(np.arange(n), dtree.feature_importances_, align='center')
-plt.yticks(np.arange(n), df.feature_names)
-plt.xlabel("Feature importance")
-plt.ylabel("Feature")
-plt.ylim(-1, n)
-plt.show()
-
-dot_data = tree.export_graphviz(dtree, out_file=None, filled=True, 
-    class_names=df['target_names'])
-dot_graph = graphviz.Source(dot_data)
-dot_graph.view()
 tree_text = tree.export_text(dtree)
 
 outputs = [
@@ -84,6 +56,17 @@ outputs = [
 ]
 for out in outputs:
     print("\n", out[0], "\n ", out[1])
+
+# Output graphics
+print("\n Feature imporantance chart:")
+n = df.data.shape[1]
+plt.subplots_adjust(left=0.28)
+plt.barh(np.arange(n), dtree.feature_importances_, align='center')
+plt.yticks(np.arange(n), df.feature_names)
+plt.xlabel("Feature importance")
+plt.ylabel("Feature")
+plt.ylim(-1, n)
+plt.show()
 
 """
 	 Featre names: 

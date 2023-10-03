@@ -1,6 +1,7 @@
 """ Decision Trees / Info Gain
+Target: Play Tennis or not
 
-Play Tennis example (wind IG):
+Information gain example (for feature 'wind'):
 IG = H - (8/14)H_weak - (6/14)H_strong
 IG = 0.940 - (8/14)0.811 - (6/14)1.00 = 0.048 
 
@@ -16,65 +17,56 @@ import pathlib
 DIR = pathlib.Path(__file__).resolve().parent
 df = pd.read_csv(DIR / 'data/play_tennis.csv')
 
-# Split the dataset into features (X) and the target (y), whether play tennis or not
+# Split the dataset into features and target (X, y)
 X = df.drop(['play'], axis=1)
-y = df['play'] 
+y = df['play']
 
-# Function to calculate the total entropy of the dataset
+# Total entropy of the dataset
 def dataset_entropy():
     E = 0
 
-    # Count the occurrences of each play outcome (yes=9, no=5)
-    N = df['play'].value_counts()
+    N = df['play'].value_counts()   # Count the occurrences of each target outcome (yes=9, no=5)
 
-    # For each unique play outcome (yes/no)
+    # For each unique target outcome (yes/no)
     for v in df['play'].unique():
 
-        # Calculate the probability of this outcome
-        P = N[v]/len(df['play'])
-
-         # Update total entropy using the probability
-        E += -P*np.log2(P)
+        P = N[v]/len(df['play'])    # Calculate the probability of this outcome
+        E += -P*np.log2(P)          # Update total entropy using the probability
+        
     return E
 
-# Function to calculate the entropy of a specific attribute
+# Entropy of a specific attribute
 def attribute_entropy(attr):
     E = 0
 
-    # Calculate machine epsilon for float operations
-    eps = np.finfo(float).eps 
+    eps = np.finfo(float).eps   # machine epsilon for float operations
 
-    # Get unique play outcomes (yes/no)
-    targets = df.play.unique()
-
-    # Get unique values for the given attribute
-    values = df[attr].unique()
+    targets = df.play.unique()  # unique play outcomes (yes/no)
+    values = df[attr].unique()  # unique values for the given attribute
 
     # For each unique value of the attribute (cool/hot)
     for v in values:
-
-        # Initialize entropy for this value
-        ent = 0
+        ent = 0                 # entropy for this value
 
         # For each unique play outcome (yes/no)
         for t in targets:
 
             # Count occurrences where attribute=value and play outcome matches
-            num = len(df[attr][df[attr] == v][df.play == t]) # numerator
+            numerator = len(df[attr][df[attr] == v][df.play == t])
 
             # Count occurrences where attribute=value
-            den = len(df[attr][df[attr] == v])
+            denominator = len(df[attr][df[attr] == v])
 
             # Calculate a fraction related to the probability
-            fraction = num/(den + eps)
+            fraction = numerator/(denominator + eps)
 
-            # Update entropy for this value
-            ent += -fraction*np.log2(fraction + eps)
+            # Weighted entropy for this value
+            weighted_ent = fraction*np.log2(fraction + eps)
 
-        # Update total entropy using the weighted entropy for this value
-        E += -(den/len(df))*ent # sum of all entropies
+            ent += -weighted_ent
 
-    # Return the absolute value of the entropy
+        E += -(denominator/len(df))*ent # Sum of all entropies
+
     return abs(E)
 
 

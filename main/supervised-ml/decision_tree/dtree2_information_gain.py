@@ -1,4 +1,4 @@
-""" Decision Tree / Classifier (Play Tennis)
+""" Decision Tree / Information gain (Play Tennis)
 """
 
 import numpy as np

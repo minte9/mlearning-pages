@@ -1,4 +1,4 @@
-""" Operations / Addition and Substraction (+ -)
+""" Matrices / Addition and Substraction (+ -)
 """
 
 import numpy as np

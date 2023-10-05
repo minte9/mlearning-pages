@@ -1,5 +1,4 @@
-""" Operation / Matrix multiplication
-For element-wise multiplication we use *
+""" Matrices / Multiplication
 """
 
 import numpy as np

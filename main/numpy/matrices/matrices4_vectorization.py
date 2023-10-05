@@ -1,6 +1,4 @@
-""" Vectorization
-Vectorization is used to speed up the Python code without using loop.
-When broadcasting different dimensions are allowed.
+""" Vectorize / Broadcasting
 """
 
 import numpy as np

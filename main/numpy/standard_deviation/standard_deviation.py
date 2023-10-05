@@ -1,12 +1,4 @@
-""" Variance and Standard deviation
-
-Variance is a measure of the spread of the data.
-A high variance means that data are spread over a large range.
-A low variannce means that data are clustered close together.
-
-Standard deviation is a measure of the spread of the data 
-that is more intuitive than variance, as it is expressed 
-in the same units as data.
+""" Matrices / Standard deviation
 """
 
 import numpy as np

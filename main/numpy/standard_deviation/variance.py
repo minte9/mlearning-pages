@@ -1,3 +1,6 @@
+""" Matrices / Population Variance
+"""
+
 import numpy as np
 
 A = np.array([
@@ -11,7 +14,6 @@ B = np.array([
     [7, 8, 900], # Look Here
 ])
 
-# Algorithm
 def population_variance(X):
     N = X.size
     avg = np.mean(X)

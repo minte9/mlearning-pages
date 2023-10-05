@@ -1,10 +1,4 @@
-""" Operations / Matrix Reshape
-
-Reshape maintain the data but as different numbers of rows and columns.
-The new matrix should have the same size as original matrix
-
-The argument -1 means "as many as needed"
-Flatten transform a matrix into a one-dimensional array.
+""" Matrices / Reshape
 """
 
 import numpy as np

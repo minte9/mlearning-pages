@@ -8,9 +8,9 @@ data = {
     'oranges': [0, 3, 7, 2],
     'available': ['yes', 'no', 'yes', 'no'],
 }
+
 df = pd.DataFrame(data)
 print(df)
-
 
 """
    apples  oranges available

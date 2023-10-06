@@ -1,6 +1,6 @@
 """ Pandas / DataFrame
 For displaying data (outside Jupyter) use DataFrame' to_markdown()
-    pip install tabulate
+pip install tabulate
 """
 
 import pandas as pd

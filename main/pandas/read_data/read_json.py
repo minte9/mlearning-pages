@@ -5,30 +5,25 @@ Load a JSON file for data preprocessing.
 import pandas as pd
 import pathlib
 
-# Json file
+# File path
 DIR = pathlib.Path(__file__).resolve().parent 
-FILE = DIR / 'data/03.json'
+FILE = DIR / '_data/03.json'
 
-df1 = pd.read_json(FILE, orient='columns')
+# Read from json
+print("Load from json file:")
+df = pd.read_json(
+        FILE, orient='columns'
+)
+print(df.head(2).to_markdown())
 
-# Json string
-DATA = [
-    {
-        "id": 1,
-        "name": "Mary",
-    },
-    {
-        "id": 2,
-        "name": "John",
-    },
+# Read from string
+print("Load from json string:")
+data = [
+    {"id": 1, "name": "Mary"},
+    {"id": 2, "name": "John"},
 ]
-df2 = pd.json_normalize(DATA)
-
-print("JSON FILE:")
-print(df1.head(2).to_markdown())
-
-print("JSON STRING:")
-print(df2.head(2).to_markdown())
+df = pd.json_normalize(data)
+print(df.head(2).to_markdown())
 
 """
 DataFrame from json file:

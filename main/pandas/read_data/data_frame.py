@@ -1,5 +1,4 @@
 """ Pandas / DataFrame
-pip install tabulate
 """
 
 import pandas as pd
@@ -14,7 +13,8 @@ df = pd.DataFrame(data)
 print("DataFrame:")
 print(df)
 
-# For table display we can use tabulate package
+# For table display we can use tabulate package 
+# pip install tabulate
 print(df.to_markdown())
 
 """

@@ -7,7 +7,7 @@ import pathlib
 
 URL = 'https://raw.githubusercontent.com/chrisalbon/sim_data/master/data.csv'
 DIR = pathlib.Path(__file__).resolve().parent 
-FILE = DIR / 'data/01.csv'
+FILE = DIR / '_data/01.csv'
 
 df1 = pd.read_csv(URL)
 df2 = pd.read_csv(FILE)

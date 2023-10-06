@@ -12,6 +12,9 @@ data = {
 df = pd.DataFrame(data)
 
 print("DataFrame:")
+print(df)
+
+# For table display we can use tabulate package
 print(df.to_markdown())
 
 """

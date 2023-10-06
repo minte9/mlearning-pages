@@ -1,4 +1,4 @@
-""" Data clearing / Location
+""" Data cleaning / Location
 Real world cases could have millions of rows and columns.
 """
 

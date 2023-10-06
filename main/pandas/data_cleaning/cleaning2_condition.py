@@ -1,4 +1,4 @@
-""" Data clearing / Condition and filtering
+""" Data cleaning / Condition and filtering
 """
 
 import pandas as pd

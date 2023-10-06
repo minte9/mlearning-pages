@@ -16,6 +16,7 @@ df = df.set_index(df['Name'])
 print(df.loc['Allen, Miss Elisabeth Walton'])
 
 """
+
                                             Name PClass   Age     Sex  Survived  SexCode
 1                    Allison, Miss Helen Loraine    1st   2.0  female         0        1
 2            Allison, Mr Hudson Joshua Creighton    1st  30.0    male         0        0
@@ -28,4 +29,5 @@ Sex                               female
 Survived                               1
 SexCode                                1
 Name: Allen, Miss Elisabeth Walton, dtype: object
+
 """

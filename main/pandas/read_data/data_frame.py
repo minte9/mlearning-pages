@@ -9,20 +9,13 @@ data = {
     'available': ['yes', 'no', 'yes', 'no'],
 }
 df = pd.DataFrame(data)
-
-print("DataFrame:")
 print(df)
 
-# For table display we can use tabulate package 
-# pip install tabulate
-print(df.to_markdown())
 
 """
-DataFrame:
-|    |   apples |   oranges | available   |
-|---:|---------:|----------:|:------------|
-|  0 |        3 |         0 | yes         |
-|  1 |        2 |         3 | no          |
-|  2 |        0 |         7 | yes         |
-|  3 |        1 |         2 | no          |
+   apples  oranges available
+0       3        0       yes
+1       2        3        no
+2       0        7       yes
+3       1        2        no
 """

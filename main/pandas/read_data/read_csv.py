@@ -1,5 +1,7 @@
 """ Read data / CSV
 The source can be URL or FILE
+For table display we can use tabulate package 
+    pip install tabulate
 """
 
 import pandas as pd

@@ -1,21 +1,13 @@
-""" Data clearing / Describe DataFrame
-
+""" Data clearing / Location
 Real world cases could have millions of rows and columns.
 Describe do not always tell the full story.
-
-For example in `titanic.csv`, `survived` is categorical, 
-but pandas treats it as numerical. 
-
-Both iloc and loc are very useful during data cleaning.
-For output data (outside Jupyter) use DataFrame' to_markdown()
-    pip install tabulate
 """
 
 import pandas as pd
 import pathlib
 
 DIR = pathlib.Path(__file__).resolve().parent
-df = pd.read_csv(DIR / '../titanic.csv')
+df = pd.read_csv(DIR / '../_data/titanic.csv')
 
 # Set index to non-numerical
 df2 = df.set_index(df['Name'])

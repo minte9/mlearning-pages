@@ -29,7 +29,6 @@ print(A)
 # Missing values (by Agge)
 A = pd.DataFrame()
 A = df[df['Age'].isnull()]
-
 print("Missing values (Age):", A.size)
 print(A.head())
 

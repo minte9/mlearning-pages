@@ -1,5 +1,5 @@
 """ Pandas / DataFrame
-For displaying data (outside Jupyter) use DataFrame' to_markdown()
+We can use use tabulate package for displaying data (outside Jupyter)
 pip install tabulate
 """
 

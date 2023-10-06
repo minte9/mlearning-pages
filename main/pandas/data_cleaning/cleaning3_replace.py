@@ -8,43 +8,19 @@ import pandas as pd
 import pathlib
 
 DIR = pathlib.Path(__file__).resolve().parent
-df = pd.read_csv(DIR / '../titanic.csv')
+df = pd.read_csv(DIR / '../_data/titanic.csv')
 
-R1 = df['Sex'].replace("female", "Woman")
-R2 = df['Sex'].replace(['female', 'male'], ['Woman', 'Man'])
-R3 = df.replace(1, 'one')
-R4 = df.replace(r'1st', 'First', regex=True)
+# Replace female/male
+df['Sex'] = df['Sex'].replace(['female', 'male'], ['Woman', 'Man'])
+df['PClass'] = df['PClass'].replace(r'1st', 'First', regex=True)
 
-print("Replace in one column:"); print(R1.head(2).to_markdown(), "\n")
-print("Replace multiple values:"); print(R2.head(5).to_markdown(), "\n")
-print("Replace all:"); print(R3.head(2).to_markdown(), "\n")
-print("Regex replace:"); print(R4.head(2).to_markdown(), "\n")
+print(df.head())
 
 """
-Replace in one column:
-|    | Sex   |
-|---:|:------|
-|  0 | Woman |
-|  1 | Woman | 
-
-Replace multiple values:
-|    | Sex   |
-|---:|:------|
-|  0 | Woman |
-|  1 | Woman |
-|  2 | Man   |
-|  3 | Woman |
-|  4 | Man   | 
-
-Replace all:
-|    | Name                         | PClass   |   Age | Sex    | Survived   | SexCode   |
-|---:|:-----------------------------|:---------|------:|:-------|:-----------|:----------|
-|  0 | Allen, Miss Elisabeth Walton | 1st      |    29 | female | one        | one       |
-|  1 | Allison, Miss Helen Loraine  | 1st      |     2 | female | 0          | one       | 
-
-Regex replace:
-|    | Name                         | PClass   |   Age | Sex    |   Survived |   SexCode |
-|---:|:-----------------------------|:---------|------:|:-------|-----------:|----------:|
-|  0 | Allen, Miss Elisabeth Walton | First    |    29 | female |          1 |         1 |
-|  1 | Allison, Miss Helen Loraine  | First    |     2 | female |          0 |         1 | 
+                                            Name PClass    Age    Sex  Survived  SexCode
+0                   Allen, Miss Elisabeth Walton  First  29.00  Woman         1        1
+1                    Allison, Miss Helen Loraine  First   2.00  Woman         0        1
+2            Allison, Mr Hudson Joshua Creighton  First  30.00    Man         0        0
+3  Allison, Mrs Hudson JC (Bessie Waldo Daniels)  First  25.00  Woman         0        1
+4                  Allison, Master Hudson Trevor  First   0.92    Man         1        0
 """

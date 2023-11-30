@@ -1,13 +1,3 @@
-""" Iris Species  / Dataset description
-
-It's difficult to plot datasets with more than 2-3 features.
-Pair plots uses all posible pair of features.  
-
-The data points are colored according to the species the iris belons to.
-From the plots, we can see that tha three classes are well separated.
-This means that ML model will be able to learn to separate them.
-"""
-
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 import pandas as pd
@@ -21,14 +11,6 @@ X1, X2, y1, y2 = train_test_split(
     dataset['data'], dataset['target'], random_state=0 # fixed seed
 )
 
-# Plot features matrix
-df = pd.DataFrame(X1, columns=dataset.feature_names)
-pd.plotting.scatter_matrix(
-    df, c=y1, figsize=(15, 15), marker='o', 
-    s=60, alpha = .8, diagonal='none'
-)
-plt.suptitle('Iris features matrix')
-plt.show()
 
 # Describe dataset  
 print('Description: \n ', dataset['DESCR'][:193])
@@ -43,6 +25,16 @@ print('X1 shape: ', X1.shape)
 print('X2 shape: ', X2.shape)
 print('y1 shape: ', y1.shape)
 print('y2 shape: ', y2.shape)
+
+
+# Plot features matrix
+df = pd.DataFrame(X1, columns=dataset.feature_names)
+pd.plotting.scatter_matrix(
+    df, c=y1, figsize=(15, 15), marker='o', 
+    s=60, alpha = .8, diagonal='none'
+)
+plt.suptitle('Iris features matrix')
+plt.show()
 
 """
     Keys: dict_keys(['data', 'target', 'frame', 'target_names', ... module'])

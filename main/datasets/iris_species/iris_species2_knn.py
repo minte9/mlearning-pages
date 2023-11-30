@@ -1,13 +1,3 @@
-""" Iris Species / KNN Clasifier
-
-Learn model that predicts the species of a new iris
-based on known measurements (length and width of petals).
-The most important parameter is the number of neighbors (k)
-
-Our model predicts that this new iris belongs to class 0, 
-meaning its species is setosa.
-"""
-
 import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -28,6 +18,10 @@ knn.fit(X1, y1)
 # New iris prediction
 X_new = np.array([5, 2.9, 1, 0.2]).reshape(1, 4)
 y_new = knn.predict(X_new)
+
+print("Prediction class:", y_new)
+print("Predicted target:", dataset['target_names'][y_new])
+
 
 # Training data frame
 df = pd.DataFrame(X1, columns=dataset.feature_names)
@@ -63,9 +57,6 @@ for i in range(4):
         ax.scatter(X_new[:, j], X_new[:, i], c='r', marker='x', s=200)
 
 plt.show()
-
-print("Prediction class:", y_new)
-print("Predicted target:", dataset['target_names'][y_new])
 
 """
     Prediction class: [0]

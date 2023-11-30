@@ -1,10 +1,3 @@
-""" KNN classifier / Features and label
-
-We provide training dataset points (features) and label (target).
-Next, we train the model using KNN classifier with k=3 (nearest neighbors).
-Finally, we are able now to predict the label for a new (unknown) data point.   
-"""
-
 from sklearn.neighbors import KNeighborsClassifier
 
 # Training dataset

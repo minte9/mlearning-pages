@@ -46,10 +46,10 @@ predictions2 = knn.predict(X2)
 score1 = metrics.accuracy_score(y1, predictions1)
 score2 = metrics.accuracy_score(y2, predictions2)
 
-print("Model score with training dataset:", score1 * 100)
-print("Model score with test dataset:", score2 * 100)
+print("Model score on training dataset:", score1 * 100)
+print("Model score on test dataset:", score2 * 100)
 
 """
-  Model score with training dataset: 85.0
-  Model score with test dataset:     100.0
+  Model score on training dataset: 85.0
+  Model score on test dataset:     100.0
 """

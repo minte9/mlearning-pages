@@ -1,10 +1,3 @@
-"""KNN classifier / Fruits
-
-Dataset contains heights, widths and labels (fruit name).
-The algorithm teach a model to map any combination in order to make predictions.
-We use Pandas library to transform a json dataset into a DataFrame.
-"""
-
 from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
 

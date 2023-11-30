@@ -1,16 +1,3 @@
-""" Diabetes dataset / Knn Algorithm
-
-Target is a quantitative measure of disease progression 
-one year after baseline. The features are: 
-age, sex, body mass index, average blood, etc.
-
-The target values are continuous not categorical.
-We need to divide the target values into two categories.
-
-1 represents target value greater than the mean target value
-0 represents target value less than or equal
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_diabetes
@@ -21,12 +8,12 @@ X = dataset.data
 y = dataset.target
 features = dataset.feature_names
 
-X = X[:, [2, 3]]                        # select 2 features to plot (bmi, bp)
-y_binary = np.where(y > y.mean(), 1, 0) # make the target categorical
-class_names = ['OK', 'NOK']             # 0 is 'OK', 1 is 'NOK'
+# Select 2 features to plot (bmi, bp) and make the target categorical
+X = X[:, [2, 3]]                        
+y_binary = np.where(y > y.mean(), 1, 0)
+class_names = ['OK', 'NOK']  # 0 is 'OK', 1 is 'NOK'
 
-
-# Algorithm
+# KNN Algorithm
 def knn(x_unknown, k=5):
     distances = np.sqrt(np.sum((X - x_unknown)**2, axis=1))
 
@@ -68,20 +55,3 @@ for i in knn_keysB:
 plt.title('Diabetes dataset - Knn')
 plt.legend()
 plt.show()
-
-print("Keys:", dataset.keys())
-print("Shape:", dataset['data'].shape)
-print("Target values examples:", dataset.target[0:7])
-print(dataset['DESCR'])
-
-"""
-    Keys: dict_keys(['data', 'target', 'frame', 'DESCR', ...])
-    Shape: (442, 10)
-    Target values examples: [151.  75. 141. 206. 135.  97. 138.]
-    Diabetes dataset
-    ----------------
-    Ten baseline variables, age, sex, body mass index, average blood
-    pressure, and six blood serum measurements were obtained for each of n =
-    442 diabetes patients, as well as the response of interest, a
-    quantitative measure of disease progression one year after baseline.
-"""

@@ -21,7 +21,7 @@ k = 3
 
 # Square distances (matrix)
 SD = np.sqrt(np.sum((X - x_unknown)**2, axis=1))    # Calculate Euclidean distances
-keys = np.argsort(SD)                               # Sort distances to find closest points
+keys = np.argsort(SD)                       # Sort distances to find closest points
 
 # Neighbors target (matrix)
 keys_knn = keys[:k]                 # Select k-nearest indices

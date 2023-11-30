@@ -49,3 +49,7 @@ knn_class = knn.predict(x_unknown)
 
 # Output prediction
 print("Prediction for", x_unknown, "= class", knn_class)
+
+"""
+    Prediction for [3.6, 1.8] = class 1
+"""

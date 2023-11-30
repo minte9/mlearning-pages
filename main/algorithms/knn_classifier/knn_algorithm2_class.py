@@ -1,10 +1,3 @@
-""" K-Nearest Neighbors Classifier / Usage Example
-
-The algorithm works by finding the k nearest neighbors to the input data point, 
-and then assigning the output label based on the majority 
-vote of the k-nearest neighbors.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -46,13 +39,13 @@ class KNeighborsClassifier:
         
         return result
 
+# Instantiate KNeighborsClassifier with 3 neighbors
 knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X, y)
 
+# Unknown data point
 x_unknown = [3.6, 1.8]  
-knn_class = knn.predict(x_unknown)   
-print("Prediction for", x_unknown, "= class", knn_class)
+knn_class = knn.predict(x_unknown)
 
-"""
-    Prediction for [3.6, 1.8] = class 1
-"""
+# Output prediction
+print("Prediction for", x_unknown, "= class", knn_class)

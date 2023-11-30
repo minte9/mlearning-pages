@@ -1,13 +1,3 @@
-""" Iris species / Model Evaluation
-
-We make a prediction for each iris in the test dataset and
-compare it against its known label.
-
-For this model the test set accurary is 0.97
-This means that we made the right prediction for 97% 
-for irises in the test dataset.
-"""
-
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier

@@ -1,12 +1,3 @@
-"""KNN classifier Evaluation / Fruit example
-
-We split the dataset in two datasets: training and test
-The we evaluate the model on both datasets.
-
-The score is the difference between actual and predicted labels
-1.0 means the model correctly predicted all (100%)
-"""
-
 import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics

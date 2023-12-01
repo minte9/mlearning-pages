@@ -39,7 +39,7 @@ class KNeighborsClassifier:
         
         return result
 
-# Instantiate the model with 3 neighbors
+# Model initialization k=3
 knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X, y)
 

@@ -23,9 +23,9 @@ fig, ax = plt.subplots()
 plt.ylim(0, 140)
 plt.xlim(0, 140)
 
-ax.plot(X,  Y,  'x', color='g', label='training data')      # dataset points
-ax.plot(x1, y1, 'o', color='r', label=f'h({x1}) = {y1}')    # unknown point
-ax.plot(X, a*X + b,  label=f'h(x) = {b} + {a}x')            # function line
+ax.plot(X,  Y,  'x', color='g', label='training data')      # Dataset points
+ax.plot(x1, y1, 'o', color='r', label=f'h({x1}) = {y1}')    # Unknown point
+ax.plot(X, a*X + b,  label=f'h(x) = {b} + {a}x')            # Function line
 
 plt.legend()
 plt.show()

@@ -1,4 +1,9 @@
 """ Reviews Sentiment (KNN)
+
+Collect reviews from amazon books and manually label each post as positive or negative sentiment.
+Extract text features from the posts, such as word frequencies or TF-IDF values.
+Build a dataset with these features and labels.
+Train a KNN classifier to classify new posts based on their sentiment.
 """
 
 import pathlib

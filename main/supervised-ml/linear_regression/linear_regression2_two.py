@@ -1,25 +1,14 @@
-""" Linear Regression  / two parameters
-h(x) = ax + by + c
-
-We can predict the CO2 emission of a car based on the size of the engine. 
-With multiple regression we can throw in more variables, 
-like the weight of the car, to make the prediction more accurate.
-"""
-
-import numpy as np
-import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
 import pandas as pd
-import pathlib
+import numpy as np
 
-# fitted without feature names
-import warnings  
-warnings.filterwarnings("ignore", category=Warning)
+import pathlib
+DIR = pathlib.Path(__file__).resolve().parent
 
 # Training Dataset
-DIR = pathlib.Path(__file__).resolve().parent
 with open(DIR / 'data/cars.csv') as file:
-    df = pd.read_csv(DIR / 'data/cars.csv')
+    df = pd.read_csv(file)
     X = df[[
         'Weight',
         'Volume',

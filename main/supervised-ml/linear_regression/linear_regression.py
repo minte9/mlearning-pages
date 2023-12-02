@@ -1,10 +1,3 @@
-""" Linear Regression / one parameter
-h(x) = ax + b
-
-We find the line that best fits the data.
-It is one of the most popular tools in statistics.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression

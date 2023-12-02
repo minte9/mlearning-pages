@@ -104,16 +104,16 @@ print("Score on Test:", knn.score(X2, y2).round(2))
 print("Report:", classification_report(y2, y_pred, zero_division=0))
 
 """
-	Test data:       positive negative positive negative positive negative positive
-	Prediction:      positive positive positive positive positive positive positive
-	Score on Train: 0.75
-	Score on Test: 0.57
-	Report:               precision    recall  f1-score   support
+    Test data:       negative negative positive positive negative positive positive
+    Prediction:      positive positive positive positive negative positive positive
+    Score on Train: 0.79
+    Score on Test: 0.71
+    Report:               precision    recall  f1-score   support
 
-		negative       0.00      0.00      0.00         3
-		positive       0.57      1.00      0.73         4
+        negative       1.00      0.33      0.50         3
+        positive       0.67      1.00      0.80         4
 
-		accuracy                           0.57         7
-	   macro avg       0.29      0.50      0.36         7
-	weighted avg       0.33      0.57      0.42         7
+        accuracy                           0.71         7
+    macro avg       0.83      0.67      0.65         7
+    weighted avg       0.81      0.71      0.67         7
 """

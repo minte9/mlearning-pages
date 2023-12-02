@@ -22,20 +22,20 @@ b = r.intercept_.round(1)
 x1 = 80
 y1 = a*x1 + b
 
-print(f'f(x) = {a}x + {b}')
-print(f'f({x1}) = {y1}')
+print(f'h(x) = {a}x + {b}')
+print(f'h({x1}) = {y1}')
 
 # Draw graphics
 fig, ax = plt.subplots()
 plt.ylim(0, 140)
 plt.xlim(0, 140)
 
-ax.plot(X,  Y,  'x', color='g', label='training data')   # Draw dataset points
-ax.plot(x1, y1, 'o', color='r', label=f'h({x1}) = {y1}') # Draw unknown point
-ax.plot(X, a*X + b,  label=f'h(x) = {b} + {a}x')         # Draw function line
+ax.plot(X,  Y,  'x', color='g', label='training data')      # dataset points
+ax.plot(x1, y1, 'o', color='r', label=f'h({x1}) = {y1}')    # unknown point
+ax.plot(X, a*X + b,  label=f'h(x) = {b} + {a}x')            # function line
 
-
-plt.legend(), plt.show()
+plt.legend()
+plt.show()
 
 """
     f(x) = 1.3x + -18.0

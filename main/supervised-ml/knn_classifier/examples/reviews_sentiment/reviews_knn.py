@@ -54,10 +54,6 @@ def steming_words(A):
     A = [[porter.stem(w) for w in words] for words in A]
     return A
 
-def debug(s1, s2=None, debug=True):
-    if debug:
-        print(s1, s2)
-
 ic("Initial dataset")
 ic(df.head())
 

@@ -60,7 +60,7 @@ def binary_genres(movie_genres):
     return lst
 
 # Classify movies by actors 
-for val, index in zip(movies['cast'],movies.index): # select first 4 actors
+for val, index in zip(movies['cast'], movies.index): # select first 4 actors
     lst = val[:4]
     movies.loc[index, 'cast'] = str(lst)
 movies['cast'] = movies['cast'].str.strip('[]').str.replace(" '",'').str.replace("'",'')

@@ -17,11 +17,10 @@ git pull origin main
 #
 
 ### References
-> [Machine Learning Simplified](https://www.amazon.com/gp/product/B0B216KMM4) book  
-> [Machine Learning Simplified](https://code.themlsbook.com/index.html) source code  
-> [Introduction to Machine Learning](https://www.amazon.com/gp/product/B01M0LNE8C) book  
-> [Introduction to Machine Learning](https://github.com/amueller/introduction_to_ml_with_python) source code  
-> [Calculus: An Intuitive and Physical Approach](https://www.amazon.com/gp/product/B00CB2MK6C) book   
-> [Machine Learning with Python Cookbook](https://www.amazon.com/gp/product/B07BC3LFKT) book  
-> [Chris Albon - Datasets](https://github.com/chrisalbon/sim_data)
-> [Learn and Remember](https://www.minte9.com/mlearning) minte9  
+https://www.amazon.com/Machine-Learning-Simplified-Introduction-Supervised-ebook/dp/B0B216KMM4  
+https://code.themlsbook.com/index.html  
+https://www.amazon.com/Introduction-Machine-Learning-Python-Scientists-ebook/dp/B01M0LNE8C  
+https://github.com/amueller/introduction_to_ml_with_python    
+https://www.amazon.com/Calculus-Intuitive-Physical-Approach-Mathematics-ebook/dp/B00CB2MK6C  
+https://www.amazon.com/Machine-Learning-Python-Cookbook-Gallatin-ebook/dp/B0CD15GLSQ  
+https://github.com/chrisalbon/sim_data  

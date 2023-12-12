@@ -1,6 +1,4 @@
-## Machine Learning - Pages
-
-#
+## Machine Learning Pages
 
 ### Install
 

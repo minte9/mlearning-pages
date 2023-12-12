@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+practice/
+
 # Projects
 sentiment140.csv
 

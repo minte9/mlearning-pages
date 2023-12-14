@@ -9,12 +9,32 @@ DIR = pathlib.Path(__file__).resolve().parent
 
 # Load the preprocessed data
 with open(DIR / 'data/movies_processed.pkl', 'rb') as f:
+
+    # Deserialize the data from the file and assign it to variable
     movies = pickle.load(f)
 
 def similarity(a, b):
+    """
+    Calculate the similarity between two movies.
+
+    Args:
+    a (dict): A dictionary containing features of the first movie.
+    b (dict): A dictionary containing features of the second movie.
+
+    Returns:
+    float: A similarity score, where a lower score indicates greater similarity.
+    """
+
+    # Calculate the cosine distance for the genres of the movies
     d1 = spatial.distance.cosine(a['genres_bin'], b['genres_bin'])
+
+    # Calculate the cosine distance for the cast of the movies
     d2 = spatial.distance.cosine(a['cast_bin'], b['cast_bin'])
+
+    # Calculate the cosine distance for the keywords of the movies
     d3 = spatial.distance.cosine(a['keywords_bin'], b['keywords_bin'])
+
+    # Return the sum of the three distances as the overall similarity score
     return d1 + d2 + d3
 
 def predict_similar_movies(movie_title):

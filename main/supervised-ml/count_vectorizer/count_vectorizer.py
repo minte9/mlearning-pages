@@ -1,5 +1,4 @@
-""" 
-    Knn / Movie recommendation system (scikit)
+""" Knn / Movie recommendation system (scikit)
 """
 
 import pathlib

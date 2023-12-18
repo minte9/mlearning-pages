@@ -11,13 +11,13 @@ from icecream import ic
 import numpy as np
 import pymysql
 
-# Database connection
+# DB connection
 conn = pymysql.connect(host='localhost', user='admin', password='password', db='minte9_refresh_v2')
 
 # Fetch data
 with conn.cursor() as c:
     query = """
-        SELECT page_id, COALESCE(content_highlighted, content) as text 
+        SELECT page_id, COALESCE(content_highlighted, content) as content 
         FROM pages 
         WHERE pages.catg IN ('mlearning', 'python', 'algorightms')
         ORDER BY page_id ASC
@@ -30,7 +30,7 @@ with conn.cursor() as c:
 vectorizer = CountVectorizer()
 
 # Strip HTML tags from the text and store it in 'page_texts'
-page_texts = [BeautifulSoup(text, 'html.parser').get_text() for _, text in data]
+page_texts = [BeautifulSoup(content, 'html.parser').get_text() for _, content in data]
 X = vectorizer.fit_transform(page_texts)
 
 # print(page_texts[600])
@@ -52,10 +52,12 @@ with conn.cursor() as cursor:
         similar_indices = np.argsort(similarity_matrix[i])[-4:-1][::-1]
         similar_pages = [data[idx][0] for idx in similar_indices]
 
-        # Output results
+        # Output results (first 3)
         ic(i, page_id, similar_pages)
-
         if i >= 2: break
+
+        # update_query = "UPDATE pages SET similar_pages = %s WHERE page_id = %s"
+        # cursor.execute(update_query, (','.join(map(str, similar_pages)), page_id))
 
 """
     ic| similarity_matrix: array([[1.        , 0.09132484, 0.15395037, ..., 0.13038836, 0.08898476,

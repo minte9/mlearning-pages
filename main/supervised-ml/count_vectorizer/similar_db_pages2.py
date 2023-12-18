@@ -17,7 +17,7 @@ conn = pymysql.connect(host='localhost', user='admin', password='password', db='
 # Fetch data
 with conn.cursor() as c:
     query = """
-        SELECT page_id, COALESCE(content_highlighted, content) as content 
+        SELECT page_id, COALESCE(content_highlighted, content) as text 
         FROM pages 
         WHERE pages.catg IN ('mlearning', 'python', 'algorightms')
         ORDER BY page_id ASC

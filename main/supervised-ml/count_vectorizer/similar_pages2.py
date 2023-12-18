@@ -6,6 +6,7 @@ you can leverage Python's powerful libraries and then update your database.
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from bs4 import BeautifulSoup
 from icecream import ic
 import numpy as np
 import pymysql
@@ -15,18 +16,23 @@ conn = pymysql.connect(host='localhost', user='admin', password='password', db='
 
 # Fetch data
 with conn.cursor() as c:
-    c.execute("SELECT page_id, content FROM pages")
+    c.execute("SELECT page_id, COALESCE(content_highlighted, content) FROM pages WHERE catg='python'")
     data = c.fetchall()
 
 
 # Data processing
 vectorizer = CountVectorizer()
-page_texts = [text for _, text in data]
+
+# Strip HTML tags from the text and store it in 'page_texts'
+page_texts = [BeautifulSoup(text, 'html.parser').get_text() for _, text in data]
 X = vectorizer.fit_transform(page_texts)
+
+# print(page_texts[600])
 
 # Calculate similarity
 similarity_matrix = cosine_similarity(X)
 
+# Print the similarity matrix and its shape
 ic(similarity_matrix)
 ic(np.array(similarity_matrix).shape)
 
@@ -37,16 +43,13 @@ with conn.cursor() as cursor:
         page_id = page[0]
 
         # Get top 5 similar pages, excluding the page itself
-        similar_indices = np.argsort(similarity_matrix[i])[-6:-1]
+        # Higher values do indicate higher similarity
+        similar_indices = np.argsort(similarity_matrix[i])[1:6]
         similar_pages = [data[idx][0] for idx in similar_indices]
 
         # Output results
         ic(i, page_id, similar_pages)
 
-        #update_query = "UPDATE pages SET similar_pages = %s WHERE page_id = %s"
-        #cursor.execute(update_query, (','.join(map(str, similar_pages)), page_id))
-
-        # Dont' show all results (break after 3 pages)
         if i >= 2: break
 
 """

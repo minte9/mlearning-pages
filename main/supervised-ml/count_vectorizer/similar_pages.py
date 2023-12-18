@@ -37,7 +37,8 @@ with conn.cursor() as cursor:
         page_id = page[0]
 
         # Get top 5 similar pages, excluding the page itself
-        similar_indices = np.argsort(similarity_matrix[i])[-6:-1]
+        # Higher values do indicate higher similarity
+        similar_indices = np.argsort(similarity_matrix[i])[1:6]
         similar_pages = [data[idx][0] for idx in similar_indices]
 
         # Output results

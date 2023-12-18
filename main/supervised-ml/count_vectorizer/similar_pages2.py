@@ -17,9 +17,10 @@ conn = pymysql.connect(host='localhost', user='admin', password='password', db='
 # Fetch data
 with conn.cursor() as c:
     query = """
-        SELECT t1.page_id, COALESCE(t1.content_highlighted, t1.content) as content 
-        FROM pages t1
-        WHERE page_private=0
+        SELECT page_id, COALESCE(content_highlighted, content) as content 
+        FROM pages 
+        WHERE pages.catg IN ('mlearning', 'python', 'algorightms')
+        ORDER BY page_id ASC
     """
     c.execute(query)
     data = c.fetchall()
@@ -47,12 +48,7 @@ with conn.cursor() as cursor:
     for i, page in enumerate(data):
         page_id = page[0]
 
-        """
-            Get top 3 similar pages, excluding the page itself
-            Higher values do indicate higher similarity
-            Numpy argsort returns the indices that would sort the array in ascending order
-            We reverse indices array (higher values first)
-        """
+        # Get top 3 similar pages, excluding the page itself
         similar_indices = np.argsort(similarity_matrix[i])[-4:-1][::-1]
         similar_pages = [data[idx][0] for idx in similar_indices]
 

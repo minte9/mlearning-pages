@@ -41,7 +41,7 @@ with conn.cursor() as cursor:
             Higher values do indicate higher similarity
             Numpy argsort returns the indices that would sort the array in ascending order
         """
-        similar_indices = np.argsort(similarity_matrix[i])[-6:-1]
+        similar_indices = np.argsort(similarity_matrix[i])[-4:-1]
         similar_pages = [data[idx][0] for idx in similar_indices]
 
         # Output results

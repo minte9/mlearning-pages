@@ -36,18 +36,18 @@ with conn.cursor() as cursor:
     for i, page in enumerate(data):
         page_id = page[0]
 
-        # Get top 5 similar pages, excluding the page itself
-        # Higher values do indicate higher similarity
-        similar_indices = np.argsort(similarity_matrix[i])[1:6]
+        """
+            Get top 5 similar pages, excluding the page itself
+            Higher values do indicate higher similarity
+            Numpy argsort returns the indices that would sort the array in ascending order
+        """
+        similar_indices = np.argsort(similarity_matrix[i])[-6:-1]
         similar_pages = [data[idx][0] for idx in similar_indices]
 
         # Output results
         ic(i, page_id, similar_pages)
 
-        #update_query = "UPDATE pages SET similar_pages = %s WHERE page_id = %s"
-        #cursor.execute(update_query, (','.join(map(str, similar_pages)), page_id))
-
-        # Dont' show all results (break after 3 pages)
+        # Dont' show all results
         if i >= 2: break
 
 """

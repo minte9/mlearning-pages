@@ -69,7 +69,7 @@ print("Prediction:", y_pred)
     12        0     1         1      0     1
     13        1     2         0      1     0 
     
-    Unknown:
+    Sample:
        outlook  temp  humidity  windy
     0        1     0         1      0 
 

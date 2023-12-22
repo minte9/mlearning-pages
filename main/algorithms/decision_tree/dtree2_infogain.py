@@ -21,56 +21,33 @@ df = pd.read_csv(DIR / 'data/play_tennis.csv')
 X = df.drop(['play'], axis=1)
 y = df['play'] 
 
+# Total entropy
+def dataset_entropy(df):
+    E = 0
+    N = df['play'].value_counts() # yes: 9, no: 5
+    values = df['play'].unique()
+    for v in values: # yes/no
+        P = N[v]/len(df['play'])  # probability
+        E += -P*np.log2(P)
+    return E
 
-""" Calculate the total entropy of the dataset 
-"""
-total_entropy = 0
-
-# For each unique play outcome (yes/no)
-for target in df['play'].unique():
-
-    # Probability of target outcome
-    target_count = df['play'].value_counts()[target]
-    target_total = len(df['play'])
-    P = target_count/target_total
-
-    # Update total entropy
-    total_entropy += -P*np.log2(P)
-
-
-""" Function to calculate entropy of a specific attribute
-"""
+# Entropy for each attribute
 def attribute_entropy(attr):
     E = 0
-    eps = np.finfo(float).eps  # Calculate machine epsilon for float operations
-
-    targets = df.play.unique() # Unique target outcomes (yes/no)
-    values = df[attr].unique() # Unique values for the given attribute (cool,hot)
-
-    # For each unique value of the attribute 
-    for v in values:
-        # Initialize entropy for this value
+    eps = np.finfo(float).eps   # machine epsilon for the float 
+    targets = df.play.unique()
+    values = df[attr].unique()
+    for v in values: # cool/hot
         ent = 0
-
-        # For each unique play outcome (yes/no)
-        for t in targets:
-
-            # Count occurrences where attribute=value and play outcome matches
-            numerator = len(df[attr][df[attr] == v][df.play == t]) # numerator
-            # Count occurrences where attribute=value
-            denominator = len(df[attr][df[attr] == v])
-
-            # Calculate probability
-            P = numerator/(denominator + eps)
-            # Update entropy for this value
-            ent += -P*np.log2(P + eps)
-
-        # Update total entropy using the weighted entropy for this value
-        E += -(denominator/len(df))*ent
-
-    # Return the absolute value of the entropy
+        for t in targets: # yes,no
+            num = len(df[attr][df[attr] == v][df.play == t]) # numerator
+            den = len(df[attr][df[attr] == v])
+            fraction = num/(den + eps)
+            ent += -fraction*np.log2(fraction + eps) # entropy for one feature
+        E += -(den/len(df))*ent # sum of all entropies
     return abs(E)
 
+total_entropy  = dataset_entropy(df)
 
 # Get the names of attributes (excluding the target variable)
 attributes = df.keys()[:-1]

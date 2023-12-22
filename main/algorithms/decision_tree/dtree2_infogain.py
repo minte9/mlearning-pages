@@ -42,7 +42,6 @@ for target in df['play'].unique():
 """
 def attribute_entropy(attr):
     E = 0
-    
     eps = np.finfo(float).eps  # Calculate machine epsilon for float operations
 
     targets = df.play.unique() # Unique target outcomes (yes/no)
@@ -50,7 +49,6 @@ def attribute_entropy(attr):
 
     # For each unique value of the attribute 
     for v in values:
-
         # Initialize entropy for this value
         ent = 0
 
@@ -59,13 +57,11 @@ def attribute_entropy(attr):
 
             # Count occurrences where attribute=value and play outcome matches
             numerator = len(df[attr][df[attr] == v][df.play == t]) # numerator
-
             # Count occurrences where attribute=value
             denominator = len(df[attr][df[attr] == v])
 
             # Calculate probability
             P = numerator/(denominator + eps)
-
             # Update entropy for this value
             ent += -P*np.log2(P + eps)
 

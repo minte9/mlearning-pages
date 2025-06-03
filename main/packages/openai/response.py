@@ -1,8 +1,12 @@
 import openai
 import os
+from dotenv import load_dotenv
+
+# Loads variables from .env into environment
+load_dotenv()  
 
 # Setup OpenAI API key
-openai.api_key = os.environ.get("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 question = "What is flask python?"
 

@@ -1,8 +1,11 @@
 import openai
 import os, sys
 
+from dotenv import load_dotenv
+load_dotenv()  
+
 # Setup OpenAI API key
-openai.api_key = os.environ.get("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize conversation history
 conversation_history = []

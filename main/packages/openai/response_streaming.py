@@ -1,4 +1,4 @@
-"""Streaming with the OpenAI API allows you to get partial results 
+""" Streaming with the OpenAI API allows you to get partial results 
 and process them as they become available, which is more efficient and responsive. 
 """
 

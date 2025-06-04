@@ -1,3 +1,7 @@
+""" You can create a conversation where the model remembers the context.
+You'll need to include that conversation history in subsequent requests.
+"""
+
 import openai
 import os, sys
 
@@ -35,7 +39,7 @@ while True:
         content = chunk["choices"][0]["delta"].get("content", "")
         print(content, end="", flush=True)
 
-    # Add API response to converstion history
+    # Add API response to conversation history
     conversation_history.append({"role": "system", "content": content})
 
     

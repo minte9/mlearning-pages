@@ -1,4 +1,5 @@
-""" You can add a context message at the start of the conversation to instruct the model. 
+""" You can add a context message at the start of the conversation 
+in order to instruct the model. 
 """
 
 import openai

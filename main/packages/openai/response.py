@@ -22,7 +22,7 @@ response = openai.ChatCompletion.create(
 answer = response['choices'][0]['message']['content']
 
 print(question)
-print(answer)
+print(answer) 
 
 """
 What is flask python?

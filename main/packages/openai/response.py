@@ -1,3 +1,12 @@
+""" Install the library and create a new secret key
+https://platform.openai.com/account/api-keys
+
+pin install openai
+
+.env
+OPENAI_API_KEY=xxx
+"""
+
 import openai
 import os
 from dotenv import load_dotenv

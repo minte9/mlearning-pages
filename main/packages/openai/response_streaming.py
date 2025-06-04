@@ -1,8 +1,16 @@
+"""Streaming with the OpenAI API allows you to get partial results and process them
+as they become available, which can be more efficient and responsive.
+"""
+
 import openai
-import os, sys
+import os
+from dotenv import load_dotenv
+
+# Loads variables from .env into environment
+load_dotenv()  
 
 # Setup OpenAI API key
-openai.api_key = os.environ.get("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # User question
 print("Please enter your question (press Enter to submit):")

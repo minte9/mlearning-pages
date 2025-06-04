@@ -1,5 +1,5 @@
-"""Streaming with the OpenAI API allows you to get partial results and process them
-as they become available, which can be more efficient and responsive. 
+"""Streaming with the OpenAI API allows you to get partial results 
+and process them as they become available, which is more efficient and responsive. 
 """
 
 import openai

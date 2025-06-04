@@ -31,3 +31,10 @@ for chunk in response:
     print(content, end="", flush=True)
     
 print("\n")
+
+"""
+    Please enter your question (press Enter to submit):
+    What is Flask?
+    Flask is a lightweight and flexible web application framework for Python. 
+    It is designed to make it easy to build web applications ... 
+"""

@@ -74,6 +74,16 @@ def get_action_plan(natural_language_cmd):
         print("Raw response:", response_text)
         return None
 
+def perform_git(repo_name):
+    """Pull, commit, and push changes in the specific repo."""
+    repo_path = REPOS[repo_name]
+    print(f"\n Updating Github repo: {repo_name}")
+    os.chdir(repo_path)
+    subprocess.run(["git", "pull", "origin", "main", "--force"])
+    subprocess.run(["git", "add", "."])
+    subprocess.run(["git", "commit", "-am", f"{repo_name}-pages update"])
+    subprocess.run(["git", "push", "origin", "main"])
+
 def main():
     user_command = input("What should I do? \n> ").strip()
 
@@ -101,7 +111,13 @@ def main():
         print("No valid action plan. Aborting.")
         return
 
-    print(action_plan)
+    print(f"Action plan: {action_plan}")
+
+    for repo in action_plan.get("git", []):
+        if repo in REPOS:
+            perform_git(repo)
+
+    print("All tasks completed.")
 
 
 if __name__ == '__main__':

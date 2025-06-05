@@ -88,15 +88,13 @@ def main():
     user_command = input("What should I do? \n> ").strip()
 
     """
-        > user_command (input): 
-
+        User commands examples: 
         "Export only python repo differences to GitHub"
         "Upload java to FTP"
         "Export all differences to FTP and GitHub"
         "Go to school"
 
-        > action_plan (response):
-
+        Action plan responses:
         {'git': ['python'], 'ftp': []}
         {'git': [], 'ftp': ['java']}
         {'git': ['python', 'algorithms', 'php', 'mlearning', 'java'], 

@@ -17,6 +17,7 @@ load_dotenv()
 # Setup OpenAI API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+
 # Define valid repositories and their paths
 REPOS = {
     "python":       "/var/www/refresh.local/refresh.ro/Application/github/python-pages/",
@@ -30,6 +31,7 @@ REPOS = {
 FTP_BASE = os.getenv("FTP_BASE")
 FTP_USER = os.getenv("FTP_USER")
 FTP_PASS = os.getenv("FTP_PASS")
+
 
 def get_action_plan(natural_language_cmd):
     """Use OpenAI to interpret the user command and return repo and ftp instructions."""
@@ -86,27 +88,17 @@ def perform_git(repo_name):
     subprocess.run(["git", "push", "origin", "main"])
 
 
-def perform_ftp(repo_name):
-    """Upload changed files to the hosting corresponding FTP Path"""
-    local_path = REPOS[repo_name]
-    remote_path = f"{FTP_BASE}{repo_name}-pages"
-
-    print(f"🌐 Uploding {repo_name} files to FTP ...")
-
-    changed_files = get_changed_files(local_path)
-    print(changed_files)
-
-    if not changed_files:
-        print("No changed files to upload")
-        return
+def get_today_date():
+    from datetime import datetime
+    return datetime.today().strftime('%Y-%m-%d')
 
 def get_changed_files(repo_path):
     """Return list of changed files (repo_path) from Git"""
     os.chdir(repo_path)
 
     try:
-        result = suprocess.run(
-            ["git", "diff", "--stat", f"@{{get_today_date()}}", "--diff-filter=ACRMRT", "--name-only"],
+        result = subprocess.run(
+            ["git", "diff", "--stat", f"@{{{get_today_date()}}}", "--diff-filter=ACRMRT", "--name-only"],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -114,16 +106,38 @@ def get_changed_files(repo_path):
         )
         changed_files = result.stdout.strip().split('\n')
         return [f for f in changed_files if f.strip()]
-    except suprocess.CalledProcessError as e:
+    except subprocess.CalledProcessError as e:
         print("Git diff failed:", e.stderr)
         return []
 
-def get_today_date():
-    from datetime import datetime
-    return datetime.today.strftime('%Y-%m-%d')
+def perform_ftp(repo_name):
+    """Upload changed files to the hosting corresponding FTP Path"""
+    local_repo_path = REPOS[repo_name]
+    remote_path = f"{FTP_BASE}{repo_name}-pages"
+
+    print(f"🌐 Uploding {repo_name} files to FTP ...")
+
+    changed_files = get_changed_files(local_repo_path)
+
+    if not changed_files:
+        print("No changed files to upload")
+        return
+
+    for rel_path in changed_files:
+        local_file = os.path.join(local_repo_path, rel_path)
+        remote_file = f"{remote_path}/{rel_path}"
+
+        # Skip if file doesn't exist (deleted, moved, etc.)
+        if not os.path.isfile(local_file):
+            continue
+
+        print(f"- {rel_path}")
+        subprocess.run(["curl",  "-T", local_file, remote_file, "--user", f"{FTP_USER}:{FTP_PASS}"])
+
 
 def main():
     user_command = input("What should I do? \n> ").strip()
+    #user_command = "Upload mlearning to ftp"
 
     """
         User commands examples: 
@@ -162,3 +176,18 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+"""
+To run it more cleanly from anywhere:
+Create a shell script or symlink:
+
+    # Inside /usr/local/bin/deployai (or somewhere in PATH)
+    #!/bin/bash
+    python3 /path/to/deploy_agent.py "$@"
+
+Make it executable:
+
+    chmod +x /usr/local/bin/deployai
+"""

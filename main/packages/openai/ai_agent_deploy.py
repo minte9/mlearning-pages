@@ -1,5 +1,6 @@
-""" AI Agent that orchestrates Git operations and FTP deployment based on natural language input. 
-Intelligent agent that can interpret your commands like:
+""" AI Agent that orchestrates Git and FTP operations based on natural language input. 
+The agent that can interpret your commands like:
+
  - "Export all differences to FTP and GitHub"
  - "Push only python repo updates"
  - "Sync algorithms and PHP pages"

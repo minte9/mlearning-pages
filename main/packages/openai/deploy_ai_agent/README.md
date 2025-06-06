@@ -11,7 +11,7 @@ Just tell the agent what to do.
 ## ✨ Features
 
 - 🧠 Understands natural language commands using OpenAI GPT
-- 🗃️ Detects changed files per repo using `git diff`
+- 🕑 Detects changed files per repo using `git diff`
 - 📤 Uploads only changed files to FTP (no full syncs)
 - 🛠 Git operations: pull, add, commit, push — per project
 - 💬 Clean, interactive CLI interface

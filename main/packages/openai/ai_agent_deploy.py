@@ -164,13 +164,13 @@ def main():
 
     print(f"Action plan: {action_plan}")
 
-    for repo in action_plan.get("git", []):
-        if repo in REPOS:
-            perform_git(repo)
-
     for repo in action_plan.get("ftp", []):
         if repo in REPOS:
             perform_ftp(repo)
+
+    for repo in action_plan.get("git", []):
+        if repo in REPOS:
+            perform_git(repo)
 
     print("All tasks completed.")
 

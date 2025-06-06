@@ -47,7 +47,8 @@ In the project root (where setup.py is located), run:
 pip install -e .
 ```
 
-This will install the `deployai` command system-wide (in editable mode), so you can run it from anywhere on your system. 
+This will install the `deployai` command system-wide (in editable mode), 
+so you can run it from anywhere on your system. 
 
 🔁 If you make changes to the Python file, they take effect immediately — no reinstall needed.
 

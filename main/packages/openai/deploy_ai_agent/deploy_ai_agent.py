@@ -139,9 +139,9 @@ def perform_ftp(repo_name):
 
 def main():
 
-    if len(sys.argv) > 1:
+    if len(sys.argv) >= 1:
         # Command passed as a CLI argument
-        user_command = " ".join(sys.argv[1:]).strip()
+        user_command = sys.argv[1].strip()
     else:
         # Interactive fallback
         user_command = input("What should I do? \n> ").strip()

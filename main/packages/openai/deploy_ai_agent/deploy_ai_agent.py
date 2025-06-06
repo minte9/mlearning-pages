@@ -11,6 +11,7 @@ import os
 import subprocess
 import json
 import datetime
+import sys
 
 from dotenv import load_dotenv
 load_dotenv()  
@@ -137,7 +138,14 @@ def perform_ftp(repo_name):
 
 
 def main():
-    user_command = input("What should I do? \n> ").strip()
+
+    if len(sys.argv) > 1:
+        # Command passed as a CLI argument
+        user_command = " ".join(sys.argv[1:]).strip()
+    else:
+        # Interactive fallback
+        user_command = input("What should I do? \n> ").strip()
+
     #user_command = "Upload mlearning to ftp"
 
     """

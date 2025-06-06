@@ -39,12 +39,23 @@ export FTP_USER=your_ftp_username
 export FTP_PASS=your_ftp_password
 ```
 
-### 3. Make it globally accessible (optional)
+### 3. Install as a CLI tool (globally, editable)
+
+In the project root (where setup.py is located), run:
 
 ```bash
-chmod +x deploy_ai_agent.py
-ln -s "$(pwd)/deploy_ai_agent.py" /usr/local/bin/deployai
+pip install -e .
 ```
+
+This will install the deployai command system-wide (in editable mode), so you can run:
+
+```bash
+deployai
+```
+
+from anywhere on your system. 
+
+🔁 If you make changes to the Python file, they take effect immediately — no reinstall needed.
 
 Then enter commands like:
 

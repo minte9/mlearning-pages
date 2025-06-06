@@ -33,7 +33,6 @@ Create a .env file or export these manually:
 
 ```bash
 export OPENAI_API_KEY=your_openai_api_key
-
 export FTP_BASE=your_ftp_directory
 export FTP_USER=your_ftp_username
 export FTP_PASS=your_ftp_password
@@ -47,7 +46,7 @@ In the project root (where setup.py is located), run:
 pip install -e .
 ```
 
-This will install the `deployai` command system-wide (in editable mode), 
+This will install the `deployai` command system-wide (in editable mode),  
 so you can run it from anywhere on your system. 
 
 🔁 If you make changes to the Python file, they take effect immediately — no reinstall needed.

@@ -9,6 +9,7 @@ import openai
 import os
 import subprocess
 import json
+import datetime
 
 from dotenv import load_dotenv
 load_dotenv()  
@@ -77,12 +78,49 @@ def get_action_plan(natural_language_cmd):
 def perform_git(repo_name):
     """Pull, commit, and push changes in the specific repo."""
     repo_path = REPOS[repo_name]
-    print(f"\n Updating Github repo: {repo_name}")
+    print(f"🌐 Updating Github repo: {repo_name}")
     os.chdir(repo_path)
     subprocess.run(["git", "pull", "origin", "main", "--force"])
     subprocess.run(["git", "add", "."])
     subprocess.run(["git", "commit", "-am", f"{repo_name}-pages update"])
     subprocess.run(["git", "push", "origin", "main"])
+
+
+def perform_ftp(repo_name):
+    """Upload changed files to the hosting corresponding FTP Path"""
+    local_path = REPOS[repo_name]
+    remote_path = f"{FTP_BASE}{repo_name}-pages"
+
+    print(f"🌐 Uploding {repo_name} files to FTP ...")
+
+    changed_files = get_changed_files(local_path)
+    print(changed_files)
+
+    if not changed_files:
+        print("No changed files to upload")
+        return
+
+def get_changed_files(repo_path):
+    """Return list of changed files (repo_path) from Git"""
+    os.chdir(repo_path)
+
+    try:
+        result = suprocess.run(
+            ["git", "diff", "--stat", f"@{{get_today_date()}}", "--diff-filter=ACRMRT", "--name-only"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True
+        )
+        changed_files = result.stdout.strip().split('\n')
+        return [f for f in changed_files if f.strip()]
+    except suprocess.CalledProcessError as e:
+        print("Git diff failed:", e.stderr)
+        return []
+
+def get_today_date():
+    from datetime import datetime
+    return datetime.today.strftime('%Y-%m-%d')
 
 def main():
     user_command = input("What should I do? \n> ").strip()
@@ -106,7 +144,7 @@ def main():
     action_plan = get_action_plan(user_command)
 
     if not action_plan:
-        print("No valid action plan. Aborting.")
+        print("❌ No valid action plan. Aborting.")
         return
 
     print(f"Action plan: {action_plan}")
@@ -114,6 +152,10 @@ def main():
     for repo in action_plan.get("git", []):
         if repo in REPOS:
             perform_git(repo)
+
+    for repo in action_plan.get("ftp", []):
+        if repo in REPOS:
+            perform_ftp(repo)
 
     print("All tasks completed.")
 

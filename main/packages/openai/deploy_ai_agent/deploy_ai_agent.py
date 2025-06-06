@@ -172,7 +172,7 @@ def main():
         if repo in REPOS:
             perform_git(repo)
 
-    print("All tasks completed.")
+    print("✅ All tasks completed.")
 
 
 if __name__ == '__main__':

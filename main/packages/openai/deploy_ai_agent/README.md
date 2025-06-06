@@ -51,20 +51,6 @@ chmod +x deploy_agent.py
 ln -s "$(pwd)/deploy_agent.py" /usr/local/bin/deployai
 ```
 
-Now you can run the agent from anywhere using:
-
-```bash
-deployai
-```
-
-### Usage
-
-Just run:
-
-```bash
-deployai
-```
-
 Then enter commands like:
 
 ```
@@ -94,8 +80,8 @@ Uploads only those files via curl.
 $ deployai
 What should I do? > Push only python and java changes to GitHub
 
-📘 Updating GitHub repo: python
-📘 Updating GitHub repo: java
+🌐 Updating GitHub repo: python
+🌐 Updating GitHub repo: java
 
 ✅ All tasks completed.
 ```

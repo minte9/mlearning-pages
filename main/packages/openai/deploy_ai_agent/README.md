@@ -33,6 +33,8 @@ Create a .env file or export these manually:
 
 ```bash
 export OPENAI_API_KEY=your_openai_api_key
+
+export FTP_BASE=your_ftp_directory
 export FTP_USER=your_ftp_username
 export FTP_PASS=your_ftp_password
 ```
@@ -40,31 +42,28 @@ export FTP_PASS=your_ftp_password
 ### 3. Make it globally accessible (optional)
 
 ```bash
-chmod +x deploy_agent.py
-ln -s "$(pwd)/deploy_agent.py" /usr/local/bin/deployai
+chmod +x deploy_ai_agent.py
+ln -s "$(pwd)/deploy_ai_agent.py" /usr/local/bin/deployai
 ```
 
 Then enter commands like:
 
 ```
-Export only python repo differences to GitHub
-Upload java repo to FTP
-Export all changes to GitHub and FTP
-Sync php and mlearning only
+"Export only python repo differences to GitHub"
+"Upload java repo to FTP"
+"Export all changes to GitHub and FTP"
+"Sync php and mlearning only"
 ```
 
 ### 🧠 How It Works
 
-Parses your command with GPT-4.  
-
-Maps it to valid repo actions:  
+The agent parses your command with GPT-4 and maps it to valid repo actions:  
 
 "git": list of repos to update with git pull/add/commit/push  
 "ftp": list of repos to upload changed files via FTP  
 
 Detects changed files in each repo using git diff.  
 Uploads only those files via curl.  
-
 
 
 ### 💡 Example Interaction

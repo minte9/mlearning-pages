@@ -168,7 +168,7 @@ def main():
         if repo in REPOS:
             perform_ftp(repo)
 
-    for repo in action_plan.get("git", []):
+    for repo in action_plan.get("git", []): 
         if repo in REPOS:
             perform_git(repo)
 

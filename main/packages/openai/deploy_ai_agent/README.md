@@ -21,20 +21,13 @@ Just tell the agent what to do.
 
 ## 📦 Installation
 
-### 1. Clone the project
-
-```bash
-git clone https://github.com/yourname/deploy-ai-agent.git
-cd deploy-ai-agent
-```
-
-## 2. Install Python dependencies
+### 1. Clone the project and install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Set your environment variables
+### 2. Set your environment variables
 
 Create a .env file or export these manually:
 
@@ -44,7 +37,7 @@ export FTP_USER=your_ftp_username
 export FTP_PASS=your_ftp_password
 ```
 
-### 4. Make it globally accessible (optional)
+### 3. Make it globally accessible (optional)
 
 ```bash
 chmod +x deploy_agent.py

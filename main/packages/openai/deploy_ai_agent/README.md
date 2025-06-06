@@ -47,24 +47,14 @@ In the project root (where setup.py is located), run:
 pip install -e .
 ```
 
-This will install the deployai command system-wide (in editable mode), so you can run:
+This will install the deployai command system-wide (in editable mode),  
+so you can run it from anywhere on your system. 
 
 ```bash
 deployai
 ```
 
-from anywhere on your system. 
-
 🔁 If you make changes to the Python file, they take effect immediately — no reinstall needed.
-
-Then enter commands like:
-
-```
-"Export only python repo differences to GitHub"
-"Upload java repo to FTP"
-"Export all changes to GitHub and FTP"
-"Sync php and mlearning only"
-```
 
 ### 🧠 How It Works
 

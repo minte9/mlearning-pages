@@ -6,7 +6,7 @@ The agent that can interpret your commands like:
  - "Sync algorithms and PHP pages"
 """
 
-import openai
+from openai import OpenAI
 import os
 import subprocess
 import json
@@ -15,8 +15,8 @@ import datetime
 from dotenv import load_dotenv
 load_dotenv()  
 
-# Setup OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# OpenAI Client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 # Define valid repositories and their paths
@@ -61,7 +61,7 @@ def get_action_plan(natural_language_cmd):
         }}
     """
 
-    completion = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-4.1",
         messages=[
             {"role": "system", "content": system_prompt.strip()},
@@ -69,7 +69,7 @@ def get_action_plan(natural_language_cmd):
         ]
     )
 
-    response_text = completion.choices[0].message.content.strip()
+    response_text = response.choices[0].message.content.strip()
 
     try:
         return json.loads(response_text)
@@ -177,3 +177,15 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+"""
+To run it more cleanly from anywhere:
+Create a shell script or symlink:
+    # Inside /usr/local/bin/deployai (or somewhere in PATH)
+    #!/bin/bash
+    python3 /path/to/deploy_agent.py "$@"
+
+Make it executable:
+    chmod +x /usr/local/bin/deployai
+"""

@@ -1,4 +1,4 @@
-"""For loading models and tokenizers an `internet` connection is typically required.  
+""" For loading models and tokenizers an `internet` connection is typically required.  
 The library `fetches` the necessary model files from the Hugging Face model hub.  
 
 Once you've loaded the model and tokenizer at least once and `cached` them locally,  

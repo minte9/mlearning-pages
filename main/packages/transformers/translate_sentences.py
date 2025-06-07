@@ -1,4 +1,4 @@
-"""To perform batch processing for translation using transformers, you can gather `multiple` sentences.  
+""" To perform batch processing for translation using transformers, you can gather `multiple` sentences.  
 You ca process them `together` using the generate method of your translation model.   
 This method should provide `efficiency` improvements compared to translating sentences one by one.  
 """

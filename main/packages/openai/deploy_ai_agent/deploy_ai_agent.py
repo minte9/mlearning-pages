@@ -146,24 +146,6 @@ def main():
         # Interactive fallback
         user_command = input("What should I do? \n> ").strip()
 
-    #user_command = "Upload mlearning to ftp"
-
-    """
-        User commands examples: 
-        "Export only python repo differences to GitHub"
-        "Upload java to FTP"
-        "Export all differences to FTP and GitHub"
-        "Go to school"
-
-        Action plan responses:
-        {'git': ['python'], 'ftp': []}
-        {'git': [], 'ftp': ['java']}
-        {'git': ['python', 'algorithms', 'php', 'mlearning', 'java'], 
-         'ftp': ['python', 'algorithms', 'php', 'mlearning', 'java']}
-        {'git': [], 'ftp': []}
-
-    """
-
     action_plan = get_action_plan(user_command)
 
     if not action_plan:

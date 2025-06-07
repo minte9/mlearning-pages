@@ -139,8 +139,8 @@ def perform_ftp(repo_name):
 
 def main():
 
-    if len(sys.argv) >= 1:
-        # Command passed as a CLI argument
+    if len(sys.argv) > 1:
+        # Command passed as CLI argument (e.g. deployai "Sync my php repo")
         user_command = sys.argv[1].strip()
     else:
         # Interactive fallback
@@ -185,15 +185,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-"""
-To run it more cleanly from anywhere:
-Create a shell script or symlink:
-    # Inside /usr/local/bin/deployai (or somewhere in PATH)
-    #!/bin/bash
-    python3 /path/to/deploy_agent.py "$@"
-
-Make it executable:
-    chmod +x /usr/local/bin/deployai
-"""

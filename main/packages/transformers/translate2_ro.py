@@ -1,15 +1,19 @@
-"""
-    pip install transformers
-    pip install sentencepiece
-    pip install torch torchvision torchaudio -f https://download.pytorch.org/whl/torch_stable.html
-    pip install sacremoses
+"""For loading models and tokenizers an `internet` connection is typically required.  
+The library `fetches` the necessary model files from the Hugging Face model hub.  
+
+Once you've loaded the model and tokenizer at least once and `cached` them locally,  
+subsequent uses of the same model or tokenizer can often work `offline`.  
 """
 
 from transformers import MarianMTModel, MarianTokenizer
 
 # Load pre-trained model and tokenizer 
-model_name = 'BlackKakapo/opus-mt-ro-en'
+model_name = 'BlackKakapo/opus-mt-ro-en'    # Look Here
+
+# Load the tokenizer associated with the pre-trained translation model
 tokenizer = MarianTokenizer.from_pretrained(model_name)
+
+# Load the pre-trained MarianMT model for translation
 model = MarianMTModel.from_pretrained(model_name)
 
 # Example sentence in Romanian

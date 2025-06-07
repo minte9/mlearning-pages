@@ -11,7 +11,8 @@ Install required libraries:
 
     pip install transformers
     pip install sentencepiece
-    pip install torch torchvision torchaudio -f https://download.pytorch.org/whl/torch_stable.html
+    pip install torch torchvision torchaudio -f \
+        https://download.pytorch.org/whl/torch_stable.html
     pip install sacremoses
 """
 

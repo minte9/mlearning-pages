@@ -149,7 +149,7 @@ def main():
     action_plan = get_action_plan(user_command)
 
     if not action_plan:
-        print("❌ No valid action plan. Aborting.")
+        print("No valid action plan. Aborting.")
         return
 
     print(f"Action plan: {action_plan}")

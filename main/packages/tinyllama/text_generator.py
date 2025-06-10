@@ -32,3 +32,11 @@ response = tokenizer.decode(outputs[0][input_ids.shape[-1]:], skip_special_token
 
 print(chat[0]['content'])
 print(response)
+
+"""
+Processing ...
+What is flask (python)?
+<|assistant|>
+Flask is a lightweight web application framework for Python that provides a simple and 
+flexible way to develop and deploy web.
+"""

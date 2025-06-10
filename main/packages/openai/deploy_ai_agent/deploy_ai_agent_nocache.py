@@ -12,13 +12,13 @@ import subprocess
 import json
 import datetime
 import sys
-import sqlite3
 
 from dotenv import load_dotenv
 load_dotenv()  
 
 # OpenAI Client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 # Define valid repositories and their paths
 REPOS = {
@@ -34,42 +34,6 @@ FTP_BASE = os.getenv("FTP_BASE")
 FTP_USER = os.getenv("FTP_USER")
 FTP_PASS = os.getenv("FTP_PASS")
 
-# SQLite persistence
-DB_PATH = "prompt_cache.db"
-
-def init_db():
-    """Initialize SQLite DB and create table if not exists"""
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
-    c.execute("""
-        CREATE TABLE IF NOT EXISTS prompt_cache (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            prompt TEXT UNIQUE,
-            response TEXT
-        )
-    """)
-    conn.commit()
-    conn.close()
-
-def get_cached_response(prompt):
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
-    c.execute("SELECT response FROM prompt_cache WHERE prompt = ?", (prompt,))
-    row = c.fetchone()
-    conn.close()
-    return row[0] if row else None
-
-def store_response(prompt, response):
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
-    try:
-        c.execute("INSERT INTO prompt_cache (prompt, response) VALUES (?,?)", (prompt, response))
-        conn.close()
-    except sqlite3.IntegrityError:
-        # Already exists - ignore
-        pass
-    finally:
-        conn.close()
 
 def get_action_plan(natural_language_cmd):
     """Use OpenAI to interpret the user command and return repo and ftp instructions."""
@@ -98,22 +62,16 @@ def get_action_plan(natural_language_cmd):
         }}
     """
 
-    cached = get_cached_response(natural_language_cmd)
-    if cached:
-        print("📦 Using cached response from SQLite")
-    else:
-        print("🧠 Sending to OpenAI...")
-        response = client.chat.completions.create(
-            model="gpt-4.1",
-            messages=[
-                {"role": "system", "content": system_prompt.strip()},
-                {"role": "user", "content": f"Command: {natural_language_cmd}"}
-            ]
-        )
-        response_text = response.choices[0].message.content.strip()
-        store_response(natural_language_cmd, response_text)
+    response = client.chat.completions.create(
+        model="gpt-4.1",
+        messages=[
+            {"role": "system", "content": system_prompt.strip()},
+            {"role": "user", "content": f"Command: {natural_language_cmd}"}
+        ]
+    )
 
-    # Parse json
+    response_text = response.choices[0].message.content.strip()
+
     try:
         return json.loads(response_text)
     except json.JSONDecodeError as e:
@@ -180,7 +138,6 @@ def perform_ftp(repo_name):
 
 
 def main():
-    init_db()
 
     if len(sys.argv) > 1:
         # Command passed as CLI argument (e.g. deployai "Sync my php repo")

@@ -101,6 +101,7 @@ def get_action_plan(natural_language_cmd):
     cached = get_cached_response(natural_language_cmd)
     if cached:
         print("📦 Using cached response from SQLite")
+        response_text = cached
     else:
         print("🧠 Sending to OpenAI...")
         response = client.chat.completions.create(

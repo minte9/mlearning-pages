@@ -64,7 +64,7 @@ def store_response(prompt, response):
     c = conn.cursor()
     try:
         c.execute("INSERT INTO prompt_cache (prompt, response) VALUES (?,?)", (prompt, response))
-        conn.close()
+        conn.commit()
     except sqlite3.IntegrityError:
         # Already exists - ignore
         pass
@@ -99,7 +99,6 @@ def get_action_plan(natural_language_cmd):
     """
 
     cached = get_cached_response(natural_language_cmd)
-    print(cached)
     if cached:
         print("📦 Using cached response from SQLite")
     else:

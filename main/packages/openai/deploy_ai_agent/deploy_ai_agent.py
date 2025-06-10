@@ -99,6 +99,7 @@ def get_action_plan(natural_language_cmd):
     """
 
     cached = get_cached_response(natural_language_cmd)
+    print(cached)
     if cached:
         print("📦 Using cached response from SQLite")
     else:

@@ -35,7 +35,7 @@ FTP_USER = os.getenv("FTP_USER")
 FTP_PASS = os.getenv("FTP_PASS")
 
 # SQLite persistence
-DB_PATH = "prompt_cache.db"
+DB_PATH = os.getenv("CURR_DIR") + "mlearning-pages/main/packages/openai/deploy_ai_agentprompt_cache.db"
 
 def init_db():
     """Initialize SQLite DB and create table if not exists"""

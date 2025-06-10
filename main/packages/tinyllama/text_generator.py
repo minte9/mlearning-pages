@@ -1,3 +1,8 @@
+"""Example of using the TinyLLaMA model via Hugging Face Transformers in Python. 
+This model is a small version of Meta's LLaMA, optimized for running efficiently 
+on CPUs or smaller GPUs.
+"""
+
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 

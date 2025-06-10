@@ -35,7 +35,8 @@ FTP_USER = os.getenv("FTP_USER")
 FTP_PASS = os.getenv("FTP_PASS")
 
 # SQLite persistence
-DB_PATH = os.getenv("APP_DIR") + "prompt_cache.db"
+DB_PATH = os.getcwd() + "prompt_cache.db"
+print(DB_PATH)
 
 def init_db():
     """Initialize SQLite DB and create table if not exists"""

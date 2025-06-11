@@ -3,9 +3,6 @@ This model is a small version of Meta's LLaMA, optimized for running efficiently
 on CPUs or smaller GPUs.
 """
 
-import warnings
-warnings.filterwarnings("ignore", category=FutureWarning)
-
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 

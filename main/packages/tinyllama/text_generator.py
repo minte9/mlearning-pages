@@ -12,8 +12,8 @@ import torch
 print("Processing ...")
 
 model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name, use_safetensors=True)
+model = AutoModelForCausalLM.from_pretrained(model_name, use_safetensors=True)
 
 chat = [
     {"role": "user", "content": "What is flask (python)?"}
@@ -28,9 +28,7 @@ with torch.no_grad():
         max_new_tokens=30,
         temperature=0.7,
         top_p=0.9,
-        do_sample=True,
-        pad_token_id=tokenizer.eos_token_id,
-        eos_token_id=tokenizer.eos_token_id
+        do_sample=True
     )
 
 response = tokenizer.decode(outputs[0][input_ids.shape[-1]:], skip_special_tokens=True)

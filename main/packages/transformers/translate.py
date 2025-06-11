@@ -18,28 +18,24 @@ Install required libraries:
 
 from transformers import MarianMTModel, MarianTokenizer
 
-# Specify the model name for English to Romanian translation
+# Load pre-trained model and tokenizer 
 model_name = 'Helsinki-NLP/opus-mt-en-ro'
-
-# Load the tokenizer associated with the pre-trained translation model
 tokenizer = MarianTokenizer.from_pretrained(model_name)
+model = MarianMTModel.from_pretrained(model_name, use_safetensors=True)
 
-# Load the pre-trained MarianMT model for translation
-model = MarianMTModel.from_pretrained(model_name)
-
-# Define the input English sentence to be translated
+# Text to translate
 text = "Everything should be made as simple as possible, but no simpler."
 
-# Tokenize the input text and convert it to tensor format suitable for the model
+# Tokenize the input text
 inputs = tokenizer(text, return_tensors="pt")
 
-# Generate the translated text using the model
+# Perform translation
 translated = model.generate(**inputs)
 
-# Decode the generated tensor back into human-readable text (Romanian)
+# Decode translated text
 translated_text = tokenizer.decode(translated[0], skip_special_tokens=True)
 
-# Print the original English text and its Romanian translation
+# Output result
 print(text)
 print(translated_text)
 

@@ -1,5 +1,5 @@
-"""Image to text
-Get only highlighted text
+"""Image to text and get only highlighted text.
+Converting to HSV makes color selection easier.
 """
 import os
 import cv2, pytesseract

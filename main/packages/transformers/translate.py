@@ -4,11 +4,6 @@ One popular library for machine translation is transformers by `Hugging` Face.
 It provides easy-to-use interfaces to various `pre-trained` models.
 
 Install required libraries:
-    - transformers: for accessing pre-trained translation models
-    - sentencepiece: tokenizer dependency for some models
-    - torch and related packages: required by transformers for deep learning inference
-    - sacremoses: used for tokenization in certain models
-
     pip install transformers
     pip install sentencepiece
     pip install torch torchvision torchaudio -f \

@@ -35,14 +35,14 @@ chunks = document.split("\n")
 chunks = [c.strip() for c in chunks if c and c.strip()]
 ic(chunks)
 """
-ic| chunks: ['LangChain is a Python framework for developing applications powered by '
-             'language models.',
-             'It offers tools for prompt management, chaining, and connecting to external '
-             'data.',
-             'RAG stands for Retrieval-Augmented Generation, where a model uses a '
-             'retriever to get relevant info',
-             'from a knowledge base before generating an answer.',
-             'This helps reduce hallucinations and keeps answers factual.']
+chunks: ['LangChain is a Python framework for developing applications powered by '
+        'language models.',
+        'It offers tools for prompt management, chaining, and connecting to external '
+        'data.',
+        'RAG stands for Retrieval-Augmented Generation, where a model uses a '
+        'retriever to get relevant info',
+        'from a knowledge base before generating an answer.',
+        'This helps reduce hallucinations and keeps answers factual.']
 """
 
 # ---- 3) Embed chunks ----
@@ -56,16 +56,16 @@ def embed_texts(texts):
 chunk_embeddings = embed_texts(chunks)
 ic(chunk_embeddings)
 """
-ic| chunk_embeddings: array([[-0.02162271,  0.00888773,  0.03650993, ..., -0.05459763,
-                              -0.00785622, -0.00189854],
-                             [-0.02058555,  0.0135925 ,  0.06969436, ..., -0.05116868,
-                              -0.02132028,  0.01723991],
-                             [-0.00323994,  0.02070102, -0.00502882, ..., -0.00503547,
-                               0.02446847, -0.00111243],
-                             [-0.02227938, -0.00813061,  0.05838839, ...,  0.00838136,
-                               0.03080512,  0.01227949],
-                             [-0.01651258, -0.01769928, -0.01214926, ..., -0.00260496,
-                              -0.02000033,  0.01199007]])
+chunk_embeddings: array([[-0.02162271,  0.00888773,  0.03650993, ..., -0.05459763,
+                        -0.00785622, -0.00189854],
+                        [-0.02058555,  0.0135925 ,  0.06969436, ..., -0.05116868,
+                        -0.02132028,  0.01723991],
+                        [-0.00323994,  0.02070102, -0.00502882, ..., -0.00503547,
+                        0.02446847, -0.00111243],
+                        [-0.02227938, -0.00813061,  0.05838839, ...,  0.00838136,
+                        0.03080512,  0.01227949],
+                        [-0.01651258, -0.01769928, -0.01214926, ..., -0.00260496,
+                        -0.02000033,  0.01199007]])
 """
 
 # ---- 4) Retrive top chunks ----
@@ -79,10 +79,10 @@ question = "What is RAG?"
 context = "\n".join(retrieve(question))
 ic(context)
 """
-ic| context: ('RAG stands for Retrieval-Augmented Generation, where a model uses a '
-              'retriever to get relevant info'
-              'It offers tools for prompt management, chaining, and connecting to external '
-              'data.')
+context: ('RAG stands for Retrieval-Augmented Generation, where a model uses a '
+        'retriever to get relevant info'
+        'It offers tools for prompt management, chaining, and connecting to external '
+        'data.')
 """
 
 # ---- 5) Generate answer ----

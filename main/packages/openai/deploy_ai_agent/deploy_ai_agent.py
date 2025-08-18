@@ -26,7 +26,8 @@ REPOS = {
     "algorithms":   "/var/www/refresh.local/refresh.ro/Application/github/algorithms-pages/",
     "php":          "/var/www/refresh.local/refresh.ro/Application/github/php-pages/",
     "mlearning":    "/var/www/refresh.local/refresh.ro/Application/github/mlearning-pages/",
-    "java":         "/var/www/refresh.local/refresh.ro/Application/github/java-pages/"
+    "java":         "/var/www/refresh.local/refresh.ro/Application/github/java-pages/",
+    "javascript":   "/var/www/refresh.local/refresh.ro/Application/github/javascript-pages/"
 }
 
 # Define base FTP path and credentials (preferably load from environment)

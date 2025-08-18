@@ -70,11 +70,12 @@ if __name__ == "__main__":
     Question: Give a paragraph where the author talks about cheese, please.
     Answer: Cheese, like oil, makes too much of itself. It wants the whole boat to itself. 
     It goes through the hamper, and gives a cheesy flavour to everything else there. 
-    You can’t tell whether you are eating apple-pie or German sausage, or strawberries and cream. 
-    It all seems cheese. There is too much odour about cheese. 
+    You can’t tell whether you are eating apple-pie or German sausage, 
+    or strawberries and cream. It all seems cheese. There is too much odour about cheese. 
     I remember a friend of mine, buying a couple of cheeses at Liverpool. 
-    Splendid cheeses they were, ripe and mellow, and with a two hundred horse-power scent about them 
-    that might have been warranted to carry three miles, and knock a man over at two hundred yards.
+    Splendid cheeses they were, ripe and mellow, and with a two hundred horse-power 
+    scent about them that might have been warranted to carry three miles, and knock a man
+    over at two hundred yards.
     """
 
     while True:
@@ -85,7 +86,11 @@ if __name__ == "__main__":
 
     """
     Question: Who is Montmorency?
-    Answer: Montmorency is a character who does not enjoy the river or the scenery and finds the activities of the others, particularly their boating, to be foolishness. He does not engage in smoking and prefers to create mischief and annoy the group by getting in the way and being a nuisance. His ambition in life is to be a perfect bother to those around him.
+    Answer: Montmorency is a character who does not enjoy the river or the scenery and finds 
+    the activities of the others, particularly their boating, to be foolishness. 
+    He does not engage in smoking and prefers to create mischief and annoy the group 
+    by getting in the way and being a nuisance. His ambition in life is to be a 
+    perfect bother to those around him.
 
     Question: Is Montmorency a person?
     Answer: No, Montmorency is not a person; Montmorency is a dog.

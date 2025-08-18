@@ -24,7 +24,6 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 document = """
 LangChain is a Python framework for developing applications powered by language models.
 It offers tools for prompt management, chaining, and connecting to external data.
-
 RAG stands for Retrieval-Augmented Generation, where a model uses a retriever 
 to get relevant info from a knowledge base before generating an answer.
 This helps reduce hallucinations and keeps answers factual.

@@ -56,8 +56,8 @@ if __name__ == "__main__":
         print(f"Answer: {rag_answer(request)}")
 
     """
-    Question: What is the main topic in the document?
-    Answer: The main topic in the document is the discussion among a group of friends 
+    Question: What is the main topic in this document?
+    Answer: The main topic in this document is the discussion among a group of friends 
     about their health and the need for rest, leading to a decision to take a break, 
     potentially a trip on the River, due to feeling overworked.
 

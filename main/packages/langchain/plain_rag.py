@@ -95,7 +95,7 @@ if __name__ == "__main__":
     Question: Is Montmorency a person?
     Answer: No, Montmorency is not a person; Montmorency is a dog.
 
-    Question: What is the pythagorean formula?
+    Question: What is the Pythagorean formula?
     Answer: The context provided does not contain any information about 
     the Pythagorean formula. Therefore, I am unable to answer your question 
     based solely on that context.

@@ -1,5 +1,5 @@
 """ With LangChain we have less boilerplate, more composability.
-Buit-in best practice (chunking, retrival, prompt templating).
+Buit-in best practice (chunking, retrival, prompt templating). 
 """
 
 import os

@@ -1,7 +1,5 @@
 """ With LangChain we have less boilerplate, more composability.
-Buit-in best practice (chunking, retrival, prompt templating). 
-LangChain's components makes it easier to extend later, you can easily 
-swap in other loaders (PDF/HTML), or an API layer with only a few lines changed.
+Buit-in best practice (chunking, retrival, prompt templating).
 """
 
 import os
@@ -32,7 +30,7 @@ splits = splitter.split_documents(docs)
 
 # 3) Build vector store (embeddings under the hood)
 vs = FAISS.from_documents(splits, embeddings)
-retriver = vs.as_retriever(search_kwargs={"k": 2}) # top chunks 2
+retriever = vs.as_retriever(search_kwargs={"k": 2}) # top chunks 2
 
 # 4) Prompt template
 prompt = ChatPromptTemplate.from_messages([
@@ -46,7 +44,7 @@ def format_docs(docs):
 # 5) Compose the RAG chain (retrive -> prompt -> LLM -> text)
 rag_chain = (
     RunnableParallel(
-        {"context": retriver | format_docs, "question": RunnablePassthrough()}
+        {"context": retriever | format_docs, "question": RunnablePassthrough()}
     )
     | prompt
     | llm

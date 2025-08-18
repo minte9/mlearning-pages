@@ -1,6 +1,7 @@
 """ With LangChain we have less boilerplate, more composability.
 Buit-in best practice (chunking, retrival, prompt templating). 
-LangChain's components makes it easier to extend later.
+LangChain's components makes it easier to extend later, you can easily 
+swap in other loaders (PDF/HTML), or an API layer with only a few lines changed.
 """
 
 import os

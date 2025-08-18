@@ -82,3 +82,11 @@ if __name__ == "__main__":
         if (request == 'quit'):
             break
         print(f"Answer: {rag_answer(request)}")
+
+    """
+    Question: Who is Montmorency?
+    Answer: Montmorency is a character who does not enjoy the river or the scenery and finds the activities of the others, particularly their boating, to be foolishness. He does not engage in smoking and prefers to create mischief and annoy the group by getting in the way and being a nuisance. His ambition in life is to be a perfect bother to those around him.
+
+    Question: Is Montmorency a person?
+    Answer: No, Montmorency is not a person; Montmorency is a dog.
+    """

@@ -106,6 +106,6 @@ if __name__ == "__main__":
     print(f"Answer: {answer}")
     """
     Question: What RAG means?
-    Answer: RAG stands for Retrieval-Augmented Generation, which is a model that uses a retriever 
-    to obtain relevant information.
+    Answer: RAG stands for Retrieval-Augmented Generation, which is a model that uses 
+    a retriever to obtain relevant information.
     """

@@ -4,7 +4,8 @@ A model gets relevant information from a local knowledge base.
 2) Chunking: Break into small pieces (per line).
 3) Embedding: Turn text into numerical vectors.
 4) Retrieval: Find the most similar chunks to the question using cosine similarity.
-5) Generation: Give those top chunks to the LLM in a prompt, it will answer from facts in your data.
+5) Generation: Give those top chunks to the LLM in a prompt, 
+it will answer from facts in your data.
 """
 
 import os
@@ -12,7 +13,9 @@ from dotenv import load_dotenv
 from openai import OpenAI
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
+
 from icecream import ic
+ic.disable()
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -22,8 +25,8 @@ document = """
 LangChain is a Python framework for developing applications powered by language models.
 It offers tools for prompt management, chaining, and connecting to external data.
 
-RAG stands for Retrieval-Augmented Generation, where a model uses a retriever to get relevant info
-from a knowledge base before generating an answer.
+RAG stands for Retrieval-Augmented Generation, where a model uses a retriever 
+to get relevant info from a knowledge base before generating an answer.
 This helps reduce hallucinations and keeps answers factual.
 """
 
@@ -98,10 +101,12 @@ def rag_answer(question):
 
 if __name__ == "__main__":
     question = "What RAG means?"
+    print(f"Question: {question}")
+
     answer = rag_answer(question)
-    
-    ic(answer)
+    print(f"Answer: {answer}")
     """
-    ic| answer: ('RAG stands for Retrieval-Augmented Generation, which involves a model using '
-             'a retriever to obtain relevant information.')
+    Question: What RAG means?
+    Answer: RAG stands for Retrieval-Augmented Generation, which is a model that uses a retriever 
+    to obtain relevant information.
     """

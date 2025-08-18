@@ -56,9 +56,9 @@ if __name__ == "__main__":
 
     """
     Question: What is the main topic in the document?
-    Answer: The main topic in the document is the discussion among a group of friends about their health 
-    and the need for rest, leading to a decision to take a break, potentially a trip on the River, 
-    due to feeling overworked.
+    Answer: The main topic in the document is the discussion among a group of friends 
+    about their health and the need for rest, leading to a decision to take a break, 
+    potentially a trip on the River, due to feeling overworked.
     """
 
     question = "Give me a paragraph where the author talks about cheese, please."
@@ -86,8 +86,8 @@ if __name__ == "__main__":
 
     """
     Question: Who is Montmorency?
-    Answer: Montmorency is a character who does not enjoy the river or the scenery and finds 
-    the activities of the others, particularly their boating, to be foolishness. 
+    Answer: Montmorency is a character who does not enjoy the river or the scenery and 
+    finds the activities of the others, particularly their boating, to be foolishness. 
     He does not engage in smoking and prefers to create mischief and annoy the group 
     by getting in the way and being a nuisance. His ambition in life is to be a 
     perfect bother to those around him.

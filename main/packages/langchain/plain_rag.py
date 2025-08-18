@@ -49,24 +49,18 @@ def rag_answer(question):
     return response_text
 
 if __name__ == "__main__":
-    question = "What is the main topic in the document?"
-    print(f"\nQuestion: {question}")
-    answer = rag_answer(question)
-    print(f"Answer: {answer}")
+    while True:
+        request = input('\nQuestion: ')
+        if (request == 'quit'):
+            break
+        print(f"Answer: {rag_answer(request)}")
 
     """
     Question: What is the main topic in the document?
     Answer: The main topic in the document is the discussion among a group of friends 
     about their health and the need for rest, leading to a decision to take a break, 
     potentially a trip on the River, due to feeling overworked.
-    """
 
-    question = "Give me a paragraph where the author talks about cheese, please."
-    print(f"\nQuestion: {question}")
-    answer = rag_answer(question)
-    print(f"Answer: {answer}")
-
-    """
     Question: Give a paragraph where the author talks about cheese, please.
     Answer: Cheese, like oil, makes too much of itself. It wants the whole boat to itself. 
     It goes through the hamper, and gives a cheesy flavour to everything else there. 
@@ -76,15 +70,7 @@ if __name__ == "__main__":
     Splendid cheeses they were, ripe and mellow, and with a two hundred horse-power 
     scent about them that might have been warranted to carry three miles, and knock a man
     over at two hundred yards.
-    """
 
-    while True:
-        request = input('\nQuestion: ')
-        if (request == 'quit'):
-            break
-        print(f"Answer: {rag_answer(request)}")
-
-    """
     Question: Who is Montmorency?
     Answer: Montmorency is a character who does not enjoy the river or the scenery and 
     finds the activities of the others, particularly their boating, to be foolishness. 

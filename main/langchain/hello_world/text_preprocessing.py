@@ -10,12 +10,11 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-prompt = PromptTemplate.from_template(
-"""
-    Process the given text by following the given steps in sequence. 
-    Follow only the steps that have a 'yes' as value. Remove Number:{number}, 
-    Remove Punctuation: {punctuation}, Word stemming: {stemming}. Output just
-    the preprocessed text.Text:{text}
+prompt = PromptTemplate.from_template("""
+Process the given text by following the given steps in sequence. 
+Follow only the steps that have a 'yes' as value. Remove Number:{number}, 
+Remove Punctuation: {punctuation}, Word stemming: {stemming}. Output just
+the preprocessed text.Text:{text}
 """)
 llm = OpenAI(openai_api_key=os.getenv("OPENAI_API_KEY"))
 chain = LLMChain(llm=llm, prompt=prompt)

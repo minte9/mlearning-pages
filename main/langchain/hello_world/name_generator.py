@@ -1,3 +1,6 @@
+""" Simple LLMChain passing LLM model and prompt template
+"""
+
 from langchain.prompts import PromptTemplate
 from langchain_openai import OpenAI   
 from langchain.chains import LLMChain
@@ -10,8 +13,8 @@ prompt = PromptTemplate.from_template("Suggest {number} names for a {domain} web
 llm = OpenAI(openai_api_key=os.getenv("OPENAI_API_KEY"))
 chain = LLMChain(llm=llm, prompt=prompt)
 
-response = chain.run({'number': 5, 'domain': 'machine learning'})
-print(response)
+answer = chain.run({'number': 5, 'domain': 'machine learning'})
+print(answer)
 """
     1. IntelliLearn
     2. DataBrains

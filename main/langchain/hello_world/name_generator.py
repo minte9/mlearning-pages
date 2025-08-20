@@ -1,4 +1,4 @@
-""" Simple LLMChain passing LLM model and prompt template
+""" Simple LLMChain passing LLM model and a prompt template
 """
 
 from langchain.prompts import PromptTemplate

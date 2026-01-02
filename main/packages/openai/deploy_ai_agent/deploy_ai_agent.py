@@ -1,5 +1,5 @@
-""" AI Agent that orchestrates Git and FTP operations based on natural language input. 
-The agent that can interpret your commands like: 
+""" AI Agent that orchestrates Git and FTP operations based on natural language input.
+The agent can interpret your commands like:
 
  - "Export all differences to FTP and GitHub"
  - "Push only python repo updates"
@@ -15,7 +15,7 @@ import sys
 import sqlite3
 
 from dotenv import load_dotenv
-load_dotenv()  
+load_dotenv()
 
 # OpenAI Client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -26,8 +26,10 @@ REPOS = {
     "algorithms":   "/var/www/refresh.local/refresh.ro/Application/github/algorithms-pages/",
     "php":          "/var/www/refresh.local/refresh.ro/Application/github/php-pages/",
     "mlearning":    "/var/www/refresh.local/refresh.ro/Application/github/mlearning-pages/",
-    "java":         "/var/www/refresh.local/refresh.ro/Application/github/java-pages/",
-    "javascript":   "/var/www/refresh.local/refresh.ro/Application/github/javascript-pages/"
+    "java":         "/var/www/refresh.local/refresh.ro/Application/github/java/",
+    "javascript":   "/var/www/refresh.local/refresh.ro/Application/github/javascript-pages/",
+    "kotlin":       "/var/www/refresh.local/refresh.ro/Application/github/kotlin-pages/",
+    "spring-boot":  "/var/www/refresh.local/refresh.ro/Application/github/spring-boot/"
 }
 
 # Define base FTP path and credentials (preferably load from environment)
@@ -67,7 +69,7 @@ def store_response(prompt, response):
         c.execute("INSERT INTO prompt_cache (prompt, response) VALUES (?,?)", (prompt, response))
         conn.commit()
     except sqlite3.IntegrityError:
-        # Already exists - ignore
+        # Already exists - ignore 
         pass
     finally:
         conn.close()
@@ -77,7 +79,7 @@ def get_action_plan(natural_language_cmd):
 
     system_prompt = f"""
         You are an AI agent that converts deployment commands into structured JSON instructions.
-        
+
         Valid repositories:
         {',' . join(REPOS.keys())}
 
@@ -93,9 +95,9 @@ def get_action_plan(natural_language_cmd):
         Response: {{ "git": [], "ftp": ["java", "php"] }}
 
         User: Export all differences to FTP and GitHub
-        Response: {{ 
-            "git": ["python", "algorithms", "php", "mlearning", "java"], 
-            "ftp": ["python", "algorithms", "php", "mlearning", "java"] 
+        Response: {{
+            "git": ["python", "algorithms", "php", "mlearning", "java"],
+            "ftp": ["python", "algorithms", "php", "mlearning", "java"]
         }}
     """
 
@@ -159,7 +161,11 @@ def get_changed_files(repo_path):
 def perform_ftp(repo_name):
     """Upload changed files to the hosting corresponding FTP Path"""
     local_repo_path = REPOS[repo_name]
-    remote_path = f"{FTP_BASE}{repo_name}-pages"
+
+    if repo_name == 'java' or repo_name == 'spring-boot':
+        remote_path = f"{FTP_BASE}{repo_name}"
+    else:
+        remote_path = f"{FTP_BASE}{repo_name}-pages"
 
     print(f"🌐 Uploding {repo_name} files to FTP ...")
 
@@ -172,6 +178,8 @@ def perform_ftp(repo_name):
     for rel_path in changed_files:
         local_file = os.path.join(local_repo_path, rel_path)
         remote_file = f"{remote_path}/{rel_path}"
+
+        #print(local_file, remote_file); sys.exit(0)
 
         # Skip if file doesn't exist (deleted, moved, etc.)
         if not os.path.isfile(local_file):
@@ -203,7 +211,7 @@ def main():
         if repo in REPOS:
             perform_ftp(repo)
 
-    for repo in action_plan.get("git", []): 
+    for repo in action_plan.get("git", []):
         if repo in REPOS:
             perform_git(repo)
 

@@ -163,6 +163,9 @@ def get_changed_files(repo_path):
         return []
 
 def perform_ftp(repo_name):
+    print("Skip ftp upload - DEPRECATED")
+    return
+
     """Upload changed files to the hosting corresponding FTP Path"""
     local_repo_path = REPOS[repo_name]
 

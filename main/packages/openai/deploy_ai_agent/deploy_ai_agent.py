@@ -39,14 +39,10 @@ FTP_BASE = os.getenv("FTP_BASE")
 FTP_USER = os.getenv("FTP_USER")
 FTP_PASS = os.getenv("FTP_PASS")
 
-APP_DIR = Path(
-    os.getenv("APP_DIR", Path.home() / ".deployai")
-)
-
-APP_DIR.mkdir(parents=True, exist_ok=True)
 
 # SQLite persistence
-DB_PATH = os.getenv("APP_DIR") + "prompt_cache.db"
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / "prompt_cache.db"
 
 def init_db():
     """Initialize SQLite DB and create table if not exists"""

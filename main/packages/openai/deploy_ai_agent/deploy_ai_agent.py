@@ -13,6 +13,7 @@ import json
 import datetime
 import sys
 import sqlite3
+from pathlib import Path
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -22,20 +23,27 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Define valid repositories and their paths
 REPOS = {
-    "python":       "/var/www/refresh.local/refresh.ro/Application/github/python-pages/",
-    "algorithms":   "/var/www/refresh.local/refresh.ro/Application/github/algorithms-pages/",
-    "php":          "/var/www/refresh.local/refresh.ro/Application/github/php-pages/",
-    "mlearning":    "/var/www/refresh.local/refresh.ro/Application/github/mlearning-pages/",
-    "java":         "/var/www/refresh.local/refresh.ro/Application/github/java/",
-    "javascript":   "/var/www/refresh.local/refresh.ro/Application/github/javascript-pages/",
-    "kotlin":       "/var/www/refresh.local/refresh.ro/Application/github/kotlin-pages/",
-    "spring-boot":  "/var/www/refresh.local/refresh.ro/Application/github/spring-boot/"
+    "python":       "/var/docker/minte9/app/src/Application/github/python-pages/",
+    "algorithms":   "/var/docker/minte9/app/src/Application/github/algorithms-pages/",
+    "php":          "/var/docker/minte9/app/src/Application/github/php-pages/",
+    "mlearning":    "/var/docker/minte9/app/src/Application/github/mlearning-pages/",
+    "java":         "/var/docker/minte9/app/src/Application/github/java/",
+    "javascript":   "/var/docker/minte9/app/src/Application/github/javascript-pages/",
+    "kotlin":       "/var/docker/minte9/app/src/Application/github/kotlin-pages/",
+    "spring-boot":  "/var/docker/minte9/app/src/Application/github/spring-boot/",
+    "devops":  "/var/docker/minte9/app/src/Application/github/devops/"
 }
 
 # Define base FTP path and credentials (preferably load from environment)
 FTP_BASE = os.getenv("FTP_BASE")
 FTP_USER = os.getenv("FTP_USER")
 FTP_PASS = os.getenv("FTP_PASS")
+
+APP_DIR = Path(
+    os.getenv("APP_DIR", Path.home() / ".deployai")
+)
+
+APP_DIR.mkdir(parents=True, exist_ok=True)
 
 # SQLite persistence
 DB_PATH = os.getenv("APP_DIR") + "prompt_cache.db"

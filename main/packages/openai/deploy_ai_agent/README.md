@@ -42,12 +42,21 @@ export FTP_PASS=your_ftp_password
 
 In the project root (where setup.py is located), run:
 
-```bash
-pip install -e .
-```
+    pip install -e .
 
-This will install the `deployai` command system-wide (in editable mode),  
-so you can run it from anywhere on your system. 
+
+This will install the `deployai` command system-wide (in editable mode),   
+so you can run it from anywhere on your system.  
+
+When moving directory, it should be reinstalled.  
+Install it as your user, not root.  
+
+    cd /var/newdir/
+    pip uninstall deploy-ai-agent -y
+    pip install -e . --user
+    pip install -e . --user --config-settings editable_mode=compat
+
+
 
 🔁 If you make changes to the Python file, they take effect immediately — no reinstall needed.
 

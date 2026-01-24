@@ -1,4 +1,4 @@
-# KNN - PREDICT UNKNOWN
+# PREDICT UNKNOWN - KNN
 # ---------------------
 # Concept:
 #   - We provide training dataset ponts (features) and label (target).

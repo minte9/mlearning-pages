@@ -1,7 +1,8 @@
-# KNN - PREDICT from DATASET
+# PREDICT from DATASET - KNN
 # --------------------------
 # We use pandas library to transform a dictonary dataset into a DataFrame.
 # Fruits dataset contains heights, widths and labels (fruit name).
+# ------------------------------------------------
 
 from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd

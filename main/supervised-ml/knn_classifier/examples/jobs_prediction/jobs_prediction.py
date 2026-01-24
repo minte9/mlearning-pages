@@ -13,7 +13,7 @@ import numpy as np
 # Import dataset from file
 import sys
 sys.dont_write_bytecode = True # no .pyc files
-from knn5_jobs2_data import jobs
+from data import jobs
 
 # Training dataframe
 df = pd.DataFrame(jobs)

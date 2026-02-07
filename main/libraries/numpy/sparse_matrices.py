@@ -12,7 +12,7 @@ On values we have how many times each user watched that movie.
 We can see that we have multiple zero values, which is normal.
 """
 
-import numpy as np
+import numpy as np 
 from scipy import sparse
 
 M = np.array([

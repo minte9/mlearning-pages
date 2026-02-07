@@ -23,15 +23,16 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Define valid repositories and their paths
 REPOS = {
-    "python":       "/var/docker/minte9/app/src/Application/github/python-pages/",
-    "algorithms":   "/var/docker/minte9/app/src/Application/github/algorithms-pages/",
-    "php":          "/var/docker/minte9/app/src/Application/github/php-pages/",
-    "mlearning":    "/var/docker/minte9/app/src/Application/github/mlearning-pages/",
-    "java":         "/var/docker/minte9/app/src/Application/github/java/",
-    "javascript":   "/var/docker/minte9/app/src/Application/github/javascript-pages/",
-    "kotlin":       "/var/docker/minte9/app/src/Application/github/kotlin-pages/",
-    "spring-boot":  "/var/docker/minte9/app/src/Application/github/spring-boot/",
-    "devops":  "/var/docker/minte9/app/src/Application/github/devops/"
+    "python":        "/var/docker/minte9/app/src/Application/github/python-pages/",
+    "algorithms":    "/var/docker/minte9/app/src/Application/github/algorithms-pages/",
+    "php":           "/var/docker/minte9/app/src/Application/github/php-pages/",
+    "mlearning":     "/var/docker/minte9/app/src/Application/github/mlearning-pages/",
+    "java":          "/var/docker/minte9/app/src/Application/github/java/",
+    "javascript":    "/var/docker/minte9/app/src/Application/github/javascript-pages/",
+    "kotlin":        "/var/docker/minte9/app/src/Application/github/kotlin-pages/",
+    "spring-boot":   "/var/docker/minte9/app/src/Application/github/spring-boot/",
+    "devops":        "/var/docker/minte9/app/src/Application/github/devops/",
+    "microservices": "/var/docker/minte9/app/src/Application/github/microservices/"
 }
 
 # Define base FTP path and credentials (preferably load from environment)

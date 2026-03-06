@@ -60,7 +60,7 @@ Install it as your user, not root.
 
 🔁 If you make changes to the Python file, they take effect immediately — no reinstall needed.
 
-### 🧠 How It Works
+### How It Works
 
 The agent parses your command with GPT-4 and maps it to valid repo actions:  
 
@@ -71,7 +71,7 @@ Detects changed files in each repo using git diff.
 Uploads only those files via curl.  
 
 
-### 💡 Example Interaction
+### Example Interaction
 
 ```bash
 $ deployai
@@ -80,5 +80,5 @@ What should I do? > Push only python and java changes to GitHub
 🌐 Updating GitHub repo: python
 🌐 Updating GitHub repo: java
 
-✅ All tasks completed.
+All tasks completed.
 ```

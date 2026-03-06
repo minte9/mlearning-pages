@@ -1,4 +1,4 @@
-# 🚀 Deploy AI Agent
+# Deploy AI Agent
 
 An AI-powered assistant that syncs Git repositories and uploads code changes via FTP.  
 All controlled through natural language commands.  
@@ -8,18 +8,18 @@ Just tell the agent what to do.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🧠 Understands natural language commands using OpenAI GPT
-- 🕑 Detects changed files per repo using `git diff`
-- 📤 Uploads only changed files to FTP (no full syncs)
-- 🛠 Git operations: pull, add, commit, push — per project
-- 💬 Clean, interactive CLI interface
-- 🔐 Secure: uses environment variables for secrets
+- Understands natural language commands using OpenAI GPT
+- Detects changed files per repo using `git diff`
+- Uploads only changed files to FTP (no full syncs)
+- Git operations: pull, add, commit, push — per project
+- Clean, interactive CLI interface
+- Secure: uses environment variables for secrets
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### 1. Clone the project and install dependencies
 

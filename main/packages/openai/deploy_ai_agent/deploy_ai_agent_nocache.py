@@ -22,11 +22,10 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Define valid repositories and their paths
 REPOS = {
-    "python":       "/var/www/refresh.local/refresh.ro/Application/github/python-pages/",
-    "algorithms":   "/var/www/refresh.local/refresh.ro/Application/github/algorithms-pages/",
-    "php":          "/var/www/refresh.local/refresh.ro/Application/github/php-pages/",
-    "mlearning":    "/var/www/refresh.local/refresh.ro/Application/github/mlearning-pages/",
-    "java":         "/var/www/refresh.local/refresh.ro/Application/github/java-pages/"
+    "python":       "/var/www/refresh.local/refresh.ro/Application/github/python/",
+    "algorithms":   "/var/www/refresh.local/refresh.ro/Application/github/algorithms/",
+    "mlearning":    "/var/www/refresh.local/refresh.ro/Application/github/mlearning/",
+    "java":         "/var/www/refresh.local/refresh.ro/Application/github/java/"
 }
 
 # Define base FTP path and credentials (preferably load from environment)

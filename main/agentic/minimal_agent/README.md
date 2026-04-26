@@ -209,3 +209,10 @@ The memory.json will look like:
   "Python - Dictionary": 0.5
 }
 ~~~
+
+### Cost Estimation
+
+Using:
+- gpt-4.1-mini
+- 5-10 calls per section
+- daily 30 min usage = $1-3/month

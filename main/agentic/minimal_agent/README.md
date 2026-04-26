@@ -1,6 +1,6 @@
 ### Minimal Agent
 
-Memory Learning Agent (v1.0).  
+Memory Learning Agent.    
 What this agent does:
 
 - Load a .md file (your notes)
@@ -67,7 +67,7 @@ def run_agent():
         question = generate_question(topic)
 
         # ACT
-        print(f"\n❓ {question}")
+        print(f"\n {question}")
         user_answer = input("Your answer: ")
 
         # OBSERVE

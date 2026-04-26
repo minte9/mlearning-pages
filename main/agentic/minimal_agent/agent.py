@@ -63,7 +63,7 @@ def load_notes():
         content = f.read()
 
     topics = []
-    sections = content.split("### ")
+    sections = content.split("# ")
 
     for s in sections:
         s = s.strip()

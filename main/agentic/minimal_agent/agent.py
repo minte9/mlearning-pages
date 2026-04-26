@@ -63,9 +63,14 @@ def load_notes():
         content = f.read()
 
     topics = []
-    sections = content.split("###")
+    sections = content.split("### ")
 
     for s in sections:
+        s = s.strip()
+        
+        if not s: continue
+        if "\n" not in s: continue
+
         title, body = s.split("\n", 1)
         topics.append({
             "title": title.strip(),

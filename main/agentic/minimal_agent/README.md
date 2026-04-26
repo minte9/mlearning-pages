@@ -21,13 +21,13 @@ project/
 ### 2. Example notes
 
 ~~~sh
-# Python - Functions
+### Python - Functions
 A function is a reusable block of code.
 
-# Python - Lists
+### Python - Lists
 A list is a collection of items that is ordered and mutable.
 
-# Python - Dictionary
+### Python - Dictionary
 A dictionary stores key-value pairs.
 ~~~
 
@@ -101,9 +101,14 @@ def load_notes():
         content = f.read()
 
     topics = []
-    sections = content.split("###")
+    sections = content.split("### ")
 
     for s in sections:
+        s = s.strip()
+        
+        if not s: continue
+        if "\n" not in s: continue
+
         title, body = s.split("\n", 1)
         topics.append({
             "title": title.strip(),
@@ -190,4 +195,17 @@ def evaluate_answer(topic, question, user_answer):
 
 if __name__ == "__main__":
     run_agent()
+~~~
+
+
+### 4. Memory System (simple)
+
+The memory.json will look like:
+
+~~~json
+{
+  "Python - Functions": 0.9,
+  "Python - Lists": 0.4,
+  "Python - Dictionary": 0.5
+}
 ~~~

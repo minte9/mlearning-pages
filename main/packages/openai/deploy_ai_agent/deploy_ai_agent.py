@@ -28,6 +28,7 @@ REPOS = {
     "mlearning":     "/var/docker/minte9/app/src/Application/github/mlearning/",
     "java":          "/var/docker/minte9/app/src/Application/github/java/",
     "devops":        "/var/docker/minte9/app/src/Application/github/devops/",
+    "infra-monitor": "/var/docker/minte9/app/src/Application/github/infra-monitor/",
 }
 
 # Define base FTP path and credentials (preferably load from environment)

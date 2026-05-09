@@ -10,7 +10,7 @@ client = OpenAI()   # automatically read OPENAI_API_KEY
 # JSON persistence
 BASE_DIR = Path(__file__).resolve().parent
 MEMORY_FILE = BASE_DIR / "memory.json"
-NOTES_FILE = BASE_DIR / "notes.md"
+NOTES_FILE = BASE_DIR / "notes_inheritance.md"
 
 
 # ---------------------
@@ -119,10 +119,14 @@ def ask_llm(prompt):
 def generate_question(topic):
     prompt = f"""
     Create a simple question to test this topic:
-
     {topic["title"]}
-
-    Only return the question.
+    
+    Only return the question. 
+    If the question contain multiple line (code examples) it must be displayed properly.  
+    The question must not ask for a code example answer, just a text answer. 
+    
+    Use the topic body for the context.
+    {topic["content"]}
     """
     return ask_llm(prompt)
 

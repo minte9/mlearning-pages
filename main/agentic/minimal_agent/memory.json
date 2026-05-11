@@ -8,5 +8,15 @@
   "1. Payment Processing System": 0.8,
   "1.5 What's wrong here?": 0.7,
   "1.3 Rule of thumb about inheritance": 0.8,
-  "1.2 Why not use interfaces?": 0.8
+  "1.2 Why not use interfaces?": 0.8,
+  "Composition": 0.8,
+  "3. Default Method": 0.9,
+  "1. Notification Service": 0.0,
+  "2. Dependency Inversion": 0.8,
+  "2.2 Dependency Inversion": 0.7,
+  "Polymorphism": 0.8,
+  "2. Dependency Injection": 0.8,
+  "4. Static Keyword": 0.8,
+  "3. Final Keyword": 0.8,
+  "1. Storage Service Application": 0.9
 }

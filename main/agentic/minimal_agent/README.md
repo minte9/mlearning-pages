@@ -48,7 +48,7 @@ client = OpenAI()   # automatically read OPENAI_API_KEY
 # JSON persistence
 BASE_DIR = Path(__file__).resolve().parent
 MEMORY_FILE = BASE_DIR / "memory.json"
-NOTES_FILE = BASE_DIR / "notes.md"
+NOTES_FILE = BASE_DIR / "notes/notes_dummy.md"
 
 
 # ---------------------
